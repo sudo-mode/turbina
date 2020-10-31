@@ -1,2 +1,2 @@
 # turbina
-frontend of 'TURBINA' project.
+frontend of 'TURBINA' project
