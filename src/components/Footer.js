@@ -2,7 +2,14 @@ import './Footer.css';
 
 function Footer() {
   return (
-    <footer />
+    <footer className="footer">
+      <div className="footer__column">
+        <p className="footer__copyright">Copyright</p>
+      </div>
+      <div className="footer__column">
+        <p className="footer__copyright">Copyright</p>
+      </div>
+    </footer>
   )
 }
 

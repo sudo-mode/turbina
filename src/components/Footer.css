@@ -1,0 +1,25 @@
+.footer {
+  padding: 30px 20px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+
+.footer__column:last-of-type {
+  margin: 0;
+}
+
+.footer__copyright {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.15;
+}
