@@ -1,8 +1,13 @@
 import './Player.css';
+import PlayerController from './PlayerController';
+import PlayerSelector from './PlayerSelector';
 
 function Player () {
   return (
-    <p>Контур — Хадн Дадн feat. Варя Карпова и Федя Быстров</p>
+    <section className="player"> 
+      <PlayerController />
+      <PlayerSelector />
+    </section>
   )
 }
 
