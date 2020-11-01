@@ -1,0 +1,16 @@
+.player__switcher {
+  grid-area: switcher;
+  width: 148px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  background: center no-repeat transparent;
+  margin-left: 20px;
+  font-size: 18px;
+  color: #fff;
+  display: none;
+}
+
+.player__switcher_visible {
+  display: block;
+}
