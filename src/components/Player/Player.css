@@ -1,6 +1,8 @@
 .player {
     /* height: 250px;
   border: 1px dashed; */
+  font-family: Inter;
+  
 }
 
 .player__controllers {
@@ -8,4 +10,5 @@
   grid-template-columns: 1fr min-content min-content;
   grid-gap: 20px;
   margin-bottom: 36px;
+  /* align-items: center; */
 }

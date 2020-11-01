@@ -1,7 +1,8 @@
 import './PlayerController.css';
 import playBtn from '../../images/play-icon.svg';
 import pauseBtn from '../../images/pause-icon.svg';
-
+import PlayerSelector from './PlayerSelector';
+import PlayerSwitcher from './PlayerSwitcher';
 
 function PlayerController ({ isPlaying }) {
   return (
@@ -18,6 +19,8 @@ function PlayerController ({ isPlaying }) {
         <p className="player__song">Контур — Хадн Дадн feat. Варя Карпова и Федя Быстров</p>
 
         <div className="player__timer">0:24</div>
+        <PlayerSelector isOpen={true}/>
+        <PlayerSwitcher isOpen={true}/>
         <div className="player__timeline">
           <div className="player__progress" />
         </div>

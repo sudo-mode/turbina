@@ -6,3 +6,7 @@
   height: 24px;
   background: center no-repeat transparent;
 }
+
+.player__switchers {
+  display: flex;
+}

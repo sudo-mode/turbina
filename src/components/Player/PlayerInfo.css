@@ -3,11 +3,16 @@
   overflow-y: scroll;
   margin-left: 48px;
   margin-right: 45px;
+  display: none;
+}
+
+.player__player-info_active {
+  display: block;
 }
 
 .player__tracks {
   list-style-type: none;
-  padding: 0;
+  padding: 0 0 10px 0;
   margin: 0;
 }
 

@@ -2,12 +2,14 @@
 
 .player__controller {
   display: grid;
-  grid-template-columns: min-content 1fr min-content;
-  grid-template-rows: 1fr min-content;
+  grid-template-columns: min-content 1fr min-content min-content min-content;
+  grid-template-rows: 40px min-content;
   grid-gap: 10px 16px;
+  align-items: center;
   grid-template-areas:
-    "btn song timer"
-    " .  line line";
+    "btn song timer switch switcj2"
+    " .  line line . .";
+  
 }
 
 .player__control-btn {
