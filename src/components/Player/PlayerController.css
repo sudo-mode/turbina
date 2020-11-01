@@ -8,9 +8,6 @@
   grid-template-areas:
     "btn song timer"
     " .  line line";
-  /* убрать */
-  color: #fff;
-  font-family: Inter;
 }
 
 .player__control-btn {

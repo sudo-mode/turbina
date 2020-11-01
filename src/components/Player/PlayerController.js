@@ -1,5 +1,4 @@
 import './PlayerController.css';
-import '../../vendor/fonts/fonts.css';
 import playBtn from '../../images/play-icon.svg';
 import pauseBtn from '../../images/pause-icon.svg';
 
