@@ -1,0 +1,14 @@
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  width: 30px;
+  object-fit: contain;
+}
+
+.header__links {
+  list-style-type: none;
+}
