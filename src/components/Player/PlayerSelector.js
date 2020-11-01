@@ -2,7 +2,7 @@ import './PlayerSelector.css';
 
 function PlayerSelector () {
   return (
-    <p></p>
+    <button>Текст песни</button>
   )
 }
 
