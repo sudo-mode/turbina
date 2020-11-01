@@ -4,11 +4,10 @@
   grid-template-columns: 48px 1fr min-content min-content;
   grid-template-rows: 40px min-content;
   grid-row-gap: 6px;
-  /* grid-gap: 6px 16px; */
   align-items: center;
   grid-template-areas:
     "btn song timer switcher"
-    " .  line line    line  ";
+    " .  line line    .  ";
   
 }
 
