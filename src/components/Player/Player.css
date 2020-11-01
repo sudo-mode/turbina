@@ -6,7 +6,4 @@
   grid-template-areas: 
     "player player player player extend-btn"
     "  .     info   info   info      .     ";
-  /* убрать */
-  font-family: Inter;
-  color: #fff;
 }

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './Player.css';
-import '../../vendor/fonts/fonts.css';
 import PlayerController from './PlayerController';
 import PlayerExtendBtn from './PlayerExtendBtn';
 import PlayerInfo from './PlayerInfo';
