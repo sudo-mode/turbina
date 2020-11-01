@@ -1,21 +1,12 @@
 import './PlayerSwitcher.css';
-import extendBtn from '../../images/extend-icon.svg';
-import closeBtn from '../../images/close-icon.svg';
 
-function PlayerSwitcher (isOpen) {
-  return (
-    <>
-      <div className="player__switchers">
-        {/* { isOpen && <button></button> } */}
-        
-        <button
-          className="player__extend-btn"
-          type="button"
-          style={{ backgroundImage: `url(${isOpen ? closeBtn : extendBtn})` }}
-        />
-        
-      </div>
-    </>
+function PlayerSwitcher ({ isVisible }) {
+  return (   
+    <button 
+      className={`player__switcher ${isVisible && 'player__switcher_visible'}`} 
+    >
+      Текст песни
+    </button>
   )
 }
 

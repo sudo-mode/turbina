@@ -1,12 +1,13 @@
-.player__player-info {
-  height: 109px;
+.player__info {
+  grid-area: info;
+  max-height: 108px;
   overflow-y: scroll;
-  margin-left: 48px;
-  margin-right: 45px;
+  margin-top: 46px;
+  margin-bottom: 12px;
   display: none;
 }
 
-.player__player-info_active {
+.player__info_active {
   display: block;
 }
 
@@ -16,8 +17,10 @@
   margin: 0;
 }
 
+ /* TODO -- провентиллировать вопросик про кроссбраузерность данного решения */
+
 ::-webkit-scrollbar-button {
-  background-image:url('');
+  /* background-image: url(''); */
   background-repeat:no-repeat;
   width:3px;
   height:0;
@@ -39,7 +42,7 @@
 }
   
 ::-webkit-resizer{
-  background-image:url('');
+  /* background-image: url(''); */
   background-repeat:no-repeat;
   width:3px;
   height:0px

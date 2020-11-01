@@ -4,7 +4,7 @@ import PlayerTrack from './PlayerTrack';
 function PlayerInfo({tracks, isOpen, text}) {
 
   return (
-    <div className={`player__player-info ${isOpen && 'player__player-info_active'}`}>
+    <div className={`player__info ${isOpen && 'player__info_active'}`}>
       <ul className='player__tracks'>
         {tracks.map((track, i) => (
           <PlayerTrack
@@ -14,7 +14,6 @@ function PlayerInfo({tracks, isOpen, text}) {
         ))}
       </ul>
     </div>
-
   )
 }
 

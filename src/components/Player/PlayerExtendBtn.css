@@ -1,0 +1,10 @@
+.player__extend-btn {
+  grid-area: extend-btn;
+  padding: 0;
+  border: none;
+  outline: none;
+  width: 24px;
+  height: 24px;
+  background: center no-repeat transparent;
+  margin-top: 10px;
+}

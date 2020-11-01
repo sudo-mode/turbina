@@ -1,10 +1,9 @@
 import './PlayerController.css';
+import PlayerSwitcher from './PlayerSwitcher';
 import playBtn from '../../images/play-icon.svg';
 import pauseBtn from '../../images/pause-icon.svg';
-import PlayerSelector from './PlayerSelector';
-import PlayerSwitcher from './PlayerSwitcher';
 
-function PlayerController ({ isPlaying }) {
+function PlayerController ({ isPlaying, isExtend }) {
   return (
     <>
       <audio>
@@ -16,11 +15,13 @@ function PlayerController ({ isPlaying }) {
           type="button"
           style={{ backgroundImage: `url(${isPlaying ? pauseBtn : playBtn})` }}
         />
-        <p className="player__song">Контур — Хадн Дадн feat. Варя Карпова и Федя Быстров</p>
-
-        <div className="player__timer">0:24</div>
-        <PlayerSelector isOpen={true}/>
-        <PlayerSwitcher isOpen={true}/>
+        <p className="player__song">
+          Контур — Хадн Дадн feat. Варя Карпова и Федя Быстров
+        </p>
+        <span className="player__timer">
+          0:24
+        </span>
+        <PlayerSwitcher isVisible={isExtend} />
         <div className="player__timeline">
           <div className="player__progress" />
         </div>

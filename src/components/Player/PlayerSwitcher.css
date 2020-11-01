@@ -1,12 +1,16 @@
-.player__extend-btn {
-  padding: 0;
-  border: none;
-  outline: none;
-  width: 24px;
-  height: 24px;
+.player__switcher {
+  grid-area: switcher;
+  width: 148px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 20px;
   background: center no-repeat transparent;
+  margin-left: 20px;
+  font-size: 18px;
+  color: #fff;
+  display: none;
 }
 
-.player__switchers {
-  display: flex;
+.player__switcher_visible {
+  display: block;
 }

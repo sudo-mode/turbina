@@ -1,29 +1,30 @@
+import { useState } from 'react';
 import './Player.css';
 import '../../vendor/fonts/fonts.css';
 import PlayerController from './PlayerController';
-import PlayerSelector from './PlayerSelector';
-import PlayerSwitcher from './PlayerSwitcher';
-import tracks from '../../db/tracks';
+import PlayerExtendBtn from './PlayerExtendBtn';
 import PlayerInfo from './PlayerInfo';
+import tracks from '../../db/tracks';
 
 function Player () {
-
-  // true false
+  const [isPlayerExtend, setPlayerState] = useState(true);
 
   return (
     <section className="player">
-      <div className="player__controllers">
-        <PlayerController  isPlaying={true} />
-        {/* <PlayerSelector isOpen={true}/> */}
-        {/* <PlayerSwitcher isOpen={true}/> */}
-      </div>
-      
-      <PlayerInfo isOpen={true} tracks={tracks} text={false}/>
+      <PlayerController
+        isPlaying={false}
+        isExtend={isPlayerExtend} 
+      />
+      <PlayerExtendBtn
+        isOpen={isPlayerExtend}
+      />
+      <PlayerInfo
+        isOpen={isPlayerExtend}
+        tracks={tracks}
+        text={false}
+      />
     </section>
-
   )
 }
-
-
 
 export default Player;
