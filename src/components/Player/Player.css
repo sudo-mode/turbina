@@ -1,3 +1,10 @@
-/* .player {
-  
-} */
+.player {
+    height: 250px;
+  border: 1px dashed;
+}
+
+.player__controllers {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-gap: 20px;
+}
