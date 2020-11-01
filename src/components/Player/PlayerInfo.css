@@ -1,9 +1,8 @@
 .player__player-info {
   height: 109px;
-  border: 1px solid green;
   overflow-y: scroll;
   margin-left: 48px;
-  margin-right: 48px;
+  margin-right: 45px;
 }
 
 .player__tracks {

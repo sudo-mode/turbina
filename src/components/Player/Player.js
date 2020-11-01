@@ -10,10 +10,11 @@ function Player () {
     <section className="player">
       <div className="player__controllers">
         <PlayerController  isPlaying={false} />
+        <PlayerSelector isOpen={true}/>
         <PlayerSwitcher isOpen={false}/>
       </div>
-      <PlayerSelector />
-      <PlayerInfo tracks={tracks}/>
+      
+      <PlayerInfo isOpen={true} tracks={tracks}/>
     </section>
 
   )

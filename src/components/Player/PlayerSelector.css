@@ -1,4 +1,18 @@
-p {
-  margin: 0;
+.player__selector {
+  width: 147px;
+  height: 40px;
+  border-width: 2px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #fff;
+  border-color: #fff;
+  background: center no-repeat transparent;
+  border-style: solid;
+  font-size: 18px;
+  display: none;
 }
-/* Это можно убрать, добавлено просто, чтобы друг другу не мешать */
+
+.player__selector_visible {
+  display: block;
+}
