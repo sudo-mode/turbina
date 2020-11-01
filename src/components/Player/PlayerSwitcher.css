@@ -1,0 +1,8 @@
+.player__extend-btn {
+  padding: 0;
+  border: none;
+  outline: none;
+  width: 24px;
+  height: 24px;
+  background: center no-repeat transparent;
+}
