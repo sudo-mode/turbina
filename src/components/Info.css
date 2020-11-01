@@ -1,0 +1,151 @@
+/* TODO: разбиение стилей соответсвенно компонентам */
+/* TODO: мобильная версия */
+
+/* Стиль всей секции */
+.info-container {
+    margin-top: -20px;
+    background-color: #fff;
+    color: #000;
+    font-weight: normal;
+    border-radius: 10px;
+}
+
+/* Компонент Текст */
+.text {
+    max-width: 716px;
+    margin-right: auto;
+    padding-top: 64px;
+    padding-left: 60px;
+}
+
+
+/* Идея для мобильной верстки 
+@media screen and (max-width:767px) {
+    .text {
+      max-width: calc(100% - 32px);
+      margin: 0 16px;
+    }
+  } */
+
+.text__heading {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 44px;
+}
+
+.text__paragraph {
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 60px;
+}
+
+.text__list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.text__list-item {
+    margin-bottom: 16px;
+}
+
+.text__list-item:last-of-type {
+    margin-bottom: 0;
+}
+
+
+/* Компонент Форма */
+.form {
+    padding-top: 64px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__heading {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 80px;
+}
+
+.form__input {
+    width: 597px;
+    margin-bottom: 16px;
+    padding-top: 19px;
+    padding-left: 24px;
+    padding-bottom: 19px;
+    border: 2px solid #000;
+    border-radius: 30px;
+}
+
+.form__input::placeholder {
+    font-size: 18px;
+    line-height: 1.2;
+    color: #000;
+}
+
+.form__textarea {
+    width: 597px;
+    height: 246px;
+    margin-bottom: 16px;
+    border: 2px solid #000;
+    border-radius: 30px;
+}
+
+.form__input_radio {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.form__input-label {
+    margin-top: 34px;
+    margin-bottom: 88px;
+}
+
+.form__label-text {
+    margin-left: 16px;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.form__offer-link {
+    color: #000;
+}
+
+.form__pseudo-item {
+    display: inline-block;
+    vertical-align: middle;
+    width: 27px;
+    height: 27px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+/* Активная радиокнопка
+.form__input_radio:checked + .form__pseudo-item {
+    background-size: 20px 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
+
+.form__submit-button {
+    width: 597px;
+    height: 60px;
+    margin-bottom: 86px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 30px;
+    font-size: 18px;
+    line-height: 1.2;
+    transition: background-color 0.4s linear;
+}
+
+.form__submit-button:hover {
+   background-color: rgba(0, 0, 0, 0.6);
+   color: #fff;
+}
+
+
+
