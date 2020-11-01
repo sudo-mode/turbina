@@ -1,4 +1,5 @@
 @import url(../vendor/normalize.css);
+@import url(../vendor/fonts/fonts.css);
 
 .page {
   width: 100%;
@@ -7,6 +8,7 @@
   box-sizing: border-box;
   background: center / cover url('../images/background.png');
   background-attachment: fixed;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
 .page__container {
