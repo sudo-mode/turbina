@@ -2,7 +2,7 @@ import './PlayerSelector.css';
 
 function PlayerSelector () {
   return (
-    <p></p>
+    <button>x</button>
   )
 }
 
