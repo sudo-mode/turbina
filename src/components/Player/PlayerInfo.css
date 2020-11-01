@@ -2,8 +2,8 @@
   grid-area: info;
   max-height: 108px;
   overflow-y: scroll;
-  margin-top: 46px;
-  margin-bottom: 12px;
+  margin-top: 38px;
+  margin-bottom: 32px;
   display: none;
 }
 
@@ -13,7 +13,7 @@
 
 .player__tracks {
   list-style-type: none;
-  padding: 0 0 10px 0;
+  padding: 0;
   margin: 0;
 }
 
