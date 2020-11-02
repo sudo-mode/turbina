@@ -7,7 +7,13 @@ import tracks from '../../db/tracks';
 
 function Player () {
   const [isPlayerExtend, setPlayerState] = useState(true);
+  const [currentTrack, setCurrentTrack] = useState(tracks[0]);
 
+  const handleTrackClick = (track) => {
+    console.log('curren track: ', track)
+    setCurrentTrack(track)
+  }
+  
   return (
     <section className="player">
       <PlayerController
@@ -19,8 +25,10 @@ function Player () {
       />
       <PlayerInfo
         isOpen={isPlayerExtend}
+        onTrackClick={handleTrackClick}
         tracks={tracks}
-        text={false}
+        isTextInfo={false}
+        currentTrack={currentTrack}
       />
     </section>
   )
