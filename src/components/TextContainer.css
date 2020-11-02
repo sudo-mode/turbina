@@ -1,0 +1,43 @@
+/* Компонент Текст */
+.text {
+    max-width: 716px;
+    margin-right: auto;
+    /* padding-top: 64px;
+    padding-left: 60px; */
+}
+
+
+/* Идея для мобильной верстки 
+@media screen and (max-width:767px) {
+    .text {
+      max-width: calc(100% - 32px);
+      margin: 0 20px;
+    }
+  } */
+
+.text__heading {
+    font-size: 50px;
+    line-height: 1.2;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.text__paragraph {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 80px;
+}
+
+.text__list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.text__list-item {
+    margin-bottom: 14px;
+}
+
+.text__list-item:last-of-type {
+    margin-bottom: 0;
+}
