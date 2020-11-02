@@ -2,8 +2,6 @@
 .text {
     max-width: 716px;
     margin-right: auto;
-    /* padding-top: 64px;
-    padding-left: 60px; */
 }
 
 
@@ -23,11 +21,27 @@
     margin-bottom: 40px;
 }
 
+
+/* Идея для мобильной верстки  */
+@media screen and (max-width:425px) {
+    .text__heading {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+  }
+
 .text__paragraph {
     font-size: 16px;
     line-height: 1.4;
     margin-bottom: 80px;
 }
+
+@media screen and (max-width:425px) {
+    .text__paragraph {
+        font-size: 12px;
+        margin-bottom: 60px;
+    }
+  }
 
 .text__list {
     list-style: none;
