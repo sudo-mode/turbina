@@ -13,6 +13,11 @@ function Player () {
     setPlayerState(!isPlayerExtend);
   }
 
+  const handleTrackClick = (track) => {
+    console.log('curren track: ', track)
+    setCurrentTrack(track)
+  }
+  
   return (
     <section className="player">
       <PlayerController
@@ -26,8 +31,10 @@ function Player () {
       />
       <PlayerInfo
         isOpen={isPlayerExtend}
+        onTrackClick={handleTrackClick}
         tracks={tracks}
-        text={false}
+        isTextInfo={false}
+        currentTrack={currentTrack}
       />
     </section>
   )

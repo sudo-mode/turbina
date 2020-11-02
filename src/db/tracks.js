@@ -4,8 +4,8 @@ const tracks = [
     group: 'Хадн Дадн',
     trackName: 'Контур',
     author: 'Варя Карпова и Федя Быстров',
-    text: `Мой милый милый мальчик
-    Моя милая милая девочка
+    text: `Мой милый милый мальчик,
+    Моя милая милая девочка,
     Никогда не знаешь что будет дальше
     В этой гадкой зиме`,
     link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'

@@ -1,6 +1,32 @@
+.player__track-item {
+  margin-bottom: 16px;
+  padding-right: 10px;
+}
+
 .player__track {
-  margin-bottom: 6px;
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.55;
+  max-width: 100%;
+  width: fit-content;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: transform .1s ease-out, text-shadow 0.2s ease-out;
+}
+
+.player__track:hover {
+  cursor: pointer;
+  transform: skewX(-9deg);
+  text-shadow: 0 0 4px white;
+}
+
+@media screen and (max-width: 1024px) {
+  .player__info {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .player__info {
+    margin-bottom: 10px;
+  }
 }
