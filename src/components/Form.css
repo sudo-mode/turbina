@@ -1,0 +1,111 @@
+/* Компонент Форма */
+.form {
+    /* padding-top: 64px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.form__heading {
+    font-size: 50px;
+    line-height: 1.2;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width:1024px) {
+    .form__heading {
+        font-size: 46px;
+    }
+  }
+
+@media screen and (max-width:768px) {
+    .form__heading {
+        font-size: 42px;
+    }
+}
+  
+@media screen and (max-width:425px) {
+    .form__heading {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+  }
+
+.form__input {
+    max-width: 600px;
+    margin-bottom: 10px;
+    padding: 20px 0;
+    border: none;
+    border-bottom: 2px solid #000;
+    /* border-radius: 30px; */
+}
+
+.form__input::placeholder {
+    font-size: 18px;
+    line-height: 1.2;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.form__textarea {
+    max-width: 600px;
+    /* height: 246px; */
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid #000;
+    /* border-radius: 30px; */
+}
+
+.form__input_radio {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.form__input-label {
+    margin-top: 34px;
+    margin-bottom: 88px;
+}
+
+.form__label-text {
+    margin-left: 16px;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.form__offer-link {
+    color: #000;
+}
+
+.form__pseudo-item {
+    display: inline-block;
+    vertical-align: middle;
+    width: 27px;
+    height: 27px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+/* Активная радиокнопка */
+.form__input_radio:checked + .form__pseudo-item {
+    background-color: #000;
+}
+
+.form__submit-button {
+    max-width: 600px;
+    height: 60px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 30px;
+    font-size: 18px;
+    line-height: 1.2;
+    transition: background-color 0.4s linear;
+}
+
+.form__submit-button:hover {
+   background-color: rgba(0, 0, 0, 0.6);
+   color: #fff;
+}
