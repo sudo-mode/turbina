@@ -4,24 +4,49 @@
   align-items: flex-start;
 }
 
-.header__shop-link {
-  display: block;
-  margin-left: 5px;
-  transition: opacity .2s ease-out;
+
+/* Логотип магазина "Маршак" */
+
+.header__logo {
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
-.header__shop-link:hover {
-  opacity: .7;
+.marshak-link {
+  display: block;  
+  transition: box-shadow .2s ease-out;
 }
 
-.shop-logo {
+.marshak-link:hover {
+  box-shadow: 0 6px 6px #ffffff40;
+}
+
+.marshak-logo {
   display: block;
   width: 50px;
   object-fit: contain;
 }
 
-.header__platform-links {
-  margin: 5px 0 0;
+
+/* Ссылки на стриминговые сервисы */
+
+.header__links {
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.stream-services {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-height: 185px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.0;
+}
+
+.stream-services__links {
+  margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
@@ -29,27 +54,103 @@
   align-items: flex-end;
 }
 
-.header__platform-link-container {
-  margin-bottom: 10px;
+.stream-services__link-container {
+  margin-bottom: 8px;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  transition: box-shadow .2s ease-out;
 }
 
-.header__platform-link-container:last-child {
+.stream-services__link-container:last-child {
   margin-bottom: 0;
 }
 
-.header__platform-link {
+.stream-services__link-container:hover {
+  box-shadow: 0 0 8px 4px #ffffff40;
+}
+
+.stream-services__link {
   display: inline-block;
+  border-radius: 30px;
+  /* border-radius продублирован, чтобы при трансформации текста 
+  элемент не выходил за границу контейнера */
+  padding: 8px 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: transform .2s ease-out;
+}
+
+.stream-services__link:hover {
+  transform: skewX(-9deg);
+}
+
+.stream-services__button {
+  margin-bottom: 8px;
   border: 2px solid #fff;
   border-radius: 30px;
   padding: 8px 20px;
   color: #fff;
-  text-decoration: none;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 1.15;
-  transition: opacity .2s ease-out;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  transition: box-shadow .2s ease-out;
 }
 
-.header__platform-link:hover {
-  opacity: .7;
+.stream-services__button:focus {
+  outline: none;
+}
+
+.stream-services__button:hover {
+  box-shadow: 0 0 8px 4px #ffffff40;
+}
+
+.stream-services__button_minimised {
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  background-image: url(../images/links-close-icon.svg);
+  background-size: 10px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .marshak-logo {
+    width: 40px;
+  }
+
+  .stream-services {
+    font-size: 15px;
+  }
+
+  .stream-services__link {
+    padding: 8px 18px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+  .marshak-logo {
+    width: 24px;
+  }
+
+  .stream-services {
+    font-size: 12px;
+  }
+
+  .stream-services__link {
+    padding: 7px 16px;
+  }
+
+  .stream-services__button {
+    padding: 7px 16px;
+  }
+
+  .stream-services__button_minimised {
+    padding: 0;
+  }
 }
