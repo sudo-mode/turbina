@@ -8,6 +8,7 @@ import tracks from '../../db/tracks';
 
 function Player () {
   const [isPlayerExtend, setPlayerState] = useState(true);
+  const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const handleExtendClick = () => {
     setPlayerState(!isPlayerExtend);
   }
@@ -15,7 +16,7 @@ function Player () {
   return (
     <section className="player">
       <PlayerController
-        link='https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
+        track={currentTrack}
         isExtend={isPlayerExtend}
       />
       <PlayerSwitcher isVisible={isPlayerExtend} />
