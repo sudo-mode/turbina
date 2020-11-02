@@ -23,6 +23,18 @@
 
 
 /* Идея для мобильной верстки  */
+@media screen and (max-width:1024px) {
+    .text__heading {
+        font-size: 46px;
+    }
+  }
+
+@media screen and (max-width:768px) {
+    .text__heading {
+        font-size: 42px;
+    }
+}
+  
 @media screen and (max-width:425px) {
     .text__heading {
         font-size: 32px;
@@ -36,12 +48,18 @@
     margin-bottom: 80px;
 }
 
+@media screen and (max-width:1024px) {
+    .text__paragraph {
+        font-size: 15px;
+    }
+}
+
 @media screen and (max-width:425px) {
     .text__paragraph {
         font-size: 12px;
         margin-bottom: 60px;
     }
-  }
+}
 
 .text__list {
     list-style: none;

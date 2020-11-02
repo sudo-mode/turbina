@@ -13,7 +13,7 @@
 }
 
 /* Идея для мобильной верстки  */
-@media screen and (max-width:767px) {
+@media screen and (max-width:425px) {
     .info-container {
       /* max-width: calc(100% - 32px);
       margin: 0 20px; */
