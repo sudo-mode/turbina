@@ -7,4 +7,5 @@
   height: 24px;
   background: center no-repeat transparent;
   margin-top: 10px;
+  justify-self: end;
 }
