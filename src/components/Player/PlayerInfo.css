@@ -1,10 +1,21 @@
 .player__info {
+  font-size: 20px;
+  line-height: 1.2;
   grid-area: info;
   max-height: 108px;
   overflow-y: scroll;
-  margin-top: 38px;
+  margin-top: 28px;
   margin-bottom: 32px;
+  padding-top: 10px;
   display: none;
+  overflow-x: hidden;
+  mask-image: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0,0,0,1) 20%,
+    rgba(0,0,0,1) 50%,
+    rgba(0,0,0,1) 80%,
+    rgba(0,0,0,0) 100%);  
 }
 
 .player__info_active {
@@ -17,10 +28,24 @@
   margin: 0;
 }
 
+.player__text-line {
+  margin: 0;
+  font-style: italic;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.player__info-header {
+  font-weight: 400;
+  margin: 0 0 16px 0;
+  font-style: italic;
+}
+
  /* TODO -- провентиллировать вопросик про кроссбраузерность данного решения */
 
 ::-webkit-scrollbar-button {
-  /* background-image: url(''); */
   background-repeat:no-repeat;
   width:3px;
   height:0;
@@ -42,7 +67,6 @@
 }
   
 ::-webkit-resizer{
-  /* background-image: url(''); */
   background-repeat:no-repeat;
   width:3px;
   height:0px
@@ -50,4 +74,26 @@
   
 ::-webkit-scrollbar{
   width: 3px;
+}
+
+@media screen and (max-width: 1024px) {
+
+  .player__info {
+    font-size: 18px;
+  }
+
+  .player__info-header {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+
+  .player__info {
+    font-size: 14px;
+  }
+
+  .player__info-header {
+    margin-bottom: 10px;
+  }
 }
