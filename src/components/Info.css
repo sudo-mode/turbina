@@ -4,59 +4,26 @@
 /* Стиль всей секции */
 .info-container {
     margin-top: -20px;
+    padding: 100px 52px;
+    box-sizing: border-box;
     background-color: #fff;
     color: #000;
     font-weight: normal;
     border-radius: 10px;
 }
 
-/* Компонент Текст */
-.text {
-    max-width: 716px;
-    margin-right: auto;
-    padding-top: 64px;
-    padding-left: 60px;
-}
-
-
-/* Идея для мобильной верстки 
-@media screen and (max-width:767px) {
-    .text {
-      max-width: calc(100% - 32px);
-      margin: 0 16px;
+/* Идея для мобильной верстки  */
+@media screen and (max-width:425px) {
+    .info-container {
+      /* max-width: calc(100% - 32px);
+      margin: 0 20px; */
+      padding: 92px 20px;
     }
-  } */
-
-.text__heading {
-    font-size: 30px;
-    line-height: 1.2;
-    margin-bottom: 44px;
-}
-
-.text__paragraph {
-    font-size: 18px;
-    line-height: 1.2;
-    margin-bottom: 60px;
-}
-
-.text__list {
-    list-style: none;
-    padding-left: 0;
-}
-
-.text__list-item {
-    margin-bottom: 16px;
-}
-
-.text__list-item:last-of-type {
-    margin-bottom: 0;
-}
-
+  }
 
 /* Компонент Форма */
 .form {
     padding-top: 64px;
-    padding-left: 60px;
     display: flex;
     flex-direction: column;
 }
@@ -123,17 +90,14 @@
     border-radius: 50%;
 }
 
-/* Активная радиокнопка
+/* Активная радиокнопка */
 .form__input_radio:checked + .form__pseudo-item {
-    background-size: 20px 20px;
-    background-position: center;
-    background-repeat: no-repeat;
-} */
+    background-color: #000;
+}
 
 .form__submit-button {
     width: 597px;
     height: 60px;
-    margin-bottom: 86px;
     background-color: #fff;
     border: 2px solid #000;
     border-radius: 30px;

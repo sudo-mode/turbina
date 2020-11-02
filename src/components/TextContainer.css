@@ -1,0 +1,75 @@
+/* Компонент Текст */
+.text {
+    max-width: 716px;
+    margin-right: auto;
+}
+
+
+/* Идея для мобильной верстки 
+@media screen and (max-width:767px) {
+    .text {
+      max-width: calc(100% - 32px);
+      margin: 0 20px;
+    }
+  } */
+
+.text__heading {
+    font-size: 50px;
+    line-height: 1.2;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+
+/* Идея для мобильной верстки  */
+@media screen and (max-width:1024px) {
+    .text__heading {
+        font-size: 46px;
+    }
+  }
+
+@media screen and (max-width:768px) {
+    .text__heading {
+        font-size: 42px;
+    }
+}
+  
+@media screen and (max-width:425px) {
+    .text__heading {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+  }
+
+.text__paragraph {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 80px;
+}
+
+@media screen and (max-width:1024px) {
+    .text__paragraph {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:425px) {
+    .text__paragraph {
+        font-size: 12px;
+        margin-bottom: 60px;
+    }
+}
+
+.text__list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.text__list-item {
+    margin-bottom: 14px;
+}
+
+.text__list-item:last-of-type {
+    margin-bottom: 0;
+}
