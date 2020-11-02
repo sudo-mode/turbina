@@ -1,9 +1,9 @@
 .player {
   display: grid;
-  grid-template-columns: 28px 1fr 1fr 148px 26px;
+  grid-template-columns: 48px 1fr min-content 46px;
   grid-template-rows: min-content 1fr;
-  grid-gap: 0 20px;
+  /* grid-gap: 0 20px; */
   grid-template-areas: 
-    "player player player player extend-btn"
-    "  .     info   info   info      .     ";
+    "player player switcher extend-btn"
+    "  .     info    info       .     ";
 }

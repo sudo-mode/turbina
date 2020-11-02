@@ -7,28 +7,32 @@ const tracks = [
     text: `Мой милый милый мальчик
     Моя милая милая девочка
     Никогда не знаешь что будет дальше
-    В этой гадкой зиме`
+    В этой гадкой зиме`,
+    link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
   },
   {
     id: '№6',
     group: 'Мукулатура',
     trackName: 'Поэзия',
     author: 'Саша Петров',
-    text: ``
+    text: ``,
+    link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
   },
   {
     id: '№5',
     group: 'СПБЧ',
     trackName: 'Лодка',
     author: 'Маруся Романова',
-    text: ``
+    text: ``,
+    link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
   },
   {
     id: '№4',
     group: 'Инди группа',
     trackName: 'Кирпичи',
     author: 'Петр Сковородников',
-    text: ``
+    text: ``,
+    link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
   },
 
 ]
