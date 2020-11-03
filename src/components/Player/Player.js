@@ -9,6 +9,7 @@ import tracks from '../../db/tracks';
 function Player () {
   const [isPlayerExtend, setPlayerState] = useState(true);
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
+  const [isTextInfo, setTextInfo] = useState(false);
 
   const handleExtendClick = () => {
     setPlayerState(!isPlayerExtend);
@@ -18,13 +19,21 @@ function Player () {
     console.log('curren track: ', track)
     setCurrentTrack(track)
   }
+
+  const handlePlayerSwitcherClick = () => {
+    console.log('handlePlayerSwitcherClick isTextInfo: ', isTextInfo)
+    setTextInfo(!isTextInfo)
+  }
   
   return (
     <section className="player">
       <PlayerController
         track={currentTrack}
       />
-      {isPlayerExtend && <PlayerSwitcher />}
+      {isPlayerExtend && <PlayerSwitcher
+        onClick={handlePlayerSwitcherClick}
+        isTextInfo={isTextInfo}
+      />}
       <PlayerExtendBtn
         isOpen={isPlayerExtend}
         onClick={handleExtendClick}
@@ -33,7 +42,7 @@ function Player () {
         isOpen={isPlayerExtend}
         onTrackClick={handleTrackClick}
         tracks={tracks}
-        isTextInfo={false}
+        isTextInfo={isTextInfo}
         currentTrack={currentTrack}
       />
     </section>

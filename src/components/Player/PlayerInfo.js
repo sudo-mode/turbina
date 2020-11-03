@@ -5,9 +5,10 @@ import { useState } from 'react';
 
 function PlayerInfo({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick }) {
 
+  
+
   const setTextLyricsFormat = (text) => {
     const textArray = text.split('\n')
-
     return textArray.map((line, i) => (
       <p key={i} className='player__text-line'>{line}</p>
     ))
@@ -59,7 +60,7 @@ function PlayerInfo({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick }) 
 
   const renderView = ({ style, ...props }) => {
     const viewStyle = {
-      paddingTop: 3,
+      paddingTop: 4,
       paddingBottom: 12,
       overflowy: 'scroll',
       overflowX: 'hidden',
@@ -70,7 +71,7 @@ function PlayerInfo({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick }) 
       rgba(0,0,0,1) 8%,
       rgba(0,0,0,1) 50%,
       rgba(0,0,0,1) 78%,
-      rgba(0,0,0,0) 87%)`,
+      rgba(0,0,0,0) 85%)`,
     };
     return (
       <div

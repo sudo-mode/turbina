@@ -1,9 +1,13 @@
 import './PlayerSwitcher.css';
 
-function PlayerSwitcher () {
+function PlayerSwitcher ({ onClick, isTextInfo  }) {
+
+  
+
+  console.log('PlayerSwitcher handlePlayerSwitcherClick', onClick)
   return (   
-    <button className="player__switcher">
-      Текст песни
+    <button onClick={ onClick } className="player__switcher">
+      {isTextInfo ? 'Релизы' : 'Текст песни'}
     </button>
   )
 }
