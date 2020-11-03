@@ -35,7 +35,7 @@ function PlayerController ({ track }) {
   }, []);
 
 
-  const audio = new Audio(track.link);
+  // const audio = new Audio(track.link);
 
   // console.dir(audio);
   const timeline = useRef();
@@ -58,7 +58,7 @@ function PlayerController ({ track }) {
             className="player__song"
             ref={trackRef}
           >
-            Контур — Хадн Дадн feat. Варя Карпова и Федя Быстров
+            {`${track.trackName} — ${track.group}`}<span> feat. </span>{`${track.author}`}
           </p>
 
         </div>

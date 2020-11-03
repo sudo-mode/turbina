@@ -22,9 +22,8 @@ function Player () {
     <section className="player">
       <PlayerController
         track={currentTrack}
-        isExtend={isPlayerExtend}
       />
-      <PlayerSwitcher isVisible={isPlayerExtend} />
+      {isPlayerExtend && <PlayerSwitcher />}
       <PlayerExtendBtn
         isOpen={isPlayerExtend}
         onClick={handleExtendClick}
