@@ -8,8 +8,8 @@
 /* Логотип магазина "Маршак" */
 
 .header__logo {
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .marshak-link {
@@ -31,8 +31,7 @@
 /* Ссылки на стриминговые сервисы */
 
 .header__links {
-  margin-top: 5px;
-  margin-right: 5px;
+  margin: 0;
 }
 
 .stream-services {
@@ -131,6 +130,18 @@
     padding: 8px 18px;
   }
 
+}
+
+@media screen and (max-width: 600px) {
+  .header__logo {
+    margin-top: 8px;
+    margin-left: 8px;
+  }
+
+  .header__links {
+    margin-top: 5px;
+    margin-right: 5px;
+  }
 }
 
 @media screen and (max-width: 480px) {
