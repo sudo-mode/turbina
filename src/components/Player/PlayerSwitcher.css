@@ -12,6 +12,10 @@
   display: block;
 }
 
+.player__switcher:active, .player__switcher:focus {
+  outline: none;
+}
+
 @media screen and (max-width: 1024px) { 
   .player__switcher {
     width: 125px;

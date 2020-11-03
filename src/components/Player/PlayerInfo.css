@@ -19,10 +19,15 @@
 .player__text-line {
   margin: 0;
   font-style: italic;
-  line-height: 1.35;
+  line-height: 1.6;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  font-weight: 500;
+}
+
+.player__text-line:last-child {
+  padding-bottom: 10px;
 }
 
 .player__info-header {
@@ -39,12 +44,6 @@
 
   .player__info-header {
     margin-bottom: 15px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .player__info {
-    max-height: 102px;
   }
 }
 
