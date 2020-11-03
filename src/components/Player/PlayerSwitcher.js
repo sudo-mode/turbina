@@ -1,10 +1,8 @@
 import './PlayerSwitcher.css';
 
-function PlayerSwitcher ({ isVisible }) {
+function PlayerSwitcher () {
   return (   
-    <button 
-      className={`player__switcher ${isVisible && 'player__switcher_visible'}`} 
-    >
+    <button className="player__switcher">
       Текст песни
     </button>
   )

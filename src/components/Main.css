@@ -1,21 +1,23 @@
 .main {
   height: 100vh;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 15px 5px 30px;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  padding: 15px 5px;
   box-sizing: border-box;
   color: #fff;
 }
 
 @media screen and (max-width: 768px) {
   .main {
-    padding-bottom: 28px;
+    padding-bottom: 15px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .main {
-    padding: 5px 8px 28px;
+    padding: 8px 8px;
   }
 }
