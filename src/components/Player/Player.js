@@ -9,6 +9,7 @@ import tracks from '../../db/tracks';
 function Player () {
   const [isPlayerExtend, setPlayerState] = useState(true);
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
+
   const handleExtendClick = () => {
     setPlayerState(!isPlayerExtend);
   }
