@@ -1,20 +1,19 @@
 .main {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 15px 5px 30px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  padding: 15px 5px;
   box-sizing: border-box;
   color: #fff;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .main {
-    padding-bottom: 28px;
+    padding: 8px;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-height: 650px) {
   .main {
     padding: 8px 8px;
   }
