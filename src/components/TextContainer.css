@@ -36,7 +36,7 @@
     }
 }
   
-@media screen and (max-width:425px) {
+@media screen and (max-width:480px) {
     .text__heading {
         font-size: 32px;
         margin-bottom: 32px;

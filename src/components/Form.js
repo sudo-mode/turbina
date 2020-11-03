@@ -24,7 +24,7 @@ function Form() {
                   <span className="form__label-text">Согласен с <a className="form__offer-link" href="#">офертой</a></span>
                 </label>
 
-                <button type="submit" className="form__submit-button">Отправить форму</button>
+                <button type="submit" className="form__submit-button"><p className="form__button-text">Отправить форму</p></button>
             </form>
       </div>
     )
