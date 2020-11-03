@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 32px 1fr min-content;
   grid-template-rows: 40px min-content;
-  grid-gap: 6px 16px;
+  gap: 6px 16px;
   align-items: center;
   grid-template-areas:
     "btn song timer"
@@ -30,6 +30,17 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+.player__song-container_masked {
+  mask-image: -webkit-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0,0,0,1) 10%,
+    rgba(0,0,0,1) 50%,
+    rgba(0,0,0,1) 90%,
+    rgba(0,0,0,0) 100%); 
+}
+
 .player__song {
   font-size: 22px;
   font-weight: 400;

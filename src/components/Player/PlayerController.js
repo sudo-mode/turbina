@@ -14,19 +14,22 @@ function PlayerController ({ track }) {
   const trackRef = useRef();
 
   useEffect(() => {
-    const elementWidth = trackRef.current.scrollWidth;
-    const parentWidth = trackRef.current.parentElement.offsetWidth;
+    const element = trackRef.current;
+    const parentElement = element.parentElement;
+    const elementWidth = element.scrollWidth;
+    const parentWidth = parentElement.offsetWidth;
     if (elementWidth > parentWidth) {
-      let currentX = trackRef.current.parentElement.offsetWidth;
+      parentElement.classList.add('player__song-container_masked')
+      let currentX = parentWidth;
       const scroll = () => {
         currentX--;
-        trackRef.current.style.left = `${currentX}px`;
+        element.style.left = `${currentX}px`;
         if (currentX < (-1 * elementWidth)) {
-          currentX = trackRef.current.parentElement.offsetWidth;
+          currentX = parentWidth;
         }
       }
-      trackRef.current.style.left = `${currentX}px`;
-      setInterval(scroll, 7);
+      element.style.left = `${currentX}px`;
+      setInterval(scroll, 15);
     }
 
   }, []);
