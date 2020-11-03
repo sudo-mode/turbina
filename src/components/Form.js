@@ -1,6 +1,16 @@
+import React from 'react';
 import './Form.css';
+import pdfUrl from '../vendor/offer.pdf';
 
 function Form() {
+
+    // // const [isRadioButtonChecked, setIsRadioButtonChecked] = React.useState(false);
+
+    // const radioRef = React.createRef();
+    // function handleRadioCheck() {
+    //     radioRef.current.setAttribute(!checked);
+    // }
+
     return(
         <div className="form-container">
         <form className="form" method="POST" name="send-poem" noValidate>
@@ -21,7 +31,7 @@ function Form() {
                   <input className="form__input_radio" type="radio" name="offer" value="agree" id="offer" required />
                   <span className="form__pseudo-item"></span>
                   {/* TODO: прикрутить оферту в пдф */}
-                  <span className="form__label-text">Согласен с <a className="form__offer-link" href="#">офертой</a></span>
+                  <span className="form__label-text">Согласен с <a className="form__offer-link" target="_blank" href={pdfUrl}>офертой</a></span>
                 </label>
 
                 <button type="submit" className="form__submit-button"><p className="form__button-text">Отправить форму</p></button>
