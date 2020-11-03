@@ -8,7 +8,7 @@ function Form() {
     const { values, handleChange, errors, isValid } = useFormWithValidation();
 
     const inputClassName = (
-        `${isValid ? 'form__input form__input_email' : 'form__input form__input_email form__input_invalid'}`
+        `${isValid ? 'form__input form__input_email form__input_invalid' : 'form__input form__input_email'}`
     )
     // // const [isRadioButtonChecked, setIsRadioButtonChecked] = React.useState(false);
 
