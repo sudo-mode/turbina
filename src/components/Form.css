@@ -116,3 +116,11 @@
 .form__button-text:hover {
     transform: skew(-9deg);
 }
+
+.form__input-error {
+    color: red;
+}
+
+.form__input_invalid {
+    border-bottom: 2px solid red;
+}
