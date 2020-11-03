@@ -1,5 +1,6 @@
 function ServiceLinks() {
   return (
+    // TODO - вставить актуальные ссылки
     <ul className="stream-services__links">
       
       <li className="stream-services__link-container">
