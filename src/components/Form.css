@@ -43,15 +43,15 @@
 }
 
 .form__input::placeholder {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.2;
     color: rgba(0, 0, 0, 0.4);
 }
 
 .form__textarea {
     max-width: 600px;
-    /* height: 246px; */
     margin-bottom: 10px;
+    padding: 20px 0 2px 0;
     border: none;
     border-bottom: 2px solid #000;
     /* border-radius: 30px; */
