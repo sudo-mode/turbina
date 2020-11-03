@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import './PlayerController.css';
 import playBtn from '../../images/play-icon.svg';
 import pauseBtn from '../../images/pause-icon.svg';
+import PlayerTrack from './PlayerTrack';
 
 function PlayerController ({ track }) {
   const [isPlaying, setPlayingState] = useState(false);
@@ -55,8 +56,13 @@ function PlayerController ({ track }) {
             className="player__song"
             ref={trackRef}
           >
-            Контур — Хадн Дадн feat. Варя Карпова и Федя Быстров
+            <PlayerTrack
+                key={track.id}
+                track={track}  
+                isLoading={true}
+            />
           </p>
+
 
         </div>
         <span className="player__timer">

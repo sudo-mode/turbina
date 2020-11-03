@@ -1,32 +1,42 @@
 .player__track-item {
-  margin-bottom: 16px;
+  margin-bottom: 0px;
   padding-right: 10px;
 }
 
 .player__track {
-  max-width: 100%;
+  background: transparent;
+  color: #fff;
+  padding: 0;
+  border: none;
   width: fit-content;
   margin: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   transition: transform .1s ease-out, text-shadow 0.2s ease-out;
+  margin-bottom: 16px;
+  transition: opacity .5s ease-in-out;
 }
 
-.player__track:hover {
+.player__track_loading {
+  opacity: 0;
+}
+
+.player__track_info {
+  max-width: calc(100% - 50px);
+  text-align: left;
+}
+
+.player__track_info:hover {
   cursor: pointer;
   transform: skewX(-9deg);
   text-shadow: 0 0 4px white;
 }
 
-@media screen and (max-width: 1024px) {
-  .player__info {
-    margin-bottom: 15px;
-  }
+.player__track:active, .player__track:focus {
+  outline: none;
 }
 
-@media screen and (max-width: 480px) {
-  .player__info {
-    margin-bottom: 10px;
-  }
+.player__track_feat {
+  font-style: italic;
 }
