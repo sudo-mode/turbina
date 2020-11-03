@@ -14,3 +14,9 @@
 .page__container {
   width: 100%;
 }
+
+@media screen and (max-width: 600px) {
+  .page {
+    padding: 0 5px;
+  }
+}
