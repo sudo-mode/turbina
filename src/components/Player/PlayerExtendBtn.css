@@ -6,6 +6,13 @@
   width: 24px;
   height: 24px;
   background: center no-repeat transparent;
-  margin-top: 10px;
   justify-self: end;
+}
+
+@media screen and (max-width: 480px) {
+  .player__extend-btn {
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+  }
 }

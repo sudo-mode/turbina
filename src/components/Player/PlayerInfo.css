@@ -1,11 +1,8 @@
 .player__info {
-  font-size: 20px;
-  line-height: 1.2;
   grid-area: info;
-  max-height: 108px;
+  max-height: 114px;
   overflow-y: scroll;
-  margin-top: 28px;
-  margin-bottom: 32px;
+  margin-top: 20px;
   padding-top: 10px;
   display: none;
   overflow-x: hidden;
@@ -77,9 +74,9 @@
 }
 
 @media screen and (max-width: 1024px) {
-
   .player__info {
-    font-size: 18px;
+    margin-top: 18px;
+    margin-bottom: 0;
   }
 
   .player__info-header {
@@ -87,10 +84,16 @@
   }
 }
 
-@media screen and (max-width: 480px) {
-
+@media screen and (max-width: 768px) {
   .player__info {
-    font-size: 14px;
+    max-height: 102px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .player__info {
+    max-height: 88px;
+    margin-top: 0;
   }
 
   .player__info-header {
