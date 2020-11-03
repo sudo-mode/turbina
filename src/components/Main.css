@@ -1,18 +1,16 @@
 .main {
   height: 100vh;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between; */
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  padding: 15px 5px;
+  justify-content: space-between;
+  padding: 15px 5px 30px;
   box-sizing: border-box;
   color: #fff;
 }
 
 @media screen and (max-width: 768px) {
   .main {
-    padding-bottom: 15px;
+    padding-bottom: 28px;
   }
 }
 
