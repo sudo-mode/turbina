@@ -15,6 +15,6 @@
 
 @media screen and (max-height: 650px) {
   .main {
-    padding: 8px 8px;
+    grid-template-rows: 2fr 1fr 2fr;
   }
 }
