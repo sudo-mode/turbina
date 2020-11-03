@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: 48px 1fr min-content 46px;
   grid-template-rows: min-content 1fr;
-  /* grid-gap: 0 20px; */
   grid-template-areas: 
     "player player switcher extend-btn"
     "  .     info    info       .     ";
