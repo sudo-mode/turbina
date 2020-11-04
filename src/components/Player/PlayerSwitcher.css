@@ -10,6 +10,21 @@
   font-size: 16px;
   color: #fff;
   display: block;
+  transition: box-shadow .2s ease-out;
+  cursor: pointer;
+}
+
+.player__switcher-text {
+  margin: 0;
+  padding: 0;
+  transition: transform .2s ease-out;
+}
+
+.player__switcher:hover {
+  box-shadow: 0 0 8px 4px #ffffff40;
+}
+.player__switcher:hover .player__switcher-text {
+  transform: skewX(-9deg);
 }
 
 .player__switcher:active, .player__switcher:focus {
