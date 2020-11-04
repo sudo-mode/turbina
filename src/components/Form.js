@@ -20,7 +20,7 @@ function Form() {
     return(
         <div className="form-container">
         <form className="form" method="POST" name="send-poem" onSubmit={handleSubmit} noValidate>
-                <h2 className="form__heading">Форма.</h2>
+                <h2 className="form__heading">Форма</h2>
                 <p className="text__paragraph form__text">Заполняя эту форму, вы становитесь частью проекта.</p>
 
                 <input 
@@ -88,7 +88,7 @@ function Form() {
                   />
                   <span className="form__pseudo-item"></span>
         
-                  <span className="form__label-text">Согласен с <a className="form__offer-link" target="_blank" href={pdfUrl}>офертой</a></span>
+                  <span className="form__label-text">Согласен с <a className="form__offer-link" target="_blank" href={pdfUrl} rel="noreferrer">офертой</a></span>
                 </label>
                 <span className="form__input-error" id="offer-error">{errors.offer || ''}</span>
 

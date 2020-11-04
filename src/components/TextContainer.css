@@ -1,6 +1,6 @@
 /* Компонент Текст */
 .text {
-    max-width: 716px;
+    max-width: 760px;
     margin-right: auto;
 }
 
@@ -14,7 +14,7 @@
 }
 
 
-/* Идея для мобильной верстки  */
+/* Адаптивная верстка  */
 @media screen and (max-width:1024px) {
     .text__heading {
         font-size: 46px;
