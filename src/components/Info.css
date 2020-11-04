@@ -1,9 +1,6 @@
-/* TODO: разбиение стилей соответсвенно компонентам */
-/* TODO: мобильная версия */
-
 /* Стиль всей секции */
 .info-container {
-    margin-top: -20px;
+    margin-top: -10px;
     padding: 100px 52px;
     box-sizing: border-box;
     background-color: #fff;
@@ -13,10 +10,8 @@
 }
 
 /* Идея для мобильной верстки  */
-@media screen and (max-width:425px) {
+@media screen and (max-width:480px) {
     .info-container {
-      /* max-width: calc(100% - 32px);
-      margin: 0 20px; */
       padding: 92px 20px;
     }
   }

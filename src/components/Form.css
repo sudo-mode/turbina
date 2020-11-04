@@ -1,6 +1,5 @@
 /* Компонент Форма */
 .form {
-    /* padding-top: 64px; */
     display: flex;
     flex-direction: column;
 }
@@ -26,7 +25,7 @@
     }
 }
   
-@media screen and (max-width:425px) {
+@media screen and (max-width:480px) {
     .form__heading {
         font-size: 32px;
         margin-bottom: 32px;
@@ -39,7 +38,6 @@
     padding: 20px 0;
     border: none;
     border-bottom: 2px solid #000;
-    /* border-radius: 30px; */
 }
 
 .form__input::placeholder {
@@ -54,7 +52,6 @@
     padding: 20px 0 2px 0;
     border: none;
     border-bottom: 2px solid #000;
-    /* border-radius: 30px; */
 }
 
 .form__input_radio {
@@ -67,7 +64,6 @@
 
 .form__input-label {
     margin-top: 34px;
-    margin-bottom: 88px;
 }
 
 .form__label-text {
@@ -85,6 +81,7 @@
     vertical-align: middle;
     width: 27px;
     height: 27px;
+    margin-bottom: 5px;
     border: 1px solid black;
     border-radius: 50%;
 }
@@ -97,15 +94,36 @@
 .form__submit-button {
     max-width: 600px;
     height: 60px;
+    margin-top: 44px;
     background-color: #fff;
     border: 2px solid #000;
     border-radius: 30px;
     font-size: 18px;
     line-height: 1.2;
-    transition: background-color 0.4s linear;
+    transition: box-shadow 0.4s ease-out;
 }
 
 .form__submit-button:hover {
-   background-color: rgba(0, 0, 0, 0.6);
-   color: #fff;
+   box-shadow: 0 0 8px 4px #00000040;
+}
+
+.form__button-text {
+    transition: transform 0.4s ease-out;
+}
+
+.form__button-text:hover {
+    transform: skew(-9deg);
+}
+
+.form__submit-button_disabled {
+    border: 2px solid #00000040;
+}
+
+.form__input-error {
+    color: red;
+}
+
+.form__input_invalid {
+    color: red;
+    border-bottom: 2px solid red;
 }
