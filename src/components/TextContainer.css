@@ -1,17 +1,8 @@
 /* Компонент Текст */
 .text {
-    max-width: 716px;
+    max-width: 760px;
     margin-right: auto;
 }
-
-
-/* Идея для мобильной верстки 
-@media screen and (max-width:767px) {
-    .text {
-      max-width: calc(100% - 32px);
-      margin: 0 20px;
-    }
-  } */
 
 .text__heading {
     font-size: 50px;
@@ -23,7 +14,7 @@
 }
 
 
-/* Идея для мобильной верстки  */
+/* Адаптивная верстка  */
 @media screen and (max-width:1024px) {
     .text__heading {
         font-size: 46px;
@@ -36,7 +27,7 @@
     }
 }
   
-@media screen and (max-width:425px) {
+@media screen and (max-width:480px) {
     .text__heading {
         font-size: 32px;
         margin-bottom: 32px;
@@ -55,7 +46,7 @@
     }
 }
 
-@media screen and (max-width:425px) {
+@media screen and (max-width:480px) {
     .text__paragraph {
         font-size: 12px;
         margin-bottom: 60px;
