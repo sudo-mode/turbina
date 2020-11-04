@@ -26,7 +26,6 @@ function useFormWithValidation() {
             ...errors,
             [name]: target.validationMessage 
         });
-     
         setIsFormValid(target.closest('form').checkValidity());
 
         // TODO: НАПИСАТЬ РЕСЕТ ФОРМЫ
