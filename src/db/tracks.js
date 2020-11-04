@@ -15,7 +15,13 @@ const tracks = [
     group: 'Мукулатура',
     trackName: 'Поэзия',
     author: 'Саша Петров',
-    text: ``,
+    text: `Саша Петров
+    Саша Петров
+    Саша Петров
+    Саша Петров
+    Саша Петров
+    Саша Петров
+    Саша Петров`,
     link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
   },
   {
@@ -23,15 +29,24 @@ const tracks = [
     group: 'СПБЧ',
     trackName: 'Лодка',
     author: 'Маруся Романова',
-    text: ``,
+    text: `Маруся Романова
+    Маруся Романова
+    Маруся Романова
+    Маруся Романова
+    Маруся Романова`,
     link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
   },
   {
     id: '№4',
-    group: 'Инди группа',
+    group: 'Инди группа Инди группа Инди группа Инди группа Инди группа Инди группа',
     trackName: 'Кирпичи',
     author: 'Петр Сковородников',
-    text: ``,
+    text: `Петр Сковородников
+    Петр Сковородников
+    Петр Сковородников
+    Петр Сковородников
+    Петр Сковородников
+    Петр Сковородников`,
     link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
   },
 

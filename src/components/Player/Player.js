@@ -3,7 +3,7 @@ import './Player.css';
 import PlayerController from './PlayerController';
 import PlayerSwitcher from './PlayerSwitcher';
 import PlayerExtendBtn from './PlayerExtendBtn';
-import PlayerInfo from './PlayerInfo';
+import PlayerInfoContainer from './PlayerInfoContainer';
 import tracks from '../../db/tracks';
 
 function Player () {
@@ -16,12 +16,10 @@ function Player () {
   }
 
   const handleTrackClick = (track) => {
-    console.log('curren track: ', track)
     setCurrentTrack(track)
   }
 
   const handlePlayerSwitcherClick = () => {
-    console.log('handlePlayerSwitcherClick isTextInfo: ', isTextInfo)
     setTextInfo(!isTextInfo)
   }
   
@@ -38,7 +36,7 @@ function Player () {
         isOpen={isPlayerExtend}
         onClick={handleExtendClick}
       />
-      <PlayerInfo
+      <PlayerInfoContainer
         isOpen={isPlayerExtend}
         onTrackClick={handleTrackClick}
         tracks={tracks}

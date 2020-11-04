@@ -13,9 +13,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  transition: transform .1s ease-out, text-shadow 0.2s ease-out;
+  transition: transform .2s ease-out, text-shadow 0.2s ease-out, opacity .5s ease-in-out;
   margin-bottom: 16px;
-  transition: opacity .5s ease-in-out;
+  
   font-weight: 500;
 }
 
