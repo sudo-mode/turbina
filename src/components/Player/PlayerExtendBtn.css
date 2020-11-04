@@ -9,6 +9,10 @@
   justify-self: end;
 }
 
+.player__extend-btn:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 480px) {
   .player__extend-btn {
     width: 16px;
