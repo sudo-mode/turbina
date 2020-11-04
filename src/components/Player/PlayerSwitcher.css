@@ -17,7 +17,12 @@
 .player__switcher-text {
   margin: 0;
   padding: 0;
-  transition: transform .2s ease-out;
+  opacity: 0;
+}
+
+.player__switcher-text_loading {
+  transition: opacity .5s ease-in-out, transform .2s ease-out;
+  opacity: 1;
 }
 
 .player__switcher:hover {

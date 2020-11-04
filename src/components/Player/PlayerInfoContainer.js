@@ -3,7 +3,7 @@ import PlayerInfoContent from './PlayerInfoContent';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { useState } from 'react';
 
-function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick }) {
+function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick, isLoading }) {
 
   const [top, setTop] = useState(0);
 
@@ -84,6 +84,7 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
           isTextInfo={isTextInfo}
           currentTrack={currentTrack}
           onTrackClick={onTrackClick}
+          isLoading={isLoading}
         />
       </Scrollbars >
     </div>

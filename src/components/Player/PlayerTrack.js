@@ -1,5 +1,5 @@
 import './PlayerTrack.css';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function PlayerTrack({ track, onTrackClick, inList, isLoading }) {
 

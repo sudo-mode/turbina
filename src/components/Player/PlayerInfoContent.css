@@ -1,3 +1,12 @@
+.player__content {
+  opacity: 0;
+}
+
+.player__content_loading {
+  transition: opacity .5s ease-in-out;
+  opacity: 1;
+}
+
 .player__tracks {
   list-style-type: none;
   padding: 0;

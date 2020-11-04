@@ -1,7 +1,17 @@
 import './PlayerInfoContent.css';
 import PlayerTrack from './PlayerTrack';
+import { useState, useEffect } from 'react';
 
 function PlayerInfoContent({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick }) {
+
+  const [contentStyle, setContentStyle] = useState('player__content');
+
+  const setChangeStyle = () => {
+    setContentStyle('player__content');
+    setTimeout(() => {  
+      setContentStyle('player__content player__content_loading');
+    }, 100)
+  }
 
   const setTextLyricsFormat = (text) => {
     const textArray = text.split('\n')
@@ -48,10 +58,14 @@ function PlayerInfoContent({ tracks, isOpen, isTextInfo, currentTrack, onTrackCl
     }
   }
 
+  useEffect(() => {
+    setChangeStyle()
+  }, [isTextInfo])
+
   return (
-      <div>
-        {setInfoContent(isTextInfo)}
-      </div>   
+    <div className={contentStyle}>
+      {setInfoContent(isTextInfo)}
+    </div>   
   )
 }
 

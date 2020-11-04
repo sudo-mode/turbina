@@ -21,6 +21,7 @@ function Player () {
 
   const handlePlayerSwitcherClick = () => {
     setTextInfo(!isTextInfo)
+
   }
   
   return (

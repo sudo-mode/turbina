@@ -15,7 +15,6 @@
   overflow: hidden;
   transition: transform .2s ease-out, text-shadow 0.2s ease-out, opacity .5s ease-in-out;
   margin-bottom: 16px;
-  
   font-weight: 500;
 }
 
