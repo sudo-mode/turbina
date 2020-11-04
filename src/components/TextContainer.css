@@ -4,15 +4,6 @@
     margin-right: auto;
 }
 
-
-/* Идея для мобильной верстки 
-@media screen and (max-width:767px) {
-    .text {
-      max-width: calc(100% - 32px);
-      margin: 0 20px;
-    }
-  } */
-
 .text__heading {
     font-size: 50px;
     line-height: 1.2;
@@ -55,7 +46,7 @@
     }
 }
 
-@media screen and (max-width:425px) {
+@media screen and (max-width:480px) {
     .text__paragraph {
         font-size: 12px;
         margin-bottom: 60px;

@@ -1,42 +1,39 @@
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 
 function useFormWithValidation() {
     const [values, setValues] = useState({
         name: '',
         email: '',
         tel: '',
-        text: ''
+        text: '',
+        offer: false
     });
     const [errors, setErrors] = useState({});
-    const [isValid, setIsValid] = useState(false);
+    const [isFormValid, setIsFormValid] = useState(false);
 
     function handleChange(evt) {
         const target = evt.target;
         const name = target.name;
         const value = target.value;
+        const isCheckbox = target.type === 'checkbox';
 
         setValues({
             ...values,
-            [name]: value
+            [name]: isCheckbox ? target.checked : value
         });
+        
         setErrors({
             ...errors,
             [name]: target.validationMessage 
         });
-        setIsValid(target.closest('form').checkValidity());
+     
+        setIsFormValid(target.closest('form').checkValidity());
 
-        // const resetForm = useCallback(
-        //     (newValues = {}, newErrors = {}, newIsValid = false) => {
-        //         setValues(newValues);
-        //         setErrors(newErrors);
-        //         setIsValid(newIsValid);
-        //     },
-        //     [setValues, setErrors, setIsValid]
-        // );
+        // TODO: НАПИСАТЬ РЕСЕТ ФОРМЫ
 
     }
 
-    return { values, handleChange, errors, isValid }
+    return { values, handleChange, errors, isFormValid }
 }
 
 export default useFormWithValidation;
