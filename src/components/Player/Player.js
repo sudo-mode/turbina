@@ -29,10 +29,6 @@ function Player () {
       <PlayerController
         track={currentTrack}
       />
-      {isPlayerExtend && <PlayerSwitcher
-        onClick={handlePlayerSwitcherClick}
-        isTextInfo={isTextInfo}
-      />}
       <PlayerExtendBtn
         isOpen={isPlayerExtend}
         onClick={handleExtendClick}
@@ -44,6 +40,10 @@ function Player () {
         isTextInfo={isTextInfo}
         currentTrack={currentTrack}
       />
+      {isPlayerExtend && <PlayerSwitcher
+        onClick={handlePlayerSwitcherClick}
+        isTextInfo={isTextInfo}
+      />}
     </section>
   )
 }

@@ -4,11 +4,12 @@
   padding-top: 28px;
   padding-bottom: 5px;
   overflow: hidden;
-  display: none;
+  margin-bottom: -100%;
+  transition: margin 1s;
 }
 
 .player__info-container_active {
-  display: block;
+  margin-bottom: 0;
 }
 
 
