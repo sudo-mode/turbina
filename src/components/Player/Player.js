@@ -3,19 +3,25 @@ import './Player.css';
 import PlayerController from './PlayerController';
 import PlayerSwitcher from './PlayerSwitcher';
 import PlayerExtendBtn from './PlayerExtendBtn';
-import PlayerInfo from './PlayerInfo';
+import PlayerInfoContainer from './PlayerInfoContainer';
 import tracks from '../../db/tracks';
 
 function Player () {
   const [isPlayerExtend, setPlayerState] = useState(true);
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
+  const [isTextInfo, setTextInfo] = useState(false);
+
   const handleExtendClick = () => {
     setPlayerState(!isPlayerExtend);
   }
 
   const handleTrackClick = (track) => {
-    console.log('curren track: ', track)
     setCurrentTrack(track)
+  }
+
+  const handlePlayerSwitcherClick = () => {
+    setTextInfo(!isTextInfo)
+
   }
   
   return (
@@ -23,16 +29,19 @@ function Player () {
       <PlayerController
         track={currentTrack}
       />
-      {isPlayerExtend && <PlayerSwitcher />}
+      {isPlayerExtend && <PlayerSwitcher
+        onClick={handlePlayerSwitcherClick}
+        isTextInfo={isTextInfo}
+      />}
       <PlayerExtendBtn
         isOpen={isPlayerExtend}
         onClick={handleExtendClick}
       />
-      <PlayerInfo
+      <PlayerInfoContainer
         isOpen={isPlayerExtend}
         onTrackClick={handleTrackClick}
         tracks={tracks}
-        isTextInfo={false}
+        isTextInfo={isTextInfo}
         currentTrack={currentTrack}
       />
     </section>

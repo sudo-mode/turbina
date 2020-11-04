@@ -1,0 +1,27 @@
+.player__info-container {
+  grid-area: info;
+  display: none;
+  overflow: hidden;
+  height: 129px;
+  padding-top: 28px;
+  padding-bottom: 5px;
+}
+
+.player__info-container_active {
+  display: block;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .player__info-container {
+    font-size: 18px;
+    padding-top: 26px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .player__info-container {
+    font-size: 14px;
+    padding-top: 6px;
+  }
+}

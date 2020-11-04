@@ -1,0 +1,46 @@
+.player__content {
+  opacity: 0;
+}
+
+.player__content_loading {
+  transition: opacity .5s ease-in-out;
+  opacity: 1;
+}
+
+.player__tracks {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.player__text-line {
+  margin: 0;
+  font-style: italic;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.player__text-line:last-child {
+  padding-bottom: 10px;
+}
+
+.player__info-header {
+  font-weight: 400;
+  margin: 0 0 16px 0;
+  font-style: italic;
+}
+
+@media screen and (max-width: 1024px) {
+  .player__info-header {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .player__info-header {
+    margin-bottom: 10px;
+  }
+}
