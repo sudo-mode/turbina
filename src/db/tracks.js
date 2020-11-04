@@ -11,6 +11,19 @@ const tracks = [
     link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
   },
   {
+    id: '№4',
+    group: 'Супер-мега-трек для тестирования бегущей строки (Нажми меня) Инди группа Инди группа Инди группа Инди группа',
+    trackName: 'Кирпичи',
+    author: 'Петр Сковородников',
+    text: `Петр Сковородников
+    Петр Сковородников
+    Петр Сковородников
+    Петр Сковородников
+    Петр Сковородников
+    Петр Сковородников`,
+    link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
+  },
+  {
     id: '№6',
     group: 'Мукулатура',
     trackName: 'Поэзия',
@@ -36,20 +49,6 @@ const tracks = [
     Маруся Романова`,
     link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
   },
-  {
-    id: '№4',
-    group: 'Инди группа Инди группа Инди группа Инди группа Инди группа Инди группа',
-    trackName: 'Кирпичи',
-    author: 'Петр Сковородников',
-    text: `Петр Сковородников
-    Петр Сковородников
-    Петр Сковородников
-    Петр Сковородников
-    Петр Сковородников
-    Петр Сковородников`,
-    link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
-  },
-
 ]
 
 export default tracks;

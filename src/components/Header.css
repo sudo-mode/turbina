@@ -73,7 +73,7 @@
   border-radius: 30px;
   /* border-radius продублирован, чтобы при трансформации текста 
   элемент не выходил за границу контейнера */
-  padding: 8px 20px;
+  padding: 8px 18px;
   color: #fff;
   text-decoration: none;
   transition: transform .2s ease-out;
@@ -126,8 +126,12 @@
     font-size: 15px;
   }
 
+  .stream-services__link-container {
+    margin-bottom: 6px;
+  }
+
   .stream-services__link {
-    padding: 8px 18px;
+    padding: 8px 16px;
   }
 
 }
@@ -135,12 +139,12 @@
 @media screen and (max-width: 600px) {
   .header__logo {
     margin-top: 8px;
-    margin-left: 8px;
+    margin-left: 4px;
   }
 
   .header__links {
     margin-top: 5px;
-    margin-right: 5px;
+    margin-right: 0;
   }
 }
 
@@ -151,17 +155,23 @@
 
   .stream-services {
     font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .stream-services__link-container {
+    margin-bottom: 5px;
   }
 
   .stream-services__link {
-    padding: 7px 16px;
+    padding: 7px 14px;
   }
 
   .stream-services__button {
-    padding: 7px 16px;
+    padding: 7px 14px;
   }
 
   .stream-services__button_minimised {
     padding: 0;
+    margin-bottom: 5px;
   }
 }

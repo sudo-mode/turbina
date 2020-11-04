@@ -41,7 +41,7 @@ function Form() {
                   type="email" 
                   name="email" 
                   id="email" 
-                  placeholder="Почта" 
+                  placeholder="Телефон" 
                   required 
                   minLength="6" 
                   maxLength="50" 
@@ -55,7 +55,7 @@ function Form() {
                   type="tel" 
                   name="tel" 
                   id="tel" 
-                  placeholder="Телефон" 
+                  placeholder="Почта" 
                   required 
                   value={values.tel || ''}
                   onChange={handleChange}

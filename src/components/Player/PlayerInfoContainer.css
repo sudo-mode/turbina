@@ -1,10 +1,10 @@
 .player__info-container {
   grid-area: info;
-  display: none;
-  overflow: hidden;
-  height: 129px;
+  height: 112px;
   padding-top: 28px;
   padding-bottom: 5px;
+  overflow: hidden;
+  display: none;
 }
 
 .player__info-container_active {
@@ -14,14 +14,20 @@
 
 @media screen and (max-width: 1024px) {
   .player__info-container {
-    font-size: 18px;
+    max-height: 102px;
     padding-top: 26px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .player__info-container {
+    max-height: 100px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .player__info-container {
-    font-size: 14px;
+    max-height: 87px;
     padding-top: 6px;
   }
 }

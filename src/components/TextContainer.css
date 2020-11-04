@@ -1,6 +1,8 @@
+/* TODO -- объединить медиазапросы в файлах. */
+
 /* Компонент Текст */
 .text {
-    max-width: 760px;
+    max-width: 750px;
     margin-right: auto;
 }
 
@@ -20,11 +22,19 @@
     .text__heading {
         font-size: 46px;
     }
+    
+    .text {
+      max-width: 694px;
+    }
   }
 
 @media screen and (max-width:768px) {
     .text__heading {
         font-size: 42px;
+    }
+
+    .text {
+      max-width: 100%;
     }
 }
   
@@ -46,6 +56,7 @@
     .text__paragraph {
         margin-bottom: 80px;
         font-size: 15px;
+        line-height: 1.5;
     }
 }
 
@@ -53,6 +64,7 @@
     .text__paragraph {
         margin-bottom: 60px;
         font-size: 12px;
+        line-height: 1.4;
     }
 }
 

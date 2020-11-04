@@ -12,7 +12,8 @@
 /* Адаптивная верстка  */
 @media screen and (max-width:1024px) {
     .info-container {
-      padding: 100px 50px;
+      padding-top: 100px;
+      padding-bottom: 100px;
     }
 }
 
