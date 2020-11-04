@@ -23,8 +23,8 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
       rgba(0, 0, 0, 0) 0%,
       rgba(0,0,0,1) 8%,
       rgba(0,0,0,1) 50%,
-      rgba(0,0,0,1) 78%,
-      rgba(0,0,0,0) 85%)`,
+      rgba(0,0,0,1) 77%,
+      rgba(0,0,0,0) 80%)`,
     };
 
     return (

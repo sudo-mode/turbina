@@ -3,6 +3,10 @@
   padding-right: 10px;
 }
 
+.player__track-item:last-child {
+  padding-bottom: 4px;
+}
+
 .player__track {
   background: transparent;
   color: #fff;
@@ -23,7 +27,7 @@
 }
 
 .player__track_info {
-  max-width: calc(100% - 50px);
+  max-width: calc(100% - 56px);
   text-align: left;
 }
 

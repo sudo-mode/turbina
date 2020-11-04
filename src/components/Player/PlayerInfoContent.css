@@ -21,6 +21,7 @@
   white-space: nowrap;
   overflow: hidden;
   font-weight: 500;
+  max-width: calc(100% - 56px);
 }
 
 .player__text-line:last-child {
