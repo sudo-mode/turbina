@@ -22,6 +22,10 @@
   background: center no-repeat transparent;
 }
 
+.player__control-btn:hover {
+  cursor: pointer;
+}
+
 .player__song-container {
   grid-area: song;
   padding-bottom: 30px;
