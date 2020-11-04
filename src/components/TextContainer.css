@@ -37,21 +37,22 @@
 
 .text__paragraph {
     margin-top: 0;
-    margin-bottom: 80px;
+    margin-bottom: 90px;
     font-size: 16px;
     line-height: 1.4;
 }
 
 @media screen and (max-width:1024px) {
     .text__paragraph {
+        margin-bottom: 80px;
         font-size: 15px;
     }
 }
 
 @media screen and (max-width:480px) {
     .text__paragraph {
-        font-size: 12px;
         margin-bottom: 60px;
+        font-size: 12px;
     }
 }
 

@@ -33,6 +33,11 @@
     }
 }
 
+.form__text {
+    margin-top: 0;
+    margin-bottom: 60px;
+}
+
 .form__input {
     max-width: 600px;
     margin-bottom: 10px;
@@ -57,6 +62,7 @@
     max-width: 600px;
     margin-bottom: 10px;
     padding: 20px 0 2px 0;
+    resize: none;
     border: none;
     border-bottom: 2px solid #000;
 }
@@ -166,6 +172,14 @@
 
 .form__input-error {
     color: red;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+@media screen and (max-width:480px) {
+    .form__input-error {
+        font-size: 14px;
+    }
 }
 
 .form__input_invalid {
