@@ -7,6 +7,7 @@
 .form__heading {
     font-size: 50px;
     line-height: 1.2;
+    font-weight: 400;
     font-style: italic;
     text-transform: uppercase;
     margin-top: 0;
@@ -101,7 +102,7 @@
     width: 27px;
     height: 27px;
     margin-bottom: 5px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 50%;
 }
 
@@ -109,6 +110,10 @@
 /* Активная радиокнопка */
 .form__input_radio:checked + .form__pseudo-item {
     background-color: #000;
+}
+
+.form__input_radio:hover + .form__pseudo-item {
+    cursor: pointer;
 }
 
 .form__submit-button {
@@ -125,6 +130,7 @@
 
 .form__submit-button:hover {
    box-shadow: 0 0 8px 4px #00000040;
+   cursor: pointer;
 }
 
 @media screen and (max-width:480px) {

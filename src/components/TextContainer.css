@@ -7,6 +7,7 @@
 .text__heading {
     font-size: 50px;
     line-height: 1.2;
+    font-weight: 400;
     font-style: italic;
     text-transform: uppercase;
     margin-top: 0;
@@ -35,9 +36,10 @@
   }
 
 .text__paragraph {
+    margin-top: 0;
+    margin-bottom: 80px;
     font-size: 16px;
     line-height: 1.4;
-    margin-bottom: 80px;
 }
 
 @media screen and (max-width:1024px) {
