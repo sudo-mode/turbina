@@ -1,8 +1,10 @@
 import './Header.css';
-import logoHeader from '../images/marshak-logo.png';
-import ServiceLinks from './ServiceLinks';
 import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive'
+import { useMediaQuery } from 'react-responsive';
+import cn from 'classnames';
+import StreamServiceLink from './StreamServiceLink';
+import logoHeader from '../images/marshak-logo.png';
+import { marshakLink, serviceLinks } from '../db/links';
 
 function Header() {
   const [isLinksHidden, setIsLinksHidden] = useState(true);
@@ -16,7 +18,7 @@ function Header() {
     <header className="header">
       <a
         className="marshak-link header__logo"
-        href="https://marshakbooks.ru/"
+        href={marshakLink}
         target="_blank"
         rel="noreferrer"
       >
@@ -30,16 +32,23 @@ function Header() {
       <div className="stream-services header__links">
         {isMobile && (
           <button
-            className={`stream-services__button ${
-              isLinksHidden ? "" : "stream-services__button_minimised"
-            }`}
+            className={cn('stream-services__button', {
+              "stream-services__button_minimised": !isLinksHidden
+            })}
             type="button"
             onClick={handleServiceButtonClick}
           >
-            {isLinksHidden ? "Стриминги" : ""}
+            {isLinksHidden && "Стриминги"}
           </button>
         )}
-        {(!isMobile || !isLinksHidden) && <ServiceLinks />}
+
+        {(!isMobile || !isLinksHidden) && (
+          <ul className="stream-services__links">
+            {serviceLinks.map((item, i) => (
+              <StreamServiceLink {...item} key={i} />
+            ))}
+          </ul>
+        )}
       </div>
     </header>
   );
