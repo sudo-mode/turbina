@@ -1,6 +1,7 @@
 import './Header.css';
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import cn from 'classnames';
 import StreamServiceLink from './StreamServiceLink';
 import logoHeader from '../images/marshak-logo.png';
 import { marshakLink, serviceLinks } from '../db/links';
@@ -31,9 +32,9 @@ function Header() {
       <div className="stream-services header__links">
         {isMobile && (
           <button
-            className={`stream-services__button ${
-              isLinksHidden ? "" : "stream-services__button_minimised"
-            }`}
+            className={cn('stream-services__button', {
+              "stream-services__button_minimised": !isLinksHidden
+            })}
             type="button"
             onClick={handleServiceButtonClick}
           >
