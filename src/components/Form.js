@@ -1,14 +1,15 @@
 import React from 'react';
 import './Form.css';
 import pdfUrl from '../vendor/offer.pdf';
-import useFormWithValidation from '../hooks/useFormWithValidation.js'
+import useFormWithValidation from '../hooks/useFormWithValidation.js';
+import validationInfo from '../utils/validationInfo.js';
 
 // TODO: ФОКУС ИНПУТОВ
 // TODO: Отправка формы
 
 function Form() {
 
-    const { values, handleChange, errors, isFormValid } = useFormWithValidation();
+    const { values, handleChange, errors, isFormValid } = useFormWithValidation(validationInfo);
 
     function handleSubmit(evt) {
         evt.preventDefault();

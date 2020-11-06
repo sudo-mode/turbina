@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-function useFormWithValidation() {
+function useFormWithValidation(validationInfo) {
     const [values, setValues] = useState({
         name: '',
         email: '',
@@ -24,8 +24,9 @@ function useFormWithValidation() {
         
         setErrors({
             ...errors,
-            [name]: target.validationMessage 
+            [name]: validationInfo
         });
+
         setIsFormValid(target.closest('form').checkValidity());
 
         // TODO: НАПИСАТЬ РЕСЕТ ФОРМЫ
