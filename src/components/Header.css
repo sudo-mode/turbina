@@ -41,7 +41,7 @@
   align-items: flex-end;
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.0;
+  line-height: 1;
 }
 
 .stream-services__links {
@@ -112,7 +112,6 @@
   background-size: 18px;
   background-position: 50%;
   background-repeat: no-repeat;
-  background-color: transparent;
   cursor: pointer;
 }
 
