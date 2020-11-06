@@ -1,7 +1,6 @@
 .footer {
   padding: 20px 5px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
   color: #fff;
@@ -40,6 +39,7 @@
 
   .footer__item {
     margin-bottom: 5px;
+    text-align: center;
   }
 
   .footer__item:last-child {
