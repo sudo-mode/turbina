@@ -12,52 +12,34 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
   };
 
   const renderView = ({ style, ...props }) => {
-    const viewStyle = {
-      paddingTop: 4,
-      paddingBottom: 12,
-      overflowy: 'scroll',
-      overflowX: 'hidden',
-      width: `calc(${100}% + ${60}px)`,
-      WebkitMaskImage: `-webkit-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0,0,0,1) 8%,
-      rgba(0,0,0,1) 50%,
-      rgba(0,0,0,1) 77%,
-      rgba(0,0,0,0) 80%)`,
-    };
-
     return (
       <div
-        className='player__box'
-        style={{ ...style, ...viewStyle }}
-        {...props} />
+        className='player__scroll-box'
+        style={{ ...style, overflowX: 'hidden' }}
+        {...props}
+      />
     );
   };
 
   const renderThumb = ({ style, ...props }) => {
-    const thumbStyle = {
-      borderRadius: 4,
-      backgroundColor: `rgba( 255, 255, 255, 0.3)`,
-    };
     return (
       <div
-        style={{ ...style, ...thumbStyle }}
+        className='player__scroll-box-thumb'
+        style={{ ...style }}
         {...props} />
     );
   };
 
   const renderTrack = ({ style, ...props }) => {
     const finalStyle = {
-      ...style,
-      right: 2,
-      bottom: 10,
-      top: 2,
-      borderRadius: 4,
-      backgroundColor: `rgba( 243, 243, 243, 0.1)`,
-      width: 3,
+
     };
-    return <div style={finalStyle} {...props} />;
+    return (
+      <div
+        className='player__scroll-box-track'
+        style={{ ...style, width: 3 }}
+        {...props} />
+    );
   };
 
   const renderTrackHorizontal = ({ style, ...props }) => {
@@ -78,7 +60,7 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
         renderTrackVertical={renderTrack}
         renderTrackHorizontal={renderTrackHorizontal}
       >
-        < PlayerInfoContent 
+        < PlayerInfoContent
           tracks={tracks}
           isOpen={isOpen}
           isTextInfo={isTextInfo}

@@ -12,6 +12,31 @@
   margin-bottom: 0;
 }
 
+.player__scroll-box {
+  padding-top: 4px;
+  padding-bottom: 12px;
+  width: calc(100% + 60px);
+  mask-image: -webkit-linear-gradient(
+  top,
+  rgba(0, 0, 0, 0) 0%,
+  rgba(0,0,0,1) 8%,
+  rgba(0,0,0,1) 50%,
+  rgba(0,0,0,1) 77%,
+  rgba(0,0,0,0) 80%);
+}
+
+.player__scroll-box-thumb {
+  border-radius: 4px;
+  background-color: rgba( 255, 255, 255, 0.3);
+}
+
+.player__scroll-box-track {
+  right: 2px;
+  bottom: 10px;
+  top: 2px;
+  border-radius: 4px;
+  background-color: rgba( 243, 243, 243, 0.1);
+}
 
 @media screen and (max-width: 1024px) {
   .player__info-container {
@@ -31,4 +56,21 @@
     max-height: 87px;
     padding-top: 6px;
   }
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+::-webkit-scrollbar-track:vertical { 
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: #c1c1c1;
+  border: 1px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-button:vertical {
+  border: 1px solid #f1f1f1;
 }
