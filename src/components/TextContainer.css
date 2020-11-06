@@ -69,7 +69,8 @@
 }
 
 .text__list {
-    list-style: none;
+    list-style-type: disc;
+    list-style-position: inside;
     padding-left: 0;
 }
 
