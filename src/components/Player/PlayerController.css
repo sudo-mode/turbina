@@ -86,12 +86,6 @@
   }
 }
 
-@media screen and (max-width: 600px) {
-  .player__song-container_masked {
-    mask-image: none;
-  }
-}
-
 @media screen and (max-width: 480px) {
   .player__controller {
     gap: 8px 12px;
