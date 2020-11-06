@@ -30,7 +30,6 @@
   grid-area: song;
   padding-bottom: 30px;
   position: relative;
-  /* font-weight: 500; */
   white-space: nowrap;
   overflow: hidden;
 }
@@ -49,7 +48,7 @@
   margin: 0;
   position: absolute;
   top: 0;
-  left: 1px;
+  left: 0;
   font-weight: 500;
 }
 
@@ -105,5 +104,4 @@
   .player__timeline {
     height: 3px;
   }
-  
 }
