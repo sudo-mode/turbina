@@ -1,14 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
 import './PlayerController.css';
+import useAudioPlayer from '../../hooks/useAudioPlayer';
+import PlayerTimeline from './PlayerTimeline';
 import playBtn from '../../images/play-icon.svg';
 import pauseBtn from '../../images/pause-icon.svg';
-import PlayerTrack from './PlayerTrack';
+import PlayerTimer from './PlayerTimer';
+// import PlayerTrack from './PlayerTrack';
 
 function PlayerController ({ track }) {
-  const [isPlaying, setPlayingState] = useState(false);
+  // const [isPlaying, setPlaying] = useState(false);
 
   const handlePlayClick = () => {
-    setPlayingState(!isPlaying);
+    setPlaying(!isPlaying);
   }
 
   // TODO -- можно КАК-ТО использовать для паузы в бегущей строке
@@ -80,18 +83,23 @@ function PlayerController ({ track }) {
   // const audio = new Audio(track.link);
 
   // console.dir(audio);
-  const timeline = useRef();
-  // console.log(timeline.current);
+  // const playerRef = useRef();
+  // // console.log(timeline.current);
+
+  const { curTime, duration, isPlaying, setPlaying, setClickedTime } = useAudioPlayer();
 
   return (
     <div className="player__controller">
+      <audio id="audio">
+        <source src={track.link} />
+      </audio>
       <button
         className="player__control-btn"
         type="button"
         onClick={handlePlayClick}
         style={{ backgroundImage: `url(${isPlaying ? pauseBtn : playBtn})` }}
       />
-      <div  className="player__song-container">
+      <div className="player__song-container">
         <p 
           className="player__song"
           ref={trackRef}
@@ -99,14 +107,13 @@ function PlayerController ({ track }) {
           {`${track.trackName} — ${track.group} feat. ${track.author}`}
         </p>
       </div>
-      <span className="player__timer">
-        0:24
-      </span>
-      <div className="player__timeline" ref={timeline}>
-        <div className="player__progress" />
-      </div>
+      <PlayerTimer curTime={curTime} />
+      <PlayerTimeline
+        curTime={curTime}
+        duration={duration}
+        onTimeUpdate={(time) => setClickedTime(time)}
+      />
     </div>
-
   )
 }
 
