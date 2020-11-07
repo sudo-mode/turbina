@@ -6,8 +6,9 @@
   border-radius: 20px;
   background: center no-repeat transparent;
   margin-left: 20px;
-  margin-top: -5px;
+  margin-top: -4px;
   font-size: 16px;
+  line-height: 1;
   color: #fff;
   display: block;
   transition: box-shadow .2s ease-out;

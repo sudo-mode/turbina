@@ -38,6 +38,7 @@ function PlayerInfoContent({ tracks, isOpen, isTextInfo, currentTrack, onTrackCl
             {tracks.map((track, i) => (
               <li key={track.id} className='player__track-item'>
                 <PlayerTrack
+                  key={track.id}
                   track={track}
                   onTrackClick={onTrackClick}
                   inList={true}
@@ -51,11 +52,7 @@ function PlayerInfoContent({ tracks, isOpen, isTextInfo, currentTrack, onTrackCl
   }
 
   const setInfoContent = (isTextInfo) => {
-    if (isTextInfo) {
-      return setSongLyrics(currentTrack)
-    } else {
-      return setReleaseList(tracks)
-    }
+    return isTextInfo ? setSongLyrics(currentTrack) : setReleaseList(tracks)
   }
 
   useEffect(() => {

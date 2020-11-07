@@ -25,7 +25,7 @@
 }
 
 .player__text-line:last-child {
-  padding-bottom: 10px;
+  padding-bottom: 14px;
 }
 
 .player__info-header {
@@ -38,10 +38,21 @@
   .player__info-header {
     margin-bottom: 15px;
   }
+  .player__text-line:last-child {
+    padding-bottom: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .player__text-line:last-child {
+    padding-bottom: 10px;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .player__info-header {
     margin-bottom: 14px;
   }
+
+
 }
