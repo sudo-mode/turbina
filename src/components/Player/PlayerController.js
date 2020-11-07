@@ -16,7 +16,7 @@ function PlayerController ({ track }) {
 
   useTicker(trackRef);
 
-  const { curTime, duration, isPlaying, setPlaying, setClickedTime } = useAudioPlayer();
+  const { curTime, duration, isPlaying, setPlaying, setClickedTime } = useAudioPlayer('audio');
 
   return (
     <div className="player__controller">
