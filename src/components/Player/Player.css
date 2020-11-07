@@ -8,7 +8,7 @@
     "  .     info    info       .     ";
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding-top: 15px;
   font-size: 20px;
   line-height: 1.2;
@@ -23,7 +23,7 @@
 
 @media screen and (max-width: 768px) {
   .player {
-    margin-bottom: 14px;
+    margin-bottom: 8px;
   }
 }
 
@@ -42,7 +42,7 @@
       "player  player  extend-btn"
       "  .    switcher     .     "
       "  .      info       .     ";
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-size: 14px;
   }  
 }

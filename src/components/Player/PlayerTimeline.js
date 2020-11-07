@@ -4,7 +4,7 @@ function PlayerTimeline ({ duration, curTime, onTimeUpdate }) {
   const curPercentage = (curTime / duration) * 100;
 
   const calculateClickedTime = (e) => {
-    const timeline = document.querySelector('.player__timeline');
+    const timeline = document.querySelector('.player__timeline-container');
     const timelineWidth = timeline.clientWidth;
     const timelineStart = timeline.getBoundingClientRect().left;
     const clickedXposition = e.pageX;
@@ -30,14 +30,18 @@ function PlayerTimeline ({ duration, curTime, onTimeUpdate }) {
   }
 
   return (
-    <div
-    className="player__timeline"
+    <div 
+      className="player__timeline-container"
       onMouseDown={e => handleTimeDrag(e)}
     >
-      <div 
-        className="player__progress"
-        style={{ width: `${curPercentage}%` }}
-      />
+      <div
+        className="player__timeline"
+      >
+        <div 
+          className="player__progress"
+          style={{ width: `${curPercentage}%` }}
+        />
+      </div>
     </div>
   )
 }
