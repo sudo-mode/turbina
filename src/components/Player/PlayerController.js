@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import './PlayerController.css';
 import useAudioPlayer from '../../hooks/useAudioPlayer';
 import PlayerTimeline from './PlayerTimeline';
@@ -6,7 +6,6 @@ import playBtn from '../../images/play-icon.svg';
 import pauseBtn from '../../images/pause-icon.svg';
 import PlayerTimer from './PlayerTimer';
 import useTicker from '../../hooks/useTicker';
-// import PlayerTrack from './PlayerTrack';
 
 function PlayerController ({ track }) {
   const handlePlayClick = () => {
@@ -21,7 +20,9 @@ function PlayerController ({ track }) {
 
   return (
     <div className="player__controller">
-      <audio id="audio">
+    {/* TODO -- проверить, куда именно нужно подставлять ссылку для обеспечения возможности
+    переключения треков */}
+      <audio id="audio" src={track.link}>
         <source src={track.link} />
       </audio>
       <button
@@ -35,7 +36,7 @@ function PlayerController ({ track }) {
           className="player__song"
           ref={trackRef}
         >
-          {`${track.trackName} — ${track.group} feat. ${track.author}`}
+          {`${track.trackName} — ${track.author}`}
         </p>
       </div>
       <PlayerTimer
