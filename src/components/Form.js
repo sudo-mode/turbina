@@ -4,19 +4,19 @@ import pdfUrl from '../vendor/offer.pdf';
 import useFormWithValidation from '../hooks/useFormWithValidation.js';
 import validationInfo from '../utils/validationInfo.js';
 
-// TODO: ФОКУС ИНПУТОВ
 // TODO: Отправка формы
 
 function Form() {
 
-    const { values, handleChange, errors, isFormValid } = useFormWithValidation(validationInfo);
+    const { values, handleChange, errors, isFormValid, resetForm } = useFormWithValidation(validationInfo);
+    const [isSubmitted, setIsSubmitted] = React.useState(false);
 
     function handleSubmit(evt) {
         evt.preventDefault();
         console.log(values);
+        setIsSubmitted(true);
+        resetForm();
     }
-
-    // TODO: стиль ошибки для инпута
 
     return(
         <div className="form-container">
@@ -79,6 +79,7 @@ function Form() {
                     type="checkbox" 
                     name="offer" 
                     value="agree" 
+                    id="offer"
                     required 
                     checked={values.offer}
                     onChange={handleChange}
@@ -90,7 +91,8 @@ function Form() {
                 <span className="form__input-error" id="offer-error">{errors.offer || ''}</span>
 
 
-                <button type="submit" className="form__submit-button" disabled={!isFormValid}><span className="form__button-text">Отправить форму</span></button>
+                <button type="submit" className="form__submit-button" disabled={!isFormValid}><span className="form__button-text">{isSubmitted? 'Ура, форма отправлена!' : 'Отправить форму'}</span></button>
+                <span className="form__wrong-submit"></span>
             </form>
       </div>
     )

@@ -65,6 +65,12 @@
   color: rgba(0, 0, 0, 0.4);
 }
 
+.form__input:focus {
+    outline: none;
+    box-shadow: 0 0 4px 2px #00000040;
+}
+
+
 @media screen and (max-width:480px) {
   .form__input {
     margin-bottom: 6px;
@@ -156,7 +162,6 @@
 .form__submit-button:hover {
    box-shadow: 0 0 8px 4px #00000040;
    cursor: pointer;
-   font-style: italic;
 }
 
 @media screen and (max-width:1024px) {
@@ -173,17 +178,18 @@
 }
 
 /* Возможность для анимации курсива на кнопке */
-/* .form__button-text {
+.form__button-text {
     margin: 0;
     padding: 18px 25px;
     box-sizing: border-box;
     font-size: 16px;
+    display: inline-block;
     transition: transform 0.4s ease-out;
 }
 
 .form__button-text:hover {
     transform: skew(-9deg);
-} */
+}
 
 @media screen and (max-width:1024px) {
     .form__button-text  {
