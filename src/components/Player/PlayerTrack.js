@@ -1,11 +1,12 @@
 import './PlayerTrack.css';
+import cn from 'classnames';
 import { useState, useEffect } from 'react';
 
 function PlayerTrack({ track, onTrackClick, inList, isLoading }) {
 
   const [loading, setLoading] = useState(isLoading);
 
-  const trackStyle = `player__track ${ inList && 'player__track_info'} ${ loading && 'player__track_loading'}`;
+  const trackStyle = cn('player__track', { 'player__track_info': inList }, { 'player__track_loading': loading });
 
   const handleClick = () => {
     if (onTrackClick) {
@@ -14,16 +15,16 @@ function PlayerTrack({ track, onTrackClick, inList, isLoading }) {
   };
 
   useEffect(() => {
-    setTimeout(()=> {
+    setTimeout(() => {
       setLoading(false)
     }, 100);
-    
+
   }, [isLoading]);
 
   return (
-      <button onClick={handleClick} className={trackStyle}>
-        {`${track.trackName} — ${track.group} feat. ${track.author}`}
-      </button>
+    <p onClick={handleClick} className={trackStyle}>
+      {`${track.trackName} — ${track.group} feat. ${track.author}`}
+    </p>
   )
 }
 
