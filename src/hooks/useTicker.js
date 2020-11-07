@@ -64,11 +64,11 @@ function useTicker(elementRef, containerTickerAddClass) {
     let currentX = 0;
     
     if (isTickerNeeded) {
-      elementContainer.classList.add('player__song-container_masked');
+      elementContainer.classList.add(containerTickerAddClass);
       const currentIntervalId = setInterval(startTicker, 10);
       setIntervalId(currentIntervalId)
     } else {
-      elementContainer.classList.remove('player__song-container_masked');
+      elementContainer.classList.remove(containerTickerAddClass);
       clearInterval(intervalId);
       element.style.left = '0px';
     }
