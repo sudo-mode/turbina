@@ -107,7 +107,10 @@ function PlayerController ({ track }) {
           {`${track.trackName} — ${track.group} feat. ${track.author}`}
         </p>
       </div>
-      <PlayerTimer curTime={curTime} />
+      <PlayerTimer
+        duration={duration}
+        curTime={curTime}
+      />
       <PlayerTimeline
         curTime={curTime}
         duration={duration}
