@@ -90,7 +90,7 @@ function PlayerController ({ track }) {
 
   return (
     <div className="player__controller">
-      <audio id="audio">
+      <audio src={track.link} id="audio">
         <source src={track.link} />
       </audio>
       <button
