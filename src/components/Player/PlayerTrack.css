@@ -8,10 +8,8 @@
 }
 
 .player__track {
-  background: transparent;
   color: #fff;
   padding: 0;
-  border: none;
   width: fit-content;
   margin: 0;
   text-overflow: ellipsis;

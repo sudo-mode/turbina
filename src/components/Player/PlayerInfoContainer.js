@@ -2,8 +2,16 @@ import './PlayerInfoContainer.css';
 import PlayerInfoContent from './PlayerInfoContent';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 
 function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick, isLoading }) {
+  const isScrollbarHeight1280 = useMediaQuery({ query: '(min-width: 1280px)' });
+  const isScrollbarHeight1024 = useMediaQuery({ query: '(min-width: 1024px)' });
+  const isScrollbarHeight768 = useMediaQuery({ query: '(min-width: 768px)' });
+  const isScrollbarHeight480 = useMediaQuery({ query: '(min-width: 480px)' });
+
+
+  const height = isScrollbarHeight1280 ? 118 : isScrollbarHeight1024 ? 118 : isScrollbarHeight768 ? 102 : isScrollbarHeight480 ? 100 : 87;
 
   const [top, setTop] = useState(0);
 
@@ -31,9 +39,6 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
   };
 
   const renderTrack = ({ style, ...props }) => {
-    const finalStyle = {
-
-    };
     return (
       <div
         className='player__scroll-box-track'
@@ -43,18 +48,21 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
   };
 
   const renderTrackHorizontal = ({ style, ...props }) => {
-    const finalStyle = {
-      display: 'none'
-    };
-    return <div style={finalStyle} {...props} />;
+    return (
+    <div
+      style={{ display: 'none' }}
+      {...props}
+    />
+    );
   };
 
   return (
 
     <div className={`player__info-container ${isOpen && 'player__info-container_active'}`}>
       <Scrollbars
+        className='player__scrollbars'
         renderView={renderView}
-        style={{ height: 118 }}
+        style={{ height: height }}
         onUpdate={handleUpdate}
         renderThumbVertical={renderThumb}
         renderTrackVertical={renderTrack}
