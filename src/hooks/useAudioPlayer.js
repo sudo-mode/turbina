@@ -10,6 +10,7 @@ function useAudioPlayer(audioElementId) {
   const [isPlaying, setPlaying] = useState(false);
   const [clickedTime, setClickedTime] = useState();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const audio = document.getElementById(audioElementId);
     // Обёртка для стейт-сеттеров

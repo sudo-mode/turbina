@@ -27,6 +27,7 @@ function useTicker(elementRef, containerTickerAddClass) {
   }
   
   // Проверяем необходимость запуска бегущей строки при загрузке страницы
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(handleResize, []);
   
   // Добавляем слышатели на ресайз окна
@@ -35,6 +36,7 @@ function useTicker(elementRef, containerTickerAddClass) {
     return () => {
       window.removeEventListener('resize', handleResize);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   // Добавляем стейт переменную для хранения текущего номера таймера
@@ -72,6 +74,7 @@ function useTicker(elementRef, containerTickerAddClass) {
       clearInterval(intervalId);
       element.style.left = '0px';
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isTickerNeeded]);
 }
 
