@@ -16,12 +16,11 @@ function Player () {
   }
 
   const handleTrackClick = (track) => {
-    setCurrentTrack(track)
+    setCurrentTrack(track);
   }
 
   const handlePlayerSwitcherClick = () => {
-    setTextInfo(!isTextInfo)
-
+    setTextInfo(!isTextInfo);
   }
   
   return (

@@ -14,14 +14,14 @@
 }
 
 .player__text-line {
+  max-width: calc(100% - 56px);
   margin: 0;
   font-style: italic;
   line-height: 1.4;
+  font-weight: 500;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-weight: 500;
-  max-width: calc(100% - 56px);
 }
 
 .player__text-line:last-child {
@@ -29,8 +29,8 @@
 }
 
 .player__info-header {
-  font-weight: 400;
   margin: 0 0 16px 0;
+  font-weight: 400;
   font-style: italic;
 }
 
@@ -38,6 +38,7 @@
   .player__info-header {
     margin-bottom: 15px;
   }
+
   .player__text-line:last-child {
     padding-bottom: 12px;
   }
@@ -53,6 +54,4 @@
   .player__info-header {
     margin-bottom: 14px;
   }
-
-
 }

@@ -28,7 +28,7 @@
 
 .player__song-container {
   grid-area: song;
-  padding-bottom: 30px;
+  padding-bottom: 25px;
   position: relative;
   white-space: nowrap;
   overflow: hidden;
@@ -52,11 +52,6 @@
   font-weight: 500;
 }
 
-.player__timer {
-  grid-area: timer;
-  font-weight: 400;
-}
-
 @media screen and (max-width: 1024px) {
   .player__controller {
     row-gap: 2px;
@@ -65,15 +60,11 @@
   .player__control-btn {
     align-self: start;
   }
-
-  .player__timer {
-    align-self: start;
-  }
 }
 
 @media screen and (max-width: 480px) {
   .player__controller {
-    gap: 8px 12px;
+    gap: 4px 12px;
   }
 
   .player__song-container {

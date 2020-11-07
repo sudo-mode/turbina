@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
 
-function useAudioPlayer() {
+/*
+Хук useAudioPlayer для использования аудиоплеера.
+audioElementId -- (строка, например 'audio')
+*/
+function useAudioPlayer(audioElementId) {
   const [duration, setDuration] = useState();
   const [curTime, setCurTime] = useState(0);
   const [isPlaying, setPlaying] = useState(false);
   const [clickedTime, setClickedTime] = useState();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    const audio = document.getElementById('audio');
-    console.log(audio)
-    // state setters wrappers
+    const audio = document.getElementById(audioElementId);
+    // Обёртка для стейт-сеттеров
     const setAudioData = () => {
       setDuration(audio.duration);
       setCurTime(audio.currentTime);
@@ -17,12 +21,12 @@ function useAudioPlayer() {
 
     const setAudioTime = () => setCurTime(audio.currentTime);
 
-    // DOM listeners: update React state on DOM events
+    // Установка DOM listeners: обновление React state по событиям DOM
     audio.addEventListener('loadeddata', setAudioData);
 
     audio.addEventListener('timeupdate', setAudioTime);
 
-    // React state listeners: update DOM on React state changes
+    // React state listeners: обновление DOM поизменению React state 
     isPlaying ? audio.play() : audio.pause();
 
     if (clickedTime && clickedTime !== curTime) {
@@ -30,7 +34,7 @@ function useAudioPlayer() {
       setClickedTime(null);
     } 
 
-    // effect cleanup
+    // Снятие слушателей
     return () => {
       audio.removeEventListener('loadeddata', setAudioData);
       audio.removeEventListener('timeupdate', setAudioTime);

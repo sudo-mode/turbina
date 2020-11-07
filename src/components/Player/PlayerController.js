@@ -14,9 +14,9 @@ function PlayerController ({ track }) {
 
   const trackRef = useRef();
 
-  useTicker(trackRef);
+  useTicker(trackRef, 'player__song-container_masked');
 
-  const { curTime, duration, isPlaying, setPlaying, setClickedTime } = useAudioPlayer();
+  const { curTime, duration, isPlaying, setPlaying, setClickedTime } = useAudioPlayer('audio');
 
   return (
     <div className="player__controller">
