@@ -91,7 +91,7 @@ function PlayerController ({ track }) {
   return (
     <div className="player__controller">
       <audio src={track.link} id="audio">
-        <source src={track.link} />
+        <source src={track.link} />      
       </audio>
       <button
         className="player__control-btn"
@@ -104,7 +104,7 @@ function PlayerController ({ track }) {
           className="player__song"
           ref={trackRef}
         >
-          {`${track.trackName} — ${track.group} feat. ${track.author}`}
+          {`${track.trackName} — ${track.author}`}
         </p>
       </div>
       <PlayerTimer

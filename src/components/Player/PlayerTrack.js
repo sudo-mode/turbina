@@ -23,7 +23,7 @@ function PlayerTrack({ track, onTrackClick, inList, isLoading }) {
 
   return (
     <p onClick={handleClick} className={trackStyle}>
-      {`${track.trackName} — ${track.group} feat. ${track.author}`}
+      {`${track.trackName} — ${track.author}`}
     </p>
   )
 }
