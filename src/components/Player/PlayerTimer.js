@@ -1,6 +1,6 @@
 import './PlayerTimer.css';
 
-function PlayerTimer ({ curTime }) {
+function PlayerTimer ({ duration, curTime }) {
   const formatDuration = (duration) => {
     let minutes = Math.floor(duration/60);
     let seconds = Math.floor(duration % 60);
@@ -14,7 +14,7 @@ function PlayerTimer ({ curTime }) {
   
   return (
     <span className="player__timer">
-      {formatDuration(curTime)}
+      {formatDuration(duration - curTime)}
     </span>
   )
 }

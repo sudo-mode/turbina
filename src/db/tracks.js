@@ -8,7 +8,7 @@ const tracks = [
     Моя милая милая девочка,
     Никогда не знаешь что будет дальше
     В этой гадкой зиме`,
-    link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
+    link: 'https://ds.cdn5.mzmdl.com/cuts/d9/c4/d9c4b23a86693374ab703d4680faeec2/47842886/The_xx_-_Crystalised_b128f0d202.mp3'
   },
   {
     id: '№4',
@@ -21,7 +21,7 @@ const tracks = [
     Петр Сковородников
     Петр Сковородников
     Петр Сковородников`,
-    link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
+    link: 'https://mzmdl.com/get/cuts/bf/ff/bfff3efbf6c332811301900ba299b04b/47842889/The_xx_-_Heart_Skipped_A_Beat_b128f0d242.mp3'
   },
   {
     id: '№6',
@@ -35,7 +35,7 @@ const tracks = [
     Саша Петров
     Саша Петров
     Саша Петров`,
-    link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
+    link: 'https://mzmdl.com/get/music/20140820/The_xx_-_VCR_16212035.mp3'
   },
   {
     id: '№5',
@@ -47,7 +47,7 @@ const tracks = [
     Маруся Романова
     Маруся Романова
     Маруся Романова`,
-    link: 'https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3'
+    link: 'https://cdn5.mzmdl.com/music/20140917/The_XX_-_Intro_17025777.mp3'
   },
 ]
 
