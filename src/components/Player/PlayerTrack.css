@@ -47,7 +47,12 @@
   .player__track {
     margin-bottom: 15px;
   }
+
+  .player__track-item:last-child {
+    padding-bottom: 0;
+  }
 }
+
 
 @media screen and (max-width: 480px) {
   .player__track {

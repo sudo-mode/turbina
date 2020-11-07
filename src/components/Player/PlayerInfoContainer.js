@@ -6,7 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 
 function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick, isLoading }) {
   const isScrollbarHeight1280 = useMediaQuery({ query: '(min-width: 1280px)' });
-  const isScrollbarHeight1024 = useMediaQuery({ query: '(min-width: 1024px)' });
+  const isScrollbarHeight1024 = useMediaQuery({ query: '(min-width: 1025px)' });
   const isScrollbarHeight768 = useMediaQuery({ query: '(min-width: 768px)' });
   const isScrollbarHeight480 = useMediaQuery({ query: '(min-width: 480px)' });
 
