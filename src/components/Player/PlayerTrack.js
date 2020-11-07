@@ -10,13 +10,13 @@ function PlayerTrack({ track, onTrackClick, inList, isLoading }) {
 
   const handleClick = () => {
     if (onTrackClick) {
-      onTrackClick(track)
+      onTrackClick(track);
     }
   };
 
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false)
+      setLoading(false);
     }, 100);
 
   }, [isLoading]);

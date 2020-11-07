@@ -13,7 +13,7 @@ function PlayerSwitcher ({ onClick, isTextInfo  }) {
   }
 
   useEffect(() => {
-    setChangeStyle()
+    setChangeStyle();
   }, [isTextInfo])
 
   return (   

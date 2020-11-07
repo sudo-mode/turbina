@@ -3,8 +3,8 @@
   height: 112px;
   padding-top: 28px;
   padding-bottom: 5px;
-  overflow: hidden;
   margin-bottom: -100%;
+  overflow: hidden;
   transition: margin 1s;
 }
 
@@ -112,4 +112,3 @@
     padding-top: 6px;
   }
 }
-

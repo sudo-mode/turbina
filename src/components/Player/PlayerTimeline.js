@@ -6,7 +6,7 @@ function PlayerTimeline ({ duration, curTime, onTimeUpdate }) {
   const calculateClickedTime = (e) => {
     const timeline = document.querySelector('.player__timeline');
     const timelineWidth = timeline.clientWidth;
-    const timelineStart = timeline.getBoundingClientRect().left
+    const timelineStart = timeline.getBoundingClientRect().left;
     const clickedXposition = e.pageX;
     const clickedPositionOnTimeline = clickedXposition - timelineStart;
     const timePerPixel = duration / timelineWidth;

@@ -52,21 +52,12 @@
   font-weight: 500;
 }
 
-.player__timer {
-  grid-area: timer;
-  font-weight: 400;
-}
-
 @media screen and (max-width: 1024px) {
   .player__controller {
     row-gap: 2px;
   }
 
   .player__control-btn {
-    align-self: start;
-  }
-
-  .player__timer {
     align-self: start;
   }
 }
