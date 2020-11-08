@@ -1,13 +1,13 @@
-function StreamServiceLink({ serviceCaption, serviceLink }) {
+function StreamServiceLink({ serviceLabel, serviceLink, style }) {
   return (
-    <li className="stream-services__link-container">
+    <li className="stream-services__link-container" style={style}>
       <a
         className="stream-services__link"
         href={serviceLink}
         target="_blank"
         rel="noreferrer"
       >
-        {serviceCaption} ↗
+        {serviceLabel} ↗
       </a>
     </li>
   );

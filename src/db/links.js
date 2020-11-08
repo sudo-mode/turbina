@@ -3,19 +3,19 @@ const marshakLink = 'https://marshakbooks.ru/';
 // TODO: вставить актуальные ссылки на стриминговые сервисы
 const serviceLinks = [
   { 
-    serviceCaption: 'Яндекс.Музыка',
+    serviceLabel: 'Яндекс.Музыка',
     serviceLink: 'https://music.yandex.ru/'
   },
   { 
-    serviceCaption: 'Spotify',
+    serviceLabel: 'Spotify',
     serviceLink: 'https://www.spotify.com/ru-ru/'
   },
   { 
-    serviceCaption: 'Apple Music',
+    serviceLabel: 'Apple Music',
     serviceLink: 'https://music.apple.com/'
   },
   { 
-    serviceCaption: 'VK Music',
+    serviceLabel: 'VK Music',
     serviceLink: 'https://vk.com/vkmusic'
   },
 ];
