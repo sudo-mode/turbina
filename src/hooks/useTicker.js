@@ -22,7 +22,6 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
     const elementContainer = element.parentElement;
     const elementWidth = element.scrollWidth;
     const elementContainerWidth = elementContainer.clientWidth;
-    console.log(elementContainerWidth);
     if (elementWidth > elementContainerWidth) {
       setTickerState(true);
     } else {
@@ -30,9 +29,15 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
     }
   }
   
-  // Проверяем необходимость запуска бегущей строки при загрузке страницы
+  // Проверяем необходимость запуска бегущей строки при загрузке страницы,
+  // предварительно сбрасывая isTickerNeeded на false для выставления "бегущего"
+  // элемента в исходное положение.
+  useEffect(() => {
+    setTickerState(false);
+    handleResize();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(handleResize, [dependence]);
+  }, [dependence]);
+
   
   // Затормаживаем обработку ресайза окна браузера
   const handleResizeThrottled = useThrottle(handleResize, 1000);
@@ -40,7 +45,6 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
   // Добавляем слышатели на ресайз окна
   useEffect(() => {
     window.addEventListener('resize', handleResizeThrottled);
-    // console.log(throttle());
     return () => {
       window.removeEventListener('resize', handleResizeThrottled);
     }
