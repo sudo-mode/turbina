@@ -214,9 +214,19 @@
     .form__input-error {
         font-size: 14px;
     }
+    
+    .form__wrong-submit {
+        font-size: 14px;
+    }
 }
 
 .form__input_invalid {
     color: red;
     border-bottom: 2px solid red;
+}
+
+.form__wrong-submit {
+    color: red;
+    font-size: 16px;
+    line-height: 1.2;
 }
