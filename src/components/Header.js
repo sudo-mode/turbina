@@ -4,12 +4,13 @@ import { useMediaQuery } from 'react-responsive';
 import cn from 'classnames';
 import StreamServiceLink from './StreamServiceLink';
 import logoHeader from '../images/marshak-logo.png';
-import { marshakLink, serviceLinks } from '../db/links';
-import { useTrail, animated } from 'react-spring'
+import { marshakLink, serviceLinks } from '../configs/links';
+import { useTrail, animated, Transition } from 'react-spring';
+import LinksCloseIcon from './svg/LinksCloseIcon';
 
 function Header() {
   const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
-  /*TODO - дописать комментарий к этим стейтам */
+  /* TODO - дописать комментарий к этим стейтам */
   const [isLinksMounted, setIsLinksMounted] = useState(false);
   const [isLinksHidden, setIsLinksHidden] = useState(true);
 
@@ -18,19 +19,22 @@ function Header() {
     setIsLinksMounted(true);
   };
 
+  /* TODO - написать комментарий к анимации кнопки Стриминги */
+  /* TODO - вынести магические числа и проперти config в нормальные переменные (для анимации) */
+
   /* Создаем анимированную компоненту из обычной */
   const AnimatedStreamServiceLink = animated(StreamServiceLink);
 
-  /* Конфиг для анимации ссылок на узких экранах. Меняются прозрачность и смещение по вертикали*/
+  /* Конфиг для анимации ссылок на узких экранах. Меняются прозрачность и смещение по горизонтали*/
   const mobileConfig = {
-    config: { mass: 1, tension: 120, friction: 14 },
+    config: { mass: 1, tension: 200, friction: 18 },
     to: {
       opacity: !isLinksHidden ? 1 : 0,
-      y: !isLinksHidden ? 0 : 50
+      x: !isLinksHidden ? 0: -50
     },
     from: { 
       opacity: 0, 
-      y: 50
+      x: -50
     },
     reverse: isLinksHidden,
     onRest: () => {
@@ -43,7 +47,7 @@ function Header() {
   /* Конфиг для анимации на широком экране. Сейчас там анимация не требуется, и конфиг обеспечивает статичное отображение при загрузке страницы) */
   const desktopConfig = {
     opacity: 1,
-    y: 0
+    x: 0
   };
 
   /* Массив с объектами пропсов для анимации каждой ссылки */
@@ -82,7 +86,17 @@ function Header() {
             type="button"
             onClick={handleServiceButtonClick}
           >
-            {isLinksHidden && "Стриминги"}
+            <Transition
+              items={isLinksHidden ? "Стриминги": <LinksCloseIcon/>}
+              from={{ opacity: 0 }}
+              enter={{ opacity: 1 }}
+              initial={{ opacity: 1 }}
+              config={{ mass: 1, tension: 140, friction: 30 }}
+            >
+              {(values, item) => (
+                <animated.span style={values}>{item}</animated.span>
+              )}
+            </Transition>
           </button>
         )}
 

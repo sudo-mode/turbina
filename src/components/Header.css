@@ -84,6 +84,8 @@
 }
 
 .stream-services__button {
+  max-width: 150px; /* for transition */
+  min-width: 70px; /* for transition */
   margin-bottom: 8px;
   border: 2px solid #fff;
   border-radius: 30px;
@@ -93,7 +95,11 @@
   cursor: pointer;
   font-size: inherit;
   line-height: inherit;
-  transition: box-shadow .2s ease-out;
+  overflow: hidden;
+  transition: 
+    box-shadow .2s ease-out, 
+    max-width .3s linear,
+    min-width .3s linear;
 }
 
 .stream-services__button:focus {
@@ -105,14 +111,10 @@
 }
 
 .stream-services__button_minimised {
-  padding: 0;
-  height: 30px;
-  width: 30px;
-  background-image: url(../images/links-close-icon.svg);
-  background-size: 18px;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  cursor: pointer;
+  max-width: 30px; /* for transition */
+  min-width: 30px; /* for transition */
+  padding: 4px;
+  line-height: 0;
 }
 
 
@@ -170,7 +172,7 @@
   }
 
   .stream-services__button_minimised {
-    padding: 0;
+    padding: 4px;
     margin-bottom: 5px;
   }
 }
