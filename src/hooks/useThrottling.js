@@ -1,4 +1,4 @@
-const useThrottle = (func, ms) => {
+const useThrottling = (func, ms) => {
   
   let isThrottled = false,
     savedArgs,
@@ -35,4 +35,4 @@ const useThrottle = (func, ms) => {
   return wrapper;
 }
 
-export default useThrottle;
+export default useThrottling;

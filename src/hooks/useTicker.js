@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import useThrottle from './useThrottle';
+import useThrottling from './useThrottling';
 
 /*
 Хук useTicker реализует бегущую строку.
@@ -45,9 +45,8 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dependence]);
 
-  
   // Затормаживаем обработку ресайза окна браузера
-  const handleResizeThrottled = useThrottle(handleResize, 1000);
+  const handleResizeThrottled = useThrottling(handleResize, 1000);
 
   // Добавляем слышатели на ресайз окна
   useEffect(() => {
@@ -61,7 +60,6 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
   // Добавляем стейт переменную для хранения текущего номера таймера
   const [intervalId, setIntervalId] = useState(null);
   
-
   // При изменении isTickerNeeded запускаем или останавливаем бегущую строку
   useEffect(() => {
     const element = elementRef.current;
