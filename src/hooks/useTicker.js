@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import useThrottle from './useThrottle';
 
 /*
 Хук useTicker реализует бегущую строку.
@@ -12,7 +13,7 @@ dependence -- зависимость, при изменении которой �
       появления бегущей строки.
 */
 function useTicker(elementRef, containerTickerAddClass, dependence) {
-  // стейт-переменнуя, определяющая необходимость бегущей строки
+  // стейт-переменная, определяющая необходимость бегущей строки
   const [isTickerNeeded, setTickerState] = useState(false);
   
   // Обработчик ресайза окна
@@ -21,6 +22,7 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
     const elementContainer = element.parentElement;
     const elementWidth = element.scrollWidth;
     const elementContainerWidth = elementContainer.clientWidth;
+    console.log(elementContainerWidth);
     if (elementWidth > elementContainerWidth) {
       setTickerState(true);
     } else {
@@ -32,11 +34,15 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(handleResize, [dependence]);
   
+  // Затормаживаем обработку ресайза окна браузера
+  const handleResizeThrottled = useThrottle(handleResize, 1000);
+
   // Добавляем слышатели на ресайз окна
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResizeThrottled);
+    // console.log(throttle());
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResizeThrottled);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -60,7 +66,7 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
       currentX--;
       element.style.left = `${currentX}px`;
       if (currentX === -elementWidth) {
-        // 10 здесь устанавливает "задержку" в пикселях переде появлением строки справа
+        // 10 здесь устанавливает "задержку" в пикселях перед появлением строки справа
         currentX = elementContainerWidth + 10;
       }
     }
