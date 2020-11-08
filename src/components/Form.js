@@ -52,28 +52,28 @@ function Form() {
                 <span className="form__input-error" id="name-error">{errors.name || ''}</span>
 
                 <input 
-                  className="form__input form__input_email"
-                  type="email" 
-                  name="email" 
+                  className="form__input form__input_tel"
+                  type="tel" 
+                  name="tel" 
                   placeholder="Телефон" 
                   required 
                   minLength="6" 
                   maxLength="50" 
-                  value={values.email || ''}
-                  onChange={handleChange}
-                />
-                <span className="form__input-error" id="email-error">{errors.email || ''}</span>
-
-                <input 
-                  className="form__input form__input_tel"
-                  type="tel" 
-                  name="tel" 
-                  placeholder="Почта" 
-                  required 
                   value={values.tel || ''}
                   onChange={handleChange}
                 />
                 <span className="form__input-error" id="phone-error">{errors.tel || ''}</span>
+
+                <input 
+                  className="form__input form__input_email"
+                  type="email" 
+                  name="email" 
+                  placeholder="Почта" 
+                  required 
+                  value={values.email || ''}
+                  onChange={handleChange}
+                />
+                <span className="form__input-error" id="email-error">{errors.email || ''}</span>
 
 
                 <textarea 
