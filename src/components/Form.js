@@ -3,19 +3,30 @@ import './Form.css';
 import pdfUrl from '../vendor/offer.pdf';
 import useFormWithValidation from '../hooks/useFormWithValidation.js';
 import validationInfo from '../utils/validationInfo.js';
+import { api } from '../utils/Api.js';
 
-// TODO: Отправка формы
+// TODO: Отправка формы - состояние isSubmitting "Отправляем форму..."
+// TODO: Таймаут, который поменяет isSubmitted обратно на false
 
 function Form() {
 
     const { values, handleChange, errors, isFormValid, resetForm } = useFormWithValidation(validationInfo);
     const [isSubmitted, setIsSubmitted] = React.useState(false);
+    const [isErrorVisible, setIsErrorVisible] = React.useState(false);
 
     function handleSubmit(evt) {
         evt.preventDefault();
         console.log(values);
-        setIsSubmitted(true);
-        resetForm();
+
+        api.submitForm(values)
+           .then(() => {
+              setIsSubmitted(true);
+              resetForm();
+           })
+           .catch((err) => {
+               console.log(err);
+               setIsErrorVisible(true);
+           })
     }
 
     return(
@@ -92,7 +103,7 @@ function Form() {
 
 
                 <button type="submit" className="form__submit-button" disabled={!isFormValid}><span className="form__button-text">{isSubmitted? 'Ура, форма отправлена!' : 'Отправить форму'}</span></button>
-                <span className="form__wrong-submit"></span>
+                <span className="form__wrong-submit">{isErrorVisible? 'Упс, что-то пошло не так!' : ''}</span>
             </form>
       </div>
     )
