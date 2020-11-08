@@ -22,6 +22,10 @@ function Form() {
            .then(() => {
               setIsSubmitted(true);
               resetForm();
+
+              setTimeout(() => 
+                setIsSubmitted(false),
+                5000);
            })
            .catch((err) => {
                console.log(err);
