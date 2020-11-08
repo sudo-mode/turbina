@@ -1,32 +1,32 @@
 import React from 'react';
 import './Form.css';
 import pdfUrl from '../vendor/offer.pdf';
-import useFormWithValidation from '../hooks/useFormWithValidation.js'
+import useFormWithValidation from '../hooks/useFormWithValidation.js';
+import validationInfo from '../utils/validationInfo.js';
 
-// TODO: ФОКУС ИНПУТОВ
 // TODO: Отправка формы
 
 function Form() {
 
-    const { values, handleChange, errors, isFormValid } = useFormWithValidation();
+    const { values, handleChange, errors, isFormValid, resetForm } = useFormWithValidation(validationInfo);
+    const [isSubmitted, setIsSubmitted] = React.useState(false);
 
     function handleSubmit(evt) {
         evt.preventDefault();
         console.log(values);
+        setIsSubmitted(true);
+        resetForm();
     }
-
-    // TODO: стиль ошибки для инпута
 
     return(
         <div className="form-container">
-        <form className="form" method="POST" name="send-poem" onSubmit={handleSubmit} noValidate>
+        <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
                 <h2 className="form__heading">Форма</h2>
                 <p className="text__paragraph form__text">Заполняя эту форму, вы становитесь частью проекта.</p>
 
                 <input 
                   className="form__input form__input_name"
                   name="name" 
-                  id="name" 
                   placeholder="Имя и фамилия автора" 
                   required 
                   minLength="2" 
@@ -40,7 +40,6 @@ function Form() {
                   className="form__input form__input_email"
                   type="email" 
                   name="email" 
-                  id="email" 
                   placeholder="Телефон" 
                   required 
                   minLength="6" 
@@ -54,7 +53,6 @@ function Form() {
                   className="form__input form__input_tel"
                   type="tel" 
                   name="tel" 
-                  id="tel" 
                   placeholder="Почта" 
                   required 
                   value={values.tel || ''}
@@ -81,7 +79,7 @@ function Form() {
                     type="checkbox" 
                     name="offer" 
                     value="agree" 
-                    id="offer" 
+                    id="offer"
                     required 
                     checked={values.offer}
                     onChange={handleChange}
@@ -93,7 +91,8 @@ function Form() {
                 <span className="form__input-error" id="offer-error">{errors.offer || ''}</span>
 
 
-                <button type="submit" className="form__submit-button" disabled={!isFormValid}><p className="form__button-text">Отправить форму</p></button>
+                <button type="submit" className="form__submit-button" disabled={!isFormValid}><span className="form__button-text">{isSubmitted? 'Ура, форма отправлена!' : 'Отправить форму'}</span></button>
+                <span className="form__wrong-submit"></span>
             </form>
       </div>
     )
