@@ -28,13 +28,20 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
       setTickerState(false);
     }
   }
+  // TODO -- можно КАК-ТО использовать для паузы в бегущей строке
+  // Функция задержки
+  const delay = async (ms) => await new Promise(resolve => setTimeout(resolve, ms));
   
   // Проверяем необходимость запуска бегущей строки при загрузке страницы,
   // предварительно сбрасывая isTickerNeeded на false для выставления "бегущего"
   // элемента в исходное положение.
   useEffect(() => {
+    async function checkIsTickerNeeded() {
+      await delay(2000);
+      handleResize();
+    };
     setTickerState(false);
-    handleResize();
+    checkIsTickerNeeded();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dependence]);
 
@@ -54,9 +61,6 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
   // Добавляем стейт переменную для хранения текущего номера таймера
   const [intervalId, setIntervalId] = useState(null);
   
-  // TODO -- можно КАК-ТО использовать для паузы в бегущей строке
-  // // Функция задержки
-  // const delay = async (ms) => await new Promise(resolve => setTimeout(resolve, ms));
 
   // При изменении isTickerNeeded запускаем или останавливаем бегущую строку
   useEffect(() => {
