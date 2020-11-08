@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import useThrottling from './useThrottling';
 
 /*
 Хук useTicker реализует бегущую строку.
@@ -8,9 +9,11 @@ import { useState, useEffect } from 'react';
 elementRef -- ссылка на элемент, который становится бегущей строкой.
 containerTickerAddClass -- класс, добавляемый в список классов контейнера
       при появлении в нём бегущей строки.
+dependence -- зависимость, при изменении которой снова проверяется необходимость
+      появления бегущей строки.
 */
-function useTicker(elementRef, containerTickerAddClass) {
-  // стейт-переменнуя, определяющая необходимость бегущей строки
+function useTicker(elementRef, containerTickerAddClass, dependence) {
+  // стейт-переменная, определяющая необходимость бегущей строки
   const [isTickerNeeded, setTickerState] = useState(false);
   
   // Обработчик ресайза окна
@@ -25,16 +28,31 @@ function useTicker(elementRef, containerTickerAddClass) {
       setTickerState(false);
     }
   }
+  // TODO -- можно КАК-ТО использовать для паузы в бегущей строке
+  // Функция задержки
+  const delay = async (ms) => await new Promise(resolve => setTimeout(resolve, ms));
   
-  // Проверяем необходимость запуска бегущей строки при загрузке страницы
+  // Проверяем необходимость запуска бегущей строки при загрузке страницы,
+  // предварительно сбрасывая isTickerNeeded на false для выставления "бегущего"
+  // элемента в исходное положение.
+  useEffect(() => {
+    async function checkIsTickerNeeded() {
+      await delay(2000);
+      handleResize();
+    };
+    setTickerState(false);
+    checkIsTickerNeeded();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(handleResize, []);
-  
+  }, [dependence]);
+
+  // Затормаживаем обработку ресайза окна браузера
+  const handleResizeThrottled = useThrottling(handleResize, 1000);
+
   // Добавляем слышатели на ресайз окна
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResizeThrottled);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', handleResizeThrottled);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -42,10 +60,6 @@ function useTicker(elementRef, containerTickerAddClass) {
   // Добавляем стейт переменную для хранения текущего номера таймера
   const [intervalId, setIntervalId] = useState(null);
   
-  // TODO -- можно КАК-ТО использовать для паузы в бегущей строке
-  // // Функция задержки
-  // const delay = async (ms) => await new Promise(resolve => setTimeout(resolve, ms));
-
   // При изменении isTickerNeeded запускаем или останавливаем бегущую строку
   useEffect(() => {
     const element = elementRef.current;
@@ -58,7 +72,7 @@ function useTicker(elementRef, containerTickerAddClass) {
       currentX--;
       element.style.left = `${currentX}px`;
       if (currentX === -elementWidth) {
-        // 10 здесь устанавливает "задержку" в пикселях переде появлением строки справа
+        // 10 здесь устанавливает "задержку" в пикселях перед появлением строки справа
         currentX = elementContainerWidth + 10;
       }
     }
