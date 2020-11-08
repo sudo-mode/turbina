@@ -8,8 +8,10 @@ import { useState, useEffect } from 'react';
 elementRef -- ссылка на элемент, который становится бегущей строкой.
 containerTickerAddClass -- класс, добавляемый в список классов контейнера
       при появлении в нём бегущей строки.
+dependence -- зависимость, при изменении которой снова проверяется необходимость
+      появления бегущей строки.
 */
-function useTicker(elementRef, containerTickerAddClass) {
+function useTicker(elementRef, containerTickerAddClass, dependence) {
   // стейт-переменнуя, определяющая необходимость бегущей строки
   const [isTickerNeeded, setTickerState] = useState(false);
   
@@ -28,7 +30,7 @@ function useTicker(elementRef, containerTickerAddClass) {
   
   // Проверяем необходимость запуска бегущей строки при загрузке страницы
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(handleResize, []);
+  useEffect(handleResize, [dependence]);
   
   // Добавляем слышатели на ресайз окна
   useEffect(() => {
