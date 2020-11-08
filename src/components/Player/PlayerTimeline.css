@@ -4,6 +4,10 @@
   height: 12px;
 }
 
+.player__timeline-container:hover {
+  cursor: pointer;
+}
+
 .player__timeline {
   position: relative;
   width: 100%;
