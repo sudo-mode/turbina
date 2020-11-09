@@ -1,4 +1,4 @@
-// ЗДЕСЬ БУДУТ КАСТОМНЫЕ ОШИБКИ; этот вариант не работает. Попробовать чере setCustomValidity
+// ЗДЕСЬ БУДУТ КАСТОМНЫЕ ОШИБКИ; этот вариант работает. Но нужно исправить тексты!
     export default function setCustomValidity (target) {
         target.setCustomValidity('');
 

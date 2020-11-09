@@ -6,6 +6,7 @@ import setCustomValidity from '../utils/setCustomValidity.js';
 import { api } from '../utils/Api.js';
 
 // TODO: Отправка формы - состояние isSubmitting "Отправляем форму..."
+// TODO: Добавить паттерн для проверки тедефона и почты
 
 function Form() {
 

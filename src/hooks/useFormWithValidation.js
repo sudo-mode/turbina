@@ -40,7 +40,15 @@ function useFormWithValidation(setCustomValidity) {
 
 
     const resetForm = useCallback(
-        (newValues = {}, newErrors = {}, newIsFormValid = false) => {
+        (newValues = {
+            name: '',
+            email: '',
+            tel: '',
+            text: '',
+            offer: false
+        }, 
+        newErrors = {}, 
+        newIsFormValid = false) => {
           setValues(newValues);
           setErrors(newErrors);
           setIsFormValid(newIsFormValid);
