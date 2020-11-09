@@ -46,6 +46,8 @@ function Player () {
   
   return (
     <section className="player">
+      <div className="cover-temp"></div>
+
       <PlayerController
         track={currentTrack}
         isLoaded={isLoaded}

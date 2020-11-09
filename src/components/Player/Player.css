@@ -1,11 +1,15 @@
 .player {
   align-self: end;
   display: grid;
-  grid-template-columns: 36px 1fr min-content 44px;
+  /* grid-template-columns: 36px 1fr min-content 44px; */
+  grid-template-columns: 201px 36px 1fr min-content 44px; /* TODO cover width (cover+margin = 176+25 = 201) */
   grid-template-rows: min-content 1fr;
-  grid-template-areas: 
+  /* grid-template-areas: 
     "player player switcher extend-btn"
-    "  .     info    info       .     ";
+    "  .     info    info       .     "; */
+  grid-template-areas: 
+    "cover player player switcher extend-btn"
+    "cover  .     info    info       .     ";
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -13,6 +17,15 @@
   font-size: 20px;
   line-height: 1.2;
   overflow: hidden;
+}
+
+/* TODO - cover styles */
+.cover-temp {
+  grid-area: cover;
+  width: 176px;
+  height: 176px;
+  background-color: #c4c4c4;
+  border-radius: 4px;
 }
 
 @media screen and (min-width: 1280px) {
@@ -33,6 +46,16 @@
 @media screen and (max-width: 768px) {
   .player {
     margin-bottom: 8px;
+    grid-template-columns: 36px 142px 1fr min-content 44px; /* TODO cover width (112+30=142)*/
+    grid-template-areas: 
+    "player player player switcher extend-btn"
+    "   .   cover   info    info       .     ";
+  }
+
+  .cover-temp {
+    align-self: center;
+    width: 112px;
+    height: 112px;
   }
 }
 
@@ -40,18 +63,27 @@
   .player {
     margin-left: 0;
     margin-right: 0;
+    font-size: 16px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .player {
-    grid-template-rows: min-content min-content 1fr;
+    /* grid-template-rows: min-content min-content 1fr; */
+    grid-template-rows: min-content min-content min-content 1fr; /* TODO cover height*/
     grid-template-columns: 28px 1fr 28px;
     grid-template-areas: 
       "player  player  extend-btn"
+      "  .      cover      .     "
       "  .    switcher     .     "
       "  .      info       .     ";
     margin-bottom: 16px;
     font-size: 14px;
-  }  
+  }
+
+  .cover-temp {
+    justify-self: center;
+    width: 240px;
+    height: 240px;
+  }
 }
