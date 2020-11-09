@@ -7,24 +7,33 @@ import pauseBtn from '../../images/pause-icon.svg';
 import PlayerTimer from './PlayerTimer';
 import useTicker from '../../hooks/useTicker';
 
-function PlayerController ({ track, isLoaded }) {
-  const handlePlayClick = () => {
-    setPlaying(!isPlaying);
-  }
+function PlayerController ({ track }) {
 
   const trackRef = useRef();
-
+  const audioPlayerRef = useRef();
+  
   useTicker(trackRef, 'player__song-container_masked', track);
 
-  const { curTime, duration, isPlaying, setPlaying, setClickedTime } = useAudioPlayer('audio');
+  const { 
+    isPlaying,
+    handlePlayClick,
+    isLoaded,
+    setAudioTime,
+    setAudioData,
+    setClickedTime,
+    curTime,
+    duration
+  } = useAudioPlayer(audioPlayerRef, track);
 
   return (
     <div className="player__controller">
-    {/* TODO -- проверить, куда именно нужно подставлять ссылку для обеспечения возможности
-    переключения треков */}
-      <audio id="audio" src={track.link}>
-        {/* <source src={track.link} /> */}
-      </audio>
+      <audio
+        src={track.link}
+        preload="auto"
+        ref={audioPlayerRef}
+        onLoadedMetadata={setAudioData}
+        onTimeUpdate={setAudioTime}
+      />
       <button
         className="player__control-btn"
         type="button"
@@ -36,13 +45,15 @@ function PlayerController ({ track, isLoaded }) {
           className="player__song"
           ref={trackRef}
         >
-          {isLoaded ? `${track.trackName} — ${track.author}` : 'Загрузка...'}
+          {isLoaded ? `${track.trackName} — ${track.author}` : 'Загрузка...'}          
         </p>
       </div>
-      <PlayerTimer
-        duration={duration}
-        curTime={curTime}
-      />
+      {isLoaded && 
+        <PlayerTimer
+          duration={duration}
+          curTime={curTime}
+        />
+      }
       <PlayerTimeline
         curTime={curTime}
         duration={duration}
