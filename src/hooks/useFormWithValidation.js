@@ -24,6 +24,20 @@ function useFormWithValidation(validationInfo) {
             [name]: isCheckbox ? target.checked : value
         });
 
+    const setCustomValidity = (target) => {
+        if (!target.validity.valid){
+             if (target.validity.valueMissing) {
+                target.setCustomValidity('This is required');
+            } else if (target.validity.tooShort) {
+                target.setCustomValidity('Value should be longer')
+            } 
+        } else {
+            target.setCustomValidity('')
+        }
+    }
+        
+        setCustomValidity(target);
+
         //Старый код с браузерными ошибками
         setErrors({
             ...errors,
