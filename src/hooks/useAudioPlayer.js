@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 audioElementId -- (строка, например 'audio')
 */
 function useAudioPlayer(audioElementId) {
-  const [duration, setDuration] = useState();
+  const [duration, setDuration] = useState(0);
   const [curTime, setCurTime] = useState(0);
   const [isPlaying, setPlaying] = useState(false);
   const [clickedTime, setClickedTime] = useState();
