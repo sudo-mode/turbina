@@ -20,7 +20,6 @@ function useFormWithValidation(setCustomValidity) {
         const value = target.value;
         const isCheckbox = target.type === 'checkbox';
 
-            
         setCustomValidity(target);
 
         setValues({
@@ -28,7 +27,6 @@ function useFormWithValidation(setCustomValidity) {
             [name]: isCheckbox ? target.checked : value
         });
 
-     
         setErrors({
             ...errors,
             [name]: target.validationMessage
@@ -37,7 +35,6 @@ function useFormWithValidation(setCustomValidity) {
 
         setIsFormValid(target.closest('form').checkValidity());
     }
-
 
     const resetForm = useCallback(
         (newValues = {
