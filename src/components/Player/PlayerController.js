@@ -7,7 +7,7 @@ import pauseBtn from '../../images/pause-icon.svg';
 import PlayerTimer from './PlayerTimer';
 import useTicker from '../../hooks/useTicker';
 
-function PlayerController ({ track }) {
+function PlayerController ({ track, isLoaded }) {
   const handlePlayClick = () => {
     setPlaying(!isPlaying);
   }
@@ -22,7 +22,7 @@ function PlayerController ({ track }) {
     <div className="player__controller">
     {/* TODO -- проверить, куда именно нужно подставлять ссылку для обеспечения возможности
     переключения треков */}
-      <audio id="audio" src={track.link} preload="auto">
+      <audio id="audio" src={track.link}>
         <source src={track.link} />
       </audio>
       <button
@@ -36,7 +36,7 @@ function PlayerController ({ track }) {
           className="player__song"
           ref={trackRef}
         >
-          {`${track.trackName} — ${track.author}`}
+          {isLoaded ? `${track.trackName} — ${track.author}` : 'Загрузка...'}
         </p>
       </div>
       <PlayerTimer

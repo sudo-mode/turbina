@@ -4,11 +4,16 @@ import { useState, useEffect } from 'react';
 Хук useAudioPlayer для использования аудиоплеера.
 audioElementId -- (строка, например 'audio')
 */
-function useAudioPlayer(audioElementId) {
+function useAudioPlayer(audioElementId, dependence) {
   const [duration, setDuration] = useState(0);
   const [curTime, setCurTime] = useState(0);
   const [isPlaying, setPlaying] = useState(false);
   const [clickedTime, setClickedTime] = useState();
+
+
+  useEffect(() => {
+    
+  }, [dependence])
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
@@ -22,7 +27,7 @@ function useAudioPlayer(audioElementId) {
     const setAudioTime = () => setCurTime(audio.currentTime);
 
     // Установка DOM listeners: обновление React state по событиям DOM
-    audio.addEventListener('loadeddata', setAudioData);
+    audio.addEventListener('loadedmetadata', setAudioData);
 
     audio.addEventListener('timeupdate', setAudioTime);
 
@@ -36,7 +41,7 @@ function useAudioPlayer(audioElementId) {
 
     // Снятие слушателей
     return () => {
-      audio.removeEventListener('loadeddata', setAudioData);
+      audio.removeEventListener('loadedmetadata', setAudioData);
       audio.removeEventListener('timeupdate', setAudioTime);
     }
   });
