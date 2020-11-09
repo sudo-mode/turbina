@@ -56,9 +56,8 @@ function Form() {
                   type="tel" 
                   name="tel" 
                   placeholder="Телефон" 
-                  required 
-                  minLength="6" 
-                  maxLength="50" 
+                  required
+                  pattern="^[ 0-9]+$"
                   value={values.tel || ''}
                   onChange={handleChange}
                 />
@@ -70,6 +69,9 @@ function Form() {
                   name="email" 
                   placeholder="Почта" 
                   required 
+                  minLength="6" 
+                  maxLength="50" 
+                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
                   value={values.email || ''}
                   onChange={handleChange}
                 />
