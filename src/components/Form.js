@@ -40,7 +40,7 @@ function Form() {
                 <p className="text__paragraph form__text">Заполняя эту форму, вы становитесь частью проекта.</p>
 
                 <input 
-                  className="form__input form__input_name"
+                  className={errors.name? 'form__input form__input_name form__input_invalid' : 'form__input form__input_name'}
                   name="name" 
                   placeholder="Имя и фамилия автора" 
                   required 

@@ -18,47 +18,39 @@ function useFormWithValidation(validationInfo) {
         const value = target.value;
         const isCheckbox = target.type === 'checkbox';
 
+        const setCustomValidity = (target) => {
+            target.setCustomValidity('');
+
+            if (!target.validity.valid){
+                 if (target.validity.valueMissing) {
+                    target.setCustomValidity('Это поле обязательно');
+                } else if (target.validity.tooShort) {
+                    target.setCustomValidity(`Введенное значение должно быть длинее ${target.minLength} символов`);
+                } else if (target.validity.tooLong) {
+                    target.setCustomValidity(`Введенное значение должно быть короче ${target.maxLength} символов`)
+                } else if (target.validity.patternMismatch) {
+                    target.setCustomValidity('Неверное значение')
+                } 
+            } 
+        }
+            
+        setCustomValidity(target);
 
         setValues({
             ...values,
             [name]: isCheckbox ? target.checked : value
         });
 
-    const setCustomValidity = (target) => {
-        if (!target.validity.valid){
-             if (target.validity.valueMissing) {
-                target.setCustomValidity('This is required');
-            } else if (target.validity.tooShort) {
-                target.setCustomValidity('Value should be longer')
-            } 
-        } else {
-            target.setCustomValidity('')
-        }
-    }
-        
-        setCustomValidity(target);
-
-        //Старый код с браузерными ошибками
+     
         setErrors({
             ...errors,
             [name]: target.validationMessage
         });
 
+
         setIsFormValid(target.closest('form').checkValidity());
     }
 
-    // function handleNameChange(evt) {
-    //     setValues({
-    //         ...values,
-    //         [evt.target.name]: evt.target.value
-    //     })
-
-    //     if (evt.target.validity.valueMissing) {
-    //         evt.target.setCustomValidity("It is required"); 
-    //       } else {
-    //         evt.target.setCustomValidity("");
-    //       }
-    // }
 
     const resetForm = useCallback(
         (newValues = {}, newErrors = {}, newIsFormValid = false) => {
