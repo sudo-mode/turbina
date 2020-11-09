@@ -23,7 +23,7 @@ function PlayerController ({ track, isLoaded }) {
     {/* TODO -- проверить, куда именно нужно подставлять ссылку для обеспечения возможности
     переключения треков */}
       <audio id="audio" src={track.link}>
-        <source src={track.link} />
+        {/* <source src={track.link} /> */}
       </audio>
       <button
         className="player__control-btn"

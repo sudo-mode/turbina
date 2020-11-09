@@ -10,18 +10,13 @@ function useAudioPlayer(audioElementId, dependence) {
   const [isPlaying, setPlaying] = useState(false);
   const [clickedTime, setClickedTime] = useState();
 
-
-  useEffect(() => {
-    
-  }, [dependence])
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const audio = document.getElementById(audioElementId);
     // Обёртка для стейт-сеттеров
     const setAudioData = () => {
       setDuration(audio.duration);
-      setCurTime(audio.currentTime);
+      // setCurTime(audio.currentTime);
     }
 
     const setAudioTime = () => setCurTime(audio.currentTime);
