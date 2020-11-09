@@ -10,6 +10,7 @@
   color: #000;
   font-weight: 400;
   border-radius: 10px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
 /* Адаптивная верстка  */
@@ -20,7 +21,7 @@
     }
 }
 
-  @media screen and (max-width:768px) {
+@media screen and (max-width:768px) {
     .info-container {
       margin-top: -8px;
     }
@@ -30,4 +31,4 @@
     .info-container {
       padding: 80px 20px;
     }
-  }
+}
