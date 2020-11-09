@@ -2,7 +2,7 @@ import React from 'react';
 import './Form.css';
 import pdfUrl from '../vendor/offer.pdf';
 import useFormWithValidation from '../hooks/useFormWithValidation.js';
-import validationInfo from '../utils/validationInfo.js';
+import setCustomValidity from '../utils/setCustomValidity.js';
 import { api } from '../utils/Api.js';
 
 // TODO: Отправка формы - состояние isSubmitting "Отправляем форму..."
@@ -10,7 +10,7 @@ import { api } from '../utils/Api.js';
 
 function Form() {
 
-    const { values, handleChange, errors, isFormValid, resetForm } = useFormWithValidation(validationInfo);
+    const { values, handleChange, errors, isFormValid, resetForm } = useFormWithValidation(setCustomValidity);
     const [isSubmitted, setIsSubmitted] = React.useState(false);
     const [isErrorVisible, setIsErrorVisible] = React.useState(false);
 
