@@ -9,8 +9,10 @@
                 target.setCustomValidity(`Введенное значение должно быть длинее ${target.minLength} символов`);
             } else if (target.validity.tooLong) {
                 target.setCustomValidity(`Введенное значение должно быть короче ${target.maxLength} символов`)
-            } else if (target.validity.patternMismatch) {
-                target.setCustomValidity('Неверное значение')
+            } else if (target.name === 'email' & target.validity.patternMismatch) {
+                target.setCustomValidity('Неверное значение: почта должна быть введена в формате "example@mail.ru"')
+            } else if (target.name === 'tel' & target.validity.patternMismatch) {
+                target.setCustomValidity('Неверное значение: телефон может содержать только цифры')
             } 
         } 
     }
