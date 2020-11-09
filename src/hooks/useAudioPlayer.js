@@ -3,50 +3,53 @@ import { useState, useEffect } from 'react';
 /*
 Хук useAudioPlayer для использования аудиоплеера.
 audioElementId -- (строка, например 'audio')
+track -- трек из списка песен, устанавливается в качестве зависимости 
+        (useEffect при смене трека)
 */
-function useAudioPlayer(audioElementId, dependence) {
+function useAudioPlayer(audioPlayerRef, track) {
+  const [isLoaded, setLoadedState] = useState(false);
+
   const [duration, setDuration] = useState(0);
   const [curTime, setCurTime] = useState(0);
   const [isPlaying, setPlaying] = useState(false);
   const [clickedTime, setClickedTime] = useState();
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const handlePlayClick = () => {
+    setPlaying(!isPlaying);
+    isPlaying ? audioPlayerRef.current.pause() : audioPlayerRef.current.play();
+  }
+
+  const setAudioData = () => {
+    setDuration(audioPlayerRef.current.duration);
+    setCurTime(audioPlayerRef.current.currentTime);
+    setLoadedState(true);
+  }
+
+  const setAudioTime = () => setCurTime(audioPlayerRef.current.currentTime);
+  
   useEffect(() => {
-    const audio = document.getElementById(audioElementId);
-    // Обёртка для стейт-сеттеров
-    const setAudioData = () => {
-      setDuration(audio.duration);
-      // setCurTime(audio.currentTime);
-    }
-
-    const setAudioTime = () => setCurTime(audio.currentTime);
-
-    // Установка DOM listeners: обновление React state по событиям DOM
-    audio.addEventListener('loadedmetadata', setAudioData);
-
-    audio.addEventListener('timeupdate', setAudioTime);
-
-    // React state listeners: обновление DOM поизменению React state 
-    isPlaying ? audio.play() : audio.pause();
-
     if (clickedTime && clickedTime !== curTime) {
-      audio.currentTime = clickedTime;
+      audioPlayerRef.current.currentTime = clickedTime;
       setClickedTime(null);
     } 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [clickedTime]);
 
-    // Снятие слушателей
-    return () => {
-      audio.removeEventListener('loadedmetadata', setAudioData);
-      audio.removeEventListener('timeupdate', setAudioTime);
-    }
-  });
+  useEffect(() => {
+    setCurTime(0);
+    setLoadedState(false);
+    setPlaying(false);
+  }, [track]);
 
   return {
-    curTime,
-    duration,
     isPlaying,
-    setPlaying,
-    setClickedTime
+    handlePlayClick,
+    isLoaded,
+    setAudioTime,
+    setAudioData,
+    setClickedTime,
+    curTime,
+    duration
   }
 }
 
