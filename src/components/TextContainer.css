@@ -1,9 +1,8 @@
-/* TODO -- объединить медиазапросы в файлах. */
-
 /* Компонент Текст */
 .text {
     max-width: 750px;
     margin-right: auto;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
 .text__heading {
@@ -16,35 +15,6 @@
     margin-bottom: 40px;
 }
 
-
-/* Адаптивная верстка  */
-@media screen and (max-width:1024px) {
-    .text__heading {
-        font-size: 46px;
-    }
-    
-    .text {
-      max-width: 694px;
-    }
-  }
-
-@media screen and (max-width:768px) {
-    .text__heading {
-        font-size: 42px;
-    }
-
-    .text {
-      max-width: 100%;
-    }
-}
-  
-@media screen and (max-width:480px) {
-    .text__heading {
-        font-size: 32px;
-        margin-bottom: 32px;
-    }
-  }
-
 .text__paragraph {
     margin-top: 0;
     margin-bottom: 90px;
@@ -54,22 +24,6 @@
 
 .text__paragraph:first-of-type {
     margin-bottom: 25px;
-}
-
-@media screen and (max-width:1024px) {
-    .text__paragraph {
-        margin-bottom: 80px;
-        font-size: 15px;
-        line-height: 1.5;
-    }
-}
-
-@media screen and (max-width:480px) {
-    .text__paragraph {
-        margin-bottom: 60px;
-        font-size: 12px;
-        line-height: 1.4;
-    }
 }
 
 .text__list {
@@ -85,3 +39,46 @@
 .text__list-item:last-of-type {
     margin-bottom: 0;
 }
+
+
+/* Адаптивная верстка  */
+@media screen and (max-width:1024px) {
+    .text {
+        max-width: 694px;
+    }
+    
+    .text__heading {
+        font-size: 46px;
+    }
+
+    .text__paragraph {
+        margin-bottom: 80px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .text {
+        max-width: 100%;
+    }
+    
+    .text__heading {
+        font-size: 42px;
+    } 
+}
+  
+@media screen and (max-width:480px) {
+    .text__heading {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    .text__paragraph {
+        margin-bottom: 60px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
+
+

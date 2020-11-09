@@ -37,7 +37,7 @@ function Form() {
         <div className="form-container">
         <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
                 <h2 className="form__heading">Форма</h2>
-                <p className="text__paragraph form__text">Заполняя эту форму, вы становитесь частью проекта.</p>
+                <p className="form__text">Заполняя эту форму, вы становитесь частью проекта.</p>
 
                 <input 
                   className={errors.name? 'form__input form__input_name form__input_invalid' : 'form__input form__input_name'}
@@ -109,7 +109,7 @@ function Form() {
 
 
                 <button type="submit" className="form__submit-button" disabled={!isFormValid}><span className="form__button-text">{isSubmitted? 'Ура, форма отправлена!' : 'Отправить форму'}</span></button>
-                <span className="form__wrong-submit">{isErrorVisible? 'Упс, что-то пошло не так!' : ''}</span>
+                <span className="form__wrong-submit">{isErrorVisible? 'Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!' : ''}</span>
             </form>
       </div>
     )
