@@ -52,14 +52,10 @@
     line-height: 1.4;
 }
 
-.text__paragraph_double {
-    margin-top: 0;
+
+.text__paragraph:first-of-type {
     margin-bottom: 25px;
-    font-size: 16px;
-    line-height: 1.4;
 }
-
-
 
 @media screen and (max-width:1024px) {
     .text__paragraph {

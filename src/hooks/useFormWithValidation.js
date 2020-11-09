@@ -1,7 +1,9 @@
 import { useState, useCallback } from 'react';
-import validationInfo from '../utils/validationInfo';
+import setCustomValidity from '../utils/setCustomValidity';
 
-function useFormWithValidation(validationInfo) {
+//TODO: написать handleBlur
+
+function useFormWithValidation(setCustomValidity) {
     const [values, setValues] = useState({
         name: '',
         email: '',
@@ -18,36 +20,32 @@ function useFormWithValidation(validationInfo) {
         const value = target.value;
         const isCheckbox = target.type === 'checkbox';
 
+        setCustomValidity(target);
 
         setValues({
             ...values,
             [name]: isCheckbox ? target.checked : value
         });
 
-        //Старый код с браузерными ошибками
         setErrors({
             ...errors,
             [name]: target.validationMessage
         });
 
+
         setIsFormValid(target.closest('form').checkValidity());
     }
 
-    // function handleNameChange(evt) {
-    //     setValues({
-    //         ...values,
-    //         [evt.target.name]: evt.target.value
-    //     })
-
-    //     if (evt.target.validity.valueMissing) {
-    //         evt.target.setCustomValidity("It is required"); 
-    //       } else {
-    //         evt.target.setCustomValidity("");
-    //       }
-    // }
-
     const resetForm = useCallback(
-        (newValues = {}, newErrors = {}, newIsFormValid = false) => {
+        (newValues = {
+            name: '',
+            email: '',
+            tel: '',
+            text: '',
+            offer: false
+        }, 
+        newErrors = {}, 
+        newIsFormValid = false) => {
           setValues(newValues);
           setErrors(newErrors);
           setIsFormValid(newIsFormValid);
