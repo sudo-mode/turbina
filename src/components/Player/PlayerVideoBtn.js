@@ -1,14 +1,12 @@
-import './PlayerVideo.css';
+import './PlayerVideoBtn.css';
 import cn from 'classnames';
 
 function PlayerVideo({ videoLink }) {
-
-  const playeVideLink = cn('player__video-link', { 'player__video-link_active': videoLink });
-  console.log('videoLink', videoLink)
+  const playerVideoLink = cn('player__video-link', { 'player__video-link_active': videoLink });
 
   return (
     <a
-      className={playeVideLink}
+      className={playerVideoLink}
       href={videoLink}
       target="_blank"
       rel="noreferrer"

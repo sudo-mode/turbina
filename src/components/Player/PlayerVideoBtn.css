@@ -1,5 +1,4 @@
 .player__video-link {
-  grid-area: video;
   width: intrinsic;           
   width: -moz-max-content;    
   width: -webkit-max-content; 
@@ -9,7 +8,7 @@
   font-size: 16px;
   display: none;
   padding: 4px 20px 0 14px;
-  margin: -4px 10px 0 20px;
+  margin-right: 10px;
   text-decoration: none;
   font-weight: 500;
   box-sizing: border-box;
@@ -21,7 +20,7 @@
 }
 
 .player__video-link_active {
-  display: block;
+  display: inline-block;
 }
 
 .player__video-link:hover {
@@ -50,19 +49,18 @@
 @media screen and (max-width: 1024px) {
   .player__video-link {
     height: 34px;
-    margin-top: -6px;
     font-size: 15px;
     padding-top: 5px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .player__video-link {
+    flex-grow: 1;
     height: 30px;
-    margin-top: 22px;
-    margin-bottom: 20px;
-    margin-left: 0;
-    margin-right: 15px;
+    padding-right: 15px;
+    padding-left: 10px;
+    margin-right: 5px;
     font-size: 12px;
   }
 

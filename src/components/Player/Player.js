@@ -4,12 +4,12 @@ import PlayerController from './PlayerController';
 import PlayerSwitcher from './PlayerSwitcher';
 import PlayerExtendBtn from './PlayerExtendBtn';
 import PlayerInfoContainer from './PlayerInfoContainer';
-import PlayerVideo from './PlayerVideo';
+import PlayerVideoBtn from './PlayerVideoBtn';
 import tracks from '../../db/tracks';
 import PlayerCover from './PlayerCover';
 
 function Player () {
-  const [isPlayerExtend, setPlayerState] = useState(false);
+  const [isPlayerExtend, setPlayerState] = useState(true);
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const [isTextInfo, setTextInfo] = useState(false);
 
@@ -47,15 +47,15 @@ function Player () {
         currentTrack={currentTrack}
       />
       {isPlayerExtend &&
-      <>
-        <PlayerVideo 
+      <div className="player__buttons-wrapper">
+        <PlayerVideoBtn 
           videoLink={currentTrack.videoLink}
         />   
         <PlayerSwitcher
           onClick={handlePlayerSwitcherClick}
           isTextInfo={isTextInfo}
         />
-      </>
+      </div>
       }
     </section>
   )

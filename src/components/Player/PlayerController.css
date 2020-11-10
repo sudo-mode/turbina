@@ -2,7 +2,7 @@
   grid-area: player;
   height: 100%;
   display: grid;
-  grid-template-columns: 16px 1fr min-content;
+  grid-template-columns: 15px 1fr min-content;
   grid-template-rows: min-content min-content;
   gap: 6px 20px;
   align-items: center;
