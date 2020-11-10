@@ -39,6 +39,8 @@ function PlayerInfoContent({ tracks, isOpen, isTextInfo, currentTrack, onTrackCl
               <li key={track.id} className='player__track-item'>
                 <PlayerTrack
                   key={track.id}
+                  trackId = {track.id}
+                  currentTrack={currentTrack}
                   track={track}
                   onTrackClick={onTrackClick}
                   inList={true}
