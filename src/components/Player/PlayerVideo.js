@@ -13,6 +13,7 @@ function PlayerVideo({ videoLink }) {
       target="_blank"
       rel="noreferrer"
     >
+      <span className='player__video-icon'></span><span className='player__video-btn-text'>Клип</span>
     </a>
 
   )
