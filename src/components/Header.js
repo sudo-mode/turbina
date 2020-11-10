@@ -87,11 +87,12 @@ function Header() {
             onClick={handleServiceButtonClick}
           >
             <Transition
-              items={isLinksHidden ? "Стриминги": <LinksCloseIcon/>}
+              items={isLinksHidden ? "Стриминги" : <LinksCloseIcon />}
               from={{ opacity: 0 }}
               enter={{ opacity: 1 }}
               initial={{ opacity: 1 }}
               config={{ mass: 1, tension: 140, friction: 30 }}
+              keys={() => isLinksHidden ? 1 : 2} // убираем лишние рендеры для animated.span
             >
               {(values, item) => (
                 <animated.span style={values}>{item}</animated.span>
