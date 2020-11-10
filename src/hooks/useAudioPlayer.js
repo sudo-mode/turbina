@@ -19,13 +19,19 @@ function useAudioPlayer(audioPlayerRef, track) {
     isPlaying ? audioPlayerRef.current.pause() : audioPlayerRef.current.play();
   }
 
-  const setAudioData = () => {
+  const handleLoadedMetaData = () => {
     setDuration(audioPlayerRef.current.duration);
     setCurTime(audioPlayerRef.current.currentTime);
     setLoadedState(true);
   }
 
-  const setAudioTime = () => setCurTime(audioPlayerRef.current.currentTime);
+  const handleTimeUpdate = () => setCurTime(audioPlayerRef.current.currentTime);
+
+  const handleTrackEnded = () => {
+    setDuration(audioPlayerRef.current.duration);
+    setCurTime(0);
+    handlePlayClick();
+  }
   
   useEffect(() => {
     if (clickedTime && clickedTime !== curTime) {
@@ -38,16 +44,16 @@ function useAudioPlayer(audioPlayerRef, track) {
   useEffect(() => {
     setCurTime(0);
     setLoadedState(false);
-    setPlaying(false);
   }, [track]);
 
   return {
     isPlaying,
     handlePlayClick,
     isLoaded,
-    setAudioTime,
-    setAudioData,
+    handleTimeUpdate,
+    handleLoadedMetaData,
     setClickedTime,
+    handleTrackEnded,
     curTime,
     duration
   }
