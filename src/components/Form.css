@@ -89,8 +89,6 @@
 
 .form__input_radio:hover + .form__pseudo-item {
     cursor: pointer;
-    background-color: #00000040; 
-    transition: background-color .4s ease-out;
 }
 
 .form__submit-button {

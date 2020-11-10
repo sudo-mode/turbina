@@ -46,6 +46,7 @@ function Form() {
                   required 
                   minLength="2" 
                   maxLength="40" 
+                  pattern="^[А-Яа-яЁё\s]+$"
                   value={values.name || ''}
                   onChange={handleChange}
                 />
@@ -57,7 +58,7 @@ function Form() {
                   name="tel" 
                   placeholder="Телефон" 
                   required
-                  pattern="^[ 0-9]+$"
+                  pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
                   value={values.tel || ''}
                   onChange={handleChange}
                 />
