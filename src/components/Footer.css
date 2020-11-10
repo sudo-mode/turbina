@@ -20,6 +20,7 @@
   display: inline-block;
   color: #fff;
   transition: transform .2s ease-out;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .footer__link:hover {

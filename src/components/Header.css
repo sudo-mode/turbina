@@ -16,6 +16,7 @@
 .marshak-link {
   display: block;  
   transition: box-shadow .2s ease-out;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .marshak-link:hover {
@@ -58,6 +59,7 @@
   border: 2px solid #fff;
   border-radius: 30px;
   transition: box-shadow .2s ease-out;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .stream-services__link-container:last-child {
@@ -100,6 +102,7 @@
     box-shadow .2s ease-out, 
     max-width .3s linear,
     min-width .3s linear;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .stream-services__button:focus {
