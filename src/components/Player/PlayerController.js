@@ -18,9 +18,10 @@ function PlayerController ({ track }) {
     isPlaying,
     handlePlayClick,
     isLoaded,
-    setAudioTime,
-    setAudioData,
+    handleTimeUpdate,
+    handleLoadedMetaData,
     setClickedTime,
+    handleTrackEnded,
     curTime,
     duration
   } = useAudioPlayer(audioPlayerRef, track);
@@ -31,8 +32,9 @@ function PlayerController ({ track }) {
         src={track.link}
         preload="auto"
         ref={audioPlayerRef}
-        onLoadedMetadata={setAudioData}
-        onTimeUpdate={setAudioTime}
+        onLoadedMetadata={handleLoadedMetaData}
+        onTimeUpdate={handleTimeUpdate}
+        onEnded={handleTrackEnded}
       />
       <button
         className="player__control-btn"

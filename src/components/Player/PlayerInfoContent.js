@@ -2,7 +2,7 @@ import './PlayerInfoContent.css';
 import PlayerTrack from './PlayerTrack';
 import { useState, useEffect } from 'react';
 
-function PlayerInfoContent({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick }) {
+function PlayerInfoContent({ tracks, isTextInfo, currentTrack, onTrackClick }) {
 
   const [contentStyle, setContentStyle] = useState('player__content');
 
