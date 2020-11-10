@@ -1,16 +1,14 @@
 .player__switcher {
-  grid-area: switcher;
   width: 135px;
   height: 35px;
+  margin-right: 2px;
   border: 2px solid #fff;
   border-radius: 20px;
   background: center no-repeat transparent;
-  margin-left: 10px;
-  margin-top: -4px;
   font-size: 16px;
   line-height: 1;
   color: #fff;
-  display: block;
+  display: inline-block;
   transition: box-shadow .2s ease-out;
   -webkit-tap-highlight-color: transparent;
 }
@@ -45,19 +43,15 @@
   .player__switcher {
     width: 125px;
     height: 34px;
-    margin-top: -6px;
     font-size: 15px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .player__switcher {
-    width: 100%;
-    min-width: 125px;
+    flex-grow: 1;
+    min-width: 160px;
     height: 30px;
-    margin-top: 22px;
-    margin-bottom: 20px;
-    margin-left: 0;
     font-size: 12px;
   }
 }

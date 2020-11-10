@@ -75,8 +75,8 @@
 
 @media screen and (max-width: 1024px) {
   .player__info-container {
-    max-height: 102px;
-    padding-top: 20px;
+    max-height: 100px;
+    padding-top: 22px;
   }
 
   .player__scroll-box-track {
@@ -94,9 +94,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .player__info-container {
-    padding-top: 20px;
-  }
+
   
   .player__scroll-box {
     mask-image: -webkit-linear-gradient(
@@ -110,7 +108,7 @@
 
 @media screen and (max-width: 480px) {
   .player__info-container {
-    max-height: 88px;
+    max-height: 86px;
     padding-top: 8px;
     padding-bottom: 8px;
   }
