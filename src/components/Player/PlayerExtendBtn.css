@@ -7,6 +7,7 @@
   height: 24px;
   background: center no-repeat transparent;
   justify-self: end;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .player__extend-btn:hover {

@@ -61,6 +61,7 @@
   
 .form__input-label {
     margin-top: 34px;
+    -webkit-tap-highlight-color: transparent;
 }
   
 .form__label-text {
@@ -71,6 +72,7 @@
 
 .form__offer-link {
     color: #000;
+    /* -webkit-tap-highlight-color: transparent; */
 }
 
 .form__pseudo-item {
@@ -104,6 +106,7 @@
     font-size: 16px;
     line-height: 1.2;
     transition: background-color 0.4s ease-out;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .form__submit-button:hover {

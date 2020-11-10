@@ -20,6 +20,7 @@
   width: 16px;
   height: 20px;
   background: center no-repeat transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .player__control-btn:hover {

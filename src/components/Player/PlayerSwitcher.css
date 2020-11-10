@@ -12,6 +12,10 @@
   color: #fff;
   display: block;
   transition: box-shadow .2s ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.player__switcher:hover {
   cursor: pointer;
 }
 
