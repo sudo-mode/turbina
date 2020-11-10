@@ -8,7 +8,7 @@ import tracks from '../../db/tracks';
 import PlayerCover from './PlayerCover';
 
 function Player () {
-  const [isPlayerExtend, setPlayerState] = useState(true);
+  const [isPlayerExtend, setPlayerState] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const [isTextInfo, setTextInfo] = useState(false);
 

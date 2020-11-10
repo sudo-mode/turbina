@@ -35,7 +35,6 @@
   .player {
     margin-bottom: 8px;
     grid-template-columns: 35px min-content 1fr min-content 44px;
-    grid-row-gap: 20px;
     grid-template-areas: 
     "player player player switcher extend-btn"
     "   .   cover   info    info       .     ";
