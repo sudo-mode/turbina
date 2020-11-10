@@ -1,0 +1,48 @@
+.cover-wrapper {
+  grid-area: cover;
+  padding-right: 26px;
+  margin-top: -4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cover {
+  width: 176px;
+  padding-bottom: 100%;
+  border-radius: 4px;
+  background-color: #c4c4c4;
+}
+
+@media screen and (max-width: 1024px) {
+  .cover-wrapper {
+    margin-top: -6px;
+  }
+
+  .cover {
+    width: 164px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cover-wrapper {
+    margin-top: -5px;
+    padding-right: 30px;
+  }
+  
+  .cover {
+    width: 112px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cover-wrapper {
+    justify-self: center;
+    max-width: 240px;
+    padding-right: 0;
+    margin-top: 0;
+  }
+  
+  .cover {
+    width: 100%;
+  }
+}

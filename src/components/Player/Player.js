@@ -5,6 +5,7 @@ import PlayerSwitcher from './PlayerSwitcher';
 import PlayerExtendBtn from './PlayerExtendBtn';
 import PlayerInfoContainer from './PlayerInfoContainer';
 import tracks from '../../db/tracks';
+import PlayerCover from './PlayerCover';
 
 function Player () {
   const [isPlayerExtend, setPlayerState] = useState(true);
@@ -25,8 +26,9 @@ function Player () {
   
   return (
     <section className="player">
-      <div className="cover-temp"></div>
-
+      <PlayerCover
+        image={currentTrack.image}
+      />
       <PlayerController
         track={currentTrack}
       />
