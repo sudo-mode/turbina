@@ -41,7 +41,6 @@
 .player__track_info:hover {
   cursor: pointer;
   font-style: italic;
-  text-shadow: 0 0 4px white;
 }
 
 .player__track:active, .player__track:focus {
