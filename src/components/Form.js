@@ -10,7 +10,7 @@ import { api } from '../utils/Api.js';
 
 function Form() {
 
-    const { values, handleChange, errors, isFormValid, resetForm } = useFormWithValidation(setCustomValidity);
+    const { values, handleChange, errors, isFormValid, resetForm, handleBlur } = useFormWithValidation(setCustomValidity);
     const [isSubmitted, setIsSubmitted] = React.useState(false);
     const [isErrorVisible, setIsErrorVisible] = React.useState(false);
 
@@ -49,6 +49,7 @@ function Form() {
                   pattern="^[А-Яа-яЁё\s]+$"
                   value={values.name || ''}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
                 <span className="form__input-error" id="name-error">{errors.name || ''}</span>
 
@@ -61,6 +62,7 @@ function Form() {
                   pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
                   value={values.tel || ''}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
                 <span className="form__input-error" id="phone-error">{errors.tel || ''}</span>
 
@@ -75,6 +77,7 @@ function Form() {
                   pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
                   value={values.email || ''}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 />
                 <span className="form__input-error" id="email-error">{errors.email || ''}</span>
 
@@ -82,11 +85,12 @@ function Form() {
                 <textarea 
                   className={errors.text? 'form__textarea form__input form__input_invalid' : 'form__textarea form__input'}
                   name="text" 
-                  minLength="50" 
+                  minLength="30" 
                   placeholder="Стихи" 
                   required
                   value={values.text || ''}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                 >
                 </textarea>
                 <span className="form__input-error" id="text-error">{errors.text || ''}</span>
