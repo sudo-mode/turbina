@@ -96,6 +96,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .player__info-container {
+    padding-top: 0;
+  }
+  
   .player__scroll-box {
     mask-image: -webkit-linear-gradient(
     top,
