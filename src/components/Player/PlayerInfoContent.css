@@ -7,6 +7,13 @@
   opacity: 1;
 }
 
+.player__info-header {
+  margin: 0 0 16px 0;
+  font-weight: 400;
+  font-style: italic;
+  padding-top: 2px;
+}
+
 .player__tracks {
   list-style-type: none;
   padding: 0;
@@ -25,28 +32,12 @@
 }
 
 .player__text-line:last-child {
-  padding-bottom: 14px;
-}
-
-.player__info-header {
-  margin: 0 0 16px 0;
-  font-weight: 400;
-  font-style: italic;
+  padding-bottom: 22px;
 }
 
 @media screen and (max-width: 1024px) {
   .player__info-header {
     margin-bottom: 15px;
-  }
-
-  .player__text-line:last-child {
-    padding-bottom: 12px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .player__text-line:last-child {
-    padding-bottom: 10px;
   }
 }
 

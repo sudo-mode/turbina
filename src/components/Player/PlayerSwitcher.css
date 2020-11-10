@@ -5,7 +5,7 @@
   border: 2px solid #fff;
   border-radius: 20px;
   background: center no-repeat transparent;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-top: -4px;
   font-size: 16px;
   line-height: 1;
@@ -55,7 +55,8 @@
     width: 100%;
     min-width: 125px;
     height: 30px;
-    margin-top: 0;
+    margin-top: 22px;
+    margin-bottom: 20px;
     margin-left: 0;
     font-size: 12px;
   }
