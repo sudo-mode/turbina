@@ -26,9 +26,11 @@ function Player () {
   
   return (
     <section className="player">
-      <PlayerCover
-        image={currentTrack.image}
-      />
+      {isPlayerExtend && 
+        <PlayerCover
+          image={currentTrack.image}
+        />
+      }
       <PlayerController
         track={currentTrack}
       />
@@ -43,10 +45,12 @@ function Player () {
         isTextInfo={isTextInfo}
         currentTrack={currentTrack}
       />
-      {isPlayerExtend && <PlayerSwitcher
-        onClick={handlePlayerSwitcherClick}
-        isTextInfo={isTextInfo}
-      />}
+      {isPlayerExtend && 
+        <PlayerSwitcher
+          onClick={handlePlayerSwitcherClick}
+          isTextInfo={isTextInfo}
+        />
+      }
     </section>
   )
 }
