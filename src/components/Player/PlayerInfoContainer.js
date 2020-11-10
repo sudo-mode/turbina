@@ -67,6 +67,7 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
         renderThumbVertical={renderThumb}
         renderTrackVertical={renderTrack}
         renderTrackHorizontal={renderTrackHorizontal}
+        hideTracksWhenNotNeeded={true}
       >
         < PlayerInfoContent
           tracks={tracks}

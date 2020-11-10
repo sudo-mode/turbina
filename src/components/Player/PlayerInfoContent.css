@@ -7,6 +7,13 @@
   opacity: 1;
 }
 
+.player__info-header {
+  margin: 0 0 16px 0;
+  font-weight: 400;
+  font-style: italic;
+  padding-top: 2px;
+}
+
 .player__tracks {
   list-style-type: none;
   padding: 0;
@@ -28,11 +35,7 @@
   padding-bottom: 14px;
 }
 
-.player__info-header {
-  margin: 0 0 16px 0;
-  font-weight: 400;
-  font-style: italic;
-}
+
 
 @media screen and (max-width: 1024px) {
   .player__info-header {

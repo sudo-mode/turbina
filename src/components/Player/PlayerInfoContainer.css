@@ -17,15 +17,13 @@
 }
 
 .player__scroll-box {
-  padding-top: 4px;
-  padding-bottom: 10px;
   width: calc(100% + 60px);
   mask-image: -webkit-linear-gradient(
   top,
   rgba(0, 0, 0, 0) 0%,
   rgba(0,0,0,1) 8%,
-  rgba(0,0,0,1) 78%,
-  rgba(0,0,0,0) 80%);
+  rgba(0,0,0,1) 105px,
+  rgba(0,0,0,0) 110px);
 }
 
 .player__scroll-box-thumb {

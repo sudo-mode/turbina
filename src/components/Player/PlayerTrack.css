@@ -4,7 +4,7 @@
 }
 
 .player__track-item:last-child {
-  padding-bottom: 4px;
+  padding-bottom: 12px;
 }
 
 .player__track {
@@ -49,7 +49,7 @@
   }
 
   .player__track-item:last-child {
-    padding-bottom: 0;
+    padding-bottom: 0px;
   }
 }
 
