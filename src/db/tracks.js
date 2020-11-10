@@ -1,20 +1,33 @@
 const tracks = [
   {
     id: '№7',
-    group: 'Хадн Дадн',
+    group: '',
     trackName: 'Контур',
-    author: 'Хадн Дадн feat. Варя Карпова и Федя Быстров',
-    text: `Мой милый милый мальчик,
-    Моя милая милая девочка,
-    Никогда не знаешь что будет дальше
-    В этой гадкой зиме`,
-    link: 'https://ds.cdn5.mzmdl.com/cuts/d9/c4/d9c4b23a86693374ab703d4680faeec2/47842886/The_xx_-_Crystalised_b128f0d202.mp3'
+    author: 'Хадн Дадн',
+    originalAuthor: 'Варя Карпова и Федя Быстров',
+    text: `Мой милый милый мальчик`,
+    link: 'https://ds.cdn5.mzmdl.com/cuts/d9/c4/d9c4b23a86693374ab703d4680faeec2/47842886/The_xx_-_Crystalised_b128f0d202.mp3',
+    videoLink: 'https://www.youtube.com/watch?v=p2xFqtgwhrU',
+  },
+  {
+    id: '№5',
+    group: '',
+    trackName: 'Лодка',
+    author: 'СПБЧ',
+    originalAuthor: 'Маруся Романова',
+    text: `Маруся Романова
+    Маруся Романова
+    Маруся Романова
+    Маруся Романова
+    Маруся Романова`,
+    link: 'https://cdn5.mzmdl.com/music/20140917/The_XX_-_Intro_17025777.mp3'
   },
   {
     id: '№8',
     group: '',
     trackName: 'Вот такие крошка дела,ты меня так долго ждала',
     author: 'Илья Подстрелов',
+    originalAuthor: '',
     text: `Ты говорила мне, что любишь очень.
 И намекала всё, что замуж хочешь.
 На свадьбах у друзей бывала часто,
@@ -54,6 +67,7 @@ const tracks = [
     group: '',
     trackName: 'Клубника Бомба',
     author: 'NikoLife & Miravi',
+    originalAuthor: '',
     text: `Клубника бомба, честно говоря
     Источник text-pesni.com
     
@@ -131,6 +145,7 @@ const tracks = [
     group: 'Супер-мега-трек для тестирования бегущей строки (Нажми меня) Инди группа Инди группа Инди группа Инди группа',
     trackName: 'Кирпичи',
     author: 'Супер-мега-трек для тестирования бегущей строки (Нажми меня) Инди группа Инди группа Инди группа Инди группа feat. Петр Сковородников',
+    originalAuthor: '',
     text: `Петр Сковородников
     Петр Сковородников
     Петр Сковородников
@@ -140,22 +155,11 @@ const tracks = [
     link: 'https://ds.cdn2.mzmdl.com/cuts/5c/20/5c20b3d7bdb714fd5c3ec8fdd234af53/48005088/Daft_Punk_-_Instant_Crush_b128f0d337.mp3'
   },
   {
-    id: '№5',
-    group: 'СПБЧ',
-    trackName: 'Лодка',
-    author: 'СПБЧ feat. Маруся Романова',
-    text: `Маруся Романова
-    Маруся Романова
-    Маруся Романова
-    Маруся Романова
-    Маруся Романова`,
-    link: 'https://cdn5.mzmdl.com/music/20140917/The_XX_-_Intro_17025777.mp3'
-  },
-  {
     id: '№9',
     group: 'Хадн Дадн',
     trackName: 'Час Орущего Евгена! [Черновик]',
     author: 'Badcomedian',
+    originalAuthor: '',
     text: `AAAAAAAAAAAAAAAAAAAAAAAAAAA
     AAAAAAAAAAAAAAAAAAAAAAAAAAA
     AAAAAAAAAAAAAAAAAAAAAA`,

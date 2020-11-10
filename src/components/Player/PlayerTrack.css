@@ -4,7 +4,7 @@
 }
 
 .player__track-item:last-child {
-  padding-bottom: 4px;
+  padding-bottom: 8px;
 }
 
 .player__track {
@@ -17,6 +17,15 @@
   overflow: hidden;
   transition: transform .2s ease-out, text-shadow 0.2s ease-out, opacity .5s ease-in-out;
   margin-bottom: 16px;
+  font-weight: 400;
+}
+
+.player__feat {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.player__track_checked {
   font-weight: 500;
 }
 
@@ -31,16 +40,12 @@
 
 .player__track_info:hover {
   cursor: pointer;
-  transform: skewX(-9deg);
+  font-style: italic;
   text-shadow: 0 0 4px white;
 }
 
 .player__track:active, .player__track:focus {
   outline: none;
-}
-
-.player__track_feat {
-  font-style: italic;
 }
 
 @media screen and (max-width: 1024px) {
@@ -49,7 +54,7 @@
   }
 
   .player__track-item:last-child {
-    padding-bottom: 0;
+    padding-bottom: 8px;
   }
 }
 
