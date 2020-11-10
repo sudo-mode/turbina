@@ -97,7 +97,7 @@
 
 @media screen and (max-width: 768px) {
   .player__info-container {
-    padding-top: 0;
+    padding-top: 20px;
   }
   
   .player__scroll-box {
