@@ -17,15 +17,13 @@
 }
 
 .player__scroll-box {
-  padding-top: 4px;
-  padding-bottom: 10px;
   width: calc(100% + 60px);
   mask-image: -webkit-linear-gradient(
   top,
   rgba(0, 0, 0, 0) 0%,
   rgba(0,0,0,1) 8%,
-  rgba(0,0,0,1) 78%,
-  rgba(0,0,0,0) 80%);
+  rgba(0,0,0,1) 106px,
+  rgba(0,0,0,0) 114px);
 }
 
 .player__scroll-box-thumb {
@@ -90,8 +88,8 @@
     top,
     rgba(0, 0, 0, 0) 0%,
     rgba(0,0,0,1) 8%,
-    rgba(0,0,0,1) 80%,
-    rgba(0,0,0,0) 82%);
+    rgba(0,0,0,1) 92px,
+    rgba(0,0,0,0) 98px);
   }
 }
 
@@ -105,8 +103,8 @@
     top,
     rgba(0, 0, 0, 0) 0%,
     rgba(0,0,0,1) 4%,
-    rgba(0,0,0,1) 80%,
-    rgba(0,0,0,0) 82%);
+    rgba(0,0,0,1) 92px,
+    rgba(0,0,0,0) 96px);
   }
 }
 
@@ -115,5 +113,13 @@
     max-height: 88px;
     padding-top: 8px;
     padding-bottom: 8px;
+  }
+  .player__scroll-box {
+    mask-image: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0,0,0,1) 4%,
+    rgba(0,0,0,1) 80px,
+    rgba(0,0,0,0) 84px);
   }
 }

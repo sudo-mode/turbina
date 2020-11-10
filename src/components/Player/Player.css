@@ -1,11 +1,11 @@
 .player {
   align-self: end;
   display: grid;
-  grid-template-columns: min-content 36px 1fr min-content 44px;
+  grid-template-columns: min-content 36px 1fr min-content min-content 44px;
   grid-template-rows: min-content 1fr;
   grid-template-areas: 
-    "cover player player switcher extend-btn"
-    "cover  .     info    info       .     ";
+    "cover player player video  switcher extend-btn"
+    "cover    .   info   info    info        .     ";
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
@@ -34,10 +34,10 @@
 @media screen and (max-width: 768px) {
   .player {
     margin-bottom: 8px;
-    grid-template-columns: 35px min-content 1fr min-content 44px;
+    grid-template-columns: 35px min-content 1fr min-content min-content 44px;
     grid-template-areas: 
-    "player player player switcher extend-btn"
-    "   .   cover   info    info       .     ";
+    "player player player video switcher extend-btn"
+    "   .   cover   info  info    info        .    ";
   }
 }
 
@@ -52,12 +52,12 @@
 @media screen and (max-width: 480px) {
   .player {
     grid-template-rows: min-content min-content min-content 1fr;
-    grid-template-columns: 26px 1fr 26px;
+    grid-template-columns: 26px min-content 1fr 26px;
     grid-template-areas: 
-      "player  player  extend-btn"
-      "  .      cover      .     "
-      "  .    switcher     .     "
-      "  .      info       .     ";
+      "player  player  player  extend-btn "
+      "  .     cover   cover       .      "
+      "  .     video   switcher    .      "
+      "  .     info    info        .      ";
     margin-bottom: 16px;
     font-size: 14px;
   }

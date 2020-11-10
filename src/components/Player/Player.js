@@ -4,6 +4,7 @@ import PlayerController from './PlayerController';
 import PlayerSwitcher from './PlayerSwitcher';
 import PlayerExtendBtn from './PlayerExtendBtn';
 import PlayerInfoContainer from './PlayerInfoContainer';
+import PlayerVideo from './PlayerVideo';
 import tracks from '../../db/tracks';
 import PlayerCover from './PlayerCover';
 
@@ -45,11 +46,16 @@ function Player () {
         isTextInfo={isTextInfo}
         currentTrack={currentTrack}
       />
-      {isPlayerExtend && 
+      {isPlayerExtend &&
+      <>
+        <PlayerVideo 
+          videoLink={currentTrack.videoLink}
+        />   
         <PlayerSwitcher
           onClick={handlePlayerSwitcherClick}
           isTextInfo={isTextInfo}
         />
+      </>
       }
     </section>
   )
