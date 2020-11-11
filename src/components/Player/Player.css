@@ -12,6 +12,8 @@
   font-size: 20px;
   line-height: 1.2;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .player__buttons-wrapper {
