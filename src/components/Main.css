@@ -1,8 +1,9 @@
 .main {
   position: relative;
   height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 15px 5px;
   box-sizing: border-box;
   color: #fff;

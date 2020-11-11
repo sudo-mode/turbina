@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import './Main.css';
 import Header from './Header';
 import ProjectLogo from './ProjectLogo';
@@ -8,8 +7,6 @@ import Player from './Player/Player';
 function Main () {
   const [isPlayerExtend, setPlayerState] = useState(false);
 
-  const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
-
   const onPlayerExtend = () => {
     setPlayerState(!isPlayerExtend);
   }
@@ -17,10 +14,7 @@ function Main () {
   return (
     <section className="main">
       <Header />
-      <ProjectLogo 
-        isMobile={isMobile}
-        isPlayerExtend={isPlayerExtend}
-      />
+      <ProjectLogo />
       <Player
         isPlayerExtend={isPlayerExtend}
         onPlayerExtend={onPlayerExtend}
