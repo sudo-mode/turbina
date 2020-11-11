@@ -6,7 +6,6 @@
   padding: 10px 20px 0;
   box-sizing: border-box;
   position: absolute;
-  z-index: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -15,7 +14,6 @@
 
 .title_blur {
   filter: blur(3px);
-  z-index: -1;
 }
 
 .title__logo {
