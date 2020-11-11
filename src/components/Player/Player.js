@@ -7,14 +7,29 @@ import PlayerInfoContainer from './PlayerInfoContainer';
 import PlayerVideoBtn from './PlayerVideoBtn';
 import tracks from '../../db/tracks';
 import PlayerCover from './PlayerCover';
+import { useSpring, animated } from 'react-spring';
 
 function Player () {
-  const [isPlayerExtend, setPlayerState] = useState(true);
+  const [isPlayerExtend, setPlayerState] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const [isTextInfo, setTextInfo] = useState(false);
+  const [isExtendElementsMounted, setIsExtendElementsMounted] = useState(false);
+
+  const extendPlayerAnimationConfig = useSpring({
+    from: { opacity: .1, scale: 0.8 },
+    to: { opacity: isPlayerExtend ? 1 : 0.1, scale: isPlayerExtend ? 1 : 0.8 },
+    config: { duration: 250 },
+    delay: !isPlayerExtend ? 100 : 0,
+    onRest: () => {
+      if (!isPlayerExtend) {
+        setIsExtendElementsMounted(false)
+      }
+    } 
+  });
 
   const handleExtendClick = () => {
     setPlayerState(!isPlayerExtend);
+    setIsExtendElementsMounted(true);
   }
 
   const handleTrackClick = (track) => {
@@ -24,15 +39,19 @@ function Player () {
   const handlePlayerSwitcherClick = () => {
     setTextInfo(!isTextInfo);
   }
+
+  const AnimatedPlayerCover = animated(PlayerCover);
   
   return (
     <section className="player">
-      {isPlayerExtend && 
-        <PlayerCover
+      {isExtendElementsMounted && 
+        <AnimatedPlayerCover
           image={currentTrack.image}
+          style={extendPlayerAnimationConfig}
         />
       }
       <PlayerController
+        isPlayerExtend={isPlayerExtend}
         track={currentTrack}
       />
       <PlayerExtendBtn
@@ -46,16 +65,19 @@ function Player () {
         isTextInfo={isTextInfo}
         currentTrack={currentTrack}
       />
-      {isPlayerExtend &&
-      <div className="player__buttons-wrapper">
-        <PlayerVideoBtn 
-          videoLink={currentTrack.videoLink}
-        />   
-        <PlayerSwitcher
-          onClick={handlePlayerSwitcherClick}
-          isTextInfo={isTextInfo}
-        />
-      </div>
+      {isExtendElementsMounted &&
+        <animated.div 
+          className="player__buttons-wrapper"
+          style={extendPlayerAnimationConfig}
+        >
+          <PlayerVideoBtn 
+            videoLink={currentTrack.videoLink}
+          />   
+          <PlayerSwitcher
+            onClick={handlePlayerSwitcherClick}
+            isTextInfo={isTextInfo}
+          />
+        </animated.div>
       }
     </section>
   )

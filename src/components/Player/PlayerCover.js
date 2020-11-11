@@ -1,8 +1,8 @@
 import './PlayerCover.css';
 
-const PlayerCover = ({ image }) => {
+const PlayerCover = ({ image, style }) => {
   return (
-    <div className="cover-wrapper">
+    <div className="cover-wrapper" style={style}>
       <div
         className="cover"
         style={{ backgroundImage: `url(${image})` }}
