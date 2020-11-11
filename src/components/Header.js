@@ -1,6 +1,6 @@
 import './Header.css';
+import './Blur.css';
 import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import cn from 'classnames';
 import StreamServiceLink from './StreamServiceLink';
 import logoHeader from '../images/marshak-logo.png';
@@ -8,12 +8,12 @@ import { marshakLink, serviceLinks } from '../configs/links';
 import { useTrail, animated, Transition } from 'react-spring';
 import LinksCloseIcon from './svg/LinksCloseIcon';
 
-function Header({ isPlayerExtend }) {
-  const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
+function Header({ isPlayerExtend, isMobile }) {
+
   /* TODO - дописать комментарий к этим стейтам */
   const [isLinksMounted, setIsLinksMounted] = useState(false);
   const [isLinksHidden, setIsLinksHidden] = useState(true);
-  const headerStyle = cn("header", { "header_blur": isPlayerExtend && isMobile})
+  const headerStyle = cn("header", { "blur": isPlayerExtend && isMobile})
 
   const handleServiceButtonClick = () => {
     setIsLinksHidden(!isLinksHidden);

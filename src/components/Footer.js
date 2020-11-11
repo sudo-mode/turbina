@@ -1,8 +1,13 @@
 import './Footer.css';
+import './Blur.css';
+import cn from 'classnames';
 
-function Footer() {
+function Footer({ isPlayerExtend, isMobile }) {
+
+  const footerStyle = cn("footer", { "blur": isPlayerExtend && isMobile })
+
   return (
-    <footer className="footer">
+    <footer className={footerStyle}>
       <p className="footer__item">&copy; Маршак, 2020.</p>
       <p className="footer__item">
         Сделано студентами&#8196;
