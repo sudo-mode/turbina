@@ -1,3 +1,29 @@
+# Проект Турбина на React
+
+Песни, которые придумали дети
+
+Frontend проекта выполнен студентами Яндекс.Практикум
+
+## Технологический стек
+
+* HTML;
+* CSS;
+* JavaScript;
+* React;
+
+
+## Реализация проекта
+
+Турбина - это веб-приложение с возможностью прослушивания музыки, написанное на React. Вся функциональность проекта работает в популярных браузерах и на популярных устройствах. Реализована адаптивная верстка.
+
+## Инструкция по развертыванию проекта
+
+* Клонирование репозитория: `git clone https://github.com/dariaovch/mesto-react.git`
+* Установка зависимостей: `npm install`
+* Запуск develop-сборки: `npm start`
+* Запуск production-сборки: `npm run build`
+* Выложить проект на сервер: `npm run deploy`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
