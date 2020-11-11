@@ -6,7 +6,7 @@
   min-height: 100vh;
   padding: 0 10px;
   box-sizing: border-box;
-  background: center / cover url('../images/background.png');
+  /* background: center / cover url('../images/background.png'); */
   background-attachment: fixed;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
 }

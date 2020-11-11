@@ -4,6 +4,7 @@ import Header from './Header';
 import ProjectLogo from './ProjectLogo';
 import Player from './Player/Player';
 
+
 function Main () {
   const [isPlayerExtend, setPlayerState] = useState(false);
 
@@ -13,8 +14,12 @@ function Main () {
 
   return (
     <section className="main">
-      <Header />
-      <ProjectLogo />
+      <Header
+        isPlayerExtend={isPlayerExtend}
+      />
+      <ProjectLogo
+        isPlayerExtend={isPlayerExtend}
+      />
       <Player
         isPlayerExtend={isPlayerExtend}
         onPlayerExtend={onPlayerExtend}
