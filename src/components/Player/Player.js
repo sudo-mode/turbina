@@ -9,12 +9,13 @@ import tracks from '../../db/tracks';
 import PlayerCover from './PlayerCover';
 import { useSpring, animated } from 'react-spring';
 
-function Player () {
-  const [isPlayerExtend, setPlayerState] = useState(false);
+
+function Player ({ isPlayerExtend, onPlayerExtend }) {
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const [isTextInfo, setTextInfo] = useState(false);
   const [isExtendElementsMounted, setIsExtendElementsMounted] = useState(false);
 
+  // TODO -- вынести в хук использование спринг
   const extendPlayerAnimationConfig = useSpring({
     from: { opacity: .1, scale: 0.8 },
     to: { opacity: isPlayerExtend ? 1 : 0.1, scale: isPlayerExtend ? 1 : 0.8 },
@@ -28,7 +29,8 @@ function Player () {
   });
 
   const handleExtendClick = () => {
-    setPlayerState(!isPlayerExtend);
+    onPlayerExtend();
+    console.log('from handleextend')
     setIsExtendElementsMounted(true);
   }
 

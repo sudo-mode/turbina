@@ -1,8 +1,20 @@
 .title {
   align-self: center;
   margin: 0 auto;
+  width: 100%;
   max-width: 720px;
   padding: 0 12px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title_mobile-extended-player {
+  position: fixed;
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .title__logo {
