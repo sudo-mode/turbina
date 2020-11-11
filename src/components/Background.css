@@ -11,6 +11,6 @@
   left: 0;
 }
 
-.background_blur {
-  background-image: url('../images/background-blur.jpg'); 
-}
+/* .background_blur {
+  backdrop-filter: blur(3px);
+} */

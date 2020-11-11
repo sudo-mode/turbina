@@ -6,6 +6,7 @@ import Info from './Info';
 import Footer from './Footer';
 import Background from './Background';
 import Blur from './Blur';
+import backgroundBlur from '../images/background-blur.jpg';
 
 function App() {
   const [isPlayerExtend, setPlayerState] = useState(false);
@@ -29,6 +30,7 @@ function App() {
         <Background
           isPlayerExtend={isPlayerExtend}
           isMobile={isMobile}
+          backgroundBlur={backgroundBlur}
         />
         <Blur
           isPlayerExtend={isPlayerExtend}
