@@ -10,7 +10,7 @@ import PlayerCover from './PlayerCover';
 import { useSpring, animated } from 'react-spring';
 
 
-function Player ({ isPlayerExtend, onPlayerExtend }) {
+function Player ({ isPlayerExtend, onPlayerExtend, style }) {
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const [isTextInfo, setTextInfo] = useState(false);
   const [isExtendElementsMounted, setIsExtendElementsMounted] = useState(false);
@@ -20,7 +20,7 @@ function Player ({ isPlayerExtend, onPlayerExtend }) {
     from: { opacity: .1, scale: 0.8 },
     to: { opacity: isPlayerExtend ? 1 : 0.1, scale: isPlayerExtend ? 1 : 0.8 },
     config: { duration: 250 },
-    delay: !isPlayerExtend ? 100 : 0,
+    // delay: !isPlayerExtend ? 100 : 0,
     onRest: () => {
       if (!isPlayerExtend) {
         setIsExtendElementsMounted(false)
@@ -44,7 +44,7 @@ function Player ({ isPlayerExtend, onPlayerExtend }) {
   const AnimatedPlayerCover = animated(PlayerCover);
   
   return (
-    <section className="player">
+    <section className="player" style={style}>
       {isExtendElementsMounted && 
         <AnimatedPlayerCover
           image={currentTrack.image}
@@ -59,13 +59,15 @@ function Player ({ isPlayerExtend, onPlayerExtend }) {
         isOpen={isPlayerExtend}
         onClick={handleExtendClick}
       />
-      <PlayerInfoContainer
+      {isPlayerExtend && 
+        <PlayerInfoContainer
         isOpen={isPlayerExtend}
         onTrackClick={handleTrackClick}
         tracks={tracks}
         isTextInfo={isTextInfo}
         currentTrack={currentTrack}
-      />
+        />
+      }
       {isExtendElementsMounted &&
         <animated.div 
           className="player__buttons-wrapper"
