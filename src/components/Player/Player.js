@@ -30,7 +30,6 @@ function Player ({ isPlayerExtend, onPlayerExtend }) {
 
   const handleExtendClick = () => {
     onPlayerExtend();
-    console.log('from handleextend')
     setIsExtendElementsMounted(true);
   }
 

@@ -7,12 +7,15 @@ import pauseBtn from '../../images/pause-icon.svg';
 import PlayerTimer from './PlayerTimer';
 import useTicker from '../../hooks/useTicker';
 
-function PlayerController ({ track }) {
-
+function PlayerController ({ isPlayerExtend, track }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();
   
-  useTicker(trackRef, 'player__song-container_masked', track);
+  useTicker({
+    elementRef: trackRef,
+    containerTickerAddClass: 'player__song-container_masked',
+    dependences: [track, isPlayerExtend]
+  });
 
   const { 
     isPlaying,
@@ -47,7 +50,10 @@ function PlayerController ({ track }) {
           className="player__song"
           ref={trackRef}
         >
-          {isLoaded ? `${track.trackName} — ${track.author}` : 'Загрузка...'}          
+          {isLoaded
+            ? <>{track.trackName} — {track.author}<span> feat. </span>{track.originalAuthor}</>
+            : 'Загрузка...'
+          }          
         </p>
       </div>
       {isLoaded && 
