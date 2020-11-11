@@ -9,8 +9,6 @@
   z-index: -5;
   top: 0;
   left: 0;
-  -webkit-transition: background-image .5s ease-in-out;
-  transition: background-image .5s ease-in-out;
 }
 
 .background_blur {
