@@ -1,7 +1,9 @@
 .main {
+  position: relative;
   height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 15px 5px;
   box-sizing: border-box;
   color: #fff;
@@ -10,11 +12,5 @@
 @media screen and (max-width: 600px) {
   .main {
     padding: 8px;
-  }
-}
-
-@media screen and (max-height: 650px) {
-  .main {
-    grid-template-rows: 2fr 1fr 2fr;
   }
 }

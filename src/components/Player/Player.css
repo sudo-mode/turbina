@@ -1,5 +1,4 @@
 .player {
-  align-self: end;
   display: grid;
   grid-template-columns: min-content 35px 1fr max-content 42px;
   grid-template-rows: min-content 1fr;

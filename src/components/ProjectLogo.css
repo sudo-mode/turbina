@@ -1,8 +1,14 @@
 .title {
   align-self: center;
   margin: 0 auto;
-  max-width: 720px;
-  padding: 0 12px;
+  width: 100%;
+  max-width: 760px;
+  padding: 10px 20px 0;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .title__logo {
@@ -11,12 +17,12 @@
 
 @media screen and (max-width: 1024px) {
   .title {
-    max-width: 600px;
+    max-width: 640px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .title {
-    max-width: 620px;
+    max-width: 660px;
   }
 }
