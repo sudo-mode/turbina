@@ -12,10 +12,6 @@
   transition: filter .5s ease-in-out;
 }
 
-.title_blur {
-  filter: blur(3px);
-}
-
 .title__logo {
   width: 100%;
 }

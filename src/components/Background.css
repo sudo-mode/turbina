@@ -9,3 +9,7 @@
   top: 0;
   left: 0;
 }
+
+.background_blur {
+  filter: blur(3px);
+}
