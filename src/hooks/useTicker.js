@@ -9,10 +9,10 @@ import useThrottling from './useThrottling';
 elementRef -- ссылка на элемент, который становится бегущей строкой.
 containerTickerAddClass -- класс, добавляемый в список классов контейнера
       при появлении в нём бегущей строки.
-dependence -- зависимость, при изменении которой снова проверяется необходимость
-      появления бегущей строки.
+dependences -- массив зависимостей, при изменении которых снова проверяется 
+      необходимость появления бегущей строки.
 */
-function useTicker(elementRef, containerTickerAddClass, dependence) {
+function useTicker({ elementRef, containerTickerAddClass, dependences }) {
   // стейт-переменная, определяющая необходимость бегущей строки
   const [isTickerNeeded, setTickerState] = useState(false);
   
@@ -43,7 +43,7 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
     setTickerState(false);
     checkIsTickerNeeded();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dependence]);
+  }, dependences);
 
   // Затормаживаем обработку ресайза окна браузера
   const handleResizeThrottled = useThrottling(handleResize, 1000);
@@ -81,7 +81,7 @@ function useTicker(elementRef, containerTickerAddClass, dependence) {
     
     if (isTickerNeeded) {
       elementContainer.classList.add(containerTickerAddClass);
-      const currentIntervalId = setInterval(startTicker, 10);
+      const currentIntervalId = setInterval(startTicker, 13);
       setIntervalId(currentIntervalId)
     } else {
       elementContainer.classList.remove(containerTickerAddClass);
