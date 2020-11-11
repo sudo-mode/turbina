@@ -7,6 +7,7 @@ import pauseBtn from '../../images/pause-icon.svg';
 import PlayerTimer from './PlayerTimer';
 import useTicker from '../../hooks/useTicker';
 
+
 function PlayerController ({ isPlayerExtend, track }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();

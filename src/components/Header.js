@@ -8,11 +8,12 @@ import { marshakLink, serviceLinks } from '../configs/links';
 import { useTrail, animated, Transition } from 'react-spring';
 import LinksCloseIcon from './svg/LinksCloseIcon';
 
-function Header() {
+function Header({ isPlayerExtend }) {
   const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
   /* TODO - дописать комментарий к этим стейтам */
   const [isLinksMounted, setIsLinksMounted] = useState(false);
   const [isLinksHidden, setIsLinksHidden] = useState(true);
+  const headerStyle = cn("header", { "header_blur": isPlayerExtend && isMobile})
 
   const handleServiceButtonClick = () => {
     setIsLinksHidden(!isLinksHidden);
@@ -30,10 +31,10 @@ function Header() {
     config: { mass: 1, tension: 200, friction: 18 },
     to: {
       opacity: !isLinksHidden ? 1 : 0,
-      x: !isLinksHidden ? 0: -50
+      x: !isLinksHidden ? 0 : -50
     },
-    from: { 
-      opacity: 0, 
+    from: {
+      opacity: 0,
       x: -50
     },
     reverse: isLinksHidden,
@@ -63,7 +64,7 @@ function Header() {
   });
 
   return (
-    <header className="header">
+    <header className={headerStyle}>
       <a
         className="marshak-link header__logo"
         href={marshakLink}
