@@ -28,6 +28,7 @@
     padding: 20px 0;
     border: none;
     border-bottom: 2px solid #000;
+    border-radius: 0;
     -webkit-tap-highlight-color: transparent;
     -webkit-border-radius: 0px;
 }
@@ -117,6 +118,14 @@
 
 .form__submit-button:focus {
     outline: none;
+}
+
+.form__submit-button:disabled {
+    box-shadow: none;
+    background-color: #fff;
+    color: #00000070;
+    cursor: auto;
+    font-style: normal;
 }
 
 .form__input-error {

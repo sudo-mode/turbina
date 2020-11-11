@@ -37,11 +37,11 @@ function useFormWithValidation(setCustomValidity) {
     }
 
     //Возможность убрать ошибку при снятии фокуса с инпута, TODO: решить, как юзабельнее
-    function handleBlur() {
-        const newErrors = {};
+    // function handleBlur() {
+    //     const newErrors = {};
 
-        setErrors(newErrors);
-    }
+    //     setErrors(newErrors);
+    // }
 
     const resetForm = useCallback(
         (newValues = {
@@ -61,7 +61,7 @@ function useFormWithValidation(setCustomValidity) {
       );
 
 
-    return { values, handleChange, errors, isFormValid, resetForm, handleBlur }
+    return { values, handleChange, errors, isFormValid, resetForm }
 }
 
 export default useFormWithValidation;
