@@ -20,3 +20,9 @@
     padding: 0 5px;
   }
 }
+
+@supports (-webkit-touch-callout: none) {
+  .page {
+    background-attachment: initial;
+  }
+}
