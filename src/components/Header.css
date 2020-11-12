@@ -25,6 +25,11 @@
   box-shadow: 0 6px 6px #ffffff40;
 }
 
+.marshak-link:focus {
+  outline: none;
+  box-shadow: 0 6px 6px #ffffff40;
+}
+
 .marshak-logo {
   display: block;
   width: 50px;
@@ -85,6 +90,11 @@
 
 .stream-services__link:hover {
   transform: skewX(-9deg);
+}
+
+.stream-services__link:focus {
+  outline: none;
+  box-shadow: 0 0 8px 4px #ffffff40;
 }
 
 .stream-services__button {
