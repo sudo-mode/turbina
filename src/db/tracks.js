@@ -1,4 +1,32 @@
+import madconbeggin from './audio/madconbeggin.mp3';
+import Navai from './audio/Navai.mp3';
+import Crystalised from './audio/The XX - Crystalised.mp3';
+import Infinity_ from './audio/The XX - Infinity .mp3';
+import Ilya from './audio/Илья Подстрелов – Вот такие крошка дела,ты меня так долго ждала_(muztron.club).mp3';
+import klubnika from './audio/nikolife-miravi-klubnika-bomba.mp3';
+import daftPunkFeat from './audio/daft-punk-feat.-julian-casablancas-instant-crush.mp3';
+
 const tracks = [
+  {
+    id: '№13',
+    group: '',
+    trackName: 'madconbeggin.mp3',
+    author: 'madconbeggin.mp3',
+    originalAuthor: 'audio1',
+    text: ``,
+    link: madconbeggin,
+    videoLink: '',
+  },
+  {
+    id: '№14',
+    group: '',
+    trackName: 'Чёрный Мерен.mp3',
+    author: 'Navai',
+    originalAuthor:' audio2',
+    text: ``,
+    link: Navai,
+    videoLink: '',
+  },
   {
     id: '№7',
     group: '',
@@ -6,7 +34,7 @@ const tracks = [
     author: 'Хадн Дадн',
     originalAuthor: 'Варя Карпова и Федя Быстров',
     text: `Мой милый милый мальчик`,
-    link: 'https://ds.cdn5.mzmdl.com/cuts/d9/c4/d9c4b23a86693374ab703d4680faeec2/47842886/The_xx_-_Crystalised_b128f0d202.mp3',
+    link: Crystalised,
     videoLink: 'https://www.youtube.com/watch?v=p2xFqtgwhrU',
   },
   {
@@ -20,7 +48,7 @@ const tracks = [
     Маруся Романова
     Маруся Романова
     Маруся Романова`,
-    link: 'https://cdn5.mzmdl.com/music/20140917/The_XX_-_Intro_17025777.mp3'
+    link: Infinity_
   },
   {
     id: '№8',
@@ -60,7 +88,7 @@ const tracks = [
 Ты меня так долго ждала.
 Я серьезных дел не боюсь,
 Возьму и женюсь!`,
-    link: 'https://cdn5.mzmdl.com/cuts/c7/28/c728e6ee24a1d8d0dfb09e918c892319/65086189/Ilya_Podstrelov_-_Vot_takie_kroshka_delaty_menya_tak_dolgo_zhdala_b128f0d196.mp3'
+    link: Ilya
   },
   {
     id: '№6',
@@ -138,7 +166,7 @@ const tracks = [
     Понравился текст песни?
     Оставьте комментарий ниже
     Читать на сайте: https://text-pesni.com/khel`,
-    link: 'https://ds.cdn2.mzmdl.com/music/20201107/NikoLife_MIRAVI_-_KLUBNIKA-BOMBA_71524894.mp3'
+    link: klubnika
   },
   {
     id: '№4',
@@ -152,18 +180,7 @@ const tracks = [
     Петр Сковородников
     Петр Сковородников
     Петр Сковородников`,
-    link: 'https://ds.cdn2.mzmdl.com/cuts/5c/20/5c20b3d7bdb714fd5c3ec8fdd234af53/48005088/Daft_Punk_-_Instant_Crush_b128f0d337.mp3'
-  },
-  {
-    id: '№9',
-    group: 'Хадн Дадн',
-    trackName: 'Час Орущего Евгена! [Черновик]',
-    author: 'Badcomedian',
-    originalAuthor: '',
-    text: `AAAAAAAAAAAAAAAAAAAAAAAAAAA
-    AAAAAAAAAAAAAAAAAAAAAAAAAAA
-    AAAAAAAAAAAAAAAAAAAAAA`,
-    link: 'https://r4---sn-n8v7kn7r.googlevideo.com/videoplayback?expire=1604871479&ei=1xCoX6bDBNzf7QS-mIGwDQ&ip=178.154.228.14&id=o-AHJYsdmC7_heEwbuiOE460RY_6MtVM-aBi3orThMSL8j&itag=18&source=youtube&requiressl=yes&pcm2=no&vprv=1&mime=video%2Fmp4&gir=yes&clen=179537548&ratebypass=yes&dur=3617.831&lmt=1540420701226991&fvip=4&beids=9466586&c=WEB&txp=5531432&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cpcm2%2Cvprv%2Cmime%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&sig=AOq0QJ8wRgIhAL1DFftiObyIGhhw-5CbJ36wlCkJmRTr8_6yRyjoW3yqAiEA5hI_YFUYrbmJZQ9ZZyj-KyobUmE2dXZW5WGBGiqoAWo%3D&redirect_counter=1&rm=sn-n8vr67z&fexp=9466586&req_id=edba30e4800ea3ee&cms_redirect=yes&ipbypass=yes&mh=C1&mip=46.39.51.220&mm=31&mn=sn-n8v7kn7r&ms=au&mt=1604849799&mv=m&mvi=4&pl=19&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgPjx2HGhVtKEaEy3c1kk29y5MrJ7CakIxgnHXeZ2FiFICIQCi-yuYnHEdbGQt1CjL-EAZ9-t1CCnzC-aQ6KHkcAuTCg%3D%3D'
+    link: daftPunkFeat,
   },
 ]
 
