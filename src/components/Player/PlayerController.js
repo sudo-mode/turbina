@@ -52,7 +52,11 @@ function PlayerController ({ isPlayerExtend, track }) {
           ref={trackRef}
         >
           {isLoaded
-            ? <>{track.trackName} — {track.author}<span> feat. </span>{track.originalAuthor}</>
+            ? <>
+                {track.trackName} — {track.author}
+                <span className="player__song-accent"> feat. </span>
+                {track.originalAuthor}
+              </>
             : 'Загрузка...'
           }          
         </p>

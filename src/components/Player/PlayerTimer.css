@@ -1,10 +1,17 @@
 .player__timer {
   grid-area: timer;
+  margin-left: 8px;
   font-weight: 400;
 }
 
 @media screen and (max-width: 1024px) {
   .player__timer {
     align-self: start;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .player__timer {
+    margin-left: 15px;
   }
 }

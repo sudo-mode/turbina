@@ -9,18 +9,18 @@
   margin-right: 10px;
   margin-bottom: 10px;
   padding-top: 15px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 1.2;
   overflow: hidden;
   position: relative;
   z-index: 1;
-
 }
 
 .player__buttons-wrapper {
   grid-area: buttons;
   margin-top: -4px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 @media screen and (min-width: 1280px) {
@@ -58,27 +58,22 @@
 
 @media screen and (max-width: 600px) {
   .player {
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .player {
     grid-template-rows: min-content min-content 1fr;
     grid-template-columns: 35px min-content 1fr 44px;
     grid-template-areas:
       "player  player  player  extend-btn "
       "  .    buttons  buttons     .      "
       "  .     cover    info       .      ";
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 16px;
   }
 
   .player__buttons-wrapper {
     display: flex;
     justify-content: space-between;
-    margin-top: 22px;
-    margin-bottom: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     margin-left: 0;
   }
 }
@@ -94,5 +89,10 @@
       "  .     info    info        .      ";
     margin-bottom: 16px;
     font-size: 14px;
+  }
+
+  .player__buttons-wrapper {
+    margin-top: 22px;
+    margin-bottom: 22px;
   }
 }
