@@ -49,12 +49,6 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .player__switcher {
-     /* margin-right: 0; */
-  }
-}
-
 @media screen and (max-width: 600px) {
   .player__switcher {
     flex-grow: 1;

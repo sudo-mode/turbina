@@ -1,8 +1,8 @@
 .cover-wrapper {
   grid-area: cover;
+  width: 100%;
   padding-right: 26px;
   margin-top: -4px;
-  width: 100%;
   box-sizing: border-box;
 }
 
