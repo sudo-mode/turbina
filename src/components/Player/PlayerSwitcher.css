@@ -1,6 +1,8 @@
 .player__switcher {
   width: 135px;
   height: 35px;
+  box-sizing: border-box;
+  padding: 0 6px;
   margin-right: 2px;
   border: 2px solid #fff;
   border-radius: 20px;
@@ -8,11 +10,9 @@
   font-size: 16px;
   line-height: 1;
   color: #fff;
-  display: inline-block;
   transition: box-shadow .2s ease-out;
   -webkit-tap-highlight-color: transparent;
-  padding: 0 6px;
-  box-sizing: border-box;
+  display: inline-block;
 }
 
 .player__switcher:hover {
@@ -46,6 +46,12 @@
     width: 125px;
     height: 34px;
     font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .player__switcher {
+     /* margin-right: 0; */
   }
 }
 

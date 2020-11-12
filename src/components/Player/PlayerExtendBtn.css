@@ -3,9 +3,9 @@
   padding: 0;
   border: none;
   outline: none;
-  width: 24px;
-  height: 24px;
-  background: center no-repeat transparent;
+  width: 30px;
+  height: 30px;
+  background: top right no-repeat transparent;
   justify-self: end;
   -webkit-tap-highlight-color: transparent;
 }
