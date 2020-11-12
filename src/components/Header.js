@@ -1,33 +1,42 @@
 import './Header.css';
 import './Blur.css';
-import { useState } from 'react';
-// import { useMediaQuery } from 'react-responsive';
+import { useEffect, useState } from 'react';
+import { useTrail, animated, Transition } from 'react-spring';
 import cn from 'classnames';
 import StreamServiceLink from './StreamServiceLink';
-import logoHeader from '../images/marshak-logo.png';
 import { marshakLink, serviceLinks } from '../configs/links';
-import { useTrail, animated, Transition } from 'react-spring';
+import logoHeader from '../images/marshak-logo.png';
 import LinksCloseIcon from './svg/LinksCloseIcon';
 
+/* TODO - написать комментарий к анимации кнопки Стриминги */
+/* TODO - вынести магические числа из проперти config в нормальные переменные (для анимации) */
+
 function Header({ isPlayerExtend, isMobile }) {
-  // const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
-  /* TODO - дописать комментарий к этим стейтам */
+  const headerStyle = cn("header", { "blur": isPlayerExtend && isMobile});
+
+  /* Разделение между стейтами isLinksMounted и isLinksHidden сделано для корректной анимации. 
+  Если размонтировать ссылки сразу по нажатию на кнопку, анимировать это не получится.
+  Ссылки должны размонтироваться по окончании анимации. */
   const [isLinksMounted, setIsLinksMounted] = useState(false);
   const [isLinksHidden, setIsLinksHidden] = useState(true);
-  const headerStyle = cn("header", { "blur": isPlayerExtend && isMobile})
 
   const handleServiceButtonClick = () => {
     setIsLinksHidden(!isLinksHidden);
     setIsLinksMounted(true);
   };
 
-  /* TODO - написать комментарий к анимации кнопки Стриминги */
-  /* TODO - вынести магические числа и проперти config в нормальные переменные (для анимации) */
-
   /* Создаем анимированную компоненту из обычной */
   const AnimatedStreamServiceLink = animated(StreamServiceLink);
 
-  /* Конфиг для анимации ссылок на узких экранах. Меняются прозрачность и смещение по горизонтали*/
+  /* Конфиг для анимации на широком экране. 
+  Сейчас конфиг обеспечивает статичное отображение при загрузке страницы) */
+  const desktopConfig = {
+    opacity: 1,
+    x: 0
+  };
+
+  /* Конфиг для анимации ссылок на узких экранах. 
+  Меняются прозрачность и смещение по горизонтали*/
   const mobileConfig = {
     config: { mass: 1, tension: 200, friction: 18 },
     to: {
@@ -46,12 +55,6 @@ function Header({ isPlayerExtend, isMobile }) {
     }
   };
 
-  /* Конфиг для анимации на широком экране. Сейчас там анимация не требуется, и конфиг обеспечивает статичное отображение при загрузке страницы) */
-  const desktopConfig = {
-    opacity: 1,
-    x: 0
-  };
-
   /* Массив с объектами пропсов для анимации каждой ссылки */
   const trail = useTrail(serviceLinks.length, isMobile ? mobileConfig : desktopConfig);
 
@@ -63,6 +66,15 @@ function Header({ isPlayerExtend, isMobile }) {
     Object.assign(linkProps, link, trail[i]);
     return linkProps;
   });
+
+  /* Для маленьких экранов: если пользователь развернул ссылки и открыл плеер, 
+  то сворачиваем ссылки, чтобы дать плееру полностью развернуться на небольших по высоте смартфонах*/
+  useEffect(() => {
+    if (isPlayerExtend && isMobile) {
+      setIsLinksHidden(true);
+      setIsLinksMounted(false);
+    }
+  }, [isPlayerExtend, isMobile]);
 
   return (
     <header className={headerStyle}>
@@ -80,7 +92,7 @@ function Header({ isPlayerExtend, isMobile }) {
       </a>
 
       <div className="stream-services header__links">
-        {isMobile && (
+        {(isMobile) && (
           <button
             className={cn("stream-services__button", {
               "stream-services__button_minimised": !isLinksHidden,
