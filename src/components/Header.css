@@ -5,6 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   transition: filter .5s ease-in-out;
 }
 
