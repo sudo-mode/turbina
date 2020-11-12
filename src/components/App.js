@@ -22,6 +22,7 @@ function App() {
         <Main
           onPlayerExtend={onPlayerExtend}
           isPlayerExtend={isPlayerExtend}
+          isLandscape={isLandscape}
         />
         <Info />
         <Footer

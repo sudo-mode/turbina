@@ -127,9 +127,9 @@
 }
 
 .stream-services__button_minimised {
-  max-width: 30px; /* for transition */
+  max-width: 35px; /* for transition */
   min-width: 30px; /* for transition */
-  padding: 4px;
+  padding: 6px;
   line-height: 0;
 }
 
