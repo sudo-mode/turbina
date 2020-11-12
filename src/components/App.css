@@ -27,3 +27,11 @@
     left: 0;
   }
 }
+
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+  .selector:not(*:root), .page {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
