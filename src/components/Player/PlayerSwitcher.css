@@ -11,6 +11,8 @@
   display: inline-block;
   transition: box-shadow .2s ease-out;
   -webkit-tap-highlight-color: transparent;
+  padding: 0 6px;
+  box-sizing: border-box;
 }
 
 .player__switcher:hover {
