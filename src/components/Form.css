@@ -76,6 +76,10 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+.form__offer-link:focus {
+    outline: none;
+}
+
 .form__pseudo-item {
     display: inline-block;
     vertical-align: middle;
