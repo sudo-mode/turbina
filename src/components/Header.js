@@ -11,8 +11,8 @@ import LinksCloseIcon from './svg/LinksCloseIcon';
 /* TODO - написать комментарий к анимации кнопки Стриминги */
 /* TODO - вынести магические числа из проперти config в нормальные переменные (для анимации) */
 
-function Header({ isPlayerExtend, isMobile }) {
-  const headerStyle = cn("header", { "blur": isPlayerExtend && isMobile});
+function Header({ isPlayerExtend, isMobile, isLandscape }) {
+  const headerStyle = cn("header", { "blur": isPlayerExtend && (isMobile || isLandscape) });
 
   /* Разделение между стейтами isLinksMounted и isLinksHidden сделано для корректной анимации. 
   Если размонтировать ссылки сразу по нажатию на кнопку, анимировать это не получится.
@@ -56,7 +56,7 @@ function Header({ isPlayerExtend, isMobile }) {
   };
 
   /* Массив с объектами пропсов для анимации каждой ссылки */
-  const trail = useTrail(serviceLinks.length, isMobile ? mobileConfig : desktopConfig);
+  const trail = useTrail(serviceLinks.length, (isMobile || isLandscape) ? mobileConfig : desktopConfig);
 
   /* Сборка объектов с полным набором пропсов для будущих анимированных компонент.
   Объединяются пропсы для анимации и обычные пропсы (название и адрес ссылки).
@@ -70,11 +70,11 @@ function Header({ isPlayerExtend, isMobile }) {
   /* Для маленьких экранов: если пользователь развернул ссылки и открыл плеер, 
   то сворачиваем ссылки, чтобы дать плееру полностью развернуться на небольших по высоте смартфонах*/
   useEffect(() => {
-    if (isPlayerExtend && isMobile) {
+    if (isPlayerExtend && (isMobile || isLandscape)) {
       setIsLinksHidden(true);
       setIsLinksMounted(false);
     }
-  }, [isPlayerExtend, isMobile]);
+  }, [isPlayerExtend, isLandscape, isMobile]);
 
   return (
     <header className={headerStyle}>
@@ -92,7 +92,7 @@ function Header({ isPlayerExtend, isMobile }) {
       </a>
 
       <div className="stream-services header__links">
-        {(isMobile) && (
+        {(isMobile || isLandscape) && (
           <button
             className={cn("stream-services__button", {
               "stream-services__button_minimised": !isLinksHidden,
@@ -115,7 +115,7 @@ function Header({ isPlayerExtend, isMobile }) {
           </button>
         )}
 
-        {(isLinksMounted || !isMobile) && (
+        {(isLinksMounted || !(isMobile || isLandscape)) && (
           <ul className="stream-services__links">
             {serviceLinksProps.map((item, i) => (
               <AnimatedStreamServiceLink

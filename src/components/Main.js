@@ -6,7 +6,7 @@ import Player from './Player/Player';
 import { useSpring, animated, } from 'react-spring';
 import { useMediaQuery } from 'react-responsive';
 
-function Main({ onPlayerExtend, isPlayerExtend }) {
+function Main({ onPlayerExtend, isPlayerExtend, isLandscape }) {
 
   const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
   const isWideMobile = useMediaQuery({ query: '(max-width: 600px)' });
@@ -45,10 +45,12 @@ function Main({ onPlayerExtend, isPlayerExtend }) {
       <Header
         isPlayerExtend={isPlayerExtend}
         isMobile={isMobile}
+        isLandscape={isLandscape}
       />
       <ProjectLogo
         isPlayerExtend={isPlayerExtend}
         isMobile={isMobile}
+        isLandscape={isLandscape}
       />
       <AnimatedPlayer
         isPlayerExtend={isPlayerExtend}
