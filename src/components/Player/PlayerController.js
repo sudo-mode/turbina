@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import './PlayerController.css';
 import useAudioPlayer from '../../hooks/useAudioPlayer';
 import PlayerTimeline from './PlayerTimeline';
@@ -6,11 +6,14 @@ import playBtn from '../../images/play-icon.svg';
 import pauseBtn from '../../images/pause-icon.svg';
 import PlayerTimer from './PlayerTimer';
 import useTicker from '../../hooks/useTicker';
+import cn from 'classnames';
 
 
 function PlayerController ({ isPlayerExtend, track }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();
+  const canvas1 = useRef();
+  const [canvasVisual, setCanvasVisual] = useState('canvas-visual');
   
   useTicker({
     elementRef: trackRef,
@@ -30,7 +33,12 @@ function PlayerController ({ isPlayerExtend, track }) {
     duration
   } = useAudioPlayer(audioPlayerRef, track);
 
+  useEffect(() => { 
+    setCanvasVisual(cn('canvas-visual', { 'canvas-visual_active' : isPlaying }))
+  }, [isPlaying])
+
   return (
+    <>
     <div className="player__controller">
       <audio
         src={track.link}
@@ -69,6 +77,24 @@ function PlayerController ({ isPlayerExtend, track }) {
         onTimeUpdate={(time) => setClickedTime(time)}
       />
     </div>
+    <canvas
+        ref={canvas1}
+        className={canvasVisual}
+        style={{
+          position: 'absolute',
+          width: `${100}%`,
+          height: `${100}vh`,
+          zIndex: -4,
+          top: 0,
+          left: 0,
+        }}>
+      </canvas>
+
+
+
+
+
+    </>
   )
 }
 
