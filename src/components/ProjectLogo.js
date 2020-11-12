@@ -1,11 +1,11 @@
 import './ProjectLogo.css';
-import { useMediaQuery } from 'react-responsive';
+import './Blur.css';
 import logo from '../images/turbina.svg';
 import cn from 'classnames';
 
-function ProjectLogo({ isPlayerExtend }) {
-  const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
-  const titleStyle = cn("title", { "title_blur": isPlayerExtend && isMobile })
+function ProjectLogo({ isPlayerExtend, isMobile }) {
+  
+  const titleStyle = cn("title", { "blur": isPlayerExtend && isMobile })
 
   return (
     <h1

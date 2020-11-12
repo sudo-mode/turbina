@@ -1,0 +1,21 @@
+.blur__layer {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: -6;
+  opacity: 0;
+  background-color: black;
+  top: 0;
+  left: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+.blur__layer_active {
+  z-index: 0;
+  opacity: .4;
+  backdrop-filter: blur(3px);
+}
+
+.blur {
+  filter: blur(3px);
+}

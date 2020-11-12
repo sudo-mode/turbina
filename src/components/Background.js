@@ -1,9 +1,14 @@
 import './Background.css';
+// import cn from 'classnames';
 
+function Background({ isPlayerExtend, isMobile }) {
 
-function Background() {
+  // const backgroundStyle = cn("background", { "background_blur": isPlayerExtend && isMobile})
+
   return (
-    <div className="background"></div>
+    <div
+      className="background"
+    ></div>
   )
 }
 

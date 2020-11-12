@@ -1,22 +1,16 @@
-import { useState } from 'react';
+
 import './Main.css';
 import Header from './Header';
 import ProjectLogo from './ProjectLogo';
 import Player from './Player/Player';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, animated, } from 'react-spring';
 import { useMediaQuery } from 'react-responsive';
 
+function Main({ onPlayerExtend, isPlayerExtend }) {
 
-function Main () {
-  const [isPlayerExtend, setPlayerState] = useState(false);
   const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
   const isWideMobile = useMediaQuery({ query: '(max-width: 600px)' });
   const isNarrowDesktop = useMediaQuery({ query: '(max-width: 1024px)' });
-
-  const onPlayerExtend = () => {
-    setPlayerState(!isPlayerExtend);
-  }
-
   const AnimatedPlayer = animated(Player);
 
   const calcDefaultHeight = () => {
@@ -50,15 +44,20 @@ function Main () {
     <section className="main">
       <Header
         isPlayerExtend={isPlayerExtend}
+        isMobile={isMobile}
       />
       <ProjectLogo
         isPlayerExtend={isPlayerExtend}
+        isMobile={isMobile}
       />
       <AnimatedPlayer
         isPlayerExtend={isPlayerExtend}
         onPlayerExtend={onPlayerExtend}
         style={extendСonfig}
       />
+
+
+
     </section>
   )
 }

@@ -8,11 +8,6 @@
   transition: filter .5s ease-in-out;
 }
 
-.header_blur {
-  filter: blur(3px);
-}
-
-
 /* Логотип магазина "Маршак" */
 
 .header__logo {
