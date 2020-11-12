@@ -16,6 +16,11 @@ const tracks = [
     text: ``,
     link: madconbeggin,
     videoLink: '',
+    theme: {
+      color: '#fff',
+      backgroundColor: 'blue',
+    },
+    albumPicture: 'https://images.unsplash.com/photo-1525253604620-23ac591dbea0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80',
   },
   {
     id: '№14',
@@ -26,6 +31,11 @@ const tracks = [
     text: ``,
     link: Navai,
     videoLink: '',
+    theme: {
+      color: '#000',
+      backgroundColor: 'white',
+    },
+    albumPicture: 'https://images.unsplash.com/photo-1587532635449-61603976e580?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80',
   },
   {
     id: '№7',
@@ -48,7 +58,12 @@ const tracks = [
     Маруся Романова
     Маруся Романова
     Маруся Романова`,
-    link: Infinity_
+    link: Infinity_,
+    theme: {
+      color: '#8B0000',
+      backgroundColor: '#98FB98',
+    },
+    albumPicture: 'https://images.unsplash.com/photo-1565292334631-95d1dd9e2970?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=742&q=80',
   },
   {
     id: '№8',
@@ -88,7 +103,12 @@ const tracks = [
 Ты меня так долго ждала.
 Я серьезных дел не боюсь,
 Возьму и женюсь!`,
-    link: Ilya
+    link: Ilya,
+    theme: {
+      color: '#191970',
+      backgroundColor: '#B0E0E6',
+    },
+    albumPicture: 'https://images.unsplash.com/photo-1566097260929-4ba43aa78fce?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80',
   },
   {
     id: '№6',
@@ -166,7 +186,12 @@ const tracks = [
     Понравился текст песни?
     Оставьте комментарий ниже
     Читать на сайте: https://text-pesni.com/khel`,
-    link: klubnika
+    link: klubnika,
+    theme: {
+      color: '#800000',
+      backgroundColor: '#D3D3D3',
+    },
+    albumPicture: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
   },
   {
     id: '№4',
@@ -181,9 +206,19 @@ const tracks = [
     Петр Сковородников
     Петр Сковородников`,
     link: daftPunkFeat,
+    theme: {
+      color: '#800080',
+      backgroundColor: '#708090',
+    },
+    albumPicture: 'https://images.unsplash.com/photo-1459305272254-33a7d593a851?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
   },
 ]
 
+const defaultThemes = [
+  {theme: {
+    color: '#000',
+    backgroundColor: 'white',
+  }},
+]
+
 export default tracks;
-
-

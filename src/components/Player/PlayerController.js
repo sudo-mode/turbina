@@ -151,11 +151,17 @@ function PlayerController({ isPlayerExtend, track }) {
       console.log('update')
 
 
+      // radial-gradient(circle closest-corner at 40px 30px, #fff, #009ec3);
 
+      // let colorCanvas = track.theme.backgroundColor;
 
-      // let colorCanvas = `rgb(${frequency_array[5]}, ${frequency_array[10]}, ${frequency_array[15]} )`
+      // let colorCanvas = `radial-gradient(circle, ${track.theme.backgroundColor}, 'rgb(${frequency_array[0]}, ${frequency_array[15]}, ${frequency_array[30]})')`;
+      // linear-gradient(to top left, powderblue, pink);
+      // let colorCanvas = `linear-gradient(to top left, ${track.theme.backgroundColor}, rgb(${frequency_array[0]}, ${frequency_array[15]}, ${frequency_array[30]}))`;
+      // let colorCanvas = `radial-gradient(${track.theme.backgroundColor}, rgb(${frequency_array[30]}, ${frequency_array[15]}, ${frequency_array[0]}))`
       // if (canvas) {
-      //   canvas.style.backgroundColor = colorCanvas;
+      //   // canvas.style.backgroundColor = colorCanvas;
+      //   canvas.style.background = colorCanvas;
       // }
 
 
@@ -245,7 +251,7 @@ function PlayerController({ isPlayerExtend, track }) {
           onTimeUpdate={(time) => setClickedTime(time)}
         />
       </div>
-      <canvas
+      {/* <canvas
         ref={canvasRef}
         className={canvasVisual}
 
@@ -257,9 +263,7 @@ function PlayerController({ isPlayerExtend, track }) {
           top: 0,
           left: 0,
         }}>
-
-
-      </canvas>
+      </canvas> */}
       <div style={{
         position: 'absolute',
         width: `${100}%`,
