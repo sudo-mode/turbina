@@ -1,6 +1,7 @@
 .main {
   position: relative;
   height: 100vh;
+  min-height: 550px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -8,7 +8,7 @@
   font-size: 16px;
   display: none;
   padding: 4px 20px 0 14px;
-  margin-right: 10px;
+  margin-right: 0; 
   text-decoration: none;
   font-weight: 500;
   box-sizing: border-box;
@@ -17,6 +17,22 @@
   background: #fff;
   color: #000;
   mix-blend-mode: lighten;
+}
+
+.player__video-link:focus {
+  outline: none;
+  box-shadow: 0 0 8px 4px #ffffff40;
+}
+
+.player__video-link-wrapper {
+  display: inline-block;
+  background-image: url('../../images/background.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 30px;
+  margin-right: 10px;
 }
 
 .player__video-link_active {
@@ -60,8 +76,13 @@
     height: 30px;
     padding-right: 15px;
     padding-left: 10px;
-    margin-right: 5px;
+    margin-right: 0px;
     font-size: 12px;
+
+  }
+
+  .player__video-link-wrapper {
+    margin-right: 5px;
   }
 
   .player__video-icon {
