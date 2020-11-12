@@ -15,11 +15,11 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape }) {
 
   const calcDefaultHeight = () => {
     if (isMobile) {
-      return '34px';
+      return '35px';
     } else if (isWideMobile || isNarrowDesktop) {
-      return '39px';
+      return '38px';
     } else {
-      return '43px';
+      return '42px';
     }
   };
 
@@ -27,11 +27,11 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape }) {
     if (isMobile) {
       return '466px';
     } else if (isWideMobile) {
-      return '245px';
+      return '220px';
     } else if (isNarrowDesktop) {
-      return '171px';
+      return '170px';
     } else {
-      return '187px';
+      return '186px';
     }
   };
 
