@@ -9,12 +9,14 @@ import { useMediaQuery } from 'react-responsive';
 function Main({ onPlayerExtend, isPlayerExtend, isLandscape }) {
 
   const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
+  const isShortMobile = useMediaQuery({ query: '(max-width: 480px) and (max-height: 550px)' });
+  const isTallMobile = useMediaQuery({ query: '(max-width: 480px) and (min-height: 551px)' });
   const isWideMobile = useMediaQuery({ query: '(max-width: 600px)' });
   const isNarrowDesktop = useMediaQuery({ query: '(max-width: 1024px)' });
   const AnimatedPlayer = animated(Player);
 
   const calcDefaultHeight = () => {
-    if (isMobile) {
+    if (isTallMobile || isShortMobile) {
       return '35px';
     } else if (isWideMobile || isNarrowDesktop) {
       return '38px';
@@ -24,8 +26,10 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape }) {
   };
 
   const calcExtendedHeight = () => {
-    if (isMobile) {
+    if (isTallMobile) {
       return '466px';
+    } else if (isShortMobile) {
+      return '380px';
     } else if (isWideMobile) {
       return '220px';
     } else if (isNarrowDesktop) {
