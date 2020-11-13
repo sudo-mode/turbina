@@ -6,7 +6,7 @@ import Player from './Player/Player';
 import { useSpring, animated, } from 'react-spring';
 import { useMediaQuery } from 'react-responsive';
 
-function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile }) {
+function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurrentTrack, currentTrack }) {
 
   const isShortMobile = useMediaQuery({ query: '(max-width: 480px) and (max-height: 550px)' });
   const isTallMobile = useMediaQuery({ query: '(max-width: 480px) and (min-height: 551px)' });
@@ -59,6 +59,8 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile }) {
         isPlayerExtend={isPlayerExtend}
         onPlayerExtend={onPlayerExtend}
         style={extendСonfig}
+        currentTrack={currentTrack}
+        onSetCurrentTrack={onSetCurrentTrack}
       />
     </section>
   )
