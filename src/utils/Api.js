@@ -43,7 +43,7 @@ class Api {
 
 //Сюда подставляется любой URL и заголовки для отправки данных формы. Отправка протестирована и стабильна.
 const options = {
-    url: 'http://httpbin.org/post',
+    url: 'https://httpbin.org/post',
     headers: {
         //   authorization: ,
           'Content-Type': 'application/json'
