@@ -1,4 +1,4 @@
-const useThrottling = (func, ms) => {
+function useThrottling(func, ms) {
   
   let isThrottled = false,
     savedArgs,

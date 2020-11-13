@@ -11,24 +11,6 @@
     "btn line line ";
 }
 
-.player__control-btn {
-  grid-area: btn;
-  align-self: start;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin-top: 2px;
-  border: none;
-  outline: none;
-  background-size: 13px 16px;
-  background: top left no-repeat transparent;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.player__control-btn:hover {
-  cursor: pointer;
-}
-
 .player__song-container {
   grid-area: song;
   padding-bottom: 24px;
@@ -71,10 +53,6 @@
   .player__controller {
     row-gap: 2px;
   }
-
-  .player__control-btn {
-    margin-top: 0;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -84,13 +62,5 @@
 
   .player__song-container {
     padding-bottom: 18px;
-  }
-  
-  .player__control-btn {
-    width: 20px;
-    height: 20px;
-    background-size: 13px 16px;
-    margin-top: -1px;
-    margin-left: 2px;
   }
 }
