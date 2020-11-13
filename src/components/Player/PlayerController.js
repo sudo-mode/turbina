@@ -40,7 +40,7 @@ function PlayerController({ isPlayerExtend, track }) {
           requestAnimationFrame(update);
           analyser.getByteFrequencyData(frequency_array);
           if (bars) {
-            for (let i = 0; i < 14; i++) {
+            for (let i = 0; i < 12; i++) {
               bars[i].style.height = (frequency_array[i] / 3) + 'px';
             }
           }
@@ -127,8 +127,6 @@ function PlayerController({ isPlayerExtend, track }) {
 
       <div className="player__bars">
         <ul ref={barsRef} className="player__bars-list">
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
           <li className='player__bar'></li>
           <li className='player__bar'></li>
           <li className='player__bar'></li>
