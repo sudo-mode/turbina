@@ -83,8 +83,9 @@
 .form__pseudo-item {
     display: inline-block;
     vertical-align: middle;
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
     margin-bottom: 5px;
     border: 2px solid black;
     border-radius: 50%;
@@ -160,6 +161,7 @@
 /* Адаптивная верстка для брекпоинта 1024px */
 @media screen and (max-width:1024px) {
     .form__heading {
+        margin-top: 56px;
         font-size: 46px;
     }
 
@@ -192,6 +194,7 @@
 @media screen and (max-width:480px) {
     .form__heading {
         font-size: 32px;
+        margin-top: 30px;
         margin-bottom: 30px;
     }
 
@@ -202,7 +205,7 @@
     }
 
     .form__input {
-        margin-bottom: 6px;
+        margin-bottom: 8px;
         font-size: 14px;
     }
     

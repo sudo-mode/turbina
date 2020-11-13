@@ -4,7 +4,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: -10px;
-  padding: 110px 50px;
+  padding: 110px 50px 90px;
   box-sizing: border-box;
   background-color: #fff;
   color: #000;
@@ -19,7 +19,7 @@
 @media screen and (max-width:1024px) {
     .info-container {
       padding-top: 100px;
-      padding-bottom: 100px;
+      padding-bottom: 80px;
     }
 }
 
@@ -31,6 +31,6 @@
 
 @media screen and (max-width:480px) {
     .info-container {
-      padding: 80px 20px;
+      padding: 80px 20px 60px;
     }
 }

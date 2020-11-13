@@ -2,6 +2,7 @@
   grid-area: extend-btn;
   justify-self: end;
   align-self: start;
+  text-align: right;
   width: 30px;
   height: 30px;
   padding: 0;
