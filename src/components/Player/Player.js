@@ -15,7 +15,6 @@ function Player ({ isPlayerExtend, onPlayerExtend, style }) {
   const [isTextInfo, setTextInfo] = useState(false);
   const [isExtendElementsMounted, setIsExtendElementsMounted] = useState(false);
 
-  // TODO -- вынести в хук использование спринг
   const extendPlayerAnimationConfig = useSpring({
     from: { opacity: .1, scale: 0.8 },
     to: { opacity: isPlayerExtend ? 1 : 0.1, scale: isPlayerExtend ? 1 : 0.8 },

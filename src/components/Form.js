@@ -5,8 +5,6 @@ import useFormWithValidation from '../hooks/useFormWithValidation.js';
 import setCustomValidity from '../utils/setCustomValidity.js';
 import { api } from '../utils/Api.js';
 
-// TODO: Отправка формы - состояние isSubmitting "Отправляем форму..."
-// TODO: Добавить паттерн для проверки тедефона и почты
 
 function Form() {
 
@@ -21,6 +19,7 @@ function Form() {
         api.submitForm(values)
            .then(() => {
               setIsSubmitted(true);
+              setIsErrorVisible(false);
               resetForm();
 
               setTimeout(() => 
@@ -45,7 +44,7 @@ function Form() {
                   placeholder="Имя и фамилия автора" 
                   required 
                   minLength="2" 
-                  maxLength="40" 
+                  maxLength="50" 
                   pattern="^[А-Яа-яЁё\s]+$"
                   value={values.name || ''}
                   onChange={handleChange}
@@ -58,6 +57,8 @@ function Form() {
                   name="tel" 
                   placeholder="Телефон" 
                   required
+                  minLength="11"
+                  maxLength="20"
                   pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
                   value={values.tel || ''}
                   onChange={handleChange}
@@ -82,7 +83,7 @@ function Form() {
                 <textarea 
                   className={errors.text? 'form__textarea form__input form__input_invalid' : 'form__textarea form__input'}
                   name="text" 
-                  minLength="30" 
+                  minLength="20" 
                   placeholder="Стихи" 
                   required
                   value={values.text || ''}
@@ -110,7 +111,9 @@ function Form() {
 
 
                 <button type="submit" className="form__submit-button" disabled={!isFormValid}><span className="form__button-text">{isSubmitted? 'Ура, форма отправлена!' : 'Отправить форму'}</span></button>
+                <span className="form__fill-hint">{isFormValid? '' : 'Чтобы отправить форму, пожалуйста, заполните все поля'}</span>
                 <span className="form__wrong-submit">{isErrorVisible? 'Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!' : ''}</span>
+                
             </form>
       </div>
     )

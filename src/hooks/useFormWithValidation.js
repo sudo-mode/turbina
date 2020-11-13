@@ -1,7 +1,4 @@
 import { useState, useCallback } from 'react';
-import setCustomValidity from '../utils/setCustomValidity';
-
-//TODO: написать handleBlur
 
 function useFormWithValidation(setCustomValidity) {
     const [values, setValues] = useState({
@@ -34,14 +31,7 @@ function useFormWithValidation(setCustomValidity) {
 
 
         setIsFormValid(target.closest('form').checkValidity());
-    }
-
-    //Возможность убрать ошибку при снятии фокуса с инпута, TODO: решить, как юзабельнее
-    // function handleBlur() {
-    //     const newErrors = {};
-
-    //     setErrors(newErrors);
-    // }
+    };
 
     const resetForm = useCallback(
         (newValues = {

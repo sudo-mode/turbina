@@ -6,32 +6,35 @@ import Player from './Player/Player';
 import { useSpring, animated, } from 'react-spring';
 import { useMediaQuery } from 'react-responsive';
 
-function Main({ onPlayerExtend, isPlayerExtend }) {
+function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile }) {
 
-  const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
+  const isShortMobile = useMediaQuery({ query: '(max-width: 480px) and (max-height: 550px)' });
+  const isTallMobile = useMediaQuery({ query: '(max-width: 480px) and (min-height: 551px)' });
   const isWideMobile = useMediaQuery({ query: '(max-width: 600px)' });
   const isNarrowDesktop = useMediaQuery({ query: '(max-width: 1024px)' });
   const AnimatedPlayer = animated(Player);
 
   const calcDefaultHeight = () => {
-    if (isMobile) {
-      return '34px';
+    if (isTallMobile || isShortMobile) {
+      return '35px';
     } else if (isWideMobile || isNarrowDesktop) {
-      return '39px';
+      return '38px';
     } else {
-      return '43px';
+      return '42px';
     }
   };
 
   const calcExtendedHeight = () => {
-    if (isMobile) {
+    if (isTallMobile) {
       return '466px';
+    } else if (isShortMobile) {
+      return '380px';
     } else if (isWideMobile) {
-      return '245px';
+      return '220px';
     } else if (isNarrowDesktop) {
-      return '171px';
+      return '170px';
     } else {
-      return '187px';
+      return '186px';
     }
   };
 
@@ -45,19 +48,18 @@ function Main({ onPlayerExtend, isPlayerExtend }) {
       <Header
         isPlayerExtend={isPlayerExtend}
         isMobile={isMobile}
+        isLandscape={isLandscape}
       />
       <ProjectLogo
         isPlayerExtend={isPlayerExtend}
         isMobile={isMobile}
+        isLandscape={isLandscape}
       />
       <AnimatedPlayer
         isPlayerExtend={isPlayerExtend}
         onPlayerExtend={onPlayerExtend}
         style={extendСonfig}
       />
-
-
-
     </section>
   )
 }

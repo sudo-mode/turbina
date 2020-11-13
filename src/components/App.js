@@ -11,6 +11,7 @@ import backgroundBlur from '../images/background-blur.jpg';
 function App() {
   const [isPlayerExtend, setPlayerState] = useState(false);
   const isMobile = useMediaQuery({ query: '(max-width: 480px)' });
+  const isLandscape = useMediaQuery({ query: '(orientation:landscape) and (max-height: 600px)' });
   const onPlayerExtend = () => {
     setPlayerState(!isPlayerExtend);
   }
@@ -21,6 +22,8 @@ function App() {
         <Main
           onPlayerExtend={onPlayerExtend}
           isPlayerExtend={isPlayerExtend}
+          isLandscape={isLandscape}
+          isMobile={isMobile}
         />
         <Info />
         <Footer
@@ -35,6 +38,7 @@ function App() {
         <Blur
           isPlayerExtend={isPlayerExtend}
           isMobile={isMobile}
+          isLandscape={isLandscape}
         />
       </div>
     </div>

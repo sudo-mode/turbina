@@ -1,7 +1,7 @@
 .main {
   position: relative;
   height: 100vh;
-  min-height: 550px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -18,6 +18,12 @@
 
 @supports (-webkit-touch-callout: none) {
   .main {
+    height: 100%;
+  }
+}
+
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+  .selector:not(*:root), .main {
     height: 100%;
   }
 }

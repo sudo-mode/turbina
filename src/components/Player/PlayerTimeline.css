@@ -25,7 +25,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .player__timeline {
+ .player__timeline {
     height: 3px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .player__timeline-container {
+    height: 15px;
   }
 }

@@ -1,11 +1,12 @@
 .footer {
-  max-width: 1280px;
+  max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
   padding: 20px 5px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   color: #fff;
   font-weight: normal;
   font-size: 16px;
@@ -24,6 +25,11 @@
 }
 
 .footer__link:hover {
+  transform: skewX(-9deg);
+}
+
+.footer__link:focus {
+  outline: none;
   transform: skewX(-9deg);
 }
 
