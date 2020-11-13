@@ -1,29 +1,35 @@
 {
   "files": {
-    "main.css": "/turbina/static/css/main.3eb1b1d2.chunk.css",
-    "main.js": "/turbina/static/js/main.2f84b6b1.chunk.js",
-    "main.js.map": "/turbina/static/js/main.2f84b6b1.chunk.js.map",
+    "main.css": "/turbina/static/css/main.8fb37e28.chunk.css",
+    "main.js": "/turbina/static/js/main.6faf2804.chunk.js",
+    "main.js.map": "/turbina/static/js/main.6faf2804.chunk.js.map",
     "runtime-main.js": "/turbina/static/js/runtime-main.81d6fa43.js",
     "runtime-main.js.map": "/turbina/static/js/runtime-main.81d6fa43.js.map",
-    "static/js/2.7fc3238c.chunk.js": "/turbina/static/js/2.7fc3238c.chunk.js",
-    "static/js/2.7fc3238c.chunk.js.map": "/turbina/static/js/2.7fc3238c.chunk.js.map",
+    "static/js/2.2bdae5a8.chunk.js": "/turbina/static/js/2.2bdae5a8.chunk.js",
+    "static/js/2.2bdae5a8.chunk.js.map": "/turbina/static/js/2.2bdae5a8.chunk.js.map",
     "static/js/3.0c405b0d.chunk.js": "/turbina/static/js/3.0c405b0d.chunk.js",
     "static/js/3.0c405b0d.chunk.js.map": "/turbina/static/js/3.0c405b0d.chunk.js.map",
     "index.html": "/turbina/index.html",
-    "static/css/main.3eb1b1d2.chunk.css.map": "/turbina/static/css/main.3eb1b1d2.chunk.css.map",
-    "static/js/2.7fc3238c.chunk.js.LICENSE.txt": "/turbina/static/js/2.7fc3238c.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/turbina/static/media/Inter-Regular.79a51fb4.ttf",
-    "static/media/PlayerInfoContainer.css": "/turbina/static/media/arrowUp.f456265e.svg",
+    "static/css/main.8fb37e28.chunk.css.map": "/turbina/static/css/main.8fb37e28.chunk.css.map",
+    "static/js/2.2bdae5a8.chunk.js.LICENSE.txt": "/turbina/static/js/2.2bdae5a8.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/turbina/static/media/arrowUp.f456265e.svg",
+    "static/media/Navai.f61bdea2.mp3": "/turbina/static/media/Navai.f61bdea2.mp3",
+    "static/media/The XX - Crystalised.a1269496.mp3": "/turbina/static/media/The XX - Crystalised.a1269496.mp3",
+    "static/media/The XX - Infinity .111d07ad.mp3": "/turbina/static/media/The XX - Infinity .111d07ad.mp3",
     "static/media/background-blur.c25e08a2.jpg": "/turbina/static/media/background-blur.c25e08a2.jpg",
     "static/media/Background.css": "/turbina/static/media/background.ec2c8593.png",
+    "static/media/daft-punk-feat.-julian-casablancas-instant-crush.cf0f1c1f.mp3": "/turbina/static/media/daft-punk-feat.-julian-casablancas-instant-crush.cf0f1c1f.mp3",
+    "static/media/madconbeggin.baac2a6d.mp3": "/turbina/static/media/madconbeggin.baac2a6d.mp3",
+    "static/media/nikolife-miravi-klubnika-bomba.dca990ca.mp3": "/turbina/static/media/nikolife-miravi-klubnika-bomba.dca990ca.mp3",
     "static/media/offer.623a8e66.pdf": "/turbina/static/media/offer.623a8e66.pdf",
     "static/media/PlayerVideoBtn.css": "/turbina/static/media/play-icon-btn.acf95aec.svg",
-    "static/media/turbina.b11f75a9.svg": "/turbina/static/media/turbina.b11f75a9.svg"
+    "static/media/turbina.b11f75a9.svg": "/turbina/static/media/turbina.b11f75a9.svg",
+    "static/media/Илья Подстрелов – Вот такие крошка дела,ты меня так долго ждала_(muztron.club).0c77ae67.mp3": "/turbina/static/media/Илья Подстрелов – Вот такие крошка дела,ты меня так долго ждала_(muztron.club).0c77ae67.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.81d6fa43.js",
-    "static/js/2.7fc3238c.chunk.js",
-    "static/css/main.3eb1b1d2.chunk.css",
-    "static/js/main.2f84b6b1.chunk.js"
+    "static/js/2.2bdae5a8.chunk.js",
+    "static/css/main.8fb37e28.chunk.css",
+    "static/js/main.6faf2804.chunk.js"
   ]
 }
