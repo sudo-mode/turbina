@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './Player.css';
 import PlayerController from './PlayerController';
 import PlayerSwitcher from './PlayerSwitcher';
-import PlayerExtendBtn from './PlayerExtendBtn';
+import ExtendBtn from './ExtendBtn';
 import PlayerInfoContainer from './PlayerInfoContainer';
 import PlayerVideoBtn from './PlayerVideoBtn';
 import tracks from '../../db/tracks';
@@ -54,9 +54,9 @@ function Player ({ isPlayerExtend, onPlayerExtend, style }) {
         isPlayerExtend={isPlayerExtend}
         track={currentTrack}
       />
-      <PlayerExtendBtn
+      <ExtendBtn
         isOpen={isPlayerExtend}
-        onClick={handleExtendClick}
+        onBtnClick={handleExtendClick}
       />
       {isPlayerExtend && 
         <PlayerInfoContainer

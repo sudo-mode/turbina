@@ -1,9 +1,9 @@
-const PauseIcon = ({
+function PauseIcon ({
   className='',
   width = 13,
   height = 16,
   fill='#fff'
-}) => {
+}) {
   return (
     <svg
       className={className}

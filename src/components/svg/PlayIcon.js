@@ -1,4 +1,4 @@
-function PlayIcon({
+function PlayIcon ({
   className = '',
   width = 16,
   height = 20,

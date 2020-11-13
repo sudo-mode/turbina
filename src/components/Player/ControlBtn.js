@@ -1,6 +1,6 @@
 import './ControlBtn.css';
-import PlayBtn from '../svg/PlayIcon';
-import PauseBtn from '../svg/PauseIcon';
+import PlayIcon from '../svg/PlayIcon';
+import PauseIcon from '../svg/PauseIcon';
 
 function PlayerControlBtn({ isPlaying, onBtnClick }) {
   return (
@@ -10,8 +10,8 @@ function PlayerControlBtn({ isPlaying, onBtnClick }) {
       onClick={onBtnClick}
     >
       {isPlaying
-        ? <PauseBtn className="control-btn_pause" />
-        : <PlayBtn className="control-btn_play" />
+        ? <PauseIcon className="control-Icon_pause" />
+        : <PlayIcon className="control-btn_play" />
       }
     </button>
   )
