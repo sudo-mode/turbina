@@ -47,6 +47,9 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
         <AnimatedPlayerCover
           image={currentTrack.albumPicture}
           style={extendPlayerAnimationConfig}
+          trackName={currentTrack.trackName}
+          author={currentTrack.author}
+          originalAuthor={currentTrack.originalAuthor}
         />
       }
       <PlayerController

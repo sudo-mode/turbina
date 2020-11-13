@@ -1,0 +1,24 @@
+@-webkit-keyframes rotation {
+	from { -webkit-transform: rotate(0deg); }
+	to { -webkit-transform: rotate(359deg); }
+}
+@keyframes rotation {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(359deg); }
+}
+
+.spinner {
+  width: 50%;
+	height: 50%;
+	clear: both;
+	margin: 20px auto;
+	border: 4px rgba(255, 255, 255, 0.25) solid;
+	border-top: 4px rgba(255, 255, 255, 1) solid;
+	border-radius: 50%;
+	-webkit-animation: rotation 1s infinite linear;
+	animation: rotation 1s infinite linear;
+}
+
+.spinner_hidden {
+  display: none;
+}
