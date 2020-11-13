@@ -1,7 +1,12 @@
-const PauseIcon = ({ width = 13, height = 16 }) => {
+const PauseIcon = ({
+  className='',
+  width = 13,
+  height = 16,
+  fill='#fff'
+}) => {
   return (
     <svg
-      className="control-btn_pause"
+      className={className}
       width={width}
       height={height}
       viewBox="0 0 14 18"
@@ -12,7 +17,7 @@ const PauseIcon = ({ width = 13, height = 16 }) => {
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M1 0a1 1 0 00-1 1v16a1 1 0 001 1h2a1 1 0 001-1V1a1 1 0 00-1-1H1zm10 0a1 1 0 00-1 1v16a1 1 0 001 1h2a1 1 0 001-1V1a1 1 0 00-1-1h-2z"
-        fill="#fff"
+        fill={fill}
       />
     </svg>
   )
