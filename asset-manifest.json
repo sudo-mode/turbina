@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/turbina/static/css/main.06ac5604.chunk.css",
-    "main.js": "/turbina/static/js/main.639bcc0c.chunk.js",
-    "main.js.map": "/turbina/static/js/main.639bcc0c.chunk.js.map",
-    "runtime-main.js": "/turbina/static/js/runtime-main.81d6fa43.js",
-    "runtime-main.js.map": "/turbina/static/js/runtime-main.81d6fa43.js.map",
-    "static/js/2.c140ae6e.chunk.js": "/turbina/static/js/2.c140ae6e.chunk.js",
-    "static/js/2.c140ae6e.chunk.js.map": "/turbina/static/js/2.c140ae6e.chunk.js.map",
-    "static/js/3.0c405b0d.chunk.js": "/turbina/static/js/3.0c405b0d.chunk.js",
-    "static/js/3.0c405b0d.chunk.js.map": "/turbina/static/js/3.0c405b0d.chunk.js.map",
+    "main.css": "/turbina/static/css/main.653eaba0.chunk.css",
+    "main.js": "/turbina/static/js/main.2053b694.chunk.js",
+    "main.js.map": "/turbina/static/js/main.2053b694.chunk.js.map",
+    "runtime-main.js": "/turbina/static/js/runtime-main.ab9049d2.js",
+    "runtime-main.js.map": "/turbina/static/js/runtime-main.ab9049d2.js.map",
+    "static/js/2.63eeef31.chunk.js": "/turbina/static/js/2.63eeef31.chunk.js",
+    "static/js/2.63eeef31.chunk.js.map": "/turbina/static/js/2.63eeef31.chunk.js.map",
+    "static/js/3.7ff315af.chunk.js": "/turbina/static/js/3.7ff315af.chunk.js",
+    "static/js/3.7ff315af.chunk.js.map": "/turbina/static/js/3.7ff315af.chunk.js.map",
     "index.html": "/turbina/index.html",
-    "static/css/main.06ac5604.chunk.css.map": "/turbina/static/css/main.06ac5604.chunk.css.map",
-    "static/js/2.c140ae6e.chunk.js.LICENSE.txt": "/turbina/static/js/2.c140ae6e.chunk.js.LICENSE.txt",
+    "static/css/main.653eaba0.chunk.css.map": "/turbina/static/css/main.653eaba0.chunk.css.map",
+    "static/js/2.63eeef31.chunk.js.LICENSE.txt": "/turbina/static/js/2.63eeef31.chunk.js.LICENSE.txt",
     "static/media/App.css": "/turbina/static/media/arrowUp.f456265e.svg",
     "static/media/Navai.f61bdea2.mp3": "/turbina/static/media/Navai.f61bdea2.mp3",
     "static/media/The XX - Crystalised.a1269496.mp3": "/turbina/static/media/The XX - Crystalised.a1269496.mp3",
@@ -26,9 +26,9 @@
     "static/media/Илья Подстрелов – Вот такие крошка дела,ты меня так долго ждала_(muztron.club).0c77ae67.mp3": "/turbina/static/media/Илья Подстрелов – Вот такие крошка дела,ты меня так долго ждала_(muztron.club).0c77ae67.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.81d6fa43.js",
-    "static/js/2.c140ae6e.chunk.js",
-    "static/css/main.06ac5604.chunk.css",
-    "static/js/main.639bcc0c.chunk.js"
+    "static/js/runtime-main.ab9049d2.js",
+    "static/js/2.63eeef31.chunk.js",
+    "static/css/main.653eaba0.chunk.css",
+    "static/js/main.2053b694.chunk.js"
   ]
 }
