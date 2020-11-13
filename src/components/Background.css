@@ -9,6 +9,7 @@
   z-index: -5;
   top: 0;
   left: 0;
+  transition: background-image 1s ease-out;
 }
 
 /* .background_blur {

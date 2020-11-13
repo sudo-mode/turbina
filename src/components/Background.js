@@ -10,7 +10,7 @@ console.log(currentTrack.theme.backgroundImage)
   return (
     <div
       className="background"
-      style={{ backgroundImage: `url(${currentTrack.theme.backgroundImage})`, }}
+      style={{ backgroundImage: `${currentTrack.theme.backgroundImage}`, }}
     ></div>
   )
 }
