@@ -8,7 +8,7 @@ import daftPunkFeat from './audio/daft-punk-feat.-julian-casablancas-instant-cru
 
 const tracks = [
 
-  // трек стороннего сайта
+  // трек стороннего сайта для проверки отключения анимации
   // {
   //   id: '№17',
   //   group: '',
@@ -24,6 +24,7 @@ const tracks = [
   //   },
   //   albumPicture: 'https://images.unsplash.com/photo-1525253604620-23ac591dbea0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80',
   // },
+
   {
     id: '№13',
     group: '',

@@ -6,7 +6,6 @@ import playBtn from '../../images/play-icon.svg';
 import pauseBtn from '../../images/pause-icon.svg';
 import PlayerTimer from './PlayerTimer';
 import useTicker from '../../hooks/useTicker';
-import cn from 'classnames';
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 function PlayerController({ isPlayerExtend, track }) {
@@ -22,7 +21,6 @@ function PlayerController({ isPlayerExtend, track }) {
       }
       const context = new AudioContext();
       const audio = audioPlayerRef.current;
-      console.log(audioPlayerRef.current.src.startsWith(window.location.href))
       const audioSrc = context.createMediaElementSource(audio);
       const analyser = context.createAnalyser();
       analyser.fftSize = 128;
@@ -60,11 +58,12 @@ function PlayerController({ isPlayerExtend, track }) {
         }, 30);
       };
       
-  
       update();
 
     } catch(e) {
       console.log(e)
+      console.log('текущий адрес: ', window.location.href)
+      console.log('адрес трека: ', audioPlayerRef.current.src)
       return
     }
   }, []);
