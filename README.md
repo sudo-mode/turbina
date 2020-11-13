@@ -4,6 +4,8 @@
 
 Frontend проекта выполнен студентами Яндекс.Практикум
 
+https://sudo-mode.github.io/turbina/
+
 ## Технологический стек
 
 * HTML;
