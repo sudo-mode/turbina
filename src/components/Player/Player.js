@@ -9,9 +9,7 @@ import VideoBtn from './VideoBtn';
 import PlayerCover from './PlayerCover';
 import tracks from '../../db/tracks';
 
-
 function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCurrentTrack }) {
-  
   const [isTextInfo, setTextInfo] = useState(false);
   const [isExtendElementsMounted, setIsExtendElementsMounted] = useState(false);
 

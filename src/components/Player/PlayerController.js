@@ -1,11 +1,10 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef } from 'react';
 import './PlayerController.css';
 import useAudioPlayer from '../../hooks/useAudioPlayer';
+import useTicker from '../../hooks/useTicker';
 import PlayerTimeline from './PlayerTimeline';
 import PlayerTimer from './PlayerTimer';
 import ControlBtn from './ControlBtn';
-import useTicker from '../../hooks/useTicker';
-window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 function PlayerController({ isPlayerExtend, track }) {
   const trackRef = useRef();
