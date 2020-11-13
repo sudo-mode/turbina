@@ -94,3 +94,16 @@
     margin-left: 2px;
   }
 }
+
+
+
+/* dfsaasdasdasd */
+
+.canvas-visual {
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.canvas-visual_active {
+  opacity: .1;
+}

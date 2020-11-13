@@ -13,7 +13,7 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
 
   const height = isScrollbarHeight1280 ? 118 : isScrollbarHeight1024 ? 118 : isScrollbarHeight768 ? 102 : isScrollbarHeight480 ? 100 : 88;
 
-  const [top, setTop] = useState(0);
+  const [,setTop] = useState(0);
 
   const handleUpdate = (values) => {
     setTop(values);
