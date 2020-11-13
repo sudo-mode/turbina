@@ -67,6 +67,18 @@
   font-style: italic;
 }
 
+.player__bars {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: .3;  
+}
+
 @media screen and (max-width: 1024px) {
   .player__controller {
     row-gap: 2px;
@@ -78,6 +90,10 @@
 }
 
 @media screen and (max-width: 480px) {
+  .player__bars {
+    display: none;
+  }
+
   .player__controller {
     grid-template-columns: 20px 1fr min-content;
   }
@@ -93,17 +109,4 @@
     margin-top: -1px;
     margin-left: 2px;
   }
-}
-
-
-
-/* dfsaasdasdasd */
-
-.canvas-visual {
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-}
-
-.canvas-visual_active {
-  opacity: .1;
 }

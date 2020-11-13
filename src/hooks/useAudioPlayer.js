@@ -56,7 +56,6 @@ function useAudioPlayer(audioPlayerRef, track, audioCtx) {
     setCurTime(0);
     setPlaying(false);
     setLoadedState(false);
-    setPlaying(false);
   }, [track]);
 
   return {

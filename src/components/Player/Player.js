@@ -46,7 +46,7 @@ function Player ({ isPlayerExtend, onPlayerExtend, style }) {
     <section className="player" style={style}>
       {isExtendElementsMounted && 
         <AnimatedPlayerCover
-          image={currentTrack.image}
+          image={currentTrack.albumPicture}
           style={extendPlayerAnimationConfig}
         />
       }

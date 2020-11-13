@@ -6,7 +6,7 @@ import Ilya from './audio/Илья Подстрелов – Вот такие к
 import klubnika from './audio/nikolife-miravi-klubnika-bomba.mp3';
 import daftPunkFeat from './audio/daft-punk-feat.-julian-casablancas-instant-crush.mp3';
 
-const tracks = [
+export const tracks = [
 
   // трек стороннего сайта для проверки отключения анимации
   // {

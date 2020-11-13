@@ -131,19 +131,8 @@ function PlayerController({ isPlayerExtend, track }) {
       />
     </div>
     
-
       <div
-        style={{
-          position: 'absolute',
-          width: `${100}%`,
-          zIndex: -1,
-          top: 0,
-          left: 0,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          opacity: .3,
-        }}
+        className="player__bars"
       >
         <ul ref={barsRef}
           style={{
