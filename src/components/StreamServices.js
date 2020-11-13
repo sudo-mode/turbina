@@ -9,9 +9,6 @@ import { serviceLinks } from '../configs/links';
 import StreamServiceLink from './StreamServiceLink';
 import LinksCloseIcon from './svg/LinksCloseIcon';
 
-/* TODO - написать комментарий к анимации кнопки Стриминги */
-/* TODO - вынести магические числа из проперти config в нормальные переменные (для анимации) */
-
 function StreamServices({ className, isMobile, isLandscape, isPlayerExtend }) {
   /* Разделение между стейтами isLinksMounted и isLinksHidden сделано для корректной анимации.
   Ссылки должны размонтироваться по окончании анимации, иначе анимации не будет. */
