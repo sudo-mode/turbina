@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/turbina/static/css/main.0b735dcf.chunk.css",
-    "main.js": "/turbina/static/js/main.111329f9.chunk.js",
-    "main.js.map": "/turbina/static/js/main.111329f9.chunk.js.map",
+    "main.css": "/turbina/static/css/main.d2785974.chunk.css",
+    "main.js": "/turbina/static/js/main.9db6f4ae.chunk.js",
+    "main.js.map": "/turbina/static/js/main.9db6f4ae.chunk.js.map",
     "runtime-main.js": "/turbina/static/js/runtime-main.8386b32b.js",
     "runtime-main.js.map": "/turbina/static/js/runtime-main.8386b32b.js.map",
     "static/js/2.3794f462.chunk.js": "/turbina/static/js/2.3794f462.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.7c6f7e7b.chunk.js": "/turbina/static/js/3.7c6f7e7b.chunk.js",
     "static/js/3.7c6f7e7b.chunk.js.map": "/turbina/static/js/3.7c6f7e7b.chunk.js.map",
     "index.html": "/turbina/index.html",
-    "static/css/main.0b735dcf.chunk.css.map": "/turbina/static/css/main.0b735dcf.chunk.css.map",
+    "static/css/main.d2785974.chunk.css.map": "/turbina/static/css/main.d2785974.chunk.css.map",
     "static/js/2.3794f462.chunk.js.LICENSE.txt": "/turbina/static/js/2.3794f462.chunk.js.LICENSE.txt",
     "static/media/App.css": "/turbina/static/media/arrowUp.f456265e.svg",
     "static/media/Navai.f61bdea2.mp3": "/turbina/static/media/Navai.f61bdea2.mp3",
@@ -29,7 +29,7 @@
   "entrypoints": [
     "static/js/runtime-main.8386b32b.js",
     "static/js/2.3794f462.chunk.js",
-    "static/css/main.0b735dcf.chunk.css",
-    "static/js/main.111329f9.chunk.js"
+    "static/css/main.d2785974.chunk.css",
+    "static/js/main.9db6f4ae.chunk.js"
   ]
 }
