@@ -35,6 +35,19 @@
   margin-right: 10px;
 }
 
+.player__video-link-wrapper {
+  display: inline-block;
+  background-image: url('../../images/background.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 30px;
+  margin-right: 10px;
+}
+
+
+
 .player__video-link_active {
   display: inline-block;
 }
@@ -56,7 +69,7 @@
   display: inline-block;
   width: 9px;
   height: 11px;
-  background-image: url(../../images/play-icon-btn.svg);
+  background-image: url('../../images/play-icon-btn.svg');
   background-size: contain;
   background-repeat: no-repeat;
   margin-right: 4px;

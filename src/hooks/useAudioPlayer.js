@@ -6,7 +6,7 @@ audioElementId -- (строка, например 'audio')
 track -- трек из списка песен, устанавливается в качестве зависимости 
         (useEffect при смене трека)
 */
-function useAudioPlayer(audioPlayerRef, track) {
+function useAudioPlayer(audioPlayerRef, track, audioCtx) {
   const [isLoaded, setLoadedState] = useState(false);
 
   const [duration, setDuration] = useState(0);
@@ -15,8 +15,19 @@ function useAudioPlayer(audioPlayerRef, track) {
   const [clickedTime, setClickedTime] = useState();
 
   const handlePlayClick = () => {
-    setPlaying(!isPlaying);
-    isPlaying ? audioPlayerRef.current.pause() : audioPlayerRef.current.play();
+
+    if (isPlaying) {
+      audioPlayerRef.current.pause();
+      setPlaying(false)
+    } else {
+      if (audioCtx) {
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume()
+        }
+      }  
+      audioPlayerRef.current.play();
+      setPlaying(true);
+    }
   }
 
   const handleLoadedMetaData = () => {
