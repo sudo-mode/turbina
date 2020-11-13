@@ -1,10 +1,13 @@
+import { useRef } from 'react';
 import './PlayerTimeline.css';
 
 function PlayerTimeline ({ duration, curTime, onTimeUpdate }) {
+  const timelineRef = useRef();
+
   const curPercentage = (curTime / duration) * 100;
 
   const calculateClickedTime = (e) => {
-    const timeline = document.querySelector('.player__timeline-container');
+    const timeline = timelineRef.current;
     const timelineWidth = timeline.clientWidth;
     const timelineStart = timeline.getBoundingClientRect().left;
     const clickedXposition = e.pageX;
@@ -36,6 +39,7 @@ function PlayerTimeline ({ duration, curTime, onTimeUpdate }) {
     >
       <div
         className="player__timeline"
+        ref={timelineRef}
       >
         <div 
           className="player__progress"

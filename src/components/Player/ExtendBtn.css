@@ -1,23 +1,33 @@
-.player__extend-btn {
+.extend-btn {
   grid-area: extend-btn;
+  justify-self: end;
+  align-self: start;
   width: 30px;
   height: 30px;
   padding: 0;
   border: none;
   outline: none;
-  background: top right no-repeat transparent;
-  justify-self: end;
+  background: transparent;
   -webkit-tap-highlight-color: transparent;
 }
 
-.player__extend-btn:hover {
+.extend-btn:hover {
   cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {
-  .player__extend-btn {
+  .extend-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .extend-btn_open {
     width: 16px;
     height: 16px;
-    background-size: contain;
+  }
+  
+  .extend-btn_close {
+    width: 16px;
+    height: 16px;
   }
 }

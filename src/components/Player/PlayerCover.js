@@ -1,6 +1,6 @@
 import './PlayerCover.css';
 
-const PlayerCover = ({ image, style }) => {
+function PlayerCover({ image, style }) {
   return (
     <div className="cover-wrapper" style={style}>
       <div
