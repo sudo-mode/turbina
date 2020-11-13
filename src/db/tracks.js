@@ -10,23 +10,8 @@ import defaultBackground from '../images/background.png';
 
 export const tracks = [
 
-  // трек стороннего сайта для проверки отключения анимации
-  // {
-  //   id: '№17',
-  //   trackName: 'madconbeggin.mp3',
-  //   author: 'madconbeggin.mp3',
-  //   originalAuthor: 'audio1',
-  //   text: ``,
-  //   link: 'https://ds.cdn5.mzmdl.com/cuts/d9/c4/d9c4b23a86693374ab703d4680faeec2/47842886/The_xx_-_Crystalised_b128f0d202.mp3',
-  //   videoLink: '',
-  //   theme: {
-  //     color: '#fff',
-  //     backgroundColor: 'blue',
-  //   },
-  //   albumPicture: 'https://images.unsplash.com/photo-1525253604620-23ac591dbea0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80',
-  // },
   {
-    id: '№7',
+    id: '№1',
     trackName: 'Контур',
     author: 'Хадн Дадн',
     originalAuthor: 'Варя Карпова и Федя Быстров',
@@ -43,12 +28,12 @@ export const tracks = [
     },
   },
   {
-    id: '№13',
-    trackName: 'madconbeggin',
-    author: 'madconbeggin',
-    originalAuthor: 'audio1',
+    id: '№2',
+    trackName: 'Лодка',
+    author: 'СБПЧ',
+    originalAuthor: 'Маруся Романова',
     text: ``,
-    link: madconbeggin,
+    link: Infinity_,
     videoLink: '',
     theme: {
       color: '#fff',
@@ -58,12 +43,12 @@ export const tracks = [
     albumPicture: 'https://images.unsplash.com/photo-1525253604620-23ac591dbea0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80',
   },
   {
-    id: '№14',
-    trackName: 'Чёрный Мерен',
-    author: 'Navai',
-    originalAuthor:' audio2',
+    id: '№3',
+    trackName: 'Кирпичи',
+    author: 'Инди группа',
+    originalAuthor: 'Пётр Сковородников',
     text: ``,
-    link: Navai,
+    link: madconbeggin,
     videoLink: '',
     theme: {
       color: '#000',
@@ -73,16 +58,12 @@ export const tracks = [
     albumPicture: 'https://images.unsplash.com/photo-1587532635449-61603976e580?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80',
   },
   {
-    id: '№5',
-    trackName: 'Лодка',
-    author: 'СПБЧ',
-    originalAuthor: 'Маруся Романова',
-    text: `Маруся Романова
-    Маруся Романова
-    Маруся Романова
-    Маруся Романова
-    Маруся Романова`,
-    link: Infinity_,
+    id: '№4',
+    trackName: 'Стой',
+    author: 'АлоэВера',
+    originalAuthor: 'Юля Дорошина',
+    text: ``,
+    link: daftPunkFeat,
     theme: {
       color: '#8B0000',
       backgroundColor: '#98FB98',
@@ -91,10 +72,10 @@ export const tracks = [
     albumPicture: 'https://images.unsplash.com/photo-1565292334631-95d1dd9e2970?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=742&q=80',
   },
   {
-    id: '№8',
-    trackName: 'Вот такие крошка дела,ты меня так долго ждала',
+    id: '№5',
+    trackName: 'Вот такие дела',
     author: 'Илья Подстрелов',
-    originalAuthor: '',
+    originalAuthor: 'Серёжа Медведев',
     text: `Ты говорила мне, что любишь очень.
       И намекала всё, что замуж хочешь.
       На свадьбах у друзей бывала часто,
@@ -105,7 +86,6 @@ export const tracks = [
       И выполнив свой долг, к тебе приеду -
       К девочке моей...
 
-      Припев [х2]:
       Вот такие, крошка, дела.
       Ты меня так долго ждала.
       Я серьезных дел не боюсь,
@@ -120,26 +100,30 @@ export const tracks = [
   },
   {
     id: '№6',
-    trackName: 'Клубника Бомба',
-    author: 'NikoLife & Miravi',
-    originalAuthor: '',
-    text: `Клубника бомба, честно говоря
-    Источник text-pesni.com
+    trackName: 'Добрая песня',
+    author: 'Тени свободы',
+    originalAuthor: 'Даша Овчинникова',
+    text: `Я верю, что ты немного лучше,
+    Немного выше кучи недоразумений,
+    В которой мы погрязли не совсем по нашей воле
     
-    Интрига
-    Ты ежевика (нет)
-    Может брусника (нет)
-    Значит клубника
+    Бывает страшно, зато не скучно,
+    Бывает больно так, что ясно без сомнений —
+    На один целых ноль десятых создан мир из боли
+    Мы знаем, он может быть чуточку злым,
+    Но нету причин и тебе быть таким
     
-    Я клубника
-    Клубника бомба
-    Я клубника
-    Клубника бомба
-    Я клубника
-    Клубника бомба
-    Я клубника
-    Клубника бомба, честно говоря`,
-    link: klubnika,
+    Стоять и терпеть и вниз не смотреть,
+    Ну и что теперь, раз зубы оскалил этот зверь,
+    Я верю — мы, мы сильнее,
+    Пускай он кричит, пускай он горит, раз наш мир дерьмо,
+    Зачем быть похожим на него?
+    Лишь из-за нас он болеет
+    
+    Мы полагаем, что всё срастется,
+    Что небо, сбросив свою серость, улыбнется,
+    Так покажи и научи его, как это делать`,
+    link: Navai,
     theme: {
       color: '#800000',
       backgroundColor: '#D3D3D3',
@@ -148,18 +132,19 @@ export const tracks = [
     albumPicture: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
   },
   {
-    id: '№4',
-    group: 'Супер-мега-трек для тестирования бегущей строки (Нажми меня) Инди группа Инди группа Инди группа Инди группа',
-    trackName: 'Кирпичи',
-    author: 'Супер-мега-трек для тестирования бегущей строки (Нажми меня) Инди группа Инди группа Инди группа Инди группа feat. Петр Сковородников',
-    originalAuthor: '',
-    text: `Петр Сковородников
-    Петр Сковородников
-    Петр Сковородников
-    Петр Сковородников
-    Петр Сковородников
-    Петр Сковородников`,
-    link: daftPunkFeat,
+    id: '№7',
+    trackName: 'Sad princess',
+    author: 'Alai Oli',
+    originalAuthor: 'Оля Ерофеева',
+    text: `Все горит, но я буду веселиться
+    Такой принцип
+    Ничего плохого не случится
+    Если все уже случилось с тобой
+    Пост апокалипсис личный
+    Все горит, но я буду веселиться
+    Такой принцип, ничего плохого не случится
+    Если все уже случилось с тобой`,
+    link: klubnika,
     theme: {
       color: '#800080',
       backgroundColor: '#708090',
