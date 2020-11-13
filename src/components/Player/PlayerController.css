@@ -86,9 +86,6 @@
 }
 
 @media screen and (max-width: 480px) {
-  .player__bars {
-    display: none;
-  }
 
   .player__controller {
     grid-template-columns: 20px 1fr min-content;
