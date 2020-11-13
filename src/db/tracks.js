@@ -169,12 +169,4 @@ export const tracks = [
   },
 ]
 
-const defaultThemes = [
-  {theme: {
-    color: '#000',
-    backgroundColor: 'white',
-    backgroundImage: `url(${defaultBackground})`,
-  }},
-]
-
 export default tracks;
