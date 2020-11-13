@@ -144,8 +144,15 @@
 }
 
 .form__wrong-submit {
-    margin: 20px auto 0 auto;
+    margin: 0 auto;
     color: red;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.form__fill-hint {
+    margin: 20px auto 5px auto;
+    color: #00000070;
     font-size: 16px;
     line-height: 1.2;
 }
@@ -222,6 +229,10 @@
     }
     
     .form__wrong-submit {
+        font-size: 14px;
+    }
+
+    .form__fill-hint {
         font-size: 14px;
     }
 }
