@@ -9,7 +9,6 @@ import VideoBtn from './VideoBtn';
 import PlayerCover from './PlayerCover';
 import tracks from '../../db/tracks';
 
-
 function Player ({ isPlayerExtend, onPlayerExtend, style }) {
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const [isTextInfo, setTextInfo] = useState(false);
