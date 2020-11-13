@@ -15,16 +15,10 @@ function useAudioPlayer(audioPlayerRef, track, audioCtx) {
   const [clickedTime, setClickedTime] = useState();
 
   const handlePlayClick = () => {
-
     if (isPlaying) {
       audioPlayerRef.current.pause();
       setPlaying(false)
     } else {
-      if (audioCtx) {
-        if (audioCtx.state === 'suspended') {
-          audioCtx.resume()
-        }
-      }  
       audioPlayerRef.current.play();
       setPlaying(true);
     }

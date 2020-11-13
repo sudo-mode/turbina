@@ -22,7 +22,7 @@ function PlayerController({ isPlayerExtend, track }) {
       const audio = audioPlayerRef.current;
       const audioSrc = context.createMediaElementSource(audio);
       const analyser = context.createAnalyser();
-      analyser.fftSize = 128;
+      analyser.fftSize = 32;
       audioSrc
         .connect(analyser)
         .connect(context.destination)
@@ -84,6 +84,14 @@ function PlayerController({ isPlayerExtend, track }) {
     curTime,
     duration
   } = useAudioPlayer(audioPlayerRef, track, audioCtx);
+
+  if(isPlaying) {
+    if (audioCtx) {
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume()
+      }
+    }  
+  }
 
   return (
     <>
@@ -151,43 +159,6 @@ function PlayerController({ isPlayerExtend, track }) {
             rgba(0,0,0,1) 80%,
             rgba(0,0,0,0) 100%)`
           }}>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
           <li></li>
           <li></li>
           <li></li>

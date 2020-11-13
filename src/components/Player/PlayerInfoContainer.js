@@ -1,7 +1,6 @@
 import './PlayerInfoContainer.css';
 import PlayerInfoContent from './PlayerInfoContent';
 import { Scrollbars } from 'react-custom-scrollbars';
-import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick, isLoading }) {
@@ -10,14 +9,7 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
   const isScrollbarHeight768 = useMediaQuery({ query: '(min-width: 768px)' });
   const isScrollbarHeight480 = useMediaQuery({ query: '(min-width: 480px)' });
 
-
   const height = isScrollbarHeight1280 ? 118 : isScrollbarHeight1024 ? 118 : isScrollbarHeight768 ? 102 : isScrollbarHeight480 ? 100 : 88;
-
-  const [,setTop] = useState(0);
-
-  const handleUpdate = (values) => {
-    setTop(values);
-  };
 
   const renderView = ({ style, ...props }) => {
     return (
@@ -63,7 +55,6 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
         className='player__scrollbars'
         renderView={renderView}
         style={{ height: height }}
-        onUpdate={handleUpdate}
         renderThumbVertical={renderThumb}
         renderTrackVertical={renderTrack}
         renderTrackHorizontal={renderTrackHorizontal}
