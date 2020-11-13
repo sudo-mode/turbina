@@ -40,7 +40,7 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile }) {
 
   const extendСonfig = useSpring({
     to: { height: isPlayerExtend ? calcExtendedHeight() : calcDefaultHeight() },
-    config: { tension: 120, friction: 17 }
+    config: { mass: 1, tension: isMobile ? 110 : 120, friction: 17 }
   });
 
   return (
