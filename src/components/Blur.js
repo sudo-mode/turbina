@@ -1,8 +1,7 @@
-import './Blur.css';
 import cn from 'classnames';
+import './Blur.css';
 
 function Blur({ isPlayerExtend, isMobile, isLandscape }) {
-
   const blurLayerStyle = cn('blur__layer', { 'blur__layer_active': isPlayerExtend && (isMobile || isLandscape) })
 
   return (
@@ -10,4 +9,4 @@ function Blur({ isPlayerExtend, isMobile, isLandscape }) {
   )
 }
 
-export default Blur
+export default Blur;
