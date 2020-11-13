@@ -4,7 +4,6 @@ import useAudioPlayer from '../../hooks/useAudioPlayer';
 import PlayerTimeline from './PlayerTimeline';
 import PlayerTimer from './PlayerTimer';
 import ControlBtn from './ControlBtn';
-// import PlayerBar from './PlayerBar';
 import useTicker from '../../hooks/useTicker';
 import './PlayerBar.css';
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -14,9 +13,6 @@ function PlayerController({ isPlayerExtend, track }) {
   const audioPlayerRef = useRef();
   const [audioCtx, setAudioCtx] = useState(null);
   const barsRef = useRef();
-  const [update, setUpdate] = useState()
-
-  // const [barHeight, setBarHeight] = useState()
 
   useEffect(() => {
     try {
@@ -39,24 +35,18 @@ function PlayerController({ isPlayerExtend, track }) {
       const frequency_array = new Uint8Array(bufferLength);
       const bars = barsRef.current.children;
 
-      function update() {
-
-        if (isMobile) {
-          return
-        } else {
-          setTimeout(() => {
-            requestAnimationFrame(update);
-            analyser.getByteFrequencyData(frequency_array);
-            if (bars) {
-              for (let i = 0; i < 16; i++) {
-                bars[i].style.height = (frequency_array[i] / 3) + 'px';
-              }
+      function update() {   
+        setTimeout(() => {
+          requestAnimationFrame(update);
+          analyser.getByteFrequencyData(frequency_array);
+          if (bars) {
+            for (let i = 0; i < 14; i++) {
+              bars[i].style.height = (frequency_array[i] / 3) + 'px';
             }
-          }, 40);
-        };
-
+          }
+        }, 40);
       }
-      setUpdate(update)
+      requestAnimationFrame(update)
 
     } catch (e) {
       console.log(e)
@@ -84,18 +74,11 @@ function PlayerController({ isPlayerExtend, track }) {
     duration
   } = useAudioPlayer(audioPlayerRef, track);
 
-
-  update()
-
-
-
   if (isPlaying && audioCtx) {
     if (audioCtx.state === 'suspended') {
       audioCtx.resume()
     }
   }
-
-
 
   return (
     <>
@@ -158,14 +141,8 @@ function PlayerController({ isPlayerExtend, track }) {
           <li className='player__bar'></li>
           <li className='player__bar'></li>
           <li className='player__bar'></li>
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
         </ul>
       </div>
-      {/* <PlayerBar
-        barHeight={barHeight}
-      /> */}
-
     </>
   )
 }
