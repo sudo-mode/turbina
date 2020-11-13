@@ -1,13 +1,13 @@
 import { useState } from 'react';
+import { useSpring, animated } from 'react-spring';
 import './Player.css';
 import PlayerController from './PlayerController';
 import PlayerSwitcher from './PlayerSwitcher';
 import ExtendBtn from './ExtendBtn';
 import PlayerInfoContainer from './PlayerInfoContainer';
-import PlayerVideoBtn from './PlayerVideoBtn';
-import tracks from '../../db/tracks';
+import VideoBtn from './VideoBtn';
 import PlayerCover from './PlayerCover';
-import { useSpring, animated } from 'react-spring';
+import tracks from '../../db/tracks';
 
 
 function Player ({ isPlayerExtend, onPlayerExtend, style }) {
@@ -19,7 +19,6 @@ function Player ({ isPlayerExtend, onPlayerExtend, style }) {
     from: { opacity: .1, scale: 0.8 },
     to: { opacity: isPlayerExtend ? 1 : 0.1, scale: isPlayerExtend ? 1 : 0.8 },
     config: { duration: 250 },
-    // delay: !isPlayerExtend ? 100 : 0,
     onRest: () => {
       if (!isPlayerExtend) {
         setIsExtendElementsMounted(false)
@@ -72,9 +71,11 @@ function Player ({ isPlayerExtend, onPlayerExtend, style }) {
           className="player__buttons-wrapper"
           style={extendPlayerAnimationConfig}
         >
-          <PlayerVideoBtn 
-            videoLink={currentTrack.videoLink}
-          />   
+          {currentTrack.videoLink &&
+            <VideoBtn 
+              videoLink={currentTrack.videoLink}
+            /> 
+          }
           <PlayerSwitcher
             onClick={handlePlayerSwitcherClick}
             isTextInfo={isTextInfo}

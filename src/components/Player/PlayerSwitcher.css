@@ -1,5 +1,6 @@
 .player__switcher {
   width: 135px;
+  min-width: 100px;
   height: 35px;
   box-sizing: border-box;
   padding: 0 6px;
@@ -52,7 +53,6 @@
 @media screen and (max-width: 600px) {
   .player__switcher {
     flex-grow: 1;
-    min-width: 160px;
     height: 30px;
     font-size: 12px;
   }

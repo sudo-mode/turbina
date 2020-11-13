@@ -1,0 +1,33 @@
+.video-link-wrapper {
+  display: inline-block;
+  padding-right: 10px;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.video-link {
+  border-radius: 20px;
+  transition: box-shadow .2s ease-out;
+}
+
+.video-link:hover {
+  box-shadow: 0 0 8px 4px #ffffff40;
+}
+
+.video-link:active, .video-link:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .video-link {
+    height: 34px;
+    width: 87px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .video-link {
+    height: 30px;
+    width: 74px;
+  }
+}

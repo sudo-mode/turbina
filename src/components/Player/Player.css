@@ -19,6 +19,7 @@
 
 .player__buttons-wrapper {
   grid-area: buttons;
+  display: flex;
   margin-top: -4px;
   margin-left: 10px;
 }
