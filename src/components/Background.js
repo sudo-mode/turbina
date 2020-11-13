@@ -6,12 +6,13 @@ function Background({ isPlayerExtend, isMobile, currentTrack }) {
   return (
     <div>
     <Transition
-      items={currentTrack ? currentTrack : ""}
+      items={currentTrack}
       from={{ opacity: 0 }}
       enter={{ opacity: 1 }}
       leave={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       config={{ mass: 1, tension: 280, friction: 120 }}
-      keys={() => currentTrack ? currentTrack : ""}
+      keys={() => currentTrack}
     > 
       {(values, item) => (
         <animated.div
