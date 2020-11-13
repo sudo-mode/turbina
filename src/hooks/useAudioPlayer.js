@@ -43,6 +43,7 @@ function useAudioPlayer(audioPlayerRef, track) {
 
   useEffect(() => {
     setCurTime(0);
+    setPlaying(false);
     setLoadedState(false);
   }, [track]);
 
