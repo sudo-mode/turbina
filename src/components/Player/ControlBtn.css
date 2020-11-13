@@ -15,8 +15,6 @@
   cursor: pointer;
 }
 
-
-
 @media screen and (max-width: 1024px) {
   .control-btn_play {
     width: 15px;
