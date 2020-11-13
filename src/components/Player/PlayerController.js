@@ -16,46 +16,53 @@ function PlayerController({ isPlayerExtend, track }) {
   const barsRef = useRef();
 
   useEffect(() => {
-    const context = new AudioContext();
-    const audio = audioPlayerRef.current;
-    const audioSrc = context.createMediaElementSource(audio);
-    const analyser = context.createAnalyser();
-    analyser.fftSize = 128;
-    audioSrc
-      .connect(analyser)
-      .connect(context.destination)
-    analyser.connect(context.destination)
-
-    setAudioCtx(context)
-
-    const bufferLength = analyser.frequencyBinCount;
-    const frequency_array = new Uint8Array(bufferLength);
-    const bars = barsRef.current.children;
-
-    function update() {
-
-      let colorBars;
-
-      setTimeout(() => {
-        requestAnimationFrame(update);
-        analyser.getByteFrequencyData(frequency_array);
-
-        if (bars) {
-
-          for (let i = 0; i < bars.length; i++) {
-
-            colorBars = `rgb(${frequency_array[0]}, ${frequency_array[i]}, ${frequency_array[i]} )`;
-            bars[i].style.height = Math.floor(frequency_array[i] / 3) + 'px';
-            bars[i].style.backgroundColor = colorBars;
-            bars[i].style.width = 3 + '%';
-            bars[i].style.marginRight = 1 + '%';
-
+    try {
+      const context = new AudioContext();
+      const audio = audioPlayerRef.current;
+  
+      const audioSrc = context.createMediaElementSource(audio);
+      const analyser = context.createAnalyser();
+      analyser.fftSize = 128;
+      audioSrc
+        .connect(analyser)
+        .connect(context.destination)
+      analyser.connect(context.destination)
+  
+      setAudioCtx(context)
+  
+      const bufferLength = analyser.frequencyBinCount;
+      const frequency_array = new Uint8Array(bufferLength);
+      const bars = barsRef.current.children;
+  
+      function update() {
+  
+        let colorBars;
+  
+        setTimeout(() => {
+          requestAnimationFrame(update);
+          analyser.getByteFrequencyData(frequency_array);
+  
+          if (bars) {
+  
+            for (let i = 0; i < bars.length; i++) {
+  
+              colorBars = `rgb(${frequency_array[0]}, ${frequency_array[i]}, ${frequency_array[i]} )`;
+              bars[i].style.height = Math.floor(frequency_array[i] / 3) + 'px';
+              bars[i].style.backgroundColor = colorBars;
+              bars[i].style.width = 3 + '%';
+              bars[i].style.marginRight = 1 + '%';
+  
+            }
           }
-        }
-      }, 30);
-    };
+        }, 30);
+      };
+  
+      update();
 
-    update();
+    } catch(e) {
+      throw new Error('Трек со стороннего сайта')
+    }
+
 
   }, []);
 
