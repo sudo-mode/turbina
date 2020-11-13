@@ -4,7 +4,9 @@ import useAudioPlayer from '../../hooks/useAudioPlayer';
 import PlayerTimeline from './PlayerTimeline';
 import PlayerTimer from './PlayerTimer';
 import ControlBtn from './ControlBtn';
+// import PlayerBar from './PlayerBar';
 import useTicker from '../../hooks/useTicker';
+import './PlayerBar.css';
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 function PlayerController({ isPlayerExtend, track }) {
@@ -12,6 +14,9 @@ function PlayerController({ isPlayerExtend, track }) {
   const audioPlayerRef = useRef();
   const [audioCtx, setAudioCtx] = useState(null);
   const barsRef = useRef();
+  const [update, setUpdate] = useState()
+
+  // const [barHeight, setBarHeight] = useState()
 
   useEffect(() => {
     try {
@@ -27,39 +32,33 @@ function PlayerController({ isPlayerExtend, track }) {
         .connect(analyser)
         .connect(context.destination)
       analyser.connect(context.destination)
-  
+
       setAudioCtx(context)
-  
+
       const bufferLength = analyser.frequencyBinCount;
       const frequency_array = new Uint8Array(bufferLength);
       const bars = barsRef.current.children;
-  
-      function update() {
-  
-        let colorBars;
-  
-        setTimeout(() => {
-          requestAnimationFrame(update);
-          analyser.getByteFrequencyData(frequency_array);
-  
-          if (bars) {
-  
-            for (let i = 0; i < bars.length; i++) {
-  
-              colorBars = `rgb(${frequency_array[0]}, ${frequency_array[i]}, ${frequency_array[i]} )`;
-              bars[i].style.height = Math.floor(frequency_array[i] / 3) + 'px';
-              bars[i].style.backgroundColor = colorBars;
-              bars[i].style.width = 3 + '%';
-              bars[i].style.marginRight = 1 + '%';
-  
-            }
-          }
-        }, 30);
-      };
-      
-      update();
 
-    } catch(e) {
+      function update() {
+
+        if (isMobile) {
+          return
+        } else {
+          setTimeout(() => {
+            requestAnimationFrame(update);
+            analyser.getByteFrequencyData(frequency_array);
+            if (bars) {
+              for (let i = 0; i < 16; i++) {
+                bars[i].style.height = (frequency_array[i] / 3) + 'px';
+              }
+            }
+          }, 40);
+        };
+
+      }
+      setUpdate(update)
+
+    } catch (e) {
       console.log(e)
       console.log('текущий адрес: ', window.location.href)
       console.log('адрес трека: ', audioPlayerRef.current.src)
@@ -83,100 +82,90 @@ function PlayerController({ isPlayerExtend, track }) {
     handleTrackEnded,
     curTime,
     duration
-  } = useAudioPlayer(audioPlayerRef, track, audioCtx);
+  } = useAudioPlayer(audioPlayerRef, track);
 
-  if(isPlaying) {
-    if (audioCtx) {
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume()
-      }
-    }  
+
+  update()
+
+
+
+  if (isPlaying && audioCtx) {
+    if (audioCtx.state === 'suspended') {
+      audioCtx.resume()
+    }
   }
+
+
 
   return (
     <>
-    <div className="player__controller">
-      <audio
-        src={track.link}
-        preload="auto"
-        ref={audioPlayerRef}
-        onLoadedMetadata={handleLoadedMetaData}
-        onTimeUpdate={handleTimeUpdate}
-        onEnded={handleTrackEnded}
-      >
-        <p>Ваш браузер не поддерживает HTML5 аудио.</p>
-      </audio>
-      <ControlBtn
-        isPlaying={isPlaying}
-        onBtnClick={handlePlayClick}
-      />
-      <div className="player__song-container">
-        <p 
-          className="player__song"
-          ref={trackRef}
+      <div className="player__controller">
+        <audio
+          src={track.link}
+          preload="auto"
+          ref={audioPlayerRef}
+          onLoadedMetadata={handleLoadedMetaData}
+          onTimeUpdate={handleTimeUpdate}
+          onEnded={handleTrackEnded}
         >
-          {isLoaded
-            ? <>
+          <p>Ваш браузер не поддерживает HTML5 аудио.</p>
+        </audio>
+        <ControlBtn
+          isPlaying={isPlaying}
+          onBtnClick={handlePlayClick}
+        />
+        <div className="player__song-container">
+          <p
+            className="player__song"
+            ref={trackRef}
+          >
+            {isLoaded
+              ? <>
                 {track.trackName} — {track.author}
                 <span className="player__song-accent"> feat. </span>
                 {track.originalAuthor}
               </>
-            : 'Загрузка...'
-          }          
-        </p>
-      </div>
-      {isLoaded && 
-        <PlayerTimer
-          duration={duration}
+              : 'Загрузка...'
+            }
+          </p>
+        </div>
+        {isLoaded &&
+          <PlayerTimer
+            duration={duration}
+            curTime={curTime}
+          />
+        }
+        <PlayerTimeline
           curTime={curTime}
+          duration={duration}
+          onTimeUpdate={(time) => setClickedTime(time)}
         />
-      }
-      <PlayerTimeline
-        curTime={curTime}
-        duration={duration}
-        onTimeUpdate={(time) => setClickedTime(time)}
-      />
-    </div>
-    
-      <div
-        className="player__bars"
-      >
-        <ul ref={barsRef}
-          style={{
-            width: `${96}%`,
-            height: 100,
-            justifyContent: 'center',
-            listStyle: 'none',
-            bacgroundColor: 'red',
-            display: 'flex',
-            alignItems: 'flex-end',
-            margin: 0,
-            padding: 0,
-            WebkitMaskImage: `-webkit-linear-gradient(
-            top,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0,0,0,1) 20%,
-            rgba(0,0,0,1) 80%,
-            rgba(0,0,0,0) 100%)`
-          }}>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+      </div>
+
+      <div className="player__bars">
+        <ul ref={barsRef} className="player__bars-list">
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
+          <li className='player__bar'></li>
         </ul>
       </div>
+      {/* <PlayerBar
+        barHeight={barHeight}
+      /> */}
+
     </>
   )
 }
