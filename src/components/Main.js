@@ -1,10 +1,10 @@
 
+import { useSpring, animated, } from 'react-spring';
+import { useMediaQuery } from 'react-responsive';
 import './Main.css';
 import Header from './Header';
 import ProjectLogo from './ProjectLogo';
 import Player from './Player/Player';
-import { useSpring, animated, } from 'react-spring';
-import { useMediaQuery } from 'react-responsive';
 
 function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurrentTrack, currentTrack }) {
 
@@ -40,7 +40,7 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurr
 
   const extendСonfig = useSpring({
     to: { height: isPlayerExtend ? calcExtendedHeight() : calcDefaultHeight() },
-    config: { tension: 120, friction: 17 }
+    config: { mass: 1, tension: isMobile ? 110 : 120, friction: 17 }
   });
 
   return (

@@ -13,7 +13,6 @@ export const tracks = [
   // трек стороннего сайта для проверки отключения анимации
   // {
   //   id: '№17',
-  //   group: '',
   //   trackName: 'madconbeggin.mp3',
   //   author: 'madconbeggin.mp3',
   //   originalAuthor: 'audio1',
@@ -26,12 +25,27 @@ export const tracks = [
   //   },
   //   albumPicture: 'https://images.unsplash.com/photo-1525253604620-23ac591dbea0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80',
   // },
-
+  {
+    id: '№7',
+    trackName: 'Контур',
+    author: 'Хадн Дадн',
+    originalAuthor: 'Варя Карпова и Федя Быстров',
+    text: `Мой милый, милый мальчик,
+      Моя милая, милая девочка.
+      Никогда не знаешь, что будет дальше
+      В этой гадкой зиме`,
+    link: Crystalised,
+    videoLink: 'https://www.youtube.com/watch?v=p2xFqtgwhrU',
+    theme: {
+      color: '#fff',
+      backgroundColor: 'white',
+      backgroundImage: `url(${defaultBackground})`,
+    },
+  },
   {
     id: '№13',
-    group: '',
-    trackName: 'madconbeggin.mp3',
-    author: 'madconbeggin.mp3',
+    trackName: 'madconbeggin',
+    author: 'madconbeggin',
     originalAuthor: 'audio1',
     text: ``,
     link: madconbeggin,
@@ -39,14 +53,13 @@ export const tracks = [
     theme: {
       color: '#fff',
       backgroundColor: 'blue',
-      backgroundImage: `url(${defaultBackground})`,
+      backgroundImage: 'linear-gradient(to top, #f43b47 0%, #453a94 100%)',
     },
     albumPicture: 'https://images.unsplash.com/photo-1525253604620-23ac591dbea0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80',
   },
   {
     id: '№14',
-    group: '',
-    trackName: 'Чёрный Мерен.mp3',
+    trackName: 'Чёрный Мерен',
     author: 'Navai',
     originalAuthor:' audio2',
     text: ``,
@@ -60,23 +73,7 @@ export const tracks = [
     albumPicture: 'https://images.unsplash.com/photo-1587532635449-61603976e580?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80',
   },
   {
-    id: '№7',
-    group: '',
-    trackName: 'Контур',
-    author: 'Хадн Дадн',
-    originalAuthor: 'Варя Карпова и Федя Быстров',
-    text: `Мой милый милый мальчик`,
-    link: Crystalised,
-    videoLink: 'https://www.youtube.com/watch?v=p2xFqtgwhrU',
-    theme: {
-      color: '#fff',
-      backgroundColor: 'white',
-      backgroundImage: 'linear-gradient(to top, #f43b47 0%, #453a94 100%)',
-    },
-  },
-  {
     id: '№5',
-    group: '',
     trackName: 'Лодка',
     author: 'СПБЧ',
     originalAuthor: 'Маруся Романова',
@@ -95,42 +92,24 @@ export const tracks = [
   },
   {
     id: '№8',
-    group: '',
     trackName: 'Вот такие крошка дела,ты меня так долго ждала',
     author: 'Илья Подстрелов',
     originalAuthor: '',
     text: `Ты говорила мне, что любишь очень.
-И намекала всё, что замуж хочешь.
-На свадьбах у друзей бывала часто,
-Мечтая о своей...
+      И намекала всё, что замуж хочешь.
+      На свадьбах у друзей бывала часто,
+      Мечтая о своей...
 
-А я то, рядовой, служу Отчизне.
-Военным тяжело любить по-жизни.
-И выполнив свой долг, к тебе приеду -
-К девочке моей...
+      А я то, рядовой, служу Отчизне.
+      Военным тяжело любить по-жизни.
+      И выполнив свой долг, к тебе приеду -
+      К девочке моей...
 
-Припев [х2]:
-Вот такие, крошка, дела.
-Ты меня так долго ждала.
-Я серьезных дел не боюсь,
-Возьму и женюсь!
-
-[Куплет 2]:
-Ты терпеливо ждешь, моя родная,
-Журнал о платьях свадебных листая.
-И песни о любви играют в сердце
-Сутки напролет.
-
-А я то, далеко, и мне не спится.
-Скучаю по тебе, моя царица.
-Еще совсем чуть-чуть и я приеду,
-Если повезет...
-
-Припев [х4]:
-Вот такие, крошка, дела.
-Ты меня так долго ждала.
-Я серьезных дел не боюсь,
-Возьму и женюсь!`,
+      Припев [х2]:
+      Вот такие, крошка, дела.
+      Ты меня так долго ждала.
+      Я серьезных дел не боюсь,
+      Возьму и женюсь!`,
     link: Ilya,
     theme: {
       color: '#191970',
@@ -141,7 +120,6 @@ export const tracks = [
   },
   {
     id: '№6',
-    group: '',
     trackName: 'Клубника Бомба',
     author: 'NikoLife & Miravi',
     originalAuthor: '',
@@ -160,61 +138,7 @@ export const tracks = [
     Я клубника
     Клубника бомба
     Я клубника
-    Клубника бомба, честно говоря
-    
-    Я заказал тебя целый килограмм
-    Чтобы отснять много фоток в Инстаграм
-    Ты вся моя, не делю напополам
-    Если ты клубника, то я сливки для мадам
-    
-    Столько сортов, но ты лишь одна
-    Я еле достал тебя, еле достал
-    Кто тут шеф-повар? — бэй, прыгай сюда
-    Смузи со льдом, ну же где мой бокал
-    
-    Интрига
-    Ты ежевика (нет)
-    Может брусника (нет)
-    Значит клубника
-    
-    Я клубника
-    Клубника бомба
-    Я клубника
-    Клубника бомба
-    Я клубника
-    Клубника бомба
-    Я клубника
-    Клубника бомба
-    
-    Твоя чика не клубника, пыл останови-ка
-    Хочешь откусить меня, но это слишком дико
-    Я выросла красивой, ведь бабушка растила
-    Я соберу корзину просмотров как у Тимы
-    
-    Не ловишь мой вайб — поймаешь нокаут
-    Мами готовит свой яблочный …
-    Я не по зубам — не на ту напал
-    Смотри на меня, я твой идеал
-    
-    Интрига
-    Ты ежевика (нет)
-    Может брусника (нет)
-    Значит клубника
-    
-    Я клубника
-    Клубника бомба
-    Я клубника
-    Клубника бомба
-    Я клубника
-    Клубника бомба
-    Я клубника
-    Клубника бомба, честно говоря
-    
-    Я клубника
-    
-    Понравился текст песни?
-    Оставьте комментарий ниже
-    Читать на сайте: https://text-pesni.com/khel`,
+    Клубника бомба, честно говоря`,
     link: klubnika,
     theme: {
       color: '#800000',
