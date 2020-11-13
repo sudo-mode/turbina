@@ -38,7 +38,9 @@ function PlayerController ({ isPlayerExtend, track }) {
         onLoadedMetadata={handleLoadedMetaData}
         onTimeUpdate={handleTimeUpdate}
         onEnded={handleTrackEnded}
-      />
+      >
+        <p>Ваш браузер не поддерживает HTML5 аудио.</p>
+      </audio>
       <ControlBtn
         isPlaying={isPlaying}
         onBtnClick={handlePlayClick}

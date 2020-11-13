@@ -1,4 +1,4 @@
-function useThrottling(func, ms) {
+function throttle(func, ms) {
   
   let isThrottled = false,
     savedArgs,
@@ -35,4 +35,4 @@ function useThrottling(func, ms) {
   return wrapper;
 }
 
-export default useThrottling;
+export default throttle;

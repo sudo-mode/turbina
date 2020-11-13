@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import useThrottling from './useThrottling';
+import throttle from '../utils/throttle';
 
 /*
 Хук useTicker реализует бегущую строку.
@@ -46,7 +46,7 @@ function useTicker({ elementRef, containerTickerAddClass, dependences }) {
   }, dependences);
 
   // Затормаживаем обработку ресайза окна браузера
-  const handleResizeThrottled = useThrottling(handleResize, 1000);
+  const handleResizeThrottled = throttle(handleResize, 1000);
 
   // Добавляем слышатели на ресайз окна
   useEffect(() => {
