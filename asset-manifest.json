@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/turbina/static/css/main.3eb1b1d2.chunk.css",
+    "main.js": "/turbina/static/js/main.2f84b6b1.chunk.js",
+    "main.js.map": "/turbina/static/js/main.2f84b6b1.chunk.js.map",
+    "runtime-main.js": "/turbina/static/js/runtime-main.81d6fa43.js",
+    "runtime-main.js.map": "/turbina/static/js/runtime-main.81d6fa43.js.map",
+    "static/js/2.7fc3238c.chunk.js": "/turbina/static/js/2.7fc3238c.chunk.js",
+    "static/js/2.7fc3238c.chunk.js.map": "/turbina/static/js/2.7fc3238c.chunk.js.map",
+    "static/js/3.0c405b0d.chunk.js": "/turbina/static/js/3.0c405b0d.chunk.js",
+    "static/js/3.0c405b0d.chunk.js.map": "/turbina/static/js/3.0c405b0d.chunk.js.map",
+    "index.html": "/turbina/index.html",
+    "static/css/main.3eb1b1d2.chunk.css.map": "/turbina/static/css/main.3eb1b1d2.chunk.css.map",
+    "static/js/2.7fc3238c.chunk.js.LICENSE.txt": "/turbina/static/js/2.7fc3238c.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/turbina/static/media/Inter-Regular.79a51fb4.ttf",
+    "static/media/PlayerInfoContainer.css": "/turbina/static/media/arrowUp.f456265e.svg",
+    "static/media/background-blur.c25e08a2.jpg": "/turbina/static/media/background-blur.c25e08a2.jpg",
+    "static/media/Background.css": "/turbina/static/media/background.ec2c8593.png",
+    "static/media/offer.623a8e66.pdf": "/turbina/static/media/offer.623a8e66.pdf",
+    "static/media/PlayerVideoBtn.css": "/turbina/static/media/play-icon-btn.acf95aec.svg",
+    "static/media/turbina.b11f75a9.svg": "/turbina/static/media/turbina.b11f75a9.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.81d6fa43.js",
+    "static/js/2.7fc3238c.chunk.js",
+    "static/css/main.3eb1b1d2.chunk.css",
+    "static/js/main.2f84b6b1.chunk.js"
+  ]
+}
