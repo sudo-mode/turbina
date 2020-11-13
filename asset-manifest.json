@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/turbina/static/css/main.8596bae7.chunk.css",
-    "main.js": "/turbina/static/js/main.c53f4c53.chunk.js",
-    "main.js.map": "/turbina/static/js/main.c53f4c53.chunk.js.map",
-    "runtime-main.js": "/turbina/static/js/runtime-main.ab9049d2.js",
-    "runtime-main.js.map": "/turbina/static/js/runtime-main.ab9049d2.js.map",
-    "static/js/2.63eeef31.chunk.js": "/turbina/static/js/2.63eeef31.chunk.js",
-    "static/js/2.63eeef31.chunk.js.map": "/turbina/static/js/2.63eeef31.chunk.js.map",
-    "static/js/3.7ff315af.chunk.js": "/turbina/static/js/3.7ff315af.chunk.js",
-    "static/js/3.7ff315af.chunk.js.map": "/turbina/static/js/3.7ff315af.chunk.js.map",
+    "main.css": "/turbina/static/css/main.0b735dcf.chunk.css",
+    "main.js": "/turbina/static/js/main.111329f9.chunk.js",
+    "main.js.map": "/turbina/static/js/main.111329f9.chunk.js.map",
+    "runtime-main.js": "/turbina/static/js/runtime-main.8386b32b.js",
+    "runtime-main.js.map": "/turbina/static/js/runtime-main.8386b32b.js.map",
+    "static/js/2.3794f462.chunk.js": "/turbina/static/js/2.3794f462.chunk.js",
+    "static/js/2.3794f462.chunk.js.map": "/turbina/static/js/2.3794f462.chunk.js.map",
+    "static/js/3.7c6f7e7b.chunk.js": "/turbina/static/js/3.7c6f7e7b.chunk.js",
+    "static/js/3.7c6f7e7b.chunk.js.map": "/turbina/static/js/3.7c6f7e7b.chunk.js.map",
     "index.html": "/turbina/index.html",
-    "static/css/main.8596bae7.chunk.css.map": "/turbina/static/css/main.8596bae7.chunk.css.map",
-    "static/js/2.63eeef31.chunk.js.LICENSE.txt": "/turbina/static/js/2.63eeef31.chunk.js.LICENSE.txt",
+    "static/css/main.0b735dcf.chunk.css.map": "/turbina/static/css/main.0b735dcf.chunk.css.map",
+    "static/js/2.3794f462.chunk.js.LICENSE.txt": "/turbina/static/js/2.3794f462.chunk.js.LICENSE.txt",
     "static/media/App.css": "/turbina/static/media/arrowUp.f456265e.svg",
     "static/media/Navai.f61bdea2.mp3": "/turbina/static/media/Navai.f61bdea2.mp3",
     "static/media/The XX - Crystalised.a1269496.mp3": "/turbina/static/media/The XX - Crystalised.a1269496.mp3",
@@ -21,14 +21,15 @@
     "static/media/daft-punk-feat.-julian-casablancas-instant-crush.cf0f1c1f.mp3": "/turbina/static/media/daft-punk-feat.-julian-casablancas-instant-crush.cf0f1c1f.mp3",
     "static/media/madconbeggin.baac2a6d.mp3": "/turbina/static/media/madconbeggin.baac2a6d.mp3",
     "static/media/nikolife-miravi-klubnika-bomba.dca990ca.mp3": "/turbina/static/media/nikolife-miravi-klubnika-bomba.dca990ca.mp3",
+    "static/media/note-round-icon.c538843e.svg": "/turbina/static/media/note-round-icon.c538843e.svg",
     "static/media/offer.623a8e66.pdf": "/turbina/static/media/offer.623a8e66.pdf",
     "static/media/turbina.b11f75a9.svg": "/turbina/static/media/turbina.b11f75a9.svg",
     "static/media/Илья Подстрелов – Вот такие крошка дела,ты меня так долго ждала_(muztron.club).0c77ae67.mp3": "/turbina/static/media/Илья Подстрелов – Вот такие крошка дела,ты меня так долго ждала_(muztron.club).0c77ae67.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.ab9049d2.js",
-    "static/js/2.63eeef31.chunk.js",
-    "static/css/main.8596bae7.chunk.css",
-    "static/js/main.c53f4c53.chunk.js"
+    "static/js/runtime-main.8386b32b.js",
+    "static/js/2.3794f462.chunk.js",
+    "static/css/main.0b735dcf.chunk.css",
+    "static/js/main.111329f9.chunk.js"
   ]
 }
