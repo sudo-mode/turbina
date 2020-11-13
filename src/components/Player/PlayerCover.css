@@ -1,65 +1,62 @@
 .cover-wrapper {
   grid-area: cover;
-  width: 100%;
+  width: 176px;
+  height: 176px;
   padding-right: 26px;
   margin-top: -4px;
-  box-sizing: border-box;
+  box-sizing: content-box;
+  overflow: hidden;
 }
 
 .cover {
-  width: 176px;
-  padding-bottom: 100%;
+  display: none;
+  width: 100%;
+  height: 100%;
   border-radius: 4px;
-  background-color: #c4c4c4;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  border: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cover_visible {
+  display: block;
 }
 
 @media screen and (max-width: 1024px) {
   .cover-wrapper {
-    margin-top: -6px;
-  }
-
-  .cover {
     width: 164px;
+    height: 164px;
+    margin-top: -6px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .cover-wrapper {
     margin-top: 0;
+    width: 112px;
+    height: 112px;
     padding-top: 15px;
     padding-right: 30px;
-  }
-  
-  .cover {
-    width: 112px;
   }
 }
 
 @media screen and (max-width: 480px) and (min-height: 551px) {
   .cover-wrapper {
     justify-self: center;
-    max-width: 240px;
+    width: 100%;
+    width: 240px;
+    height: 240px;
     padding-right: 0;
     margin-top: 0;
-  }
-  
-  .cover {
-    width: 100%;
   }
 }
 
 @media screen and (max-width: 480px) and (max-height: 550px) {
   .cover-wrapper {
     justify-self: center;
-    max-width: 160px;
+    width: 160px;    
+    height: 160px;
     padding-right: 0;
     margin-top: 0;
-  }
-  
-  .cover {
-    width: 100%;
   }
 }
