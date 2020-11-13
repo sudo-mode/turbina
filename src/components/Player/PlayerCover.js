@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import cn from 'classnames';
 import './PlayerCover.css';
 import Spinner from './Spinner';
@@ -13,9 +13,13 @@ function PlayerCover({
 }) {
   const [isLoaded, setLoadState] = useState(false);
   const imageLink = image ? image : gag;
+  const imageRef = useRef();
 
-  useEffect(() => {
-    setLoadState(false);
+  useEffect(() => { 
+    /* в Safari изображения подгружаются в кеш, и грузятся из него так быстро, что useEffect срабатывает уже после подгрузки изображения, и всё ломает. Поэтому теперь это обернуто в if */
+    if (!imageRef.current.complete) {
+      setLoadState(false);
+    }
   }, [image])
   
   const handleLoad = () => {
@@ -25,6 +29,7 @@ function PlayerCover({
   return (
     <div className="cover-wrapper" style={style}>
       <img
+        ref={imageRef}
         src={imageLink}
         className={cn("cover", {"cover_visible": isLoaded})}
         onLoad={handleLoad}
