@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Background from './Background';
 import Blur from './Blur';
 import backgroundBlur from '../images/background-blur.jpg';
+import tracks from '../db/tracks';
 
 function App() {
   const [isPlayerExtend, setPlayerState] = useState(false);
@@ -14,6 +15,11 @@ function App() {
   const isLandscape = useMediaQuery({ query: '(orientation:landscape) and (max-height: 600px)' });
   const onPlayerExtend = () => {
     setPlayerState(!isPlayerExtend);
+  }
+  const [currentTrack, setCurrentTrack] = useState(tracks[0]);
+
+  function onSetCurrentTrack(track) {
+    setCurrentTrack(track);
   }
 
   return (
@@ -24,6 +30,8 @@ function App() {
           isPlayerExtend={isPlayerExtend}
           isLandscape={isLandscape}
           isMobile={isMobile}
+          onSetCurrentTrack={onSetCurrentTrack}
+          currentTrack={currentTrack}
         />
         <Info />
         <Footer
@@ -34,6 +42,7 @@ function App() {
           isPlayerExtend={isPlayerExtend}
           isMobile={isMobile}
           backgroundBlur={backgroundBlur}
+          currentTrack={currentTrack}
         />
         <Blur
           isPlayerExtend={isPlayerExtend}
