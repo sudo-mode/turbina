@@ -1,0 +1,33 @@
+.marshak-link {
+  display: block;  
+  transition: box-shadow .2s ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.marshak-link:hover {
+  box-shadow: 0 6px 6px #ffffff40;
+}
+
+.marshak-link:focus {
+  outline: none;
+  box-shadow: 0 6px 6px #ffffff40;
+}
+
+.marshak-logo {
+  display: block;
+  width: 50px;
+  object-fit: contain;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .marshak-logo {
+    width: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .marshak-logo {
+    width: 24px;
+  }
+}
