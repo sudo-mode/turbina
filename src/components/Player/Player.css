@@ -21,7 +21,7 @@
   grid-area: buttons;
   display: flex;
   margin-top: -4px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 @media screen and (min-width: 1280px) {
