@@ -17,9 +17,12 @@ function PlayerController({ isPlayerExtend, track }) {
 
   useEffect(() => {
     try {
+      if (!audioPlayerRef.current.src.startsWith(window.location.href)) {
+        throw new Error('Есть треки со сторроних сайтов, визуализация отключается')
+      }
       const context = new AudioContext();
       const audio = audioPlayerRef.current;
-  
+      console.log(audioPlayerRef.current.src.startsWith(window.location.href))
       const audioSrc = context.createMediaElementSource(audio);
       const analyser = context.createAnalyser();
       analyser.fftSize = 128;
@@ -56,14 +59,14 @@ function PlayerController({ isPlayerExtend, track }) {
           }
         }, 30);
       };
+      
   
       update();
 
     } catch(e) {
-      throw new Error('Трек со стороннего сайта')
+      console.log(e)
+      return
     }
-
-
   }, []);
 
   useTicker({
@@ -149,7 +152,7 @@ function PlayerController({ isPlayerExtend, track }) {
             alignItems: 'flex-end',
             margin: 0,
             padding: 0,
-            webkitMaskImage: `-webkit-linear-gradient(
+            WebkitMaskImage: `-webkit-linear-gradient(
             top,
             rgba(0, 0, 0, 0) 0%,
             rgba(0,0,0,1) 20%,

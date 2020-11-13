@@ -7,21 +7,23 @@ import klubnika from './audio/nikolife-miravi-klubnika-bomba.mp3';
 import daftPunkFeat from './audio/daft-punk-feat.-julian-casablancas-instant-crush.mp3';
 
 const tracks = [
-  {
-    id: '№13',
-    group: '',
-    trackName: 'madconbeggin.mp3',
-    author: 'madconbeggin.mp3',
-    originalAuthor: 'audio1',
-    text: ``,
-    link: madconbeggin,
-    videoLink: '',
-    theme: {
-      color: '#fff',
-      backgroundColor: 'blue',
-    },
-    albumPicture: 'https://images.unsplash.com/photo-1525253604620-23ac591dbea0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80',
-  },
+
+  // трек стороннего сайта
+  // {
+  //   id: '№17',
+  //   group: '',
+  //   trackName: 'madconbeggin.mp3',
+  //   author: 'madconbeggin.mp3',
+  //   originalAuthor: 'audio1',
+  //   text: ``,
+  //   link: 'https://ds.cdn5.mzmdl.com/cuts/d9/c4/d9c4b23a86693374ab703d4680faeec2/47842886/The_xx_-_Crystalised_b128f0d202.mp3',
+  //   videoLink: '',
+  //   theme: {
+  //     color: '#fff',
+  //     backgroundColor: 'blue',
+  //   },
+  //   albumPicture: 'https://images.unsplash.com/photo-1525253604620-23ac591dbea0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80',
+  // },
   {
     id: '№13',
     group: '',

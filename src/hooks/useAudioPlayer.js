@@ -20,10 +20,12 @@ function useAudioPlayer(audioPlayerRef, track, audioCtx) {
       audioPlayerRef.current.pause();
       setPlaying(false)
     } else {
-
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume()
+      if (audioCtx) {
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume()
+        }
       }
+
       
       audioPlayerRef.current.play();
       setPlaying(true);
