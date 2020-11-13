@@ -1,15 +1,26 @@
 import './Background.css';
-// import cn from 'classnames';
+import { animated, Transition } from 'react-spring';
 
 function Background({ isPlayerExtend, isMobile, currentTrack }) {
 
-  // const backgroundStyle = cn("background", { "background_blur": isPlayerExtend && isMobile})
-
   return (
-    <div
-      className="background"
-      style={{ backgroundImage: `${currentTrack.theme.backgroundImage}`, }}
-    ></div>
+    <div>
+    <Transition
+      items={currentTrack ? currentTrack : ""}
+      from={{ opacity: 0 }}
+      enter={{ opacity: 1 }}
+      leave={{ opacity: 0 }}
+      config={{ mass: 1, tension: 280, friction: 120 }}
+      keys={() => currentTrack ? currentTrack : ""}
+    > 
+      {(values, item) => (
+        <animated.div
+          className="background"
+          style={{ backgroundImage: `${item.theme.backgroundImage}`, ...values}}
+        ></animated.div>
+      )}
+    </Transition>
+    </div>
   )
 }
 
