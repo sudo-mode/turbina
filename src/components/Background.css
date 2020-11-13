@@ -3,15 +3,10 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  /* background-image: ; */
   background-position: center;
   background-size: cover;
   z-index: -5;
   top: 0;
   left: 0;
-  transition: background-image 1s ease-out;
+  transition: background-image .4s linear;
 }
-
-/* .background_blur {
-  backdrop-filter: blur(3px);
-} */

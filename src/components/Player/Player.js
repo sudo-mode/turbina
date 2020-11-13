@@ -11,7 +11,7 @@ import { useSpring, animated } from 'react-spring';
 
 
 function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCurrentTrack }) {
-  // const [currentTrack, setCurrentTrack] = useState(tracks[0]);
+  
   const [isTextInfo, setTextInfo] = useState(false);
   const [isExtendElementsMounted, setIsExtendElementsMounted] = useState(false);
 

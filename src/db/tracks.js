@@ -249,7 +249,7 @@ const defaultThemes = [
   {theme: {
     color: '#000',
     backgroundColor: 'white',
-    backgroundImage: defaultBackground,
+    backgroundImage: `url(${defaultBackground})`,
   }},
 ]
 
