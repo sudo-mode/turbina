@@ -27,7 +27,7 @@ function PlayerController({ isPlayerExtend, track }) {
       const canvas = analyzerCanvas.current;
       const ctx = canvas.getContext('2d');
       const freqData = new Uint8Array(analyser.frequencyBinCount)
-      analyser.fftSize = 32;
+      // analyser.fftSize = 32;
       audioSrc
         .connect(analyser)
         .connect(context.destination)
@@ -42,10 +42,10 @@ function PlayerController({ isPlayerExtend, track }) {
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         // console.log(freqData)
         ctx.fillStyle = '#a39595';
-        let bars = 15;
+        let bars = 100;
         for (var i = 0; i < bars; i++) {
-          let bar_x = i * 20;
-          let bar_width = 15;
+          let bar_x = i * 3;
+          let bar_width = 1;
           let bar_height = -(freqData[i] / 2);
           ctx.fillRect(bar_x, canvas.height, bar_width, bar_height)
         }
@@ -142,7 +142,13 @@ function PlayerController({ isPlayerExtend, track }) {
           display: 'flex',
           justifyContent: 'center',
           aligItems: 'center',
-          opacity: .4, 
+          opacity: .4,
+          WebkitMaskImage: `-webkit-linear-gradient(
+            top,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0,0,0,1) 5%,
+            rgba(0,0,0,1) 75%,
+            rgba(0,0,0,0) 100%)` 
         }}
       >
       </canvas>
