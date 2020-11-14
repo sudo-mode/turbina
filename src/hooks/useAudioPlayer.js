@@ -15,13 +15,8 @@ function useAudioPlayer(audioPlayerRef, track) {
   const [clickedTime, setClickedTime] = useState();
 
   const handlePlayClick = () => {
-    if (isPlaying) {
-      audioPlayerRef.current.pause();
-      setPlaying(false)
-    } else {
-      audioPlayerRef.current.play();
-      setPlaying(true);
-    }
+    setPlaying(!isPlaying);
+    isPlaying ? audioPlayerRef.current.pause() : audioPlayerRef.current.play();
   }
 
   const handleLoadedMetaData = () => {
