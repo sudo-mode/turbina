@@ -14,7 +14,15 @@ function PlayerController({ isPlayerExtend, track }) {
   const [audioCtx, setAudioCtx] = useState(null);
   const barsRef = useRef();
 
+  const analyzerCanvas = useRef();
+
+
+
+
+
+
   useEffect(() => {
+
     try {
       if (!audioPlayerRef.current.src.startsWith(window.location.href)) {
         throw new Error('Есть треки со сторроних сайтов, визуализация отключается')
@@ -31,22 +39,42 @@ function PlayerController({ isPlayerExtend, track }) {
 
       setAudioCtx(context)
 
-      const bufferLength = analyser.frequencyBinCount;
-      const frequency_array = new Uint8Array(bufferLength);
-      const bars = barsRef.current.children;
+      // const bufferLength = analyser.frequencyBinCount;
+      // const frequency_array = new Uint8Array(bufferLength);
+      // const bars = barsRef.current.children;
+      // function update() {
+      //   setTimeout(() => {
+      //     requestAnimationFrame(update);
+      //     analyser.getByteFrequencyData(frequency_array);
+      //     if (bars) {
+      //       for (let i = 0; i < 12; i++) {
+      //         bars[i].style.height = (frequency_array[i] / 3) + 'px';
+      //       }
+      //     }
+      //   }, 40);
+      // }
+      // requestAnimationFrame(update)
 
-      function update() {
-        setTimeout(() => {
-          requestAnimationFrame(update);
-          analyser.getByteFrequencyData(frequency_array);
-          if (bars) {
-            for (let i = 0; i < 12; i++) {
-              bars[i].style.height = (frequency_array[i] / 3) + 'px';
-            }
-          }
-        }, 40);
-      }
-      requestAnimationFrame(update)
+      let canvas = analyzerCanvas.current;
+      let ctx = canvas.getContext('2d');
+      let freqData = new Uint8Array(analyser.frequencyBinCount)
+
+      function renderFrame() {
+        
+        requestAnimationFrame(renderFrame)
+        analyser.getByteFrequencyData(freqData)
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
+        // console.log(freqData)
+        ctx.fillStyle = '#896b6b';
+        let bars = 15;
+        for (var i = 0; i < bars; i++) {
+          let bar_x = i * 20;
+          let bar_width = 15;
+          let bar_height = -(freqData[i] / 2);
+          ctx.fillRect(bar_x, canvas.height, bar_width, bar_height)
+        }
+      };
+      renderFrame()
 
     } catch (e) {
       console.log(e)
@@ -126,7 +154,7 @@ function PlayerController({ isPlayerExtend, track }) {
       </div>
 
 
-      <div className="player__bars">
+      {/* <div className="player__bars">
         <ul ref={barsRef} className="player__bars-list">
           <li className='player__bar'></li>
           <li className='player__bar'></li>
@@ -141,7 +169,25 @@ function PlayerController({ isPlayerExtend, track }) {
           <li className='player__bar'></li>
           <li className='player__bar'></li>
         </ul>
-      </div>
+      </div> */}
+
+      <canvas
+        ref={analyzerCanvas}
+        id="analyzer"
+        style={{
+          position: 'absolute',
+          width: `${100}%`,
+          height: `${100}%`,
+          zIndex: -1,
+          bottom: 0,
+          left: 0,
+          display: 'flex',
+          justifyContent: 'center',
+          aligItems: 'center',
+          opacity: .4, 
+        }}
+      >
+      </canvas>
     </>
   )
 }

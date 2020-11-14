@@ -8,7 +8,7 @@
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
-  padding-top: 120px;
+  padding-top: 15px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 1.2;
@@ -90,7 +90,6 @@
       "  .     info    info        .      ";
     margin-bottom: 16px;
     font-size: 14px;
-    padding: 15px;
   }
 
   .player__buttons-wrapper {
