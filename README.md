@@ -4,7 +4,9 @@
 
 Frontend проекта выполнен студентами Яндекс.Практикум
 
-https://sudo-mode.github.io/turbina/
+Ознакомиться с проектом можно, перейдя по [ссылке](https://sudo-mode.github.io/turbina/ "Проект Турбина").
+
+![alt tag](https://psv4.userapi.com/c856224/u1190603/docs/d2/8aac3224a384/Turbina.jpg?extra=odD1k5MntXgMLWrC2kklYY7qHv8E8gcVzYsuW_tDBP0-cKJkB34OKf6Y2EJBZc6pQs8BTPlJlzu06r4JiisVWxWXQd9Cpus9drleWYjK9B74v5zoiHxTzEtQzml710Hx1_H7N0KXGlUti0n1gZY "Турбина. Песни, которые придумали дети.")
 
 ## Технологический стек
 
