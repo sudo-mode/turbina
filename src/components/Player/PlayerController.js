@@ -14,7 +14,7 @@ function PlayerController({ isPlayerExtend, track }) {
   const audioPlayerRef = useRef();
   const [audioCtx, setAudioCtx] = useState(null);
   const analyzerCanvas = useRef();
-  const isMobile = useMediaQuery({ query: '(max-width: 480px), (max-height: 600px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 480px), (max-height: 480px)' });
   const resolution = useMediaQuery({ query: '(min-resolution: .001dpcm)' });
   const ratio = useMediaQuery({ query: '(-webkit-min-device-pixel-ratio:0)' })
   const all = useMediaQuery({ query: 'all' })
