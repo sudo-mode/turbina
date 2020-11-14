@@ -12,14 +12,7 @@ function PlayerController({ isPlayerExtend, track }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();
   const [audioCtx, setAudioCtx] = useState(null);
-  const barsRef = useRef();
-
   const analyzerCanvas = useRef();
-
-
-
-
-
 
   useEffect(() => {
 
@@ -31,6 +24,9 @@ function PlayerController({ isPlayerExtend, track }) {
       const audio = audioPlayerRef.current;
       const audioSrc = context.createMediaElementSource(audio);
       const analyser = context.createAnalyser();
+      const canvas = analyzerCanvas.current;
+      const ctx = canvas.getContext('2d');
+      const freqData = new Uint8Array(analyser.frequencyBinCount)
       analyser.fftSize = 32;
       audioSrc
         .connect(analyser)
@@ -39,33 +35,13 @@ function PlayerController({ isPlayerExtend, track }) {
 
       setAudioCtx(context)
 
-      // const bufferLength = analyser.frequencyBinCount;
-      // const frequency_array = new Uint8Array(bufferLength);
-      // const bars = barsRef.current.children;
-      // function update() {
-      //   setTimeout(() => {
-      //     requestAnimationFrame(update);
-      //     analyser.getByteFrequencyData(frequency_array);
-      //     if (bars) {
-      //       for (let i = 0; i < 12; i++) {
-      //         bars[i].style.height = (frequency_array[i] / 3) + 'px';
-      //       }
-      //     }
-      //   }, 40);
-      // }
-      // requestAnimationFrame(update)
-
-      let canvas = analyzerCanvas.current;
-      let ctx = canvas.getContext('2d');
-      let freqData = new Uint8Array(analyser.frequencyBinCount)
-
       function renderFrame() {
         
         requestAnimationFrame(renderFrame)
         analyser.getByteFrequencyData(freqData)
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         // console.log(freqData)
-        ctx.fillStyle = '#896b6b';
+        ctx.fillStyle = '#a39595';
         let bars = 15;
         for (var i = 0; i < bars; i++) {
           let bar_x = i * 20;
@@ -153,31 +129,13 @@ function PlayerController({ isPlayerExtend, track }) {
         />
       </div>
 
-
-      {/* <div className="player__bars">
-        <ul ref={barsRef} className="player__bars-list">
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
-          <li className='player__bar'></li>
-        </ul>
-      </div> */}
-
       <canvas
         ref={analyzerCanvas}
         id="analyzer"
         style={{
           position: 'absolute',
           width: `${100}%`,
-          height: `${100}%`,
+          height: `${80}%`,
           zIndex: -1,
           bottom: 0,
           left: 0,
