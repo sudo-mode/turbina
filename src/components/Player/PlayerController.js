@@ -1,11 +1,12 @@
 import { useRef, useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import './PlayerController.css';
 import useAudioPlayer from '../../hooks/useAudioPlayer';
 import useTicker from '../../hooks/useTicker';
 import PlayerTimeline from './PlayerTimeline';
 import PlayerTimer from './PlayerTimer';
 import ControlBtn from './ControlBtn';
-import './PlayerBar.css';
+
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 function PlayerController({ isPlayerExtend, track }) {
@@ -13,52 +14,102 @@ function PlayerController({ isPlayerExtend, track }) {
   const audioPlayerRef = useRef();
   const [audioCtx, setAudioCtx] = useState(null);
   const analyzerCanvas = useRef();
+  const isMobile = useMediaQuery({ query: '(max-width: 480px), (max-height: 600px)' });
+  const resolution = useMediaQuery({ query: '(min-resolution: .001dpcm)' });
+  const ratio = useMediaQuery({ query: '(-webkit-min-device-pixel-ratio:0)' })
+  const all = useMediaQuery({ query: 'all' })
+
+    ;
+  const supports = useMediaQuery({ query: '(-webkit-touch-callout: none)' })
+
 
   useEffect(() => {
 
     try {
       if (!audioPlayerRef.current.src.startsWith(window.location.href)) {
-        throw new Error('Есть треки со сторроних сайтов, визуализация отключается')
+        throw new Error('AudioContext отключен',
+          'текущий адрес: ', window.location.href,
+          'адрес трека: ', audioPlayerRef.current.src)
       }
-      const context = new AudioContext();
-      const audio = audioPlayerRef.current;
-      const audioSrc = context.createMediaElementSource(audio);
-      const analyser = context.createAnalyser();
-      const canvas = analyzerCanvas.current;
-      const ctx = canvas.getContext('2d');
-      const freqData = new Uint8Array(analyser.frequencyBinCount)
-      // analyser.fftSize = 32;
-      audioSrc
-        .connect(analyser)
-        .connect(context.destination)
-      analyser.connect(context.destination)
+      console.log("isMobile", isMobile)
+      if (!isMobile) {
 
-      setAudioCtx(context)
+        const context = new AudioContext();
+        const audio = audioPlayerRef.current;
+        const audioSrc = context.createMediaElementSource(audio);
+        const analyser = context.createAnalyser();
+        const canvas = analyzerCanvas.current;
+        const ctx = canvas.getContext('2d');
+        const freqData = new Uint8Array(analyser.frequencyBinCount)
+        // analyser.fftSize = 32;
+        audioSrc
+          .connect(analyser)
+          .connect(context.destination)
+        analyser.connect(context.destination)
 
-      function renderFrame() {
-        
-        requestAnimationFrame(renderFrame)
-        analyser.getByteFrequencyData(freqData)
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        // console.log(freqData)
-        ctx.fillStyle = '#a39595';
-        let bars = 100;
-        for (var i = 0; i < bars; i++) {
-          let bar_x = i * 3;
-          let bar_width = 1;
-          let bar_height = -(freqData[i] / 2);
-          ctx.fillRect(bar_x, canvas.height, bar_width, bar_height)
-        }
-      };
-      renderFrame()
+        setAudioCtx(context)
+
+        function renderFrame(isShortMobile) {
+          // console.log('renderFrame')
+          if (isShortMobile === true) {
+            // console.log('renderFrame isShortMobile stop')
+            cancelAnimationFrame(renderFrame)
+            return
+          } else {
+            requestAnimationFrame(renderFrame)
+            analyser.getByteFrequencyData(freqData)
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+            // console.log(freqData)
+
+            const rgb1 = `rgb(${freqData[20]},${freqData[40]},${freqData[80]})`;
+            const rgb2 = `rgb(${freqData[30]},${freqData[50]},${freqData[70]})`;
+            // const rgb1 = `red`;
+            // const rgb2 = `blue`;
+            
+            var my_gradient=ctx.createLinearGradient(0,0,0,freqData[0]);
+            my_gradient.addColorStop(0, rgb1);
+            my_gradient.addColorStop(1, rgb2);
+
+
+            
+
+            // const fillStyle = `linear-gradient(to top left, ${rgb1} 0%, ${rgb2} 100%)`;
+            // console.log(fillStyle)
+            // ctx.fillStyle = '#a39595';
+            ctx.fillStyle = my_gradient;
+            
+
+            let bars = 100;
+            for (var i = 0; i < bars; i++) {
+              let bar_x = i * 3;
+              let bar_width = 1;
+              let bar_height = -(freqData[i] / 2);
+              ctx.fillRect(bar_x, canvas.height, bar_width, bar_height)
+            }
+          }
+
+        };
+
+
+        // console.log('isMobile', isMobile)
+        // console.log('renderFrame', 'yes')
+        renderFrame()
+      } else {
+        // console.log('isMobile', isMobile)
+        // console.log('(min-resolution: .001dpcm)', resolution)
+        // console.log('(-webkit-min-device-pixel-ratio:0)', ratio)
+        // console.log('all', all)
+        // console.log('all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm)', resolution && ratio && all)
+        // console.log('supports', supports)
+        // console.log('визуализация отключена')
+      }
+
 
     } catch (e) {
-      console.log(e)
-      console.log('текущий адрес: ', window.location.href)
-      console.log('адрес трека: ', audioPlayerRef.current.src)
+      // console.log(e)
       return
     }
-  }, []);
+  }, [isMobile]);
 
   useTicker({
     elementRef: trackRef,
@@ -135,20 +186,22 @@ function PlayerController({ isPlayerExtend, track }) {
         style={{
           position: 'absolute',
           width: `${100}%`,
-          height: `${80}%`,
+          height: `${90}%`,
           zIndex: -1,
           bottom: 0,
           left: 0,
           display: 'flex',
           justifyContent: 'center',
           aligItems: 'center',
-          opacity: .4,
+          opacity: 0.8,
+          margin: `${0} ${10}`,
+
           WebkitMaskImage: `-webkit-linear-gradient(
             top,
             rgba(0, 0, 0, 0) 0%,
             rgba(0,0,0,1) 5%,
             rgba(0,0,0,1) 75%,
-            rgba(0,0,0,0) 100%)` 
+            rgba(0,0,0,0) 100%)`
         }}
       >
       </canvas>

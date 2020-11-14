@@ -9,7 +9,7 @@
 
 .player__track {
   width: fit-content;
-  padding: 0;
+  padding: 0 5px 0 0;
   margin: 0 0 16px;
   color: #fff;
   font-weight: 400;

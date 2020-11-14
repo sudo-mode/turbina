@@ -25,9 +25,9 @@
   font-style: italic;
   line-height: 1.4;
   font-weight: 500;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  /* white-space: nowrap; */
+  /* overflow: hidden; */
 }
 
 .player__text-line:last-child {
