@@ -1,9 +1,11 @@
 import React from 'react';
 import './Form.css';
+import cn from 'classnames';
 import pdfUrl from '../vendor/offer.pdf';
 import useFormWithValidation from '../hooks/useFormWithValidation.js';
 import setCustomValidity from '../utils/setCustomValidity.js';
 import { api } from '../utils/Api.js';
+
 
 
 function Form() {
@@ -11,6 +13,12 @@ function Form() {
     const { values, handleChange, errors, isFormValid, resetForm } = useFormWithValidation(setCustomValidity);
     const [isSubmitted, setIsSubmitted] = React.useState(false);
     const [isErrorVisible, setIsErrorVisible] = React.useState(false);
+
+    const inputNameStyle = cn('form__input', 'form__input_name', {'form__input_invalid': errors.name});
+    const inputTelStyle = cn('form__input', 'form__input_tel', {'form__input_invalid': errors.tel});
+    const inputEmailStyle = cn('form__input', 'form__input_email', {'form__input_invalid': errors.email});
+    const inputTextStyle = cn('form__textarea', 'form__input', {'form__input_invalid': errors.text});
+
 
     function handleSubmit(evt) {
         evt.preventDefault();
@@ -34,12 +42,14 @@ function Form() {
 
     return(
         <div className="form-container">
+
+          <h2 className="form-container__heading">Форма</h2>
+          <p className="form-container__text">Заполняя эту форму, вы становитесь частью проекта.</p>
+
         <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
-                <h2 className="form__heading">Форма</h2>
-                <p className="form__text">Заполняя эту форму, вы становитесь частью проекта.</p>
 
                 <input 
-                  className={errors.name? 'form__input form__input_name form__input_invalid' : 'form__input form__input_name'}
+                  className={inputNameStyle}
                   name="name" 
                   placeholder="Имя и фамилия автора" 
                   required 
@@ -49,10 +59,10 @@ function Form() {
                   value={values.name || ''}
                   onChange={handleChange}
                 />
-                <span className="form__input-error" id="name-error">{errors.name || ''}</span>
+                {errors.name && <span className="form__input-error">{errors.name}</span>}
 
                 <input 
-                  className={errors.tel? 'form__input form__input_tel form__input_invalid' : 'form__input form__input_tel'}
+                  className={inputTelStyle}
                   type="tel" 
                   name="tel" 
                   placeholder="Телефон" 
@@ -63,10 +73,10 @@ function Form() {
                   value={values.tel || ''}
                   onChange={handleChange}
                 />
-                <span className="form__input-error" id="phone-error">{errors.tel || ''}</span>
+               {errors.tel && <span className="form__input-error">{errors.tel}</span>}
 
                 <input 
-                  className={errors.email? 'form__input form__input_email form__input_invalid' : 'form__input form__input_email'}
+                  className={inputEmailStyle}
                   type="email" 
                   name="email" 
                   placeholder="Почта" 
@@ -77,11 +87,11 @@ function Form() {
                   value={values.email || ''}
                   onChange={handleChange}
                 />
-                <span className="form__input-error" id="email-error">{errors.email || ''}</span>
+                {errors.email && <span className="form__input-error">{errors.email}</span>}
 
 
                 <textarea 
-                  className={errors.text? 'form__textarea form__input form__input_invalid' : 'form__textarea form__input'}
+                  className={inputTextStyle}
                   name="text" 
                   minLength="20" 
                   placeholder="Стихи" 
@@ -90,7 +100,7 @@ function Form() {
                   onChange={handleChange}
                 >
                 </textarea>
-                <span className="form__input-error" id="text-error">{errors.text || ''}</span>
+                {errors.text && <span className="form__input-error">{errors.text}</span>}
 
                 <label htmlFor="offer" className="form__input-label">
                   <input 
@@ -107,12 +117,12 @@ function Form() {
         
                   <span className="form__label-text">Согласен с <a className="form__offer-link" target="_blank" href={pdfUrl} rel="noreferrer">офертой</a></span>
                 </label>
-                <span className="form__input-error" id="offer-error">{errors.offer || ''}</span>
+                {errors.offer && <span className="form__input-error">{errors.offer}</span>}
 
 
                 <button type="submit" className="form__submit-button" disabled={!isFormValid}><span className="form__button-text">{isSubmitted? 'Ура, форма отправлена!' : 'Отправить форму'}</span></button>
-                <span className="form__fill-hint">{isFormValid? '' : 'Чтобы отправить форму, пожалуйста, заполните все поля'}</span>
-                <span className="form__wrong-submit">{isErrorVisible? 'Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!' : ''}</span>
+                {isErrorVisible && <span className="form__wrong-submit">Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!</span>}
+                {!isFormValid && <span className="form__fill-hint">Чтобы отправить форму, пожалуйста, заполните все поля</span>}
                 
             </form>
       </div>
