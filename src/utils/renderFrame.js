@@ -7,7 +7,7 @@ export default function renderFrame(analyser, ctx, freqData, analyzerCanvas) {
   const rgb1 = `rgb(${freqData[20]},${freqData[40]},${freqData[80]})`;
   const rgb2 = `rgb(${freqData[30]},${freqData[50]},${freqData[70]})`;
 
-  const my_gradient = ctx.createLinearGradient(0, 0, 0, freqData[10]);
+  const my_gradient = ctx.createLinearGradient(0, 0, 0, 170);
   my_gradient.addColorStop(0, rgb1);
   my_gradient.addColorStop(1, rgb2);
 
