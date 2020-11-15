@@ -38,7 +38,6 @@ function PlayerInfoContent({ tracks, isTextInfo, currentTrack, onTrackClick }) {
             {tracks.map((track, i) => (
               <li key={track.id} className='player__track-item'>
                 <PlayerTrack
-                  key={track.id}
                   trackId = {track.id}
                   currentTrack={currentTrack}
                   track={track}
