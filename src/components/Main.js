@@ -15,26 +15,28 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurr
   const AnimatedPlayer = animated(Player);
 
   const calcDefaultHeight = () => {
-    if (isTallMobile || isShortMobile) {
-      return '35px';
-    } else if (isWideMobile || isNarrowDesktop) {
-      return '38px';
-    } else {
-      return '42px';
+    switch (true) {
+      case isTallMobile || isShortMobile:
+        return "35px";
+      case isWideMobile || isNarrowDesktop:
+        return "38px";
+      default:
+        return "42px";
     }
   };
 
   const calcExtendedHeight = () => {
-    if (isTallMobile) {
-      return '466px';
-    } else if (isShortMobile) {
-      return '380px';
-    } else if (isWideMobile) {
-      return '220px';
-    } else if (isNarrowDesktop) {
-      return '170px';
-    } else {
-      return '186px';
+    switch (true) {
+      case isTallMobile:
+        return '466px';
+      case isShortMobile:
+        return '380px';
+      case isWideMobile:
+        return '220px';
+      case isNarrowDesktop:
+        return '170px';
+      default:
+        return '186px';
     }
   };
 
