@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/turbina/static/css/main.078154e0.chunk.css",
-    "main.js": "/turbina/static/js/main.0d6ea975.chunk.js",
-    "main.js.map": "/turbina/static/js/main.0d6ea975.chunk.js.map",
+    "main.css": "/turbina/static/css/main.6002b324.chunk.css",
+    "main.js": "/turbina/static/js/main.372dce47.chunk.js",
+    "main.js.map": "/turbina/static/js/main.372dce47.chunk.js.map",
     "runtime-main.js": "/turbina/static/js/runtime-main.8386b32b.js",
     "runtime-main.js.map": "/turbina/static/js/runtime-main.8386b32b.js.map",
-    "static/js/2.535a4305.chunk.js": "/turbina/static/js/2.535a4305.chunk.js",
-    "static/js/2.535a4305.chunk.js.map": "/turbina/static/js/2.535a4305.chunk.js.map",
+    "static/js/2.57b4dda1.chunk.js": "/turbina/static/js/2.57b4dda1.chunk.js",
+    "static/js/2.57b4dda1.chunk.js.map": "/turbina/static/js/2.57b4dda1.chunk.js.map",
     "static/js/3.7c6f7e7b.chunk.js": "/turbina/static/js/3.7c6f7e7b.chunk.js",
     "static/js/3.7c6f7e7b.chunk.js.map": "/turbina/static/js/3.7c6f7e7b.chunk.js.map",
     "index.html": "/turbina/index.html",
-    "static/css/main.078154e0.chunk.css.map": "/turbina/static/css/main.078154e0.chunk.css.map",
-    "static/js/2.535a4305.chunk.js.LICENSE.txt": "/turbina/static/js/2.535a4305.chunk.js.LICENSE.txt",
+    "static/css/main.6002b324.chunk.css.map": "/turbina/static/css/main.6002b324.chunk.css.map",
+    "static/js/2.57b4dda1.chunk.js.LICENSE.txt": "/turbina/static/js/2.57b4dda1.chunk.js.LICENSE.txt",
     "static/media/App.css": "/turbina/static/media/arrowUp.f456265e.svg",
     "static/media/Navai.f61bdea2.mp3": "/turbina/static/media/Navai.f61bdea2.mp3",
+    "static/media/Rasa - Пчеловод.a2b44717.mp3": "/turbina/static/media/Rasa - Пчеловод.a2b44717.mp3",
     "static/media/The XX - Crystalised.a1269496.mp3": "/turbina/static/media/The XX - Crystalised.a1269496.mp3",
     "static/media/The XX - Infinity .111d07ad.mp3": "/turbina/static/media/The XX - Infinity .111d07ad.mp3",
     "static/media/background-blur.c25e08a2.jpg": "/turbina/static/media/background-blur.c25e08a2.jpg",
@@ -23,13 +24,12 @@
     "static/media/nikolife-miravi-klubnika-bomba.dca990ca.mp3": "/turbina/static/media/nikolife-miravi-klubnika-bomba.dca990ca.mp3",
     "static/media/note-round-icon.c538843e.svg": "/turbina/static/media/note-round-icon.c538843e.svg",
     "static/media/offer.623a8e66.pdf": "/turbina/static/media/offer.623a8e66.pdf",
-    "static/media/turbina.b11f75a9.svg": "/turbina/static/media/turbina.b11f75a9.svg",
-    "static/media/Илья Подстрелов – Вот такие крошка дела,ты меня так долго ждала_(muztron.club).0c77ae67.mp3": "/turbina/static/media/Илья Подстрелов – Вот такие крошка дела,ты меня так долго ждала_(muztron.club).0c77ae67.mp3"
+    "static/media/turbina.b11f75a9.svg": "/turbina/static/media/turbina.b11f75a9.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.8386b32b.js",
-    "static/js/2.535a4305.chunk.js",
-    "static/css/main.078154e0.chunk.css",
-    "static/js/main.0d6ea975.chunk.js"
+    "static/js/2.57b4dda1.chunk.js",
+    "static/css/main.6002b324.chunk.css",
+    "static/js/main.372dce47.chunk.js"
   ]
 }
