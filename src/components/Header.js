@@ -7,13 +7,13 @@ import StreamServices from './StreamServices';
 import MarshakLink from './MarshakLink';
 
 function Header({ isPlayerExtend, isMobile, isLandscape }) {
-  const headerStyle = cn("header", { "blur": isPlayerExtend && (isMobile || isLandscape) });
-
   return (
-    <header className={headerStyle}>
-      <MarshakLink
-        className="header__logo"
-      />
+    <header
+      className={cn("header", {
+        "blur": isPlayerExtend && (isMobile || isLandscape),
+      })}
+    >
+      <MarshakLink className="header__logo" />
 
       <StreamServices
         className="header__links"
