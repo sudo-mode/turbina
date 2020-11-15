@@ -1,19 +1,15 @@
 import './Footer.css';
-import './Blur.css';
-import cn from 'classnames';
+import { yandexPraktikumLink } from '../configs/links';
 
-function Footer({ isPlayerExtend, isMobile }) {
-
-  const footerStyle = cn("footer", { "blur": isPlayerExtend && isMobile })
-
+function Footer() {
   return (
-    <footer className={footerStyle}>
+    <footer className="footer">
       <p className="footer__item">&copy; Маршак, 2020.</p>
       <p className="footer__item">
         Сделано студентами&#8196;
         <a
           className="footer__link"
-          href="https://praktikum.yandex.ru"
+          href={yandexPraktikumLink}
           target="_blank"
           rel="noreferrer"
         >
