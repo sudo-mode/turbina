@@ -118,14 +118,15 @@ function PlayerController({ isPlayerExtend, track }) {
           onTimeUpdate={(time) => setClickedTime(time)}
         />
       </div>
-
+      <div className='player__bar-wrapper'> 
       <canvas
-        className={cn('player__bar',
-          { 'player__bar_active': !isMobile && !isLandscape && isPlaying },
-          { 'player__bar_active-and-theme': track.theme.backgroundImage.includes('gradient') })}
-        ref={analyzerCanvas}
-        id="analyzer">
-      </canvas>
+          className={cn('player__bar',
+            { 'player__bar_active': !isMobile && !isLandscape && isPlaying },
+            { 'player__bar_active-and-theme': track.theme.backgroundImage.includes('gradient') })}
+          ref={analyzerCanvas}
+          id="analyzer">
+        </canvas>
+      </div>
     </>
   )
 }
