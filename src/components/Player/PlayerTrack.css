@@ -9,9 +9,10 @@
 
 .player__track {
   width: fit-content;
-  padding: 0;
+  padding: 0 5px 0 0;
   margin: 0 0 16px;
   color: #fff;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 400;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -55,7 +56,6 @@
     padding-bottom: 8px;
   }
 }
-
 
 @media screen and (max-width: 480px) {
   .player__track {
