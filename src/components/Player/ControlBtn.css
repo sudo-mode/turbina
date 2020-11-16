@@ -16,12 +16,12 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .control-btn_play {
+  .control-btn__play {
     width: 15px;
     height: 18px;
   }
   
-  .control-btn_pause {
+  .control-btn__pause {
     width: 12px;
     height: 14px;
   }
@@ -33,12 +33,12 @@
     height: 20px;
   }
 
-  .control-btn_play {
+  .control-btn__play {
     width: 13px;
     height: 16px;
   }
   
-  .control-btn_pause {
+  .control-btn__pause {
     width: 11px;
     height: 12px;
   }

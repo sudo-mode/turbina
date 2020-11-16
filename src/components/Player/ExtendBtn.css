@@ -22,12 +22,12 @@
     height: 20px;
   }
 
-  .extend-btn_open {
+  .extend-btn__open {
     width: 16px;
     height: 16px;
   }
   
-  .extend-btn_close {
+  .extend-btn__close {
     width: 16px;
     height: 16px;
   }
