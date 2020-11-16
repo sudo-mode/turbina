@@ -1,7 +1,7 @@
 /* Компонент Текст */
 .text {
-    max-width: 750px;
-    margin-right: auto;
+    /* max-width: 750px; */
+    /* margin-right: auto; */
     font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
@@ -20,6 +20,29 @@
     margin-bottom: 90px;
     font-size: 16px;
     line-height: 1.4;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    margin: 0 auto 80px auto;
+}
+
+.text-container__heading {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 400;
+    margin-right: 50px;
+    margin-top: 0;
+    width: 86px;
+}
+
+.text-container__paragraph {
+    font-size: 21px;
+    line-height: 1.3;
+    max-width: 788px;
+    margin: 0;
 }
 
 .text__paragraph:first-of-type {
@@ -46,13 +69,25 @@
     .text {
         max-width: 694px;
     }
+
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        margin: 0 auto 80px auto;
+    }
     
-    .text__heading {
+    .text-container__heading {
         font-size: 46px;
+        font-style: italic;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 40px;
+        width: 100%;
     }
 
-    .text__paragraph {
-        margin-bottom: 80px;
+    .text-container__paragraph {
+        /* margin-bottom: 80px; */
         font-size: 15px;
         line-height: 1.5;
     }
