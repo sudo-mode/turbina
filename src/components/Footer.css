@@ -35,6 +35,15 @@
   transform: skewX(-9deg);
 }
 
+.footer__owner-info {
+  margin: 0 auto;
+  /* width: 100%; */
+  /* text-align: center; */
+  font-size: 14px;
+  line-height: 1.2;
+  color: #ffffff30;
+}
+
 @media screen and (max-width: 1024px) {
   .footer {
     font-size: 15px;
