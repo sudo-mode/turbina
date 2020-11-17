@@ -1,7 +1,6 @@
 import React from 'react';
 import './Form.css';
 import cn from 'classnames';
-import pdfUrl from '../vendor/offer.pdf';
 import useFormWithValidation from '../hooks/useFormWithValidation.js';
 import setCustomValidity from '../utils/setCustomValidity.js';
 import { api } from '../utils/Api.js';
@@ -142,7 +141,7 @@ function Form() {
                   />
                   <span className="form__pseudo-item"></span>
 
-                  <span className="form__label-text">Согласен с <a className="form__offer-link" target="_blank" href={pdfUrl} rel="noreferrer">офертой</a></span>
+                  <span className="form__label-text">Согласен с <a className="form__offer-link" target="_blank" href="#" rel="noreferrer">офертой</a></span>
                 </label>
                   
                 {errors.offer && <span className="form__input-error">{errors.offer}</span>}
