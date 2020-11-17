@@ -3,11 +3,26 @@ import InstagramIcon from "../components/svg/InstagramIcon";
 import VkontakteIcon from "../components/svg/VkontakteIcon";
 
 
-const marshakLink = 'https://marshakbooks.ru/';
+const marshakMainLink = 'https://marshakbooks.ru/';
 const yandexPraktikumLink = {
   title: 'Яндекс.Практикума',
   link:'https://www.notion.so/de0ecc64f8134e178448dcbc6382046e',
 };
+
+const marshakLinks = [
+  {
+    marshakLabel: 'Книги',
+    marshakLink: 'https://marshakbooks.ru/'
+  },
+  {
+    marshakLabel: 'Школа',
+    marshakLink: 'https://marshakbooks.ru/school/'
+  },
+  {
+    marshakLabel: 'О нас',
+    marshakLink: 'https://marshakbooks.ru/о-нас/'
+  },
+];
 
 // TODO: вставить актуальные ссылки на стриминговые сервисы
 const serviceLinks = [
@@ -65,4 +80,4 @@ const socialNetworks = [
   },
 ]
 
-export { marshakLink, serviceLinks, yandexPraktikumLink, marshakNavLinks, socialNetworks };
+export { marshakMainLink, marshakLinks, serviceLinks, yandexPraktikumLink, marshakNavLinks, socialNetworks };

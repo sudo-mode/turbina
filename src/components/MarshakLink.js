@@ -1,22 +1,17 @@
-import './MarshakLink.css';
+import './MarshakLink.css'
 
-import cn from 'classnames';
-
-import { marshakLink } from '../configs/links';
-import MarshakLogo from './svg/MarshakLogo'
-
-function MarshakLink({ className }) {
+function MarshakLink({ marshakLabel, marshakLink, style }) {
   return (
-    <a
-      className={
-        cn("marshak-link", className)
-      }
-      href={marshakLink}
-      target="_blank"
-      rel="noreferrer"
-    >
-      <MarshakLogo className="marshak-logo" />
-    </a>
+    <li className="marshak__link-container" style={style}>
+      <a
+        className="marshak__link"
+        href={marshakLink}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {marshakLabel}
+      </a>
+    </li>
   );
 }
 
