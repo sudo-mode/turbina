@@ -1,8 +1,9 @@
 .player__content {
   opacity: 0;
+  /* transition: opacity .5s ease-in-out; */
 }
 
-.player__content_loading {
+.player__content_loaded {
   transition: opacity .5s ease-in-out;
   opacity: 1;
 }
