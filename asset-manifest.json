@@ -1,30 +1,29 @@
 {
   "files": {
-    "main.css": "/turbina/static/css/main.5c6d179b.chunk.css",
-    "main.js": "/turbina/static/js/main.9473a583.chunk.js",
-    "main.js.map": "/turbina/static/js/main.9473a583.chunk.js.map",
+    "main.css": "/turbina/static/css/main.6acbf1a7.chunk.css",
+    "main.js": "/turbina/static/js/main.db022c54.chunk.js",
+    "main.js.map": "/turbina/static/js/main.db022c54.chunk.js.map",
     "runtime-main.js": "/turbina/static/js/runtime-main.25bf6922.js",
     "runtime-main.js.map": "/turbina/static/js/runtime-main.25bf6922.js.map",
-    "static/js/2.47e9d503.chunk.js": "/turbina/static/js/2.47e9d503.chunk.js",
-    "static/js/2.47e9d503.chunk.js.map": "/turbina/static/js/2.47e9d503.chunk.js.map",
+    "static/js/2.7f0c3b07.chunk.js": "/turbina/static/js/2.7f0c3b07.chunk.js",
+    "static/js/2.7f0c3b07.chunk.js.map": "/turbina/static/js/2.7f0c3b07.chunk.js.map",
     "static/js/3.f0a6b853.chunk.js": "/turbina/static/js/3.f0a6b853.chunk.js",
     "static/js/3.f0a6b853.chunk.js.map": "/turbina/static/js/3.f0a6b853.chunk.js.map",
     "index.html": "/turbina/index.html",
-    "static/css/main.5c6d179b.chunk.css.map": "/turbina/static/css/main.5c6d179b.chunk.css.map",
-    "static/js/2.47e9d503.chunk.js.LICENSE.txt": "/turbina/static/js/2.47e9d503.chunk.js.LICENSE.txt",
+    "static/css/main.6acbf1a7.chunk.css.map": "/turbina/static/css/main.6acbf1a7.chunk.css.map",
+    "static/js/2.7f0c3b07.chunk.js.LICENSE.txt": "/turbina/static/js/2.7f0c3b07.chunk.js.LICENSE.txt",
     "static/media/App.css": "/turbina/static/media/arrowUp.b5f7b124.svg",
     "static/media/background-blur.c25e08a2.jpg": "/turbina/static/media/background-blur.c25e08a2.jpg",
     "static/media/background.22961cb9.png": "/turbina/static/media/background.22961cb9.png",
     "static/media/love_outline_cover.66f20682.jpg": "/turbina/static/media/love_outline_cover.66f20682.jpg",
     "static/media/note-round-icon.087d1e5c.svg": "/turbina/static/media/note-round-icon.087d1e5c.svg",
-    "static/media/offer.623a8e66.pdf": "/turbina/static/media/offer.623a8e66.pdf",
     "static/media/turbina.b11f75a9.svg": "/turbina/static/media/turbina.b11f75a9.svg",
     "static/media/Контур любви — Хадн Дадн feat. Варя Карпова и Федя Быстров.cb531876.mp3": "/turbina/static/media/Контур любви — Хадн Дадн feat. Варя Карпова и Федя Быстров.cb531876.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.25bf6922.js",
-    "static/js/2.47e9d503.chunk.js",
-    "static/css/main.5c6d179b.chunk.css",
-    "static/js/main.9473a583.chunk.js"
+    "static/js/2.7f0c3b07.chunk.js",
+    "static/css/main.6acbf1a7.chunk.css",
+    "static/js/main.db022c54.chunk.js"
   ]
 }
