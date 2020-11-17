@@ -24,7 +24,7 @@
 
 .footer__social {
   grid-area: social;
-  align-self: top;
+  align-self: flex-start;
 }
 
 .footer__yandex {

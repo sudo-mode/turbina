@@ -10,8 +10,8 @@ function PlayerControlBtn({ isPlaying, onBtnClick }) {
       onClick={onBtnClick}
     >
       {isPlaying
-        ? <PauseIcon className="control-Icon_pause" />
-        : <PlayIcon className="control-btn_play" />
+        ? <PauseIcon className="control-btn__pause" />
+        : <PlayIcon className="control-btn__play" />
       }
     </button>
   )
