@@ -3,10 +3,9 @@ import './Blur.css';
 import logo from '../images/turbina.svg';
 import cn from 'classnames';
 
-function ProjectLogo({ isPlayerExtend, isMobile, isLandscape }) {
-  
-  const titleStyle = cn("title", { "blur": isPlayerExtend && (isMobile || isLandscape)})
 
+function ProjectLogo({ isPlayerExtend, isMobile, isLandscape }) {
+  const titleStyle = cn("title", { "blur": isPlayerExtend && (isMobile || isLandscape)})
   return (
     <h1
       className={titleStyle}

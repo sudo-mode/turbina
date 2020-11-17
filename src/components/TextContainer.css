@@ -1,86 +1,111 @@
-/* Компонент Текст */
-.text {
-    max-width: 750px;
-    margin-right: auto;
+.text-container {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto 80px 0;
+    max-width: 924px;
 }
 
-.text__heading {
-    font-size: 50px;
+.text-container:last-of-type {
+    margin-bottom: 70px;
+}
+
+.text-container__heading {
+    font-size: 16px;
     line-height: 1.2;
     font-weight: 400;
-    font-style: italic;
-    text-transform: uppercase;
-    margin-top: 0;
-    margin-bottom: 40px;
+    margin: 0 50px 0 0;
+    width: 86px;
 }
 
-.text__paragraph {
-    margin-top: 0;
-    margin-bottom: 90px;
-    font-size: 16px;
-    line-height: 1.4;
+.text-container__paragraph {
+    font-size: 21px;
+    line-height: 1.3;
+    max-width: 85%;
+    margin: 0;
 }
 
-.text__paragraph:first-of-type {
+.text-container__paragraph_double {
+    display: inline-block;
+    margin-top: 0;
     margin-bottom: 25px;
 }
 
-.text__list {
+.text-container__list {
     list-style-type: disc;
     list-style-position: inside;
     padding-left: 0;
 }
 
-.text__list-item {
+.text-container__list-item {
     margin-bottom: 14px;
 }
 
-.text__list-item:last-of-type {
+.text-container__list-item:last-of-type {
     margin-bottom: 0;
 }
 
 
-/* Адаптивная верстка  */
-@media screen and (max-width:1024px) {
-    .text {
-        max-width: 694px;
+@media screen and (max-width: 1024px) {
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 80px 0;
+        max-width: 680px;
     }
     
-    .text__heading {
-        font-size: 46px;
+    .text-container:last-of-type {
+        margin-bottom: 40px;
     }
 
-    .text__paragraph {
-        margin-bottom: 80px;
+    .text-container__heading {
+        font-size: 46px;
+        font-style: italic;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .text-container__paragraph {
         font-size: 15px;
         line-height: 1.5;
+        max-width: 100%;
     }
 }
 
 @media screen and (max-width:768px) {
-    .text {
+    .text-container {
         max-width: 100%;
     }
-    
-    .text__heading {
+
+    .text-container__heading {
         font-size: 42px;
     } 
 }
   
 @media screen and (max-width:480px) {
-    .text__heading {
+    .text-container {
+        margin: 0 auto 60px auto;
+    }
+
+    .text-container:last-of-type {
+        margin-bottom: 30px;
+    }
+
+    .text-container__heading {
         font-size: 32px;
         margin-bottom: 32px;
     }
 
-    .text__paragraph {
-        margin-bottom: 60px;
+    .text-container__paragraph {
         font-size: 12px;
         line-height: 1.4;
     }
 
-    .text__paragraph:first-of-type {
+    .text-container__paragraph_double {
         margin-bottom: 16px;
-  }
+    }
+    
 }

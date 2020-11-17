@@ -9,7 +9,7 @@ function PlayerInfoContent({ tracks, isTextInfo, currentTrack, onTrackClick }) {
   const setChangeStyle = () => {
     setContentStyle('player__content');
     setTimeout(() => {  
-      setContentStyle('player__content player__content_loading');
+      setContentStyle('player__content player__content_loaded');
     }, 100)
   }
 

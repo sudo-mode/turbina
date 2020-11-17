@@ -3,7 +3,7 @@ import './MarshakLink.css';
 import cn from 'classnames';
 
 import { marshakLink } from '../configs/links';
-import logoHeader from '../images/marshak-logo.png';
+import MarshakLogo from './svg/MarshakLogo'
 
 function MarshakLink({ className }) {
   return (
@@ -15,11 +15,7 @@ function MarshakLink({ className }) {
       target="_blank"
       rel="noreferrer"
     >
-      <img
-        className="marshak-logo"
-        src={logoHeader}
-        alt="Логотип книжного магазина Маршак"
-      />
+      <MarshakLogo className="marshak-logo" />
     </a>
   );
 }

@@ -3,19 +3,37 @@
   max-width: 1250px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px 5px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  padding: 20px 10px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   color: #fff;
-  font-weight: normal;
   font-size: 16px;
   line-height: 22px;
   z-index: 1; /* чтобы футер был поверх слоя с затемнением */
 }
 
-.footer__item {
+.footer__links {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  grid-template-areas: "marshak social yandex";
+  grid-column-gap: 20px;
+}
+
+.footer__marshak {
+  grid-area: marshak;
+}
+
+.footer__social {
+  grid-area: social;
+  align-self: top;
+}
+
+.footer__yandex {
+  grid-area: yandex;
+  justify-self: end;
+  text-align: end;
+}
+
+.footer__paragraph {
   margin: 0;
 }
 
@@ -35,32 +53,75 @@
   transform: skewX(-9deg);
 }
 
+.footer__owner-info {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #ffffff70;
+}
+
+.footer__owner-info:first-of-type {
+  margin-top: 76px;
+}
+
 @media screen and (max-width: 1024px) {
   .footer {
     font-size: 15px;
   }
+
+  .footer__owner-info {
+    font-size: 11px;
+    line-height: 18px;
+  }
+
+  .footer__owner-info:first-of-type {
+    margin-top: 70px;
+  }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .footer {
-    padding: 20px 0;
-    flex-direction: column;
-    align-items: center;
-    font-size: 14px;
+    font-size: 12px;
   }
 
-  .footer__item {
-    margin-bottom: 5px;
-    text-align: center;
+  .footer__owner-info {
+    font-size: 8px;
+    line-height: 14px;
   }
 
-  .footer__item:last-child {
-    margin-bottom: 0;
+  .footer__owner-info:first-of-type {
+    margin-top: 60px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .footer {
-    font-size: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .footer__links {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-areas:
+              "marshak social"
+              "yandex  yandex";
+    gap: 35px 20px;
+  }
+  
+  .footer__social {
+    justify-self: end;
+  }
+  
+  .footer__yandex {
+    justify-self: start;
+    text-align: start;
+  }
+
+  .footer__owner-info {
+    text-align: left;
+  }
+
+  .footer__owner-info:first-of-type {
+    margin-top: 16px;
   }
 }

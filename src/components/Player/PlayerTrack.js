@@ -17,7 +17,7 @@ function PlayerTrack({ track, onTrackClick, inList, isLoading, trackId, currentT
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 100);
+    }, 200);
 
   }, [isLoading]);
 
