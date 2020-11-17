@@ -61,7 +61,7 @@ function Form() {
             <p className="text-container__paragraph">Заполните эту форму и вы можете стать частью проекта.</p>
           </TextContainer>
 
-        <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
+        <form className="form" name="send-poem" id="form-participate" onSubmit={handleSubmit} noValidate>
            
            <div className="form__type-buttons">
              <label htmlFor="parent" className="form__input_type-label">
