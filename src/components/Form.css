@@ -143,6 +143,7 @@
 }
 
 .form__type-buttons {
+    margin-top: 70px;
     margin-bottom: 54px;
     display: flex;
     flex-direction: row;
@@ -198,6 +199,10 @@
 
     .form__submit-button {
         font-size: 15px;
+    }
+
+    .form__type-buttons {
+        margin-top: 40px;
     }
 }
 
@@ -262,6 +267,7 @@
     }
 
     .form__type-buttons {
+        margin-top: 30px;
         margin-bottom: 50px;
     }
 

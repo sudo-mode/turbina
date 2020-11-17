@@ -7,7 +7,7 @@
 }
 
 .text-container:last-of-type {
-    margin-bottom: 70px;
+    margin-bottom: 0;
 }
 
 .text-container__heading {
@@ -53,10 +53,6 @@
         margin: 0 auto 80px 0;
         max-width: 680px;
     }
-    
-    .text-container:last-of-type {
-        margin-bottom: 40px;
-    }
 
     .text-container__heading {
         font-size: 46px;
@@ -88,10 +84,6 @@
 @media screen and (max-width:480px) {
     .text-container {
         margin: 0 auto 60px auto;
-    }
-
-    .text-container:last-of-type {
-        margin-bottom: 30px;
     }
 
     .text-container__heading {
