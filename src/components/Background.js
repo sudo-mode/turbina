@@ -8,9 +8,9 @@ function Background({ isPlayerExtend, isMobile, currentTrack }) {
   const bgElementRef = useRef();
 
   useEffect(() => {
-    window.addEventListener('mousemove',
-      (e) => throttle(transformElement(e, bgElementRef.current, 'position')), 50);
-    return () => window.removeEventListener('mousemove', transformElement);
+    const throttlingTransform = (e) => throttle(transformElement(e, bgElementRef.current, 'position'), 50);
+    window.addEventListener('mousemove', throttlingTransform);
+    return () => window.removeEventListener('mousemove', throttlingTransform);
   }, []);
 
   return (
