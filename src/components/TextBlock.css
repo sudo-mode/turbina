@@ -1,0 +1,20 @@
+/* Компонент Текст */
+.text {
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+/* Адаптивная верстка  */
+@media screen and (max-width:1024px) {
+    .text {
+        max-width: 694px;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .text {
+        max-width: 100%;
+    }
+
+}
+

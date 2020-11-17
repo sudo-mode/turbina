@@ -1,7 +1,17 @@
 import './Background.css';
 import { animated, Transition } from 'react-spring';
+import { useEffect, useRef } from 'react';
+import transformElement from '../utils/transformElement';
+import throttle from '../utils/simpleThrottle';
 
 function Background({ isPlayerExtend, isMobile, currentTrack }) {
+  const bgElementRef = useRef();
+
+  useEffect(() => {
+    const throttlingTransform = throttle((e) => transformElement(e, bgElementRef.current, 'position'), 25);
+    window.addEventListener('mousemove', throttlingTransform);
+    return () => window.removeEventListener('mousemove', throttlingTransform);
+  }, []);
 
   return (
     <div>
@@ -16,9 +26,14 @@ function Background({ isPlayerExtend, isMobile, currentTrack }) {
     > 
       {(values, item) => (
         <animated.div
-          className="background"
-          style={{ backgroundImage: `${item.theme.backgroundImage}`, ...values}}
-        ></animated.div>
+          ref={bgElementRef}
+            className="background"
+            style={{ backgroundImage: `${item.theme.backgroundImage}`, ...values}}
+        >
+{/*       <canvas className="canvas" ref={canvasRef}>
+            <img ref={bgElementRef} src={templateImg} alt="тема офрмления трека сайта ТурбинА"/>
+          </canvas> */}
+        </animated.div>
       )}
     </Transition>
     </div>

@@ -11,6 +11,16 @@ class Api {
         return Promise.reject(new Error(`Ошибка: ${res.status}`));
     }
 
+    _prepareBody(values) {
+        const query = new URLSearchParams();
+
+        Object.keys(values).forEach((k) => {
+            query.set(k, values[k]);
+        });
+
+        return query;
+    }
+
     //На случай, если есть несколько GET запросов с разными данными
     getData() {
         return fetch(`${this._url}`, {
@@ -27,15 +37,9 @@ class Api {
     //POST запрос для отправки формы
     submitForm(formData) {
         return fetch(`${this._url}`, {
-            method: "POST",
+            method: 'POST',
             headers:  this._headers,
-            body: JSON.stringify({
-                name: formData.name,
-                email: formData.email,
-                tel: formData.tel,
-                text: formData.text,
-                offer: formData.offer
-              })
+            body: this._prepareBody(formData)
         }).then(res => this._getResponseData(res));
        
     }
@@ -43,12 +47,11 @@ class Api {
 
 //Сюда подставляется любой URL и заголовки для отправки данных формы. Отправка протестирована и стабильна.
 const options = {
-    url: 'https://httpbin.org/post',
+    url: 'https://script.google.com/macros/s/AKfycby00KFN7at2vTHZAAYa3ONDczYx3xOsV7KRyOiZd5jyEZpymvo/exec',
     headers: {
-        //   authorization: ,
-          'Content-Type': 'application/json'
-        }
-    };
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+};
 
 export const api = new Api(options);
 

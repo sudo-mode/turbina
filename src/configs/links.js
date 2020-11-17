@@ -1,5 +1,13 @@
+import FacebookIcon from "../components/svg/FacebookIcon";
+import InstagramIcon from "../components/svg/InstagramIcon";
+import VkontakteIcon from "../components/svg/VkontakteIcon";
+
+
 const marshakMainLink = 'https://marshakbooks.ru/';
-const yandexPraktikumLink = 'https://praktikum.yandex.ru';
+const yandexPraktikumLink = {
+  title: 'Яндекс.Практикума',
+  link:'https://www.notion.so/de0ecc64f8134e178448dcbc6382046e',
+};
 
 const marshakLinks = [
   {
@@ -36,4 +44,40 @@ const serviceLinks = [
   },
 ];
 
-export { marshakMainLink, marshakLinks, serviceLinks, yandexPraktikumLink };
+const marshakNavLinks = [
+  {
+    title: 'Книги',
+    link: 'https://marshakbooks.ru/',
+  },
+  {
+    title: 'Школа',
+    link: 'https://marshakbooks.ru/school/',
+  },
+  {
+    title: 'О нас',
+    link: 'https://marshakbooks.ru/%d0%be-%d0%bd%d0%b0%d1%81/',
+  },
+];
+
+const socialNetworks = [
+  {
+    name: 'Instagram',
+    link: 'https://www.instagram.com/marshak_books/',
+    IconElement: InstagramIcon,
+    className: 'social-networks__instagram',
+  },
+  {
+    name: 'Facebook',
+    link: 'https://www.facebook.com/marshakbooks/',
+    IconElement: FacebookIcon,
+    className: 'social-networks__facebook',
+  },
+  {
+    name: 'Vkontakte',
+    link: 'https://vk.com/marshakbooks',
+    IconElement: VkontakteIcon,
+    className: 'social-networks__vkontakte',
+  },
+]
+
+export { marshakMainLink, marshakLinks, serviceLinks, yandexPraktikumLink, marshakNavLinks, socialNetworks };

@@ -5,6 +5,7 @@ import pdfUrl from '../vendor/offer.pdf';
 import useFormWithValidation from '../hooks/useFormWithValidation.js';
 import setCustomValidity from '../utils/setCustomValidity.js';
 import { api } from '../utils/Api.js';
+import TextContainer from './TextContainer.js';
 
 
 
@@ -12,6 +13,7 @@ function Form() {
 
     const { values, handleChange, errors, isFormValid, resetForm } = useFormWithValidation(setCustomValidity);
     const [isSubmitted, setIsSubmitted] = React.useState(false);
+    const [isSuccess, setIsSuccess] = React.useState(false);
     const [isErrorVisible, setIsErrorVisible] = React.useState(false);
 
     const inputNameStyle = cn('form__input', 'form__input_name', {'form__input_invalid': errors.name});
@@ -22,20 +24,23 @@ function Form() {
 
     function handleSubmit(evt) {
         evt.preventDefault();
-        console.log(values);
+        setIsSubmitted(true);
 
         api.submitForm(values)
            .then(() => {
-              setIsSubmitted(true);
+              setIsSuccess(true);
+              setIsSubmitted(false);
               setIsErrorVisible(false);
               resetForm();
 
               setTimeout(() => 
-                setIsSubmitted(false),
-                5000);
+                setIsSuccess(false),
+                5000
+              );
            })
            .catch((err) => {
                console.log(err);
+               setIsSubmitted(false);
                setIsErrorVisible(true);
            })
     }
@@ -43,8 +48,10 @@ function Form() {
     return(
         <div className="form-container">
 
-          <h2 className="form-container__heading">Форма</h2>
-          <p className="form-container__text">Заполняя эту форму, вы становитесь частью проекта.</p>
+          <TextContainer>
+            <h2 className="text-container__heading">Форма</h2>
+            <p className="text-container__paragraph">Заполните эту форму и вы можете стать частью проекта.</p>
+          </TextContainer>
 
         <form className="form" name="send-poem" id="form-participate" onSubmit={handleSubmit} noValidate>
 
@@ -92,8 +99,7 @@ function Form() {
 
                 <textarea 
                   className={inputTextStyle}
-                  name="text" 
-                  minLength="20" 
+                  name="text"
                   placeholder="Стихи" 
                   required
                   value={values.text || ''}
@@ -120,7 +126,11 @@ function Form() {
                 {errors.offer && <span className="form__input-error">{errors.offer}</span>}
 
 
-                <button type="submit" className="form__submit-button" disabled={!isFormValid}><span className="form__button-text">{isSubmitted? 'Ура, форма отправлена!' : 'Отправить форму'}</span></button>
+                <button type="submit" className="form__submit-button" disabled={!isFormValid}>
+                  <span className="form__button-text">
+                    {isSubmitted ? 'Отправляем...' : isSuccess ? 'Ура, форма отправлена!' : 'Отправить форму'}
+                  </span>
+                </button>
                 {isErrorVisible && <span className="form__wrong-submit">Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!</span>}
                 {!isFormValid && <span className="form__fill-hint">Чтобы отправить форму, пожалуйста, заполните все поля</span>}
                 

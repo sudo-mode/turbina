@@ -8,7 +8,7 @@ function PlayerSwitcher ({ onClick, isTextInfo  }) {
   const setChangeStyle = () => {
     setContentStyle('player__switcher-text');
     setTimeout(() => {  
-      setContentStyle('player__switcher-text player__switcher-text_loading');
+      setContentStyle('player__switcher-text player__switcher-text_loaded');
     }, 100)
   }
 

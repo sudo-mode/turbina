@@ -1,12 +1,12 @@
 import './Info.css';
-import TextContainer from './TextContainer.js';
+import TextBlock from './TextBlock.js';
 import Form from './Form.js';
 
 function Info () {
   return (
     <section className="info-container">
 
-      <TextContainer />
+      <TextBlock />
 
       <Form />
   
