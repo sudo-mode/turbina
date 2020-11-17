@@ -21,9 +21,6 @@ function Form() {
     const inputEmailStyle = cn('form__input', 'form__input_email', {'form__input_invalid': errors.email});
     const inputTextStyle = cn('form__textarea', 'form__input', {'form__input_invalid': errors.text});
 
-    const isParentButtonStyle = cn('form__type-choice', {'form__type-choice_visited': isParent});
-    const isMusicianButtonStyle = cn('form__type-choice', {'form__type-choice_visited': isMusician})
-
     function handleSubmit(evt) {
         evt.preventDefault();
         console.log(values);
@@ -60,23 +57,19 @@ function Form() {
           <h2 className="form-container__heading">Форма</h2>
           <p className="form-container__text">Заполняя эту форму, вы становитесь частью проекта.</p>
 
-
-          {/* <button className={isParentButtonStyle} onClick={handleIsParentClick}>Я родитель</button>
-          <button className={isMusicianButtonStyle} onClick={handleIsMusicianClick}>Я музыкант</button> */}
-
         <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
-        
-        <div className="form__type-buttons">
-          <label htmlFor="parent" className="form__input_type-label">
-            <input type="radio" name="form-type" id="parent" className="form__input_type-choice" value="isParent" onClick={handleIsParentClick} onChange={handleChange} />
-            <span className="form__choice-pseudo-item">Я родитель</span>
-          </label>
+           
+           <div className="form__type-buttons">
+             <label htmlFor="parent" className="form__input_type-label">
+               <input type="radio" name="form-type" id="parent" className="form__input_type-choice" value="isParent" onClick={handleIsParentClick} onChange={handleChange} checked={isParent} />
+               <span className="form__choice-pseudo-item">Я родитель</span>
+             </label>
 
-          <label htmlFor="musician" className="form__input_type-label">
-            <input type="radio" name="form-type" id="musician" className="form__input_type-choice" value="isMusician" onClick={handleIsMusicianClick} onChange={handleChange} />
-            <span className="form__choice-pseudo-item">Я музыкант</span>
-          </label>
-        </div>
+             <label htmlFor="musician" className="form__input_type-label">
+              <input type="radio" name="form-type" id="musician" className="form__input_type-choice" value="isMusician" onClick={handleIsMusicianClick} onChange={handleChange} checked={isMusician} />
+              <span className="form__choice-pseudo-item">Я музыкант</span>
+             </label>
+           </div>
 
                 <input 
                   className={inputNameStyle}
@@ -132,6 +125,7 @@ function Form() {
                 </textarea>
                 {errors.text && <span className="form__input-error">{errors.text}</span>}
 
+      
                 <label htmlFor="offer" className="form__input-label">
                   <input 
                     className="form__input_radio" 
@@ -144,9 +138,10 @@ function Form() {
                     onChange={handleChange}
                   />
                   <span className="form__pseudo-item"></span>
-        
+
                   <span className="form__label-text">Согласен с <a className="form__offer-link" target="_blank" href={pdfUrl} rel="noreferrer">офертой</a></span>
                 </label>
+                  
                 {errors.offer && <span className="form__input-error">{errors.offer}</span>}
 
 
