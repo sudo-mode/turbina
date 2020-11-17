@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import './Player.css';
 import PlayerController from './PlayerController';
@@ -38,6 +38,15 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
   }
 
   const AnimatedPlayerCover = animated(PlayerCover);
+
+  /* Для десктопов: плеер выезжает через 3 секунды после загрузки страницы. 
+  Рисуем компонент обложки и кнопки "Клип" и "Релизы".
+  Для отключения закомментить этот useEffect */
+  useEffect(() => {
+    if (isPlayerExtend) {
+      setIsExtendElementsMounted(true);
+    }
+  }, [isPlayerExtend])
   
   return (
     <section className="player" style={style}>
