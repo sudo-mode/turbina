@@ -5,6 +5,7 @@ import pdfUrl from '../vendor/offer.pdf';
 import useFormWithValidation from '../hooks/useFormWithValidation.js';
 import setCustomValidity from '../utils/setCustomValidity.js';
 import { api } from '../utils/Api.js';
+import TextContainer from './TextContainer.js';
 
 
 
@@ -47,10 +48,12 @@ function Form() {
     return(
         <div className="form-container">
 
-          <h2 className="form-container__heading">Форма</h2>
-          <p className="form-container__text">Заполняя эту форму, вы становитесь частью проекта.</p>
+          <TextContainer>
+            <h2 className="text-container__heading">Форма</h2>
+            <p className="text-container__paragraph">Заполните эту форму и вы можете стать частью проекта.</p>
+          </TextContainer>
 
-        <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
+          <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
 
                 <input 
                   className={inputNameStyle}
