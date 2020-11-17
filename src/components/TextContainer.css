@@ -14,8 +14,7 @@
     font-size: 16px;
     line-height: 1.2;
     font-weight: 400;
-    margin-right: 50px;
-    margin-top: 0;
+    margin: 0 50px 0 0;
     width: 86px;
 }
 
@@ -51,9 +50,14 @@
     .text-container {
         display: flex;
         flex-direction: column;
-        margin: 0 auto 80px auto;
+        margin: 0 auto 80px 0;
+        max-width: 680px;
     }
     
+    .text-container:last-of-type {
+        margin-bottom: 40px;
+    }
+
     .text-container__heading {
         font-size: 46px;
         font-style: italic;
@@ -72,6 +76,10 @@
 }
 
 @media screen and (max-width:768px) {
+    .text-container {
+        max-width: 100%;
+    }
+
     .text-container__heading {
         font-size: 42px;
     } 
@@ -95,4 +103,9 @@
         font-size: 12px;
         line-height: 1.4;
     }
+
+    .text-container__paragraph_double {
+        margin-bottom: 16px;
+    }
+    
 }
