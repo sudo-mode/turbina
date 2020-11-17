@@ -69,7 +69,7 @@ function Form() {
                 <input 
                   className={inputNameStyle}
                   name="name" 
-                  placeholder={(isParent && 'Имя и фамилия автора') || (isMusician && 'Имя и фамилия/Название группы')}
+                  placeholder={(isParent && 'Имя и фамилия автора') || (isMusician && 'Представьтесь, пожалуйста')}
                   required 
                   minLength="2" 
                   maxLength="50" 
@@ -108,16 +108,16 @@ function Form() {
                 {errors.email && <span className="form__input-error">{errors.email}</span>}
 
 
-                {isParent && <textarea 
+                <textarea 
                   className={inputTextStyle}
                   name="text" 
                   minLength="20" 
-                  placeholder="Стихи" 
+                  placeholder={(isParent && 'Стихи') || (isMusician && 'Ссылка на вашу музыку')}
                   required
                   value={values.text || ''}
                   onChange={handleChange}
                 >
-                </textarea>}
+                </textarea>
                 {errors.text && <span className="form__input-error">{errors.text}</span>}
 
                 <label htmlFor="offer" className="form__input-label">
@@ -142,7 +142,6 @@ function Form() {
                 {isErrorVisible && <span className="form__wrong-submit">Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!</span>}
                 {!isFormValid && <span className="form__fill-hint">Чтобы отправить форму, пожалуйста, заполните все поля</span>}
 
-                <span className="form__fill-hint form__fill-hint_musician">Если вы музыкант и хотите стать частью проекта - напишите нам.</span>
                 
             </form>
       </div>
