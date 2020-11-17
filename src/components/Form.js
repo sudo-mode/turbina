@@ -13,6 +13,8 @@ function Form() {
     const { values, handleChange, errors, isFormValid, resetForm } = useFormWithValidation(setCustomValidity);
     const [isSubmitted, setIsSubmitted] = React.useState(false);
     const [isErrorVisible, setIsErrorVisible] = React.useState(false);
+    const [isParent, setIsParent] = React.useState(true);
+    const [isMusician, setIsMusician] = React.useState(false);
 
     const inputNameStyle = cn('form__input', 'form__input_name', {'form__input_invalid': errors.name});
     const inputTelStyle = cn('form__input', 'form__input_tel', {'form__input_invalid': errors.tel});
@@ -40,18 +42,32 @@ function Form() {
            })
     }
 
+    function handleIsMusicianClick() {
+      setIsParent(false);
+      setIsMusician(true);
+    }
+
+    function handleIsParentClick() {
+      setIsParent(true);
+      setIsMusician(false);
+    }
+
     return(
         <div className="form-container">
 
           <h2 className="form-container__heading">Форма</h2>
           <p className="form-container__text">Заполняя эту форму, вы становитесь частью проекта.</p>
 
-        <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
 
+          <button className="form__type-choice" onClick={handleIsParentClick}>Я родитель</button>
+          <button className="form__type-choice" onClick={handleIsMusicianClick}>Я музыкант</button>
+
+        <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
+          
                 <input 
                   className={inputNameStyle}
                   name="name" 
-                  placeholder="Имя и фамилия автора" 
+                  placeholder={(isParent && 'Имя и фамилия автора') || (isMusician && 'Имя и фамилия/Название группы')}
                   required 
                   minLength="2" 
                   maxLength="50" 
@@ -90,7 +106,7 @@ function Form() {
                 {errors.email && <span className="form__input-error">{errors.email}</span>}
 
 
-                <textarea 
+                {isParent && <textarea 
                   className={inputTextStyle}
                   name="text" 
                   minLength="20" 
@@ -99,7 +115,7 @@ function Form() {
                   value={values.text || ''}
                   onChange={handleChange}
                 >
-                </textarea>
+                </textarea>}
                 {errors.text && <span className="form__input-error">{errors.text}</span>}
 
                 <label htmlFor="offer" className="form__input-label">
@@ -123,6 +139,8 @@ function Form() {
                 <button type="submit" className="form__submit-button" disabled={!isFormValid}><span className="form__button-text">{isSubmitted? 'Ура, форма отправлена!' : 'Отправить форму'}</span></button>
                 {isErrorVisible && <span className="form__wrong-submit">Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!</span>}
                 {!isFormValid && <span className="form__fill-hint">Чтобы отправить форму, пожалуйста, заполните все поля</span>}
+
+                <span className="form__fill-hint form__fill-hint_musician">Если вы музыкант и хотите стать частью проекта - напишите нам.</span>
                 
             </form>
       </div>
