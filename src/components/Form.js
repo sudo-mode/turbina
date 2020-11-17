@@ -46,7 +46,7 @@ function Form() {
 
           <TextContainer>
             <h2 className="text-container__heading">Форма</h2>
-            <p className="text-container__paragraph">Заполняя эту форму, вы становитесь частью проекта.</p>
+            <p className="text-container__paragraph">Заполните эту форму и вы можете стать частью проекта.</p>
           </TextContainer>
 
           <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>

@@ -22,8 +22,6 @@
     line-height: 1.4;
 }
 
-
-
 .text__paragraph:first-of-type {
     margin-bottom: 25px;
 }
@@ -49,37 +47,13 @@
         max-width: 694px;
     }
 
-    .text-container {
-        display: flex;
-        flex-direction: column;
-        /* justify-content: space-between; */
-        margin: 0 auto 80px auto;
-    }
-    
-    .text-container__heading {
-        font-size: 46px;
-        font-style: italic;
-        text-transform: uppercase;
-        margin-top: 0;
-        margin-bottom: 40px;
-        width: 100%;
-    }
-
-    .text-container__paragraph {
-        /* margin-bottom: 80px; */
-        font-size: 15px;
-        line-height: 1.5;
-    }
 }
 
 @media screen and (max-width:768px) {
     .text {
         max-width: 100%;
     }
-    
-    .text__heading {
-        font-size: 42px;
-    } 
+
 }
   
 @media screen and (max-width:480px) {
