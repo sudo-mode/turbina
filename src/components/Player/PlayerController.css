@@ -90,6 +90,15 @@
 }
 
 @media screen and (max-width: 480px) {
+  .player__controller {
+    grid-template-rows: min-content min-content min-content;
+    align-items: center;
+    grid-template-areas:
+      " .   btn    . "
+      " .  song timer"
+      " .  line line ";
+  }
+
   .player__bar {
     display: none;
   }
