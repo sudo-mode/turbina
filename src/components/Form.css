@@ -162,6 +162,7 @@
     vertical-align: middle;
     margin: 0 30px 0 0;
     padding: 0 0 7px 0;
+    font-size: 16px;
 }
 
 .form__input_type-choice:checked + .form__choice-pseudo-item {
@@ -203,6 +204,10 @@
 
     .form__type-buttons {
         margin-top: 40px;
+    }
+
+    .form__choice-pseudo-item {
+        font-size: 15px;
     }
 }
 
@@ -273,5 +278,6 @@
 
     .form__choice-pseudo-item {
         margin-right: 26px;
+        font-size: 14px;
     }
 }
