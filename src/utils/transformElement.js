@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 const transformElement = (evt, element, method = 'position') => { 
+  console.log('we are here');
   // текущий размер вьюпорта
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;

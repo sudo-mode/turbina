@@ -2,13 +2,13 @@ import './Background.css';
 import { animated, Transition } from 'react-spring';
 import { useEffect, useRef } from 'react';
 import transformElement from '../utils/transformElement';
-import throttle from '../utils/throttle';
+import throttle from '../utils/simpleThrottle';
 
 function Background({ isPlayerExtend, isMobile, currentTrack }) {
   const bgElementRef = useRef();
 
   useEffect(() => {
-    const throttlingTransform = (e) => throttle(transformElement(e, bgElementRef.current, 'position'), 50);
+    const throttlingTransform = throttle((e) => transformElement(e, bgElementRef.current, 'position'), 25);
     window.addEventListener('mousemove', throttlingTransform);
     return () => window.removeEventListener('mousemove', throttlingTransform);
   }, []);
