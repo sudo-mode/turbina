@@ -29,7 +29,7 @@ function PlayerInfoContent({ tracks, isTextInfo, currentTrack, onTrackClick }) {
 
   const setReleaseList = (tracks) => {
     if (tracks.length === 1) {
-      return <p className='player__info-header'>Пока это единственный релиз, но скоро будут новые</p>
+      return <p className='player__info-header'>Пока это единственный трек в проекте, но 12 декабря появятся новые</p>
     } else {
       return (
         <>
