@@ -1,5 +1,20 @@
-const marshakLink = 'https://marshakbooks.ru/';
+const marshakMainLink = 'https://marshakbooks.ru/';
 const yandexPraktikumLink = 'https://praktikum.yandex.ru';
+
+const marshakLinks = [
+  {
+    marshakLabel: 'Книги',
+    marshakLink: 'https://marshakbooks.ru/'
+  },
+  {
+    marshakLabel: 'Школа',
+    marshakLink: 'https://marshakbooks.ru/school/'
+  },
+  {
+    marshakLabel: 'О нас',
+    marshakLink: 'https://marshakbooks.ru/о-нас/'
+  },
+];
 
 // TODO: вставить актуальные ссылки на стриминговые сервисы
 const serviceLinks = [
@@ -21,4 +36,4 @@ const serviceLinks = [
   },
 ];
 
-export { marshakLink, serviceLinks, yandexPraktikumLink };
+export { marshakMainLink, marshakLinks, serviceLinks, yandexPraktikumLink };

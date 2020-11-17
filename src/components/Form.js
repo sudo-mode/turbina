@@ -46,7 +46,7 @@ function Form() {
           <h2 className="form-container__heading">Форма</h2>
           <p className="form-container__text">Заполняя эту форму, вы становитесь частью проекта.</p>
 
-        <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
+        <form className="form" name="send-poem" id="form-participate" onSubmit={handleSubmit} noValidate>
 
                 <input 
                   className={inputNameStyle}
