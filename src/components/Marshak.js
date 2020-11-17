@@ -6,11 +6,11 @@ import cn from 'classnames';
 import { Transition, animated, useTrail } from 'react-spring';
 
 import { marshakMainLink, marshakLinks } from '../configs/links';
-import logoHeader from '../images/marshak-logo.png';
 
 import MarshakLink from './MarshakLink';
 import HamburgerIcon from './svg/HamburgerIcon';
 import LinksCloseIcon from './svg/LinksCloseIcon';
+import MarshakLogo from './svg/MarshakLogo'
 
 function Marshak({ className, isMobile, isLandscape, isPlayerExtend }) {
   const isTablet = useMediaQuery({ query: '(max-width: 768px)' });
@@ -107,11 +107,7 @@ function Marshak({ className, isMobile, isLandscape, isPlayerExtend }) {
           target="_blank"
           rel="noreferrer"
         >
-          <img
-            className="marshak-logo"
-            src={logoHeader}
-            alt="Логотип независимого книжного магазина Маршак"
-          />
+          <MarshakLogo className="marshak-logo" />
         </a>
       </div>
 
