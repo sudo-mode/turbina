@@ -7,23 +7,6 @@
     font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
-.form-container__heading {
-    font-size: 50px;
-    line-height: 1.2;
-    font-weight: 400;
-    font-style: italic;
-    text-transform: uppercase;
-    margin-top: 65px;
-    margin-bottom: 40px;
-}
-
-.form-container__text {
-    margin-top: 0;
-    margin-bottom: 60px;
-    font-size: 16px;
-    line-height: 1.4;
-}
-
 .form__input {
     margin-bottom: 10px;
     padding: 20px 0;
@@ -159,7 +142,7 @@
     line-height: 1.2;
 }
 
-/* Адаптивная верстка для брекпоинта 1024px */
+/* Адаптивная верстка для брейкпоинта 1024px */
 @media screen and (max-width:1024px) {
     .form {
         margin-left: 0;

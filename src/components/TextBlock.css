@@ -5,7 +5,7 @@
     font-family: 'Inter', Arial, Helvetica, sans-serif;
 }
 
-.text__heading {
+/* .text__heading {
     font-size: 50px;
     line-height: 1.2;
     font-weight: 400;
@@ -24,21 +24,7 @@
 
 .text__paragraph:first-of-type {
     margin-bottom: 25px;
-}
-
-.text__list {
-    list-style-type: disc;
-    list-style-position: inside;
-    padding-left: 0;
-}
-
-.text__list-item {
-    margin-bottom: 14px;
-}
-
-.text__list-item:last-of-type {
-    margin-bottom: 0;
-}
+} */
 
 
 /* Адаптивная верстка  */
@@ -56,7 +42,7 @@
 
 }
   
-@media screen and (max-width:480px) {
+/* @media screen and (max-width:480px) {
     .text__heading {
         font-size: 32px;
         margin-bottom: 32px;
@@ -71,4 +57,4 @@
     .text__paragraph:first-of-type {
         margin-bottom: 16px;
   }
-}
+} */
