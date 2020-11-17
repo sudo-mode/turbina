@@ -165,7 +165,10 @@
 .form__type-choice {
     background-color: #fff;
     border: none;
+    margin-right: 30px;
     margin-bottom: 60px;
+    padding: 0;
+    padding-bottom: 7px;
     transition: transform 0.4s ease-out;
 }
 
