@@ -96,8 +96,7 @@ function Form() {
 
                 <textarea 
                   className={inputTextStyle}
-                  name="text" 
-                  minLength="20" 
+                  name="text"
                   placeholder="Стихи" 
                   required
                   value={values.text || ''}
