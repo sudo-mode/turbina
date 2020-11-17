@@ -166,12 +166,20 @@
     background-color: #fff;
     border: none;
     margin-bottom: 60px;
-    /* border-bottom: 2px solid #000; */
+    transition: transform 0.4s ease-out;
 }
 
-/* .form__type-choice:checked {
-    border-bottom: none;
+/* .form__type-choice:active{
+    border-bottom: 2px solid #000;
 } */
+
+.form__type-choice:focus {
+    outline: none;
+}
+
+.form__type-choice:hover {
+    transform: skew(-9deg);
+}
 
 /* Адаптивная верстка для брекпоинта 1024px */
 @media screen and (max-width:1024px) {
