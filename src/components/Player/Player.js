@@ -9,7 +9,7 @@ import VideoBtn from './VideoBtn';
 import PlayerCover from './PlayerCover';
 import tracks from '../../db/tracks';
 
-function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCurrentTrack }) {
+function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCurrentTrack, setIsPlaying, setBorder}) {
   const [isTextInfo, setTextInfo] = useState(false);
   const [isExtendElementsMounted, setIsExtendElementsMounted] = useState(false);
 
@@ -51,6 +51,8 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
         />
       }
       <PlayerController
+        setIsPlaying={setIsPlaying}
+        setBorder={setBorder}
         isPlayerExtend={isPlayerExtend}
         track={currentTrack}
       />
