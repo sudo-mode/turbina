@@ -1,4 +1,7 @@
 .header {
+  background: none;
+  mix-blend-mode: screen;
+
   max-width: 1900px;
   width: 100%;
   margin: 0 auto;
@@ -20,13 +23,17 @@
 }
 
 .header__form-anchor-link {
+  position: relative;
+  background: none;
+  mix-blend-mode: screen;
+
   margin-bottom: 25px;
   padding: 8px 18px;
   border: 2px solid white;
   border-radius: 30px;
   background-color: #fff;
   color: #000;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   line-height: 1;
   text-decoration: none;
@@ -34,6 +41,19 @@
   transition: box-shadow .2s ease-out;
   -webkit-tap-highlight-color: transparent;
 }
+
+.header__form-anchor-link::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  border-radius: 30px;
+  content: '';
+  mix-blend-mode: color-burn;
+}
+
 
 .header__form-anchor-link:hover {
   box-shadow: 0 0 8px 4px #ffffff40;
