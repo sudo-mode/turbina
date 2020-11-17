@@ -142,7 +142,41 @@
     line-height: 1.2;
 }
 
-/* Адаптивная верстка для брейкпоинта 1024px */
+.form__type-buttons {
+    margin-bottom: 54px;
+    display: flex;
+    flex-direction: row;
+}
+
+.form__input_type-choice {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.form__choice-pseudo-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 30px 0 0;
+    padding: 0 0 7px 0;
+}
+
+.form__input_type-choice:checked + .form__choice-pseudo-item {
+    border-bottom: 2px solid #000;
+}
+
+.form__input_type-choice:focus + .form__choice-pseudo-item {
+    outline: none;
+}
+
+.form__input_type-choice:hover + .form__choice-pseudo-item {
+    transform: skew(-9deg);
+    cursor: pointer;
+}
+
+/* Адаптивная верстка для брекпоинта 1024px */
 @media screen and (max-width:1024px) {
     .form {
         margin-left: 0;
@@ -226,33 +260,12 @@
     .form__fill-hint {
         font-size: 14px;
     }
-}
 
-
-/* Возможность для анимации курсива на кнопке */
-/* .form__button-text {
-    margin: 0;
-    padding: 18px 25px;
-    box-sizing: border-box;
-    font-size: 16px;
-    display: inline-block;
-    transition: transform 0.4s ease-out;
-}
-
-.form__button-text:hover {
-    transform: skew(-9deg);
-}
-
-@media screen and (max-width:1024px) {
-    .form__button-text  {
-        font-size: 15px;
+    .form__type-buttons {
+        margin-bottom: 50px;
     }
-  }
-  
-@media screen and (max-width:480px) {
-    .form__button-text {
-        padding: 0;
-        font-size: 12px;
-    }
-} */
 
+    .form__choice-pseudo-item {
+        margin-right: 26px;
+    }
+}
