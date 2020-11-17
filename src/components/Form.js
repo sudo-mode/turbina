@@ -12,6 +12,7 @@ function Form() {
 
     const { values, handleChange, errors, isFormValid, resetForm } = useFormWithValidation(setCustomValidity);
     const [isSubmitted, setIsSubmitted] = React.useState(false);
+    const [isSuccess, setIsSuccess] = React.useState(false);
     const [isErrorVisible, setIsErrorVisible] = React.useState(false);
 
     const inputNameStyle = cn('form__input', 'form__input_name', {'form__input_invalid': errors.name});
@@ -22,20 +23,23 @@ function Form() {
 
     function handleSubmit(evt) {
         evt.preventDefault();
-        console.log(values);
+        setIsSubmitted(true);
 
         api.submitForm(values)
            .then(() => {
-              setIsSubmitted(true);
+              setIsSuccess(true);
+              setIsSubmitted(false);
               setIsErrorVisible(false);
               resetForm();
 
               setTimeout(() => 
-                setIsSubmitted(false),
-                5000);
+                setIsSuccess(false),
+                5000
+              );
            })
            .catch((err) => {
                console.log(err);
+               setIsSubmitted(false);
                setIsErrorVisible(true);
            })
     }
@@ -120,7 +124,11 @@ function Form() {
                 {errors.offer && <span className="form__input-error">{errors.offer}</span>}
 
 
-                <button type="submit" className="form__submit-button" disabled={!isFormValid}><span className="form__button-text">{isSubmitted? 'Ура, форма отправлена!' : 'Отправить форму'}</span></button>
+                <button type="submit" className="form__submit-button" disabled={!isFormValid}>
+                  <span className="form__button-text">
+                    {isSubmitted ? 'Отправляем...' : isSuccess ? 'Ура, форма отправлена!' : 'Отправить форму'}
+                  </span>
+                </button>
                 {isErrorVisible && <span className="form__wrong-submit">Упс, что-то пошло не так и форма не отправилась, попробуйте ещё раз!</span>}
                 {!isFormValid && <span className="form__fill-hint">Чтобы отправить форму, пожалуйста, заполните все поля</span>}
                 
