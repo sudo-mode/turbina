@@ -180,7 +180,50 @@
 
 .form__type-choice:hover {
     transform: skew(-9deg);
+    cursor: pointer;
 }
+
+.form__input_type-label {
+
+}
+
+.form__type-buttons {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+.form__input_type-choice {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.form__choice-pseudo-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 30px;
+    margin-bottom: 60px;
+    padding: 0;
+    padding-bottom: 7px;
+}
+
+.form__input_type-choice:checked + .form__choice-pseudo-item {
+    border-bottom: 2px solid #000;
+}
+
+.form__input_type-choice:focus + .form__choice-pseudo-item {
+    outline: none;
+}
+
+
+.form__input_type-choice:hover + .form__choice-pseudo-item {
+    transform: skew(-9deg);
+    cursor: pointer;
+}
+
 
 /* Адаптивная верстка для брекпоинта 1024px */
 @media screen and (max-width:1024px) {

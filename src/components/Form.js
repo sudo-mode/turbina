@@ -61,11 +61,23 @@ function Form() {
           <p className="form-container__text">Заполняя эту форму, вы становитесь частью проекта.</p>
 
 
-          <button className={isParentButtonStyle} onClick={handleIsParentClick}>Я родитель</button>
-          <button className={isMusicianButtonStyle} onClick={handleIsMusicianClick}>Я музыкант</button>
+          {/* <button className={isParentButtonStyle} onClick={handleIsParentClick}>Я родитель</button>
+          <button className={isMusicianButtonStyle} onClick={handleIsMusicianClick}>Я музыкант</button> */}
 
         <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
-          
+        
+        <div className="form__type-buttons">
+          <label htmlFor="parent" className="form__input_type-label">
+            <input type="radio" name="form-type" id="parent" className="form__input_type-choice" value="isParent" onClick={handleIsParentClick} onChange={handleChange} />
+            <span className="form__choice-pseudo-item">Я родитель</span>
+          </label>
+
+          <label htmlFor="musician" className="form__input_type-label">
+            <input type="radio" name="form-type" id="musician" className="form__input_type-choice" value="isMusician" onClick={handleIsMusicianClick} onChange={handleChange} />
+            <span className="form__choice-pseudo-item">Я музыкант</span>
+          </label>
+        </div>
+
                 <input 
                   className={inputNameStyle}
                   name="name" 
@@ -111,7 +123,7 @@ function Form() {
                 <textarea 
                   className={inputTextStyle}
                   name="text" 
-                  minLength="20" 
+                  minLength={(isParent && 20) || (isMusician && 6)}
                   placeholder={(isParent && 'Стихи') || (isMusician && 'Ссылка на вашу музыку')}
                   required
                   value={values.text || ''}
