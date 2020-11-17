@@ -23,7 +23,7 @@ export const tracks = [
     link: Crystalised,
     videoLink: 'https://www.youtube.com/watch?v=p2xFqtgwhrU',
     theme: {
-      color: '#fff',
+      color: '#1c2a64',
       backgroundColor: 'white',
       backgroundImage: `url(${defaultBackground})`,
     },

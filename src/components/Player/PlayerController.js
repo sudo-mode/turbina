@@ -11,7 +11,7 @@ import cn from 'classnames';
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-function PlayerController({ isPlayerExtend, track }) {
+function PlayerController({ isPlayerExtend, track, setIsPlaying, setBorder }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();
   const [audioCtx, setAudioCtx] = useState(null);
@@ -37,16 +37,27 @@ function PlayerController({ isPlayerExtend, track }) {
         const canvas = analyzerCanvas.current;
         const ctx = canvas.getContext('2d');
         const freqData = new Uint8Array(analyser.frequencyBinCount);
+        const processor = context.createScriptProcessor(1024);
+        audioSrc.connect(processor).connect(context.destination);
+
         audioSrc
           .connect(analyser)
           .connect(context.destination);
         analyser.connect(context.destination);
         setAudioCtx(context);
+        processor.onaudioprocess = () => {
+          analyser.getByteFrequencyData(freqData);
+          const analysed = freqData
+            .reduce((acc, i) => acc + i, 0) / freqData.length;
+          const border = 100 - ((analysed / 128) * 100);
+          setBorder(border);
+        };
         renderFrame(analyser, ctx, freqData, analyzerCanvas);
       }
     } catch (e) {
       return
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isMobile]);
 
   useTicker({
@@ -66,7 +77,11 @@ function PlayerController({ isPlayerExtend, track }) {
     curTime,
     duration
   } = useAudioPlayer(audioPlayerRef, track);
-
+  
+  useEffect(() => {
+    setIsPlaying(isPlaying);
+  }, [ isPlaying, setIsPlaying ])
+  
   if (isPlaying && audioCtx) {
     if (audioCtx.state === 'suspended') {
       audioCtx.resume()

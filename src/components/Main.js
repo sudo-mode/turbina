@@ -1,6 +1,7 @@
 
 import { useSpring, animated, } from 'react-spring';
 import { useMediaQuery } from 'react-responsive';
+import React from 'react';
 import './Main.css';
 import Header from './Header';
 import ProjectLogo from './ProjectLogo';
@@ -13,6 +14,9 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurr
   const isWideMobile = useMediaQuery({ query: '(max-width: 600px)' });
   const isNarrowDesktop = useMediaQuery({ query: '(max-width: 1024px)' });
   const AnimatedPlayer = animated(Player);
+
+  const [isPlaying, setIsPlaying ] = React.useState(false);
+  const [border, setBorder ] = React.useState(0);
 
   const calcDefaultHeight = () => {
     switch (true) {
@@ -53,11 +57,17 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurr
         isLandscape={isLandscape}
       />
       <ProjectLogo
+        themeColor={currentTrack.theme.color}
+        fill={currentTrack.theme.backgroundColor}
+        isPlaying={isPlaying}
+        border={border}
         isPlayerExtend={isPlayerExtend}
         isMobile={isMobile}
         isLandscape={isLandscape}
       />
       <AnimatedPlayer
+        setIsPlaying={setIsPlaying}
+        setBorder={setBorder}
         isPlayerExtend={isPlayerExtend}
         onPlayerExtend={onPlayerExtend}
         style={extendСonfig}
