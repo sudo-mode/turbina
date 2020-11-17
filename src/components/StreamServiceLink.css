@@ -1,6 +1,5 @@
 .stream-services__link-container {
   margin-bottom: 8px;
-  border: 2px solid #fff;
   border-radius: 30px;
   transition: box-shadow .2s ease-out;
   -webkit-tap-highlight-color: transparent;
