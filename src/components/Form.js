@@ -15,7 +15,6 @@ function Form() {
     const [isSubmitted, setIsSubmitted] = React.useState(false);
     const [isSuccess, setIsSuccess] = React.useState(false);
     const [isErrorVisible, setIsErrorVisible] = React.useState(false);
-    const [isParent, setIsParent] = React.useState(true);
     const [isMusician, setIsMusician] = React.useState(false);
 
     const inputNameStyle = cn('form__input', 'form__input_name', {'form__input_invalid': errors.name});
@@ -47,12 +46,10 @@ function Form() {
     }
 
     function handleIsMusicianClick() {
-      setIsParent(false);
       setIsMusician(true);
     }
 
     function handleIsParentClick() {
-      setIsParent(true);
       setIsMusician(false);
     }
 
@@ -68,7 +65,7 @@ function Form() {
            
            <div className="form__type-buttons">
              <label htmlFor="parent" className="form__input_type-label">
-               <input type="radio" name="form-type" id="parent" className="form__input_type-choice" value="isParent" onClick={handleIsParentClick} onChange={handleChange} checked={isParent} />
+               <input type="radio" name="form-type" id="parent" className="form__input_type-choice" value="isParent" onClick={handleIsParentClick} onChange={handleChange} checked={!isMusician} />
                <span className="form__choice-pseudo-item">Я родитель</span>
              </label>
 
@@ -81,7 +78,7 @@ function Form() {
                 <input 
                   className={inputNameStyle}
                   name="name" 
-                  placeholder={(isParent && 'Имя и фамилия автора') || (isMusician && 'Представьтесь, пожалуйста')}
+                  placeholder={(!isMusician && 'Имя и фамилия автора') || (isMusician && 'Представьтесь, пожалуйста')}
                   required 
                   minLength="2" 
                   maxLength="50" 
@@ -123,8 +120,7 @@ function Form() {
                 <textarea 
                   className={inputTextStyle}
                   name="text"
-                  placeholder={(isParent && 'Стихи') || (isMusician && 'Ссылка на вашу музыку')}
-                  placeholder="Стихи" 
+                  placeholder={(!isMusician && 'Стихи') || (isMusician && 'Ссылка на вашу музыку')}
                   required
                   value={values.text || ''}
                   onChange={handleChange}
