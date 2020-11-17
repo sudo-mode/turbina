@@ -1,12 +1,21 @@
 import './SocialNetworks.css';
-import FacebookIcon from './svg/FacebookIcon';
-import InstagramIcon from './svg/InstagramIcon';
-import VkontakteIcon from './svg/VkontakteIcon';
+import { socialNetworks } from '../configs/links';
 
-function SocialNetworks () {
+function SocialNetworks ({ className }) {
   return (
-    <ul className="social-networks">
-      <li><InstagramIcon /> <FacebookIcon /> <VkontakteIcon /></li>
+    <ul className={`social-networks ${className}`}>
+    {socialNetworks.map((item) => (
+      <li className="social-networks__item" key={item.name}>
+        <a
+          className="social-networks__link"
+          href={item.link}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <item.IconElement className={item.className} />
+        </a>
+      </li>
+    ))}
     </ul>
   )
 }
