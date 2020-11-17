@@ -2,6 +2,7 @@ import './Header.css';
 import './Blur.css';
 
 import cn from 'classnames';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import StreamServices from './StreamServices';
 import Marshak from './Marshak';
@@ -21,9 +22,9 @@ function Header({ isPlayerExtend, isMobile, isLandscape }) {
       />
 
       <div className="header__container">
-        <a className="header__form-anchor-link" href="#form-participate">
+        <AnchorLink className="header__form-anchor-link" href="#form-participate">
           Хочу свой трек
-        </a>
+        </AnchorLink>
 
         <StreamServices
           isPlayerExtend={isPlayerExtend}
