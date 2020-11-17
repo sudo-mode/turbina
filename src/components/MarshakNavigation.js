@@ -1,8 +1,9 @@
 import './MarshakNavigation.css'
+import cn from 'classnames';
 
 function MarshakNavigation ({ className, links }) {
   return (
-    <div className={`marshak-navigation ${className}`}>
+    <div className={cn('marshak-navigation', className)}>
       <p className="copyright">&copy; Маршак</p>
       <ul className="marshak-navigation__links">
         {links.map((item) => (

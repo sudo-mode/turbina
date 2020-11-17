@@ -4,7 +4,7 @@ import { socialNetworks } from '../configs/links';
 
 function SocialNetworks ({ className }) {
   return (
-    <ul className={cn('social-networks', {className: className})}>
+    <ul className={cn('social-networks', className)}>
       {socialNetworks.map((item) => (
         <li className="social-networks__item" key={item.name}>
           <a
