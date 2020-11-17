@@ -10,8 +10,8 @@ function ExtendBtn ({ isOpen, onBtnClick }) {
       onClick={onBtnClick}
     >
       {isOpen
-        ? <CloseBtnIcon className="extend-btn_close" />
-        : <ExtendBtnIcon className="extend-btn_open" />
+        ? <CloseBtnIcon className="extend-btn__close" />
+        : <ExtendBtnIcon className="extend-btn__open" />
       }
     </button>
   )
