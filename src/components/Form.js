@@ -43,10 +43,12 @@ function Form() {
     return(
         <div className="form-container">
 
-          <h2 className="form-container__heading">Форма</h2>
-          <p className="form-container__text">Заполняя эту форму, вы становитесь частью проекта.</p>
+          <div className="text-container">
+            <h2 className="text-container__heading">Форма</h2>
+            <p className="text-container__paragraph">Заполняя эту форму, вы становитесь частью проекта.</p>
+          </div>
 
-        <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
+          <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
 
                 <input 
                   className={inputNameStyle}
