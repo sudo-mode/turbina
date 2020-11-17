@@ -15,7 +15,7 @@ function MarshakLink({ className }) {
       target="_blank"
       rel="noreferrer"
     >
-      <MarshakLogo />
+      <MarshakLogo className="marshak-logo" />
     </a>
   );
 }
