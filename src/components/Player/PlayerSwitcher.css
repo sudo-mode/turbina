@@ -26,7 +26,7 @@
   opacity: 0;
 }
 
-.player__switcher-text_loading {
+.player__switcher-text_loaded {
   transition: opacity .5s ease-in-out, transform .2s ease-out;
   opacity: 1;
 }
