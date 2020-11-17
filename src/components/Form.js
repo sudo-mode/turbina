@@ -21,6 +21,8 @@ function Form() {
     const inputEmailStyle = cn('form__input', 'form__input_email', {'form__input_invalid': errors.email});
     const inputTextStyle = cn('form__textarea', 'form__input', {'form__input_invalid': errors.text});
 
+    const isParentButtonStyle = cn('form__type-choice', {'form__type-choice_visited': isParent});
+    const isMusicianButtonStyle = cn('form__type-choice', {'form__type-choice_visited': isMusician})
 
     function handleSubmit(evt) {
         evt.preventDefault();
@@ -59,8 +61,8 @@ function Form() {
           <p className="form-container__text">Заполняя эту форму, вы становитесь частью проекта.</p>
 
 
-          <button className="form__type-choice" onClick={handleIsParentClick}>Я родитель</button>
-          <button className="form__type-choice" onClick={handleIsMusicianClick}>Я музыкант</button>
+          <button className={isParentButtonStyle} onClick={handleIsParentClick}>Я родитель</button>
+          <button className={isMusicianButtonStyle} onClick={handleIsMusicianClick}>Я музыкант</button>
 
         <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
           

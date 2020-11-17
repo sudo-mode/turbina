@@ -169,9 +169,10 @@
     transition: transform 0.4s ease-out;
 }
 
-/* .form__type-choice:active{
+.form__type-choice_visited {
     border-bottom: 2px solid #000;
-} */
+    /* text-decoration: underline 2px solid; */
+}
 
 .form__type-choice:focus {
     outline: none;
