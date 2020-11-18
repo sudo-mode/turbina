@@ -36,11 +36,11 @@ const serviceLinks = [
   },
   { 
     serviceLabel: 'Apple Music',
-    serviceLink: 'https://open.spotify.com/track/0FRjmDhfKmVARMOvmUm6no?si=rwTima3JQaWdse3mrQko1g'
+    serviceLink: 'https://music.apple.com/ru/album/контур-любви-feat-варя-карпова-федя-быстров-single/1539942736'
   },
   { 
     serviceLabel: 'VK Music',
-    serviceLink: 'https://vk.com/audio_playlist-2000389059_9389059_4fb8e57c6b6b7b1795'
+    serviceLink: 'https://vk.com/music/album/-2000389059_9389059_4fb8e57c6b6b7b1795'
   },
 ];
 
