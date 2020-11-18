@@ -141,7 +141,14 @@ function Form() {
                   />
                   <span className="form__pseudo-item"></span>
 
-                  <span className="form__label-text">Согласен с <a className="form__offer-link" target="_blank" href="#" rel="noreferrer">офертой</a></span>
+                  {/* <span className="form__label-text">Согласен с <a className="form__offer-link" target="_blank" href="#" rel="noreferrer">офертой</a></span> */}
+                  <span className="form__label-text">
+                    {
+                      isMusician
+                        ? 'Да-да, я понимаю, что соглашаюсь написать музыку на детские стихи'
+                        : 'Я разрешаю передавать стихи музыкантам и создавать музыку на них'
+                    }
+                  </span>
                 </label>
                   
                 {errors.offer && <span className="form__input-error">{errors.offer}</span>}
