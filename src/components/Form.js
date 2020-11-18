@@ -64,12 +64,12 @@ function Form() {
            
            <div className="form__type-buttons">
              <label htmlFor="parent" className="form__input_type-label">
-               <input type="radio" name="form-type" id="parent" className="form__input_type-choice" value="isParent" onClick={handleIsParentClick} onChange={handleChange} checked={!isMusician} />
+               <input type="radio" name="type" id="parent" className="form__input_type-choice" value="parent" onClick={handleIsParentClick} onChange={handleChange} checked={!isMusician} />
                <span className="form__choice-pseudo-item">Я родитель</span>
              </label>
 
              <label htmlFor="musician" className="form__input_type-label">
-              <input type="radio" name="form-type" id="musician" className="form__input_type-choice" value="isMusician" onClick={handleIsMusicianClick} onChange={handleChange} checked={isMusician} />
+              <input type="radio" name="type" id="musician" className="form__input_type-choice" value="musician" onClick={handleIsMusicianClick} onChange={handleChange} checked={isMusician} />
               <span className="form__choice-pseudo-item">Я музыкант</span>
              </label>
            </div>
@@ -141,7 +141,14 @@ function Form() {
                   />
                   <span className="form__pseudo-item"></span>
 
-                  <span className="form__label-text">Согласен с <a className="form__offer-link" target="_blank" href="#" rel="noreferrer">офертой</a></span>
+                  {/* <span className="form__label-text">Согласен с <a className="form__offer-link" target="_blank" href="#" rel="noreferrer">офертой</a></span> */}
+                  <span className="form__label-text">
+                    {
+                      isMusician
+                        ? 'Да-да, я понимаю, что соглашаюсь написать музыку на детские стихи'
+                        : 'Я разрешаю передавать стихи музыкантам и создавать музыку на них'
+                    }
+                  </span>
                 </label>
                   
                 {errors.offer && <span className="form__input-error">{errors.offer}</span>}

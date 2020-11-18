@@ -26,7 +26,7 @@ function Footer() {
         &#8470;&nbsp;004421830; ИНН&nbsp;343510777851; ОГРНИП&nbsp;316344300079818. 
       </p>
       <p className="footer__owner-info footer__paragraph">
-        Мы&nbsp;работаем: 11:00&nbsp;&mdash; 20:00 (Выходной: Понедельник); Наш адрес: Казарменный 
+        Мы&nbsp;работаем: 11:00&nbsp;&mdash; 20:00; Наш адрес: Казарменный 
         пер.&nbsp;4, стр.&nbsp;3; Телефон: +7&nbsp;(905)&nbsp;567&#8209;33&#8209;53, +7&nbsp;(999)&nbsp;831&#8209;51&#8209;08; 
         marshakbooks@gmail.com
       </p>
