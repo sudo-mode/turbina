@@ -28,19 +28,19 @@ const marshakLinks = [
 const serviceLinks = [
   { 
     serviceLabel: 'Яндекс.Музыка',
-    serviceLink: 'https://music.yandex.ru/'
+    serviceLink: 'https://music.yandex.ru/album/12769745'
   },
   { 
     serviceLabel: 'Spotify',
-    serviceLink: 'https://www.spotify.com/ru-ru/'
+    serviceLink: 'https://open.spotify.com/track/0FRjmDhfKmVARMOvmUm6no?si=rwTima3JQaWdse3mrQko1g'
   },
   { 
     serviceLabel: 'Apple Music',
-    serviceLink: 'https://music.apple.com/'
+    serviceLink: 'https://open.spotify.com/track/0FRjmDhfKmVARMOvmUm6no?si=rwTima3JQaWdse3mrQko1g'
   },
   { 
     serviceLabel: 'VK Music',
-    serviceLink: 'https://vk.com/vkmusic'
+    serviceLink: 'https://vk.com/audio_playlist-2000389059_9389059_4fb8e57c6b6b7b1795'
   },
 ];
 
