@@ -1,0 +1,38 @@
+.player__timeline-container {
+  grid-area: line;
+  display: flex;
+  height: 12px;
+}
+
+.player__timeline-container:hover {
+  cursor: pointer;
+}
+
+.player__timeline {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  margin: auto;
+  background-color: #ffffff30;
+}
+
+.player__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #ffffff;
+  transition: width .2s;
+}
+
+@media screen and (max-width: 768px) {
+ .player__timeline {
+    height: 3px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .player__timeline-container {
+    height: 15px;
+  }
+}

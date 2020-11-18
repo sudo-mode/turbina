@@ -1,0 +1,34 @@
+.extend-btn {
+  grid-area: extend-btn;
+  justify-self: end;
+  align-self: start;
+  text-align: right;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.extend-btn:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .extend-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .extend-btn__open {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .extend-btn__close {
+    width: 16px;
+    height: 16px;
+  }
+}

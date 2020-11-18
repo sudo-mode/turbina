@@ -1,0 +1,45 @@
+.control-btn {
+  grid-area: btn;
+  align-self: start;
+  text-align: start;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.control-btn:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .control-btn__play {
+    width: 15px;
+    height: 18px;
+  }
+  
+  .control-btn__pause {
+    width: 12px;
+    height: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .control-btn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .control-btn__play {
+    width: 13px;
+    height: 16px;
+  }
+  
+  .control-btn__pause {
+    width: 11px;
+    height: 12px;
+  }
+}

@@ -1,0 +1,36 @@
+/* Стиль всей секции */
+.info-container {
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -10px;
+  padding: 110px 50px 90px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #000;
+  font-weight: 400;
+  border-radius: 10px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+/* Адаптивная верстка  */
+@media screen and (max-width:1024px) {
+    .info-container {
+      padding-top: 100px;
+      padding-bottom: 80px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .info-container {
+      margin-top: -8px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .info-container {
+      padding: 80px 20px 60px;
+    }
+}

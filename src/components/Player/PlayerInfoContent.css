@@ -1,0 +1,47 @@
+.player__content {
+  opacity: 0;
+  /* transition: opacity .5s ease-in-out; */
+}
+
+.player__content_loaded {
+  transition: opacity .5s ease-in-out;
+  opacity: 1;
+}
+
+.player__info-header {
+  margin: 0 0 16px 0;
+  font-weight: 400;
+  padding-top: 2px;
+  max-width: calc(100% - 56px);
+}
+
+.player__tracks {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.player__text-line {
+  max-width: calc(100% - 56px);
+  margin: 0;
+  font-style: italic;
+  line-height: 1.4;
+  font-weight: 500;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.player__text-line:last-child {
+  padding-bottom: 22px;
+}
+
+@media screen and (max-width: 1024px) {
+  .player__info-header {
+    margin-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .player__info-header {
+    margin-bottom: 14px;
+  }
+}

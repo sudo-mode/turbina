@@ -1,0 +1,29 @@
+.main {
+  position: relative;
+  height: 100vh;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 5px;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    padding: 8px;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .main {
+    height: 100%;
+  }
+}
+
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) { 
+  .selector:not(*:root), .main {
+    height: 100%;
+  }
+}

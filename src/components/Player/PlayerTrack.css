@@ -1,0 +1,64 @@
+.player__track-item {
+  margin-bottom: 0px;
+  padding-right: 10px;
+}
+
+.player__track-item:last-child {
+  padding-bottom: 8px;
+}
+
+.player__track {
+  width: fit-content;
+  padding: 0 5px 0 0;
+  margin: 0 0 16px;
+  color: #fff;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: transform .2s ease-out, text-shadow 0.2s ease-out, opacity .5s ease-in-out;
+}
+
+.player__feat {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.player__track_checked {
+  font-weight: 500;
+}
+
+.player__track_loading {
+  opacity: 0;
+}
+
+.player__track_info {
+  max-width: calc(100% - 56px);
+  text-align: left;
+}
+
+.player__track_info:hover {
+  cursor: pointer;
+  font-style: italic;
+}
+
+.player__track:active, .player__track:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .player__track {
+    margin-bottom: 15px;
+  }
+
+  .player__track-item:last-child {
+    padding-bottom: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .player__track {
+    margin-bottom: 14px;
+  }
+}

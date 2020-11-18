@@ -1,0 +1,283 @@
+/* Компонент Форма */
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin-left: 136px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.form__input {
+    margin-bottom: 10px;
+    padding: 20px 15px;
+    border: none;
+    border-bottom: 2px solid #000;
+    border-radius: 0px;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-border-radius: 0px;
+}
+
+.form__input::placeholder {
+  font-size: 16px;
+  line-height: 1.2;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.form__input:focus {
+    outline: none;
+    box-shadow: 0 0 4px 3px #00000010;
+}
+
+.form__textarea {
+    margin-bottom: 10px;
+    padding: 20px 15px 2px 15px;
+    resize: none;
+    border: none;
+    border-bottom: 2px solid #000;
+}
+  
+.form__input_radio {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+  
+.form__input-label {
+    margin-top: 34px;
+    -webkit-tap-highlight-color: transparent;
+}
+  
+.form__label-text {
+    margin-left: 10px;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.form__offer-link {
+    color: #000;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.form__offer-link:focus {
+    outline: none;
+}
+
+.form__pseudo-item {
+    display: inline-block;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+
+/* Активная радиокнопка */
+.form__input_radio:checked + .form__pseudo-item {
+    background-color: #000;
+}
+
+.form__input_radio:hover + .form__pseudo-item {
+    cursor: pointer;
+}
+
+.form__submit-button {
+    height: 60px;
+    margin-top: 38px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 30px;
+    font-size: 16px;
+    line-height: 1.2;
+    transition: background-color 0.4s ease-out;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.form__submit-button:hover {
+   box-shadow: 0 0 8px 4px #00000040;
+   background-color: rgb(0, 0, 0);
+   color: #fff;
+   cursor: pointer;
+   font-style: italic;
+}
+
+.form__submit-button:focus {
+    outline: none;
+}
+
+.form__submit-button:disabled {
+    box-shadow: none;
+    background-color: #fff;
+    color: #00000070;
+    cursor: auto;
+    font-style: normal;
+}
+
+.form__input-error {
+    color: red;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.form__input_invalid {
+    color: red;
+    border-bottom: 2px solid red;
+}
+
+.form__wrong-submit {
+    margin: 20px auto 5px auto;
+    color: red;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.form__fill-hint {
+    margin: 20px auto 5px auto;
+    color: #00000070;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.form__type-buttons {
+    margin-top: 70px;
+    margin-bottom: 54px;
+    display: flex;
+    flex-direction: row;
+}
+
+.form__input_type-choice {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.form__choice-pseudo-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 30px 0 0;
+    padding: 0 0 7px 0;
+    font-size: 16px;
+}
+
+.form__input_type-choice:checked + .form__choice-pseudo-item {
+    border-bottom: 2px solid #000;
+}
+
+.form__input_type-choice:focus + .form__choice-pseudo-item {
+    outline: none;
+}
+
+.form__input_type-choice:hover + .form__choice-pseudo-item {
+    transform: skew(-9deg);
+    cursor: pointer;
+}
+
+/* Адаптивная верстка для брекпоинта 1024px */
+@media screen and (max-width:1024px) {
+    .form {
+        margin-left: 0;
+    }
+    
+    .form__heading {
+        margin-top: 56px;
+        font-size: 46px;
+    }
+
+    .form__text {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .form__label-text  {
+        font-size: 15px;
+    }
+
+    .form__submit-button {
+        font-size: 15px;
+    }
+
+    .form__type-buttons {
+        margin-top: 40px;
+    }
+
+    .form__choice-pseudo-item {
+        font-size: 15px;
+    }
+}
+
+/* Адаптивная верстка для брейкпоинта 768px */
+@media screen and (max-width:768px) {
+    .form {
+        max-width: 100%;
+    }
+    
+    .form__heading {
+        font-size: 42px;
+    }
+}
+
+  /* Адаптивная верстка для брейкпоинта 480px */
+@media screen and (max-width:480px) {
+    .form__heading {
+        font-size: 32px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .form__text {
+        margin-bottom: 40px;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
+    .form__input {
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+    
+    .form__input::placeholder {
+        font-size: 14px;
+    }
+
+    .form__input-label {
+        margin-top: 28px;
+    }
+    
+    .form__label-text {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .form__submit-button {
+        height: 42px;
+        font-size: 12px;
+    }
+
+    .form__input-error {
+        font-size: 14px;
+    }
+    
+    .form__wrong-submit {
+        font-size: 14px;
+    }
+
+    .form__fill-hint {
+        font-size: 14px;
+    }
+
+    .form__type-buttons {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .form__choice-pseudo-item {
+        margin-right: 26px;
+        font-size: 14px;
+    }
+}
