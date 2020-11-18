@@ -35,11 +35,26 @@
 
 @media screen and (max-width: 768px) {
   .marshak__link-container {
-    margin: 0 0 8px 0;
+    margin-right: 0;
+    margin-bottom: 8px;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) and (min-height: 551px) {
+  .marshak__link-container {
+    margin-bottom: 5px;
+  }
+
+  .marshak__link {
+    padding: 7px 14px;
+  }
+}
+
+@media screen and (max-width: 480px) and (max-height: 550px) {
+  .marshak__link-container {
+    margin-bottom: 4px;
+  }
+
   .marshak__link {
     padding: 7px 14px;
   }
