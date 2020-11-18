@@ -64,12 +64,12 @@ function Form() {
            
            <div className="form__type-buttons">
              <label htmlFor="parent" className="form__input_type-label">
-               <input type="radio" name="form-type" id="parent" className="form__input_type-choice" value="isParent" onClick={handleIsParentClick} onChange={handleChange} checked={!isMusician} />
+               <input type="radio" name="type" id="parent" className="form__input_type-choice" value="parent" onClick={handleIsParentClick} onChange={handleChange} checked={!isMusician} />
                <span className="form__choice-pseudo-item">Я родитель</span>
              </label>
 
              <label htmlFor="musician" className="form__input_type-label">
-              <input type="radio" name="form-type" id="musician" className="form__input_type-choice" value="isMusician" onClick={handleIsMusicianClick} onChange={handleChange} checked={isMusician} />
+              <input type="radio" name="type" id="musician" className="form__input_type-choice" value="musician" onClick={handleIsMusicianClick} onChange={handleChange} checked={isMusician} />
               <span className="form__choice-pseudo-item">Я музыкант</span>
              </label>
            </div>

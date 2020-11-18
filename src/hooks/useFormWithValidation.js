@@ -6,7 +6,8 @@ function useFormWithValidation(setCustomValidity) {
         email: '',
         tel: '',
         text: '',
-        offer: false
+        offer: false,
+        type: 'parent'
     });
     const [errors, setErrors] = useState({});
     const [isFormValid, setIsFormValid] = useState(false);
