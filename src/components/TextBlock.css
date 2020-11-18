@@ -1,6 +1,7 @@
 /* Компонент Текст */
 .text {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
+    margin-bottom: 80px;
 }
 
 /* Адаптивная верстка  */
@@ -17,4 +18,12 @@
     }
 
 }
+
+@media screen and (max-width:480px) {
+    .text {
+        margin-bottom: 60px;
+    }
+
+}
+
 
