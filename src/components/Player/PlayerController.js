@@ -15,6 +15,7 @@ function PlayerController({ isPlayerExtend, track }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();
   const [audioCtx, setAudioCtx] = useState(null);
+  const [isVisible] = useState(false);
   const analyzerCanvas = useRef();
 
   const isMobile = useMediaQuery({ query: '(max-width: 480px), (max-height: 600px)' });
@@ -121,7 +122,7 @@ function PlayerController({ isPlayerExtend, track }) {
       <div className='player__bar-wrapper'> 
       <canvas
           className={cn('player__bar',
-            { 'player__bar_active': !isMobile && !isLandscape && isPlaying },
+            { 'player__bar_active': isVisible && !isMobile && !isLandscape && isPlaying },
             { 'player__bar_active-and-theme': track.theme.backgroundImage.includes('gradient') })}
           ref={analyzerCanvas}
           id="analyzer">
