@@ -31,6 +31,7 @@ function Form() {
               setIsSuccess(true);
               setIsSubmitted(false);
               setIsErrorVisible(false);
+              setIsMusician(false);
               resetForm();
 
               setTimeout(() => 
