@@ -15,6 +15,8 @@ export default function setCustomValidity (target) {
                 target.setCustomValidity(`Введенное значение должно быть короче ${target.maxLength} символов`)
             } else if (target.name === 'email' & target.validity.patternMismatch) {
                 target.setCustomValidity('Пожалуйста, не забудьте "@" и домен')
+            } else if (target.name === 'age' && (target.validity.rangeOverflow || target.validity.rangeUnderflow)) {
+                target.setCustomValidity(`Пожалуйста, введите возраст в диапазоне от ${target.min} до ${target.max}`)
             }
         } 
     }

@@ -3,6 +3,7 @@ import { useState, useCallback } from 'react';
 function useFormWithValidation(setCustomValidity) {
     const [values, setValues] = useState({
         name: '',
+        age: '',
         email: '',
         tel: '',
         text: '',
@@ -37,10 +38,12 @@ function useFormWithValidation(setCustomValidity) {
     const resetForm = useCallback(
         (newValues = {
             name: '',
+            age: '',
             email: '',
             tel: '',
             text: '',
-            offer: false
+            offer: false,
+            type: 'parent'
         }, 
         newErrors = {}, 
         newIsFormValid = false) => {
