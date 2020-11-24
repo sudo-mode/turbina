@@ -1,6 +1,7 @@
 import FacebookIcon from "../components/svg/FacebookIcon";
 import InstagramIcon from "../components/svg/InstagramIcon";
 import VkontakteIcon from "../components/svg/VkontakteIcon";
+import TelegramIcon from "../components/svg/TelegramIcon";
 
 
 const marshakMainLink = 'https://marshakbooks.ru/';
@@ -77,6 +78,12 @@ const socialNetworks = [
     link: 'https://vk.com/marshakbooks',
     IconElement: VkontakteIcon,
     className: 'social-networks__vkontakte',
+  },
+  {
+    name: 'Telegram',
+    link: 'https://t.me/marshakbooks',
+    IconElement: TelegramIcon,
+    className: 'social-networks__telegram',
   },
 ]
 
