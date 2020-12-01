@@ -4,12 +4,11 @@ import { useEffect, useState } from 'react';
 import { useTrail, animated, Transition } from 'react-spring';
 import cn from 'classnames';
 
-import { serviceLinks } from '../configs/links';
-
 import StreamServiceLink from './StreamServiceLink';
 import LinksCloseIcon from './svg/LinksCloseIcon';
 
-function StreamServices({ className, isMobile, isLandscape, isPlayerExtend }) {
+function StreamServices({ isMobile, isLandscape, isPlayerExtend, currentTrack }) {
+  const serviceLinks = currentTrack.streamings
   /* Разделение между стейтами isLinksMounted и isLinksHidden сделано для корректной анимации.
   Ссылки должны размонтироваться по окончании анимации, иначе анимации не будет. */
   const [isLinksMounted, setIsLinksMounted] = useState(false);
@@ -72,7 +71,7 @@ function StreamServices({ className, isMobile, isLandscape, isPlayerExtend }) {
   }, [isPlayerExtend, isLandscape, isMobile]);
 
   return (
-    <div className={cn("stream-services", className)}>
+    <div className="stream-services">
       {(isMobile || isLandscape) && (
         <button
           className={cn("stream-services__button", {

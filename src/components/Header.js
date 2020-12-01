@@ -7,7 +7,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import StreamServices from './StreamServices';
 import Marshak from './Marshak';
 
-function Header({ isPlayerExtend, isMobile, isLandscape }) {
+function Header({ isPlayerExtend, isMobile, isLandscape, currentTrack }) {
   return (
     <header
       className={cn("header", {
@@ -35,6 +35,7 @@ function Header({ isPlayerExtend, isMobile, isLandscape }) {
           isPlayerExtend={isPlayerExtend}
           isMobile={isMobile}
           isLandscape={isLandscape}
+          currentTrack={currentTrack}
         />
       </div>
     </header>
