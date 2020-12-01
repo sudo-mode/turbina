@@ -55,14 +55,14 @@ function Form() {
     }
 
     return(
-        <div className="form-container">
+        <div className="form-container" id="form-participate">
 
           <TextContainer>
             <h2 className="text-container__heading">Форма</h2>
             <p className="text-container__paragraph">Заполните эту форму и вы можете стать частью проекта.</p>
           </TextContainer>
 
-        <form className="form" name="send-poem" id="form-participate" onSubmit={handleSubmit} noValidate>
+        <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
            
            <div className="form__type-buttons">
              <label htmlFor="parent" className="form__input_type-label">

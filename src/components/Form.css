@@ -178,14 +178,14 @@
     cursor: pointer;
 }
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+.form__input_age::-webkit-outer-spin-button,
+.form__input_age::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-input[type='number'],
-input[type="number"]:hover,
-input[type="number"]:focus {
+.form__input,
+.form__input:hover,
+.form__input:focus {
     appearance: none;
     -moz-appearance: textfield;
 }
