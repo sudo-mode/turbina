@@ -51,6 +51,7 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurr
         isPlayerExtend={isPlayerExtend}
         isMobile={isMobile}
         isLandscape={isLandscape}
+        currentTrack={currentTrack}
       />
       <ProjectLogo
         isPlayerExtend={isPlayerExtend}
