@@ -1,0 +1,25 @@
+@keyframes switch {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes switch2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.switchAnimation{
+  animation: switch .5s ease-in-out forwards 1 running;
+}
+
+.switchAnimation2{
+  animation: switch2 .5s ease-in-out forwards 1 running;
+}

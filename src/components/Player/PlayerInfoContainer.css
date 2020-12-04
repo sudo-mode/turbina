@@ -6,6 +6,22 @@
   overflow: hidden;
 }
 
+.player__info-header {
+  margin: 0 0 16px 0;
+  font-weight: 400;
+  padding-top: 2px;
+  max-width: calc(100% - 56px);
+}
+
+.player__info-header-content {
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.player__info-header-content_active {
+  opacity: 1;
+}
+
 .player__scrollbars {
   height: 118px;
 }
