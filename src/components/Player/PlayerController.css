@@ -2,13 +2,19 @@
   grid-area: player;
   height: 100%;
   display: grid;
-  grid-template-columns: 30px 1fr min-content;
+  grid-template-columns: 206px 1fr min-content;
   grid-template-rows: min-content min-content;
   gap: 6px 6px;
   align-items: center;
   grid-template-areas:
-    "btn song timer"
-    "btn line line ";
+    "btns song timer"
+    "btns line line ";
+}
+
+.player__controllers {
+  grid-area: btns;
+  display: flex;
+  align-items: center;
 }
 
 .player__song-container {
@@ -41,6 +47,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  font-size: 14px;
   font-weight: 500;
 }
 

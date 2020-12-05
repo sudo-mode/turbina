@@ -1,18 +1,39 @@
 .control-btn {
-  grid-area: btn;
+  /* grid-area: btn;
   align-self: start;
-  text-align: start;
-  width: 30px;
-  height: 30px;
+  text-align: start; */
+  width: 45px;
+  height: 45px;
   padding: 0;
   border: none;
+  border-radius: 50%;
   outline: none;
   background: transparent;
   -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .control-btn:hover {
   cursor: pointer;
+}
+
+.control-btn__rounded {
+  border: 1px solid #fff;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.control-btn__play {
+  width: 13px;
+  height: 15px;
+  padding-left: 2px;
+}
+
+.control-btn__checkout {
+  width: 20px;
+  height: 21px;
 }
 
 @media screen and (max-width: 1024px) {
