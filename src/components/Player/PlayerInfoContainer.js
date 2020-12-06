@@ -49,8 +49,8 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
   };
 
   return (
-
     <div className={`player__info-container ${isOpen && 'player__info-container_active'}`}>
+      <p className='player__info-header'>Релизы: </p>
       <Scrollbars
         className='player__scrollbars'
         renderView={renderView}

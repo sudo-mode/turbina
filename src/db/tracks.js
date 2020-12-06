@@ -132,6 +132,114 @@ export const tracks = [
       Никогда не знаешь, что будет дальше
       В этой гадкой зиме.`,
     link: derevnya,
+    videoLink: 'https://www.youtube.com/watch?v=tVTdzzUwF5g',
+    theme: {
+      color: '#fff',
+      backgroundColor: 'white',
+      backgroundImage: `url(${defaultBackground})`,
+    },
+    albumPicture: loveOutlineCover,
+    streamings: [
+      { 
+        serviceLabel: 'Яндекс.Музыка',
+        serviceLink: 'https://music.yandex.ru/album/12769745'
+      },
+      { 
+        serviceLabel: 'Spotify',
+        serviceLink: 'https://open.spotify.com/track/0FRjmDhfKmVARMOvmUm6no?si=rwTima3JQaWdse3mrQko1g'
+      },
+      { 
+        serviceLabel: 'Apple Music',
+        serviceLink: 'https://music.apple.com/ru/album/контур-любви-feat-варя-карпова-федя-быстров-single/1539942736'
+      },
+      { 
+        serviceLabel: 'VK Music',
+        serviceLink: 'https://vk.com/music/album/-2000389059_9389059_4fb8e57c6b6b7b1795'
+      },
+    ],
+  },
+  {
+    id: '№4',
+    trackName: 'ляпапам',
+    author: 'Хадн дадн',
+    originalAuthor: 'Варя Карпова и Федя Быстров',
+    text: `Мой милый, милый мальчик, 
+      Моя милая, милая девочка.
+      Никогда не знаешь, что будет дальше
+      В этой гадкой зиме.`,
+    link: derevnya,
+    videoLink: '',
+    theme: {
+      color: '#fff',
+      backgroundColor: 'white',
+      backgroundImage: `url(${defaultBackground})`,
+    },
+    albumPicture: loveOutlineCover,
+    streamings: [
+      { 
+        serviceLabel: 'Яндекс.Музыка',
+        serviceLink: 'https://music.yandex.ru/album/12769745'
+      },
+      { 
+        serviceLabel: 'Spotify',
+        serviceLink: 'https://open.spotify.com/track/0FRjmDhfKmVARMOvmUm6no?si=rwTima3JQaWdse3mrQko1g'
+      },
+      { 
+        serviceLabel: 'Apple Music',
+        serviceLink: 'https://music.apple.com/ru/album/контур-любви-feat-варя-карпова-федя-быстров-single/1539942736'
+      },
+      { 
+        serviceLabel: 'VK Music',
+        serviceLink: 'https://vk.com/music/album/-2000389059_9389059_4fb8e57c6b6b7b1795'
+      },
+    ],
+  },
+  {
+    id: '№5',
+    trackName: 'ляпапам',
+    author: 'Хадн дадн',
+    originalAuthor: 'Варя Карпова и Федя Быстров',
+    text: `Мой милый, милый мальчик, 
+      Моя милая, милая девочка.
+      Никогда не знаешь, что будет дальше
+      В этой гадкой зиме.`,
+    link: derevnya,
+    videoLink: '',
+    theme: {
+      color: '#fff',
+      backgroundColor: 'white',
+      backgroundImage: `url(${defaultBackground})`,
+    },
+    albumPicture: loveOutlineCover,
+    streamings: [
+      { 
+        serviceLabel: 'Яндекс.Музыка',
+        serviceLink: 'https://music.yandex.ru/album/12769745'
+      },
+      { 
+        serviceLabel: 'Spotify',
+        serviceLink: 'https://open.spotify.com/track/0FRjmDhfKmVARMOvmUm6no?si=rwTima3JQaWdse3mrQko1g'
+      },
+      { 
+        serviceLabel: 'Apple Music',
+        serviceLink: 'https://music.apple.com/ru/album/контур-любви-feat-варя-карпова-федя-быстров-single/1539942736'
+      },
+      { 
+        serviceLabel: 'VK Music',
+        serviceLink: 'https://vk.com/music/album/-2000389059_9389059_4fb8e57c6b6b7b1795'
+      },
+    ],
+  },
+  {
+    id: '№6',
+    trackName: 'ляпапам',
+    author: 'Хадн дадн',
+    originalAuthor: 'Варя Карпова и Федя Быстров',
+    text: `Мой милый, милый мальчик, 
+      Моя милая, милая девочка.
+      Никогда не знаешь, что будет дальше
+      В этой гадкой зиме.`,
+    link: derevnya,
     videoLink: '',
     theme: {
       color: '#fff',

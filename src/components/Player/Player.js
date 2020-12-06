@@ -108,15 +108,15 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
           className="player__buttons-wrapper"
           style={extendPlayerAnimationConfig}
         >
+          <PlayerSwitcher
+            onClick={handlePlayerSwitcherClick}
+            isTextInfo={isTextInfo}
+          />
           {currentTrack.videoLink &&
             <VideoBtn 
               videoLink={currentTrack.videoLink}
             /> 
           }
-          <PlayerSwitcher
-            onClick={handlePlayerSwitcherClick}
-            isTextInfo={isTextInfo}
-          />
         </animated.div>
       }
     </section>

@@ -10,7 +10,8 @@
 .player__track {
   width: fit-content;
   padding: 0 5px 0 0;
-  margin: 0 0 16px;
+  margin-top: 0;
+  margin-bottom: 12px;
   color: #fff;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -45,16 +46,6 @@
 
 .player__track:active, .player__track:focus {
   outline: none;
-}
-
-@media screen and (max-width: 1024px) {
-  .player__track {
-    margin-bottom: 15px;
-  }
-
-  .player__track-item:last-child {
-    padding-bottom: 8px;
-  }
 }
 
 @media screen and (max-width: 480px) {

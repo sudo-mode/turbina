@@ -1,7 +1,4 @@
 .control-btn {
-  /* grid-area: btn;
-  align-self: start;
-  text-align: start; */
   width: 45px;
   height: 45px;
   padding: 0;
@@ -21,8 +18,8 @@
 
 .control-btn__rounded {
   border: 1px solid #fff;
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 18px;
+  margin-right: 18px;
 }
 
 .control-btn__play {
@@ -31,36 +28,39 @@
   padding-left: 2px;
 }
 
+.control-btn__pause {
+  width: 13px;
+  height: 17px;
+}
+
 .control-btn__checkout {
   width: 20px;
   height: 21px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 480px) {
+  .control-btn {
+    width: 55px;
+    height: 55px;
+  }
+
+  .control-btn__rounded {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
   .control-btn__play {
-    width: 15px;
+    width: 16px;
     height: 18px;
   }
   
   .control-btn__pause {
-    width: 12px;
-    height: 14px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .control-btn {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 21px;
   }
 
-  .control-btn__play {
-    width: 13px;
-    height: 16px;
-  }
-  
-  .control-btn__pause {
-    width: 11px;
-    height: 12px;
+  .control-btn__checkout {
+    width: 23px;
+    height: 24px;
   }
 }
