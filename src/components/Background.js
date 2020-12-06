@@ -7,11 +7,11 @@ import throttle from '../utils/simpleThrottle';
 function Background({ isPlayerExtend, isMobile, currentTrack }) {
   const bgElementRef = useRef();
 
-  useEffect(() => {
-    const throttlingTransform = throttle((e) => transformElement(e, bgElementRef.current, 'position'), 25);
-    window.addEventListener('mousemove', throttlingTransform);
-    return () => window.removeEventListener('mousemove', throttlingTransform);
-  }, []);
+  // useEffect(() => {
+  //   const throttlingTransform = throttle((e) => transformElement(e, bgElementRef.current, 'position'), 25);
+  //   window.addEventListener('mousemove', throttlingTransform);
+  //   return () => window.removeEventListener('mousemove', throttlingTransform);
+  // }, []);
 
   return (
     <div>

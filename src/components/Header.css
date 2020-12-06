@@ -7,6 +7,15 @@
   align-items: flex-start;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   transition: filter .5s ease-in-out;
+  mix-blend-mode: screen;
+  /* -webkit-mix-blend-mode: screen;
+  -moz-mix-blend-mode: screen;
+  -o-mix-blend-mode: screen;
+  -ms-mix-blend-mode: screen; */
+  /* backface-visibility: visible;
+  -webkit-backface-visibility: visible; */
+  /* will-change: opacity; */
+  z-index: 5;
 }
 
 .header__marshak-links {
@@ -25,6 +34,7 @@
   border: 2px solid white;
   transition: box-shadow .2s ease-out;
   -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
 }
 
 .header__form-anchor-link-container:hover {
@@ -34,7 +44,7 @@
 .header__form-anchor-link {
   display: inline-block;
   padding: 8px 18px;
-  color: #fff;
+  color: #000;
   font-weight: 400;
   font-size: 16px;
   line-height: 1;

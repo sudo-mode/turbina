@@ -14,7 +14,7 @@
   line-height: 1.2;
   overflow: hidden;
   position: relative;
-  z-index: 1;
+  z-index: 20;
 }
 
 .player__buttons-wrapper {
