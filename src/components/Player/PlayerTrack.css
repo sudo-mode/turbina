@@ -4,7 +4,7 @@
 }
 
 .player__track-item:last-child {
-  padding-bottom: 8px;
+  margin-bottom: 24px;
 }
 
 .player__track {
@@ -35,7 +35,7 @@
 }
 
 .player__track_info {
-  max-width: calc(100% - 56px);
+  max-width: 100%;
   text-align: left;
 }
 

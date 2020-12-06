@@ -4,12 +4,12 @@ import { Scrollbars } from 'react-custom-scrollbars';
 import { useMediaQuery } from 'react-responsive';
 
 function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick, isLoading }) {
-  const isScrollbarHeight1280 = useMediaQuery({ query: '(min-width: 1280px)' });
-  const isScrollbarHeight1024 = useMediaQuery({ query: '(min-width: 1025px)' });
-  const isScrollbarHeight768 = useMediaQuery({ query: '(min-width: 768px)' });
-  const isScrollbarHeight480 = useMediaQuery({ query: '(min-width: 480px)' });
+  const isDesctop = useMediaQuery({ query: '(min-width: 1025px)' });
+  const isTablet = useMediaQuery({ query: '(min-width: 769px)' });
+  const isMobile = useMediaQuery({ query: '(min-width: 481px)' });
+  const isLandscape = useMediaQuery({query: '(orientation:landscape) and (max-height: 420px)'})
 
-  const height = isScrollbarHeight1280 ? 118 : isScrollbarHeight1024 ? 118 : isScrollbarHeight768 ? 102 : isScrollbarHeight480 ? 100 : 88;
+  const height = isDesctop ? 130 : isTablet ? 102 : isLandscape ? 98 : isMobile ? 152 : 88;
 
   const renderView = ({ style, ...props }) => {
     return (
