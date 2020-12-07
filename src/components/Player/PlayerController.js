@@ -8,28 +8,10 @@ import ControlBtn from './ControlBtn';
 import BackwardBtn from './BackwardBtn';
 import ForwardBtn from './ForwardBtn';
 
-// TODO - когда будет готова новая визуализация, включить
-// import visualize from '../../utils/visualize'
-// import { useRef, useEffect, useState } from 'react';
-// import VisualizerCanvas from './VisualizerCanvas';
-// import { useMediaQuery } from 'react-responsive';
-// window.AudioContext = window.AudioContext || window.webkitAudioContext;
-
-window.AudioContext = window.AudioContext || window.webkitAudioContext;
-
 function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardClick, onTrackEnd }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();
 
-  // TODO - когда будет готова новая визуализация, включить
-  // const [audioCtx, setAudioCtx] = useState(null);
-  // const analyzerCanvas = useRef();
-  // const isMobile = useMediaQuery({ query: '(max-width: 480px), (max-height: 600px)' });
-  // const isLandscape = useMediaQuery({ query: '(orientation:landscape) and (max-height: 600px)' });
-  // useEffect(() => {
-  //   visualize(audioPlayerRef, isMobile, analyzerCanvas, setAudioCtx)
-  // }, [isMobile]);
-  
   useTicker({
     elementRef: trackRef,
     containerTickerAddClass: 'player__song-container_masked',
@@ -47,13 +29,6 @@ function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardCli
     curTime,
     duration
   } = useAudioPlayer(audioPlayerRef, track, onTrackEnd);
-
-  // TODO - когда будет готова новая визуализация, включить
-  // if (isPlaying && audioCtx) {
-  //   if (audioCtx.state === 'suspended') {
-  //     audioCtx.resume()
-  //   }
-  // }
 
   return (
     <>
@@ -103,16 +78,6 @@ function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardCli
           onTimeUpdate={(time) => setClickedTime(time)}
         />
       </div>
-
-      {/* TODO - когда будет готова новая визуализация, включить
-      <VisualizerCanvas 
-        isMobile={isMobile}
-        isLandscape={isLandscape}
-        isPlaying={isPlaying}
-        track={track}
-        refanalyzerCanvas={analyzerCanvas}
-      /> */}
-
     </>
   )
 }
