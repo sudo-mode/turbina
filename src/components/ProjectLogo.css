@@ -18,13 +18,7 @@
 
 @media screen and (max-width: 1024px) {
   .title {
-    max-width: 640px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .title {
-    max-width: 660px;
+    max-width: 580px;
   }
 }
 

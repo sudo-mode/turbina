@@ -1,27 +1,31 @@
 import { useRef } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import './PlayerController.css';
 import useAudioPlayer from '../../hooks/useAudioPlayer';
 import useTicker from '../../hooks/useTicker';
 import PlayerTimeline from './PlayerTimeline';
 import PlayerTimer from './PlayerTimer';
 import ControlBtn from './ControlBtn';
-import VisualizerCanvas from './VisualizerCanvas';
+import BackwardBtn from './BackwardBtn';
+import ForwardBtn from './ForwardBtn';
+
 // TODO - когда будет готова новая визуализация, включить
 // import visualize from '../../utils/visualize'
 // import { useRef, useEffect, useState } from 'react';
+// import VisualizerCanvas from './VisualizerCanvas';
+// import { useMediaQuery } from 'react-responsive';
 // window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-function PlayerController({ isPlayerExtend, track }) {
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
+function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardClick, onTrackEnd }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();
-  const analyzerCanvas = useRef();
-  const isMobile = useMediaQuery({ query: '(max-width: 480px), (max-height: 600px)' });
-  const isLandscape = useMediaQuery({ query: '(orientation:landscape) and (max-height: 600px)' });
-  
+
   // TODO - когда будет готова новая визуализация, включить
   // const [audioCtx, setAudioCtx] = useState(null);
-  
+  // const analyzerCanvas = useRef();
+  // const isMobile = useMediaQuery({ query: '(max-width: 480px), (max-height: 600px)' });
+  // const isLandscape = useMediaQuery({ query: '(orientation:landscape) and (max-height: 600px)' });
   // useEffect(() => {
   //   visualize(audioPlayerRef, isMobile, analyzerCanvas, setAudioCtx)
   // }, [isMobile]);
@@ -39,10 +43,10 @@ function PlayerController({ isPlayerExtend, track }) {
     handleTimeUpdate,
     handleLoadedMetaData,
     setClickedTime,
-    handleTrackEnded,
+    handleTrackEnd,
     curTime,
     duration
-  } = useAudioPlayer(audioPlayerRef, track);
+  } = useAudioPlayer(audioPlayerRef, track, onTrackEnd);
 
   // TODO - когда будет готова новая визуализация, включить
   // if (isPlaying && audioCtx) {
@@ -60,14 +64,18 @@ function PlayerController({ isPlayerExtend, track }) {
           ref={audioPlayerRef}
           onLoadedMetadata={handleLoadedMetaData}
           onTimeUpdate={handleTimeUpdate}
-          onEnded={handleTrackEnded}
+          onEnded={handleTrackEnd}
         >
           <p>Ваш браузер не поддерживает HTML5 аудио.</p>
         </audio>
-        <ControlBtn
-          isPlaying={isPlaying}
-          onBtnClick={handlePlayClick}
-        />
+        <div className="player__controllers">
+          <BackwardBtn onBtnClick={onBackwardClick} />
+          <ControlBtn
+            isPlaying={isPlaying}
+            onBtnClick={handlePlayClick}
+          />
+          <ForwardBtn onBtnClick={onForwardClick} />
+        </div>
         <div className="player__song-container">
           <p
             className="player__song"
@@ -95,13 +103,16 @@ function PlayerController({ isPlayerExtend, track }) {
           onTimeUpdate={(time) => setClickedTime(time)}
         />
       </div>
+
+      {/* TODO - когда будет готова новая визуализация, включить
       <VisualizerCanvas 
         isMobile={isMobile}
         isLandscape={isLandscape}
         isPlaying={isPlaying}
         track={track}
         refanalyzerCanvas={analyzerCanvas}
-      />
+      /> */}
+
     </>
   )
 }

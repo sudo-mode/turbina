@@ -8,13 +8,14 @@
 }
 
 .player__track-item:last-child {
-  padding-bottom: 8px;
+  margin-bottom: 24px;
 }
 
 .player__track {
   width: fit-content;
   padding: 0 5px 0 0;
-  margin: 0 0 16px;
+  margin-top: 0;
+  margin-bottom: 12px;
   color: #fff;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -34,7 +35,7 @@
 }
 
 .player__track_info {
-  max-width: calc(100% - 56px);
+  max-width: 100%;
   text-align: left;
 }
 
@@ -45,16 +46,6 @@
 
 .player__track:active, .player__track:focus {
   outline: none;
-}
-
-@media screen and (max-width: 1024px) {
-  .player__track {
-    margin-bottom: 15px;
-  }
-
-  .player__track-item:last-child {
-    padding-bottom: 8px;
-  }
 }
 
 @media screen and (max-width: 480px) {
