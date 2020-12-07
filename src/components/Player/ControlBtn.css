@@ -16,7 +16,7 @@
   cursor: pointer;
 }
 
-.control-btn__rounded {
+.control-btn_rounded {
   border: 1px solid #fff;
   margin-left: 18px;
   margin-right: 18px;
@@ -44,7 +44,7 @@
     height: 55px;
   }
 
-  .control-btn__rounded {
+  .control-btn_rounded {
     margin-left: 24px;
     margin-right: 24px;
   }

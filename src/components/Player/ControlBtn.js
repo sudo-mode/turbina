@@ -5,7 +5,7 @@ import PauseIcon from '../svg/PauseIcon';
 function ControlBtn({ isPlaying, onBtnClick }) {
   return (
     <button
-      className="control-btn control-btn__rounded"
+      className="control-btn control-btn_rounded"
       type="button"
       onClick={onBtnClick}
     >

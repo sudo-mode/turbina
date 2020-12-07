@@ -23,7 +23,6 @@ function useAudioPlayer(audioPlayerRef, track, onTrackEnd) {
     isPlaying
       ? audioPlayerRef.current.play().catch(_ => setPlaying(false))
       : audioPlayerRef.current.pause();
-      console.log(isPlaying)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPlaying, track]);
   // catch предназначен для отлавливания исключения "play() failed because the user didn't interact

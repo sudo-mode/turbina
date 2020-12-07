@@ -5,6 +5,8 @@ function ArowIcon ({
   fill = '#fff',
   isRotated = false
 }) {
+
+
   return (
     <svg
       className={className}
@@ -12,7 +14,9 @@ function ArowIcon ({
       height={height}
       viewBox="0 0 32 13"
       fill="none"
-      transform={isRotated ? "rotate(180)" : "none"}
+      // Если указывать "none" в консоль падает ошибка:
+      // Error: <svg> attribute transform: Expected transform function, "none".
+      transform={isRotated ? "rotate(180)" : "rotate(0)"}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
