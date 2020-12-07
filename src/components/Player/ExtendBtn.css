@@ -10,6 +10,9 @@
   outline: none;
   background: transparent;
   -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .extend-btn:hover {
@@ -18,8 +21,15 @@
 
 @media screen and (max-width: 480px) {
   .extend-btn {
-    width: 20px;
-    height: 20px;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: -42px;
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    width: 30px;
+    height: 13px;
   }
 
   .extend-btn__open {

@@ -5,8 +5,9 @@ import { useState, useEffect } from 'react';
 audioElementId -- (строка, например 'audio')
 track -- трек из списка песен, устанавливается в качестве зависимости 
         (useEffect при смене трека)
+onTrackEnd -- обработчик конца трека
 */
-function useAudioPlayer(audioPlayerRef, track) {
+function useAudioPlayer(audioPlayerRef, track, onTrackEnd) {
   const [isLoaded, setLoadedState] = useState(false);
 
   const [duration, setDuration] = useState(0);
@@ -16,8 +17,16 @@ function useAudioPlayer(audioPlayerRef, track) {
 
   const handlePlayClick = () => {
     setPlaying(!isPlaying);
-    isPlaying ? audioPlayerRef.current.pause() : audioPlayerRef.current.play();
   }
+
+  useEffect(() => {
+    isPlaying
+      ? audioPlayerRef.current.play().catch(_ => setPlaying(false))
+      : audioPlayerRef.current.pause();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPlaying, track]);
+  // catch предназначен для отлавливания исключения "play() failed because the user didn't interact
+  // with the document first" при загрузке страницы.
 
   const handleLoadedMetaData = () => {
     setDuration(audioPlayerRef.current.duration);
@@ -27,10 +36,11 @@ function useAudioPlayer(audioPlayerRef, track) {
 
   const handleTimeUpdate = () => setCurTime(audioPlayerRef.current.currentTime);
 
-  const handleTrackEnded = () => {
+  const handleTrackEnd = () => {
     setDuration(audioPlayerRef.current.duration);
     setCurTime(0);
-    handlePlayClick();
+    onTrackEnd();
+    setPlaying(false);
   }
   
   useEffect(() => {
@@ -43,9 +53,14 @@ function useAudioPlayer(audioPlayerRef, track) {
 
   useEffect(() => {
     setCurTime(0);
-    setPlaying(false);
+    setPlaying(true);
     setLoadedState(false);
   }, [track]);
+
+  
+  useEffect(() => {
+    setPlaying(false);
+  }, []);
 
   return {
     isPlaying,
@@ -54,7 +69,7 @@ function useAudioPlayer(audioPlayerRef, track) {
     handleTimeUpdate,
     handleLoadedMetaData,
     setClickedTime,
-    handleTrackEnded,
+    handleTrackEnd,
     curTime,
     duration
   }

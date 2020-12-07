@@ -1,45 +1,66 @@
 .control-btn {
-  grid-area: btn;
-  align-self: start;
-  text-align: start;
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
   padding: 0;
   border: none;
+  border-radius: 50%;
   outline: none;
   background: transparent;
   -webkit-tap-highlight-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .control-btn:hover {
   cursor: pointer;
 }
 
-@media screen and (max-width: 1024px) {
-  .control-btn__play {
-    width: 15px;
-    height: 18px;
-  }
-  
-  .control-btn__pause {
-    width: 12px;
-    height: 14px;
-  }
+.control-btn_rounded {
+  border: 1px solid #fff;
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.control-btn__play {
+  width: 13px;
+  height: 15px;
+  padding-left: 2px;
+}
+
+.control-btn__pause {
+  width: 13px;
+  height: 17px;
+}
+
+.control-btn__checkout {
+  width: 20px;
+  height: 21px;
 }
 
 @media screen and (max-width: 480px) {
   .control-btn {
-    width: 20px;
-    height: 20px;
+    width: 55px;
+    height: 55px;
+  }
+
+  .control-btn_rounded {
+    margin-left: 24px;
+    margin-right: 24px;
   }
 
   .control-btn__play {
-    width: 13px;
-    height: 16px;
+    width: 16px;
+    height: 18px;
   }
   
   .control-btn__pause {
-    width: 11px;
-    height: 12px;
+    width: 16px;
+    height: 21px;
+  }
+
+  .control-btn__checkout {
+    width: 23px;
+    height: 24px;
   }
 }

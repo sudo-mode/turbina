@@ -58,7 +58,8 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurr
         isMobile={isMobile}
         isLandscape={isLandscape}
       />
-      <AnimatedPlayer
+      {/* <AnimatedPlayer */}
+      <Player
         isPlayerExtend={isPlayerExtend}
         onPlayerExtend={onPlayerExtend}
         style={extendСonfig}

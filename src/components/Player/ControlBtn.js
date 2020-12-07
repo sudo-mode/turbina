@@ -2,10 +2,10 @@ import './ControlBtn.css';
 import PlayIcon from '../svg/PlayIcon';
 import PauseIcon from '../svg/PauseIcon';
 
-function PlayerControlBtn({ isPlaying, onBtnClick }) {
+function ControlBtn({ isPlaying, onBtnClick }) {
   return (
     <button
-      className="control-btn"
+      className="control-btn control-btn_rounded"
       type="button"
       onClick={onBtnClick}
     >
@@ -17,4 +17,4 @@ function PlayerControlBtn({ isPlaying, onBtnClick }) {
   )
 }
 
-export default PlayerControlBtn;
+export default ControlBtn;

@@ -1,17 +1,19 @@
 import { useRef, useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import cn from 'classnames';
 import './PlayerController.css';
 import useAudioPlayer from '../../hooks/useAudioPlayer';
 import useTicker from '../../hooks/useTicker';
 import PlayerTimeline from './PlayerTimeline';
 import PlayerTimer from './PlayerTimer';
 import ControlBtn from './ControlBtn';
+import BackwardBtn from './BackwardBtn';
 import renderFrame from '../../utils/renderFrame';
-import cn from 'classnames';
+import ForwardBtn from './ForwardBtn';
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-function PlayerController({ isPlayerExtend, track }) {
+function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardClick, onTrackEnd }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();
   const [audioCtx, setAudioCtx] = useState(null);
@@ -63,10 +65,10 @@ function PlayerController({ isPlayerExtend, track }) {
     handleTimeUpdate,
     handleLoadedMetaData,
     setClickedTime,
-    handleTrackEnded,
+    handleTrackEnd,
     curTime,
     duration
-  } = useAudioPlayer(audioPlayerRef, track);
+  } = useAudioPlayer(audioPlayerRef, track, onTrackEnd);
 
   if (isPlaying && audioCtx) {
     if (audioCtx.state === 'suspended') {
@@ -75,7 +77,6 @@ function PlayerController({ isPlayerExtend, track }) {
   }
 
   return (
-
     <>
       <div className="player__controller">
         <audio
@@ -84,14 +85,18 @@ function PlayerController({ isPlayerExtend, track }) {
           ref={audioPlayerRef}
           onLoadedMetadata={handleLoadedMetaData}
           onTimeUpdate={handleTimeUpdate}
-          onEnded={handleTrackEnded}
+          onEnded={handleTrackEnd}
         >
           <p>Ваш браузер не поддерживает HTML5 аудио.</p>
         </audio>
-        <ControlBtn
-          isPlaying={isPlaying}
-          onBtnClick={handlePlayClick}
-        />
+        <div className="player__controllers">
+          <BackwardBtn onBtnClick={onBackwardClick} />
+          <ControlBtn
+            isPlaying={isPlaying}
+            onBtnClick={handlePlayClick}
+          />
+          <ForwardBtn onBtnClick={onForwardClick} />
+        </div>
         <div className="player__song-container">
           <p
             className="player__song"
@@ -120,7 +125,7 @@ function PlayerController({ isPlayerExtend, track }) {
         />
       </div>
       <div className='player__bar-wrapper'> 
-      <canvas
+        <canvas
           className={cn('player__bar',
             { 'player__bar_active': isVisible && !isMobile && !isLandscape && isPlaying },
             { 'player__bar_active-and-theme': track.theme.backgroundImage.includes('gradient') })}

@@ -32,22 +32,19 @@ function PlayerInfoContent({ tracks, isTextInfo, currentTrack, onTrackClick }) {
       return <p className='player__info-header'>Пока это единственный трек в проекте, но 12 декабря появятся новые</p>
     } else {
       return (
-        <>
-          <p className='player__info-header'>Релизы: </p>
-          <ul className='player__tracks'>
-            {tracks.map((track, i) => (
-              <li key={track.id} className='player__track-item'>
-                <PlayerTrack
-                  trackId = {track.id}
-                  currentTrack={currentTrack}
-                  track={track}
-                  onTrackClick={onTrackClick}
-                  inList={true}
-                />
-              </li>
-            ))}
-          </ul>
-        </>
+        <ul className='player__tracks'>
+          {tracks.map((track, i) => (
+            <li key={track.id} className='player__track-item'>
+              <PlayerTrack
+                trackId = {track.id}
+                currentTrack={currentTrack}
+                track={track}
+                onTrackClick={onTrackClick}
+                inList={true}
+              />
+            </li>
+          ))}
+        </ul>
       )
     }
   }
