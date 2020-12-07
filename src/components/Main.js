@@ -7,7 +7,7 @@ import ProjectLogo from './ProjectLogo';
 import Player from './Player/Player';
 
 
-function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurrentTrack, currentTrack }) {
+function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurrentTrack, currentTrack, onVideoModalOpen }) {
   const isShortMobile = useMediaQuery({ query: '(max-width: 480px) and (max-height: 550px)' });
   const isTallMobile = useMediaQuery({ query: '(max-width: 480px) and (min-height: 551px)' });
   const isWideMobile = useMediaQuery({ query: '(max-width: 600px)' });
@@ -52,6 +52,7 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurr
         isMobile={isMobile}
         isLandscape={isLandscape}
         currentTrack={currentTrack}
+        onVideoModalOpen={onVideoModalOpen}
       />
       <ProjectLogo
         isPlayerExtend={isPlayerExtend}

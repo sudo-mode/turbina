@@ -6,8 +6,13 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 import StreamServices from './StreamServices';
 import Marshak from './Marshak';
+import { liveLink } from '../configs/links';
 
-function Header({ isPlayerExtend, isMobile, isLandscape, currentTrack }) {
+function Header({ isPlayerExtend, isMobile, isLandscape, currentTrack, onVideoModalOpen }) {
+  const handleVideoModalOpen = () => {
+    onVideoModalOpen(liveLink);
+  };
+
   return (
     <header
       className={cn("header", {
@@ -22,6 +27,13 @@ function Header({ isPlayerExtend, isMobile, isLandscape, currentTrack }) {
       />
 
       <div className="header__container">
+        <button
+          className="header__open-live-button"
+          onClick={handleVideoModalOpen}
+        >
+          Live
+        </button>
+
         <div className="header__form-anchor-link-container">
           <AnchorLink
             className="header__form-anchor-link"

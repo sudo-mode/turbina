@@ -6,6 +6,7 @@ import Info from './Info';
 import Footer from './Footer';
 import Background from './Background';
 import Blur from './Blur';
+import VideoModal from './VideoModal';
 import backgroundBlur from '../images/background-blur.jpg';
 import tracks from '../db/tracks';
 
@@ -19,9 +20,25 @@ function App() {
   }
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const [playerExtendTimer, setPlayerExtendTimer] = useState(0);
+  const [isVideoModalOpened, setIsVideoModalOpened] = useState(false);
+  const [videoModalData, setVideoModalData] = useState({
+    title: '',
+    src: '',
+    youtubeId: '',
+  });
 
   function onSetCurrentTrack(track) {
     setCurrentTrack(track);
+  }
+
+  function onVideoModalOpen({ title, src, youtubeId }) {
+    setVideoModalData({ title, src, youtubeId });
+    setIsVideoModalOpened(true);
+    setPlayerState(false);
+  }
+
+  function onVideoModalClose() {
+    setIsVideoModalOpened(false);
   }
 
   /* Для десктопов: плеер выезжает через 3 секунды после загрузки страницы.
@@ -56,6 +73,7 @@ function App() {
           isMobile={isMobile}
           onSetCurrentTrack={onSetCurrentTrack}
           currentTrack={currentTrack}
+          onVideoModalOpen={onVideoModalOpen}
         />
         <Info />
         <Footer
@@ -72,6 +90,11 @@ function App() {
           isPlayerExtend={isPlayerExtend}
           isMobile={isMobile}
           isLandscape={isLandscape}
+        />
+        <VideoModal
+          videoModalData={videoModalData}
+          isVideoModalOpened={isVideoModalOpened}
+          onVideoModalClose={onVideoModalClose}
         />
       </div>
     </div>
