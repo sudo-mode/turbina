@@ -1,17 +1,8 @@
 import './PlayerInfoContent.css';
 import PlayerTrack from './PlayerTrack';
-import { useState, useEffect } from 'react';
+import cnWithSwitchAnimation from '../../utils/switchAnimation';
 
 function PlayerInfoContent({ tracks, isTextInfo, currentTrack, onTrackClick }) {
-
-  const [contentStyle, setContentStyle] = useState('player__content');
-
-  const setChangeStyle = () => {
-    setContentStyle('player__content');
-    setTimeout(() => {  
-      setContentStyle('player__content player__content_loaded');
-    }, 100)
-  }
 
   const setTextLyricsFormat = (text) => {
     const textArray = text.split('\n')
@@ -21,10 +12,10 @@ function PlayerInfoContent({ tracks, isTextInfo, currentTrack, onTrackClick }) {
   }
 
   const setSongLyrics = (currentTrack) => {
-    return (<>
-      <p className='player__info-header'>Текст песни:</p>
-      {setTextLyricsFormat(currentTrack.text)}
-    </>)
+    return (
+      <>
+        {setTextLyricsFormat(currentTrack.text)}
+      </>)
   }
 
   const setReleaseList = (tracks) => {
@@ -32,35 +23,31 @@ function PlayerInfoContent({ tracks, isTextInfo, currentTrack, onTrackClick }) {
       return <p className='player__info-header'>Пока это единственный трек в проекте, но 12 декабря появятся новые</p>
     } else {
       return (
-        <ul className='player__tracks'>
-          {tracks.map((track, i) => (
-            <li key={track.id} className='player__track-item'>
-              <PlayerTrack
-                trackId = {track.id}
-                currentTrack={currentTrack}
-                track={track}
-                onTrackClick={onTrackClick}
-                inList={true}
-              />
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className='player__tracks'>
+            {tracks.map((track, i) => (
+              <li key={track.id} className='player__track-item'>
+                <PlayerTrack
+                  trackId={track.id}
+                  currentTrack={currentTrack}
+                  track={track}
+                  onTrackClick={onTrackClick}
+                  inList={true}
+                />
+              </li>
+            ))}
+          </ul>
+        </>
       )
     }
   }
 
-  const setInfoContent = (isTextInfo) => {
-    return isTextInfo ? setSongLyrics(currentTrack) : setReleaseList(tracks)
-  }
-
-  useEffect(() => {
-    setChangeStyle()
-  }, [isTextInfo])
-
   return (
-    <div className={contentStyle}>
-      {setInfoContent(isTextInfo)}
-    </div>   
+    <>
+      <div className={cnWithSwitchAnimation('player__content', isTextInfo)}>
+        {isTextInfo ? setSongLyrics(currentTrack) : setReleaseList(tracks)}
+      </div>
+    </>
   )
 }
 

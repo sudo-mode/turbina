@@ -3,6 +3,8 @@ import { useMediaQuery } from 'react-responsive';
 import { Scrollbars } from 'react-custom-scrollbars';
 import './PlayerInfoContainer.css';
 import PlayerInfoContent from './PlayerInfoContent';
+import cnWithSwitchAnimation from '../../utils/switchAnimation';
+import cn from 'classnames';
 
 function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick, isLoading }) {
   const isBigDesktop = useMediaQuery({ query: '(min-width: 1025px)' });
@@ -56,16 +58,19 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
 
   const renderTrackHorizontal = ({ style, ...props }) => {
     return (
-    <div
-      style={{ display: 'none' }}
-      {...props}
-    />
+      <div
+        style={{ display: 'none' }}
+        {...props}
+      />
     );
   };
 
   return (
-    <div className={`player__info-container ${isOpen && 'player__info-container_active'}`}>
-      <p className='player__info-header'>Релизы: </p>
+
+    <div className={cn('player__info-container', { 'player__info-container_active': isOpen })}>
+      <p className={cnWithSwitchAnimation('player__info-header', isTextInfo)}>
+        {isTextInfo ? 'Текст песни:' : 'Релизы:'}
+      </p>
       <Scrollbars
         className='player__scrollbars'
         renderView={renderView}
