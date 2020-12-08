@@ -13,7 +13,7 @@ import ForwardBtn from './ForwardBtn';
 
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
-function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardClick, onTrackEnd }) {
+function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardClick, onTrackEnd, isVideoModalOpened }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();
   const [audioCtx, setAudioCtx] = useState(null);
@@ -75,6 +75,14 @@ function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardCli
       audioCtx.resume()
     }
   }
+
+
+  /* Ставим на паузу трек в аудио-плеере, если открывается модальное окно с youtube-плеером */
+  useEffect(() => {
+    if (isVideoModalOpened && isPlaying) {
+      handlePlayClick();
+    }
+  }, [isVideoModalOpened]);
 
   return (
     <>

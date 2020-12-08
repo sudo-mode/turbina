@@ -54,14 +54,15 @@ function App() {
   }, [isDesktop]);
 
   /* Для десктопов: плеер выезжает через 3 секунды после загрузки страницы.
-  Отменяем выезд, если пользователь успел за это время раскрыть и скрыть плеер. 
+  Отменяем выезд, если пользователь успел за это время раскрыть и скрыть плеер, либо
+  открыть модальное окно с youtube-плеером. 
   Для отключения закомментить этот useEffect и стейт playerExtendTimer */
   useEffect(() => {
-    if (playerExtendTimer && isPlayerExtend) {
+    if (playerExtendTimer && (isPlayerExtend || isVideoModalOpened)) {
       clearTimeout(playerExtendTimer);
       setPlayerExtendTimer(0);
     }
-  }, [isPlayerExtend, playerExtendTimer]);
+  }, [isPlayerExtend, playerExtendTimer, isVideoModalOpened]);
 
   return (
     <div className="page">
@@ -73,6 +74,7 @@ function App() {
           isMobile={isMobile}
           onSetCurrentTrack={setCurrentTrack}
           currentTrack={currentTrack}
+          isVideoModalOpened={isVideoModalOpened}
           onVideoModalOpen={onVideoModalOpen}
         />
         <Info />
