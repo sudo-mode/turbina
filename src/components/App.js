@@ -20,10 +20,6 @@ function App() {
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const [playerExtendTimer, setPlayerExtendTimer] = useState(0);
 
-  // function onSetCurrentTrack(track) {
-  //   setCurrentTrack(track);
-  // }
-
   /* Для десктопов: плеер выезжает через 3 секунды после загрузки страницы.
   Для отключения закомментить этот useEffect и стейт isDesktop */
   useEffect(() => {
