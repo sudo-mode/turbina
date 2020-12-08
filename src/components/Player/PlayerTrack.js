@@ -1,25 +1,16 @@
 import './PlayerTrack.css';
 import cn from 'classnames';
-import { useState, useEffect } from 'react';
 
-function PlayerTrack({ track, onTrackClick, inList, isLoading, trackId, currentTrack }) {
+function PlayerTrack({ track, onTrackClick, inList, trackId, currentTrack }) {
 
-  const [loading, setLoading] = useState(isLoading);
   const checked = trackId === currentTrack.id
-  const trackStyle = cn('player__track', { 'player__track_checked': checked }, { 'player__track_info': inList }, { 'player__track_loading': loading });
+  const trackStyle = cn('player__track', { 'player__track_checked': checked }, { 'player__track_info': inList });
 
   const handleClick = () => {
     if (onTrackClick) {
       onTrackClick(track);
     }
   };
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 200);
-
-  }, [isLoading]);
 
   return (
     <p onClick={handleClick} className={trackStyle}>

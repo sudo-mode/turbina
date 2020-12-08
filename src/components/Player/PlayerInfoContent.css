@@ -1,13 +1,3 @@
-.player__content {
-  opacity: 0;
-  /* transition: opacity .5s ease-in-out; */
-}
-
-.player__content_loaded {
-  transition: opacity .5s ease-in-out;
-  opacity: 1;
-}
-
 .player__tracks {
   list-style-type: none;
   padding: 4px 0 6px;
@@ -21,6 +11,10 @@
   line-height: 1.4;
   font-weight: 500;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
+}
+
+.player__text-line:first-child {
+  padding-top: 8px;
 }
 
 .player__text-line:last-child {
