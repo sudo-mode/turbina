@@ -23,8 +23,8 @@
 
 .modal__content {
   position: relative;
-  max-width: 920px;
   box-sizing: border-box;
+  max-width: 920px;
   width: 100%;
   padding: 0 75px 75px;
   display: flex;
@@ -87,14 +87,39 @@
   color: #fff;
 }
 
+/* Адаптивная высота iframe и контейнера modal__content */
+
+@media screen and (orientation: portrait) {
+  .modal__iframe-container {
+    padding-bottom: 56%;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-height: 741px) {
+  .modal__iframe-container {
+    padding-bottom: 56%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 740px) {
+  .modal__content {
+    height: 100%;
+    max-height: calc(100vmin - 2*(36px + 16px + 22px) - calc(100vmin - 100%));
+    /* 
+    36px - максимальная высота кнопки "Закрыть";
+    16px - высота отступа от modal__content до кнопки "Закрыть";
+    22px - запас расстояния от кнопки "Закрыть" до нижнего края экрана;
+    calc(100vmin - 100%) - высота панели браузера;
+    */
+  }
+}
+
+
+/* Ширина: 1024px и меньше */
+
 @media screen and (max-width: 1024px) {
   .modal__content {
     max-width: 804px;
-    padding: 0 50px 50px;
-  }
-
-  .modal__title {
-    margin: 35px auto;
   }
 
   .modal__close-button {
@@ -103,11 +128,37 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) and (min-height: 551px) {
+  .modal__content {
+    padding: 0 50px 50px;
+  }
+
+  .modal__title {
+    margin: 35px auto;
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 550px) {
+  .modal__content {
+    padding: 0 20px 20px;
+  }
+
+  .modal__title {
+    margin: 20px auto;
+  }
+}
+
+
+/* Ширина: 768px и меньше */
+
+@media screen and (max-width: 768px) and (min-height: 551px) {
   .modal__content {
     padding: 0 44px 44px;
   }
 }
+
+
+/* Ширина: 600px и меньше */
 
 @media screen and (max-width: 600px) {
   .modal__title {
@@ -115,17 +166,15 @@
   }
 }
 
-@media screen and (max-width: 480px) and (min-height: 551px) {
+
+/* Ширина: 480px и меньше */
+
+@media screen and (max-width: 480px) {
   .modal {
     padding: 0 10px;
   }
 
-  .modal__content {
-    padding: 0 14px 104px;
-  }
-
   .modal__title {
-    margin: 30px auto 44px;
     font-size: 12px;
   }
 
@@ -135,22 +184,22 @@
   }
 }
 
-@media screen and (max-width: 480px) and (max-height: 550px) {
-  .modal {
-    padding: 0 10px;
+@media screen and (max-width: 480px) and (min-height: 551px) {
+  .modal__content {
+    padding: 0 14px 104px;
   }
 
+  .modal__title {
+    margin: 30px auto 44px;
+  }
+}
+
+@media screen and (max-width: 480px) and (max-height: 550px) {
   .modal__content {
     padding: 0 14px 30px;
   }
 
   .modal__title {
-    margin: 30px auto 30px;
-    font-size: 12px;
-  }
-
-  .modal__close-button {
-    padding: 7px 16px;
-    font-size: 12px;
+    margin: 30px auto;
   }
 }
