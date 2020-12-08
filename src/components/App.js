@@ -6,6 +6,7 @@ import Info from './Info';
 import Footer from './Footer';
 import Background from './Background';
 import Blur from './Blur';
+import VideoModal from './VideoModal';
 import backgroundBlur from '../images/background-blur.jpg';
 import tracks from '../db/tracks';
 
@@ -19,10 +20,26 @@ function App() {
   }
   const [currentTrack, setCurrentTrack] = useState(tracks[0]);
   const [playerExtendTimer, setPlayerExtendTimer] = useState(0);
+  const [isVideoModalOpened, setIsVideoModalOpened] = useState(false);
+  const [videoModalData, setVideoModalData] = useState({
+    title: '',
+    src: '',
+    youtubeId: '',
+  });
 
   // function onSetCurrentTrack(track) {
   //   setCurrentTrack(track);
   // }
+
+  function onVideoModalOpen({ title, src, youtubeId }) {
+    setVideoModalData({ title, src, youtubeId });
+    setIsVideoModalOpened(true);
+    setPlayerState(false);
+  }
+
+  function onVideoModalClose() {
+    setIsVideoModalOpened(false);
+  }
 
   /* Для десктопов: плеер выезжает через 3 секунды после загрузки страницы.
   Для отключения закомментить этот useEffect и стейт isDesktop */
@@ -37,14 +54,15 @@ function App() {
   }, [isDesktop]);
 
   /* Для десктопов: плеер выезжает через 3 секунды после загрузки страницы.
-  Отменяем выезд, если пользователь успел за это время раскрыть и скрыть плеер. 
+  Отменяем выезд, если пользователь успел за это время раскрыть и скрыть плеер, либо
+  открыть модальное окно с youtube-плеером. 
   Для отключения закомментить этот useEffect и стейт playerExtendTimer */
   useEffect(() => {
-    if (playerExtendTimer && isPlayerExtend) {
+    if (playerExtendTimer && (isPlayerExtend || isVideoModalOpened)) {
       clearTimeout(playerExtendTimer);
       setPlayerExtendTimer(0);
     }
-  }, [isPlayerExtend, playerExtendTimer]);
+  }, [isPlayerExtend, playerExtendTimer, isVideoModalOpened]);
 
   return (
     <div className="page">
@@ -56,6 +74,8 @@ function App() {
           isMobile={isMobile}
           onSetCurrentTrack={setCurrentTrack}
           currentTrack={currentTrack}
+          isVideoModalOpened={isVideoModalOpened}
+          onVideoModalOpen={onVideoModalOpen}
         />
         <Info />
         <Footer
@@ -72,6 +92,11 @@ function App() {
           isPlayerExtend={isPlayerExtend}
           isMobile={isMobile}
           isLandscape={isLandscape}
+        />
+        <VideoModal
+          videoModalData={videoModalData}
+          isVideoModalOpened={isVideoModalOpened}
+          onVideoModalClose={onVideoModalClose}
         />
       </div>
     </div>

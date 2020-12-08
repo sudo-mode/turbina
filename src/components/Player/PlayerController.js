@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import './PlayerController.css';
 import useAudioPlayer from '../../hooks/useAudioPlayer';
 import useTicker from '../../hooks/useTicker';
@@ -8,7 +8,7 @@ import ControlBtn from './ControlBtn';
 import BackwardBtn from './BackwardBtn';
 import ForwardBtn from './ForwardBtn';
 
-function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardClick, onTrackEnd }) {
+function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardClick, onTrackEnd, isVideoModalOpened }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();
 
@@ -29,6 +29,14 @@ function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardCli
     curTime,
     duration
   } = useAudioPlayer(audioPlayerRef, track, onTrackEnd);
+
+
+  /* Ставим на паузу трек в аудио-плеере, если открывается модальное окно с youtube-плеером */
+  useEffect(() => {
+    if (isVideoModalOpened && isPlaying) {
+      handlePlayClick();
+    }
+  }, [isVideoModalOpened]);
 
   return (
     <>
