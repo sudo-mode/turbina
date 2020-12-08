@@ -4,9 +4,7 @@ function ArowIcon ({
   height = 13,
   fill = '#fff',
   isRotated = false
-}) {
-
-
+}) {      
   return (
     <svg
       className={className}
@@ -14,10 +12,11 @@ function ArowIcon ({
       height={height}
       viewBox="0 0 32 13"
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       // Если указывать "none" в консоль падает ошибка:
       // Error: <svg> attribute transform: Expected transform function, "none".
-      transform={isRotated ? "rotate(180)" : "rotate(0)"}
-      xmlns="http://www.w3.org/2000/svg"
+      // Атрибут transform в svg не работает на iOS
+      style={{transform: `${isRotated ? "rotate(181deg)" : "rotate(0)"}`}}
     >
       <path
         fillRule="evenodd"
