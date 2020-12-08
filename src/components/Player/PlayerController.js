@@ -89,6 +89,7 @@ function PlayerController({ isPlayerExtend, track, onForwardClick, onBackwardCli
   // везде кроме iOS.
   useEffect(() => {
     setPlaying(true);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trigger]);
 
   if (isPlaying && audioCtx) {
