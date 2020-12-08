@@ -26,21 +26,23 @@ function Header({ isPlayerExtend, isMobile, isLandscape, currentTrack, onVideoMo
         isLandscape={isLandscape}
       />
 
-      <div className="header__container">
-        <button
-          className="header__open-live-button"
-          onClick={handleVideoModalOpen}
-        >
-          Live
-        </button>
-
-        <div className="header__form-anchor-link-container">
-          <AnchorLink
-            className="header__form-anchor-link"
-            href="#form-participate"
+      <div className="header__various-links">
+        <div className="header__accent-elements-container">
+          <button
+            className="header__open-live-button"
+            onClick={handleVideoModalOpen}
           >
-            Хочу свой трек
-          </AnchorLink>
+            Live
+          </button>
+
+          <div className="header__form-anchor-link-container">
+            <AnchorLink
+              className="header__form-anchor-link"
+              href="#form-participate"
+            >
+              Хочу свой трек
+            </AnchorLink>
+          </div>
         </div>
 
         <StreamServices
