@@ -3,6 +3,10 @@
   padding-right: 10px;
 }
 
+.player__track-item:first-child {
+  padding-top: 8px;
+}
+
 .player__track-item:last-child {
   margin-bottom: 24px;
 }
@@ -28,10 +32,6 @@
 
 .player__track_checked {
   font-weight: 500;
-}
-
-.player__track_loading {
-  opacity: 0;
 }
 
 .player__track_info {
