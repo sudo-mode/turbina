@@ -27,9 +27,9 @@ function App() {
     youtubeId: '',
   });
 
-  function onSetCurrentTrack(track) {
-    setCurrentTrack(track);
-  }
+  // function onSetCurrentTrack(track) {
+  //   setCurrentTrack(track);
+  // }
 
   function onVideoModalOpen({ title, src, youtubeId }) {
     setVideoModalData({ title, src, youtubeId });
@@ -71,7 +71,7 @@ function App() {
           isPlayerExtend={isPlayerExtend}
           isLandscape={isLandscape}
           isMobile={isMobile}
-          onSetCurrentTrack={onSetCurrentTrack}
+          onSetCurrentTrack={setCurrentTrack}
           currentTrack={currentTrack}
           onVideoModalOpen={onVideoModalOpen}
         />
