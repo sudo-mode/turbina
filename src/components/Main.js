@@ -8,41 +8,35 @@ import Player from './Player/Player';
 
 
 function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurrentTrack, currentTrack, isVideoModalOpened, onVideoModalOpen }) {
-  const isShortMobile = useMediaQuery({ query: '(max-width: 480px) and (max-height: 550px)' });
-  const isTallMobile = useMediaQuery({ query: '(max-width: 480px) and (min-height: 551px)' });
-  const isWideMobile = useMediaQuery({ query: '(max-width: 600px)' });
+  const isTablet = useMediaQuery({ query: '(max-width: 768px)' });
   const isNarrowDesktop = useMediaQuery({ query: '(max-width: 1024px)' });
   const AnimatedPlayer = animated(Player);
 
   const calcDefaultHeight = () => {
     switch (true) {
-      case isTallMobile || isShortMobile:
-        return "35px";
-      case isWideMobile || isNarrowDesktop:
-        return "38px";
+      case isMobile:
+        return "136px";
       default:
-        return "42px";
+        return "48px";
     }
   };
 
   const calcExtendedHeight = () => {
     switch (true) {
-      case isTallMobile:
-        return '466px';
-      case isShortMobile:
-        return '380px';
-      case isWideMobile:
-        return '220px';
+      case isMobile:
+        return '584px';
+      case isTablet:
+        return '270px';
       case isNarrowDesktop:
-        return '170px';
+        return '224px';
       default:
-        return '186px';
+        return '244px';
     }
   };
 
   const extendСonfig = useSpring({
     to: { height: isPlayerExtend ? calcExtendedHeight() : calcDefaultHeight() },
-    config: { mass: 1, tension: isMobile ? 110 : 120, friction: 17 }
+    config: { mass: 1, tension: isMobile ? 100 : 120, friction: 17 }
   });
 
   return (
@@ -59,8 +53,7 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurr
         isMobile={isMobile}
         isLandscape={isLandscape}
       />
-      {/* <AnimatedPlayer */}
-      <Player
+      <AnimatedPlayer
         isPlayerExtend={isPlayerExtend}
         onPlayerExtend={onPlayerExtend}
         style={extendСonfig}
