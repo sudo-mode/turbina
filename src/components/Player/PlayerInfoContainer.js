@@ -11,22 +11,24 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
   const isDesktop = useMediaQuery({ query: '(min-width: 769px)' });
   const isTablet = useMediaQuery({ query: '(min-width: 481px)' });
   const isLandscape = useMediaQuery({query: '(orientation:landscape) and (max-height: 420px)'});
+  const isSmallMobileLandscape = useMediaQuery({query: '(orientation:landscape) and (max-height: 370px)'});
 
-  const defineScrollbarHeight = (isBigDesktop, isDesktop, isLandscape, isTablet) => {
+  const defineScrollbarHeight = () => {
+    if (isSmallMobileLandscape) return 74;
+    if (isLandscape) return 98;
     if (isBigDesktop) return 130;
     if (isDesktop) return 102;
-    if (isLandscape) return 98;
     if (isTablet) return 152;
     return 88;
   };
   
   const [scrollbarHeight, setScrollbarHeight] = useState(
-    defineScrollbarHeight(isBigDesktop, isDesktop, isLandscape, isTablet)
+    defineScrollbarHeight()
   );
 
   useEffect(() => {
-    setScrollbarHeight(defineScrollbarHeight(isBigDesktop, isDesktop, isLandscape, isTablet));
-  }, [isBigDesktop, isDesktop, isLandscape, isTablet]);
+    setScrollbarHeight(defineScrollbarHeight());
+  }, [isBigDesktop, isDesktop, isLandscape, isTablet, isSmallMobileLandscape]);
 
   const renderView = ({ style, ...props }) => {
     return (

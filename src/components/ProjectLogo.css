@@ -22,7 +22,7 @@
   }
 }
 
-@media screen and (orientation:landscape) and (max-height: 600px) {
+@media screen and (orientation:landscape) and (max-height: 420px) {
   .title {
     max-width: 300px;
   }
