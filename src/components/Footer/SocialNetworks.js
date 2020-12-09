@@ -1,6 +1,6 @@
 import './SocialNetworks.css';
 import cn from 'classnames';
-import { socialNetworks } from '../configs/links';
+import { socialNetworks } from '../../configs/links';
 
 function SocialNetworks ({ className }) {
   return (

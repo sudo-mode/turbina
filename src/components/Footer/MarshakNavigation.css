@@ -27,17 +27,17 @@
   display: inline-block;
   color: #fff;
   text-decoration: none;
-  transition: transform .2s ease-out;
+  transition: opacity .2s ease-out;
   -webkit-tap-highlight-color: transparent;
 }
 
 .marshak-navigation__link:hover {
-  transform: skewX(-9deg);
+  opacity: .5;
 }
 
 .marshak-navigation__link:focus {
   outline: none;
-  transform: skewX(-9deg);
+  opacity: .5;
 }
 
 @media screen and (max-width: 1024px) {

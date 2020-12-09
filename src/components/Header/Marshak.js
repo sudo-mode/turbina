@@ -5,12 +5,12 @@ import { useMediaQuery } from 'react-responsive'
 import cn from 'classnames';
 import { Transition, animated, useTrail } from 'react-spring';
 
-import { marshakMainLink, marshakLinks } from '../configs/links';
+import { marshakMainLink, marshakLinks } from '../../configs/links';
 
 import MarshakLink from './MarshakLink';
-import HamburgerIcon from './svg/HamburgerIcon';
-import LinksCloseIcon from './svg/LinksCloseIcon';
-import MarshakLogo from './svg/MarshakLogo'
+import HamburgerIcon from '../svg/HamburgerIcon';
+import LinksCloseIcon from '../svg/LinksCloseIcon';
+import MarshakLogo from '../svg/MarshakLogo'
 
 function Marshak({ className, isMobile, isLandscape, isPlayerExtend }) {
   const isTablet = useMediaQuery({ query: '(max-width: 768px)' });

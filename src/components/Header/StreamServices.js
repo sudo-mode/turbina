@@ -5,7 +5,7 @@ import { useTrail, animated, Transition } from 'react-spring';
 import cn from 'classnames';
 
 import StreamServiceLink from './StreamServiceLink';
-import LinksCloseIcon from './svg/LinksCloseIcon';
+import LinksCloseIcon from '../svg/LinksCloseIcon';
 
 function StreamServices({ isMobile, isLandscape, isPlayerExtend, currentTrack }) {
   const serviceLinks = currentTrack.streamings

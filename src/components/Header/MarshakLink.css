@@ -1,0 +1,26 @@
+.marshak-link-container {
+  margin-right: 8px;
+}
+
+.marshak-link-container:last-child {
+  margin-right: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .marshak-link-container {
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+}
+
+@media screen and (max-width: 480px) and (min-height: 551px) {
+  .marshak-link-container {
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) and (max-height: 550px) {
+  .marshak-link-container {
+    margin-bottom: 4px;
+  }
+}

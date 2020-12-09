@@ -22,7 +22,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  transition: transform .2s ease-out, text-shadow 0.2s ease-out, opacity .5s ease-in-out;
+  transition: opacity .2s ease-out, text-shadow 0.2s ease-out;
 }
 
 .player__feat {
@@ -41,7 +41,7 @@
 
 .player__track_info:hover {
   cursor: pointer;
-  font-style: italic;
+  opacity: .5;
 }
 
 .player__track:active, .player__track:focus {

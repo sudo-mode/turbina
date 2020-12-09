@@ -40,17 +40,17 @@
 .footer__link {
   display: inline-block;
   color: #fff;
-  transition: transform .2s ease-out;
+  transition: opacity .2s ease-out;
   -webkit-tap-highlight-color: transparent;
 }
 
 .footer__link:hover {
-  transform: skewX(-9deg);
+  opacity: .5;
 }
 
 .footer__link:focus {
   outline: none;
-  transform: skewX(-9deg);
+  opacity: .5;
 }
 
 .footer__owner-info {

@@ -10,10 +10,15 @@
   margin-left: 14px;
   width: 22px;
   height: 22px;
+  transition: opacity .2s ease-out;
 }
 
 .social-networks__item:first-of-type {
   margin-left: 0;
+}
+
+.social-networks__item:hover {
+  opacity: .5;
 }
 
 .social-networks__link {

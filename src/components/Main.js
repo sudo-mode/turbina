@@ -2,7 +2,7 @@
 import { useSpring, animated, } from 'react-spring';
 import { useMediaQuery } from 'react-responsive';
 import './Main.css';
-import Header from './Header';
+import Header from './Header/Header';
 import ProjectLogo from './ProjectLogo';
 import Player from './Player/Player';
 
@@ -10,6 +10,9 @@ import Player from './Player/Player';
 function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurrentTrack, currentTrack, isVideoModalOpened, onVideoModalOpen }) {
   const isTablet = useMediaQuery({ query: '(max-width: 768px)' });
   const isNarrowDesktop = useMediaQuery({ query: '(max-width: 1024px)' });
+  const isShortMobile = useMediaQuery({ query: '(max-width: 480px) and (max-height: 550px)' });
+  const isTallMobile = useMediaQuery({ query: '(max-width: 480px) and (min-height: 551px)' });
+  const isMobileLandscape = useMediaQuery({ query: '(orientation: landscape) and (max-height: 480px)' });
   const AnimatedPlayer = animated(Player);
 
   const calcDefaultHeight = () => {
@@ -23,8 +26,12 @@ function Main({ onPlayerExtend, isPlayerExtend, isLandscape, isMobile, onSetCurr
 
   const calcExtendedHeight = () => {
     switch (true) {
-      case isMobile:
+      case isTallMobile:
         return '584px';
+      case isShortMobile:
+        return '319px';
+      case isMobileLandscape:
+        return '198px';
       case isTablet:
         return '270px';
       case isNarrowDesktop:

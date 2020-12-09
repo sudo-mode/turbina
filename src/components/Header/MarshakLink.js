@@ -1,10 +1,11 @@
-import './MarshakLink.css'
+import './MarshakLink.css';
+import '../../style-mixes/main-link/main-link.css';
 
 function MarshakLink({ marshakLabel, marshakLink, style }) {
   return (
-    <li className="marshak__link-container" style={style}>
+    <li className="marshak-link-container" style={style}>
       <a
-        className="marshak__link"
+        className="main-link main-link_type_common"
         href={marshakLink}
         target="_blank"
         rel="noreferrer"

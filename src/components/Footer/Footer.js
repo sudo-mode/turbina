@@ -1,5 +1,5 @@
 import './Footer.css';
-import { yandexPraktikumLink, marshakNavLinks } from '../configs/links';
+import { yandexPraktikumLink, marshakNavLinks } from '../../configs/links';
 import MarshakNavigation from './MarshakNavigation';
 import SocialNetworks from './SocialNetworks';
 
