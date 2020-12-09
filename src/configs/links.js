@@ -3,6 +3,16 @@ import InstagramIcon from "../components/svg/InstagramIcon";
 import VkontakteIcon from "../components/svg/VkontakteIcon";
 import TelegramIcon from "../components/svg/TelegramIcon";
 
+// TODO обновить ссылку на стрим (src + youtubeId)
+
+// Ссылка на Live трансляцию на youtube
+const liveLink = {
+  title: 'Прямое включение с семейного фестиваля «Вселенная книг»',
+  src: 'https://www.youtube.com/embed/OVPPOwMpSpQ',
+  // идентификатор видео (часть ссылки на youtube, после 'embed/'):
+  youtubeId: 'OVPPOwMpSpQ', 
+};
+
 // Ссылка на главную страницу Маршак (используется для логотипа в хедере)
 const marshakMainLink = 'https://marshakbooks.ru/';
 
@@ -72,4 +82,4 @@ const socialNetworks = [
   },
 ]
 
-export { marshakMainLink, marshakLinks, yandexPraktikumLink, marshakNavLinks, socialNetworks };
+export { marshakMainLink, marshakLinks, yandexPraktikumLink, marshakNavLinks, socialNetworks, liveLink };
