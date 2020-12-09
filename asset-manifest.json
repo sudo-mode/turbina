@@ -1,29 +1,34 @@
 {
   "files": {
-    "main.css": "./static/css/main.7026fb38.chunk.css",
-    "main.js": "./static/js/main.0c01d079.chunk.js",
-    "main.js.map": "./static/js/main.0c01d079.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.7bb0e610.js",
-    "runtime-main.js.map": "./static/js/runtime-main.7bb0e610.js.map",
-    "static/js/2.a768e7a0.chunk.js": "./static/js/2.a768e7a0.chunk.js",
-    "static/js/2.a768e7a0.chunk.js.map": "./static/js/2.a768e7a0.chunk.js.map",
-    "static/js/3.f0a6b853.chunk.js": "./static/js/3.f0a6b853.chunk.js",
-    "static/js/3.f0a6b853.chunk.js.map": "./static/js/3.f0a6b853.chunk.js.map",
+    "main.css": "./static/css/main.3e2561ee.chunk.css",
+    "main.js": "./static/js/main.60007132.chunk.js",
+    "main.js.map": "./static/js/main.60007132.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.598d63d3.js",
+    "runtime-main.js.map": "./static/js/runtime-main.598d63d3.js.map",
+    "static/js/2.0f4c9d35.chunk.js": "./static/js/2.0f4c9d35.chunk.js",
+    "static/js/2.0f4c9d35.chunk.js.map": "./static/js/2.0f4c9d35.chunk.js.map",
+    "static/js/3.499772ad.chunk.js": "./static/js/3.499772ad.chunk.js",
+    "static/js/3.499772ad.chunk.js.map": "./static/js/3.499772ad.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.7026fb38.chunk.css.map": "./static/css/main.7026fb38.chunk.css.map",
-    "static/js/2.a768e7a0.chunk.js.LICENSE.txt": "./static/js/2.a768e7a0.chunk.js.LICENSE.txt",
+    "static/css/main.3e2561ee.chunk.css.map": "./static/css/main.3e2561ee.chunk.css.map",
+    "static/js/2.0f4c9d35.chunk.js.LICENSE.txt": "./static/js/2.0f4c9d35.chunk.js.LICENSE.txt",
     "static/media/App.css": "./static/media/arrowUp.f456265e.svg",
     "static/media/background-blur.c25e08a2.jpg": "./static/media/background-blur.c25e08a2.jpg",
     "static/media/background.22961cb9.png": "./static/media/background.22961cb9.png",
+    "static/media/four_new_tracks.f2584320.jpeg": "./static/media/four_new_tracks.f2584320.jpeg",
     "static/media/love_outline_cover.66f20682.jpg": "./static/media/love_outline_cover.66f20682.jpg",
     "static/media/note-round-icon.c538843e.svg": "./static/media/note-round-icon.c538843e.svg",
     "static/media/turbina.b11f75a9.svg": "./static/media/turbina.b11f75a9.svg",
-    "static/media/Контур любви — Хадн дадн feat. Варя Карпова и Федя Быстров.cb531876.mp3": "./static/media/Контур любви — Хадн дадн feat. Варя Карпова и Федя Быстров.cb531876.mp3"
+    "static/media/Белочки — Бабба feat. Варя Карпова.be389704.mp3": "./static/media/Белочки — Бабба feat. Варя Карпова.be389704.mp3",
+    "static/media/Конец света — TYAGOTENIE feat. Варя Карпова.a73b2263.mp3": "./static/media/Конец света — TYAGOTENIE feat. Варя Карпова.a73b2263.mp3",
+    "static/media/Контур любви — Хадн дадн feat. Варя Карпова и Федя Быстров.cb531876.mp3": "./static/media/Контур любви — Хадн дадн feat. Варя Карпова и Федя Быстров.cb531876.mp3",
+    "static/media/Природа — Jerk feat. Федя Быстров.826c0909.mp3": "./static/media/Природа — Jerk feat. Федя Быстров.826c0909.mp3",
+    "static/media/У белого кота — Света Лукьянова feat. Никита Тугумов.15a7deec.mp3": "./static/media/У белого кота — Света Лукьянова feat. Никита Тугумов.15a7deec.mp3"
   },
   "entrypoints": [
-    "static/js/runtime-main.7bb0e610.js",
-    "static/js/2.a768e7a0.chunk.js",
-    "static/css/main.7026fb38.chunk.css",
-    "static/js/main.0c01d079.chunk.js"
+    "static/js/runtime-main.598d63d3.js",
+    "static/js/2.0f4c9d35.chunk.js",
+    "static/css/main.3e2561ee.chunk.css",
+    "static/js/main.60007132.chunk.js"
   ]
 }
