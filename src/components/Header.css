@@ -7,6 +7,8 @@
   align-items: flex-start;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   transition: filter .5s ease-in-out;
+  mix-blend-mode: screen;
+  will-change: opacity; /* для корректной работы mix-blend-mode в Safari и на iOS */
 }
 
 .header__marshak-links {
@@ -22,15 +24,15 @@
 
 .header__open-live-button {
   margin-bottom: 8px;
-  border: 2px solid #fff;
+  border: none;
+  padding: 10px 20px;
   border-radius: 30px;
-  padding: 8px 20px;
-  color: #fff;
-  background-color: transparent;
+  color: #000;
+  background-color: #fff;
   cursor: pointer;
   font-size: 16px;
+  font-weight: 500;
   line-height: 1;
-  overflow: hidden;
   transition: box-shadow .2s ease-out;
   -webkit-tap-highlight-color: transparent;
 }
@@ -46,6 +48,7 @@
 .header__form-anchor-link-container {
   border-radius: 30px;
   border: 2px solid white;
+  background-color: #fff;
   transition: box-shadow .2s ease-out;
   -webkit-tap-highlight-color: transparent;
 }
@@ -57,8 +60,8 @@
 .header__form-anchor-link {
   display: inline-block;
   padding: 8px 18px;
-  color: #fff;
-  font-weight: 400;
+  color: #000;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1;
   text-decoration: none;
@@ -81,7 +84,7 @@
   }
 
   .header__open-live-button {
-    padding: 8px 18px;
+    padding: 10px 18px;
     font-size: 15px;
   }
 }
@@ -113,7 +116,7 @@
   }
 
   .header__open-live-button {
-    padding: 7px 16px;
+    padding: 9px 16px;
     font-size: 12px;
   }
 }
@@ -132,7 +135,7 @@
   .header__open-live-button {
     margin-bottom: 0;
     margin-right: 5px;
-    padding: 7px 16px;
+    padding: 9px 16px;
     font-size: 12px;
   }
 }
