@@ -1,6 +1,5 @@
 .player__controller {
   grid-area: player;
-  height: 100%;
   display: grid;
   grid-template-columns: 206px 1fr min-content;
   grid-template-rows: min-content min-content;
