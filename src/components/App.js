@@ -27,10 +27,6 @@ function App() {
     youtubeId: '',
   });
 
-  // function onSetCurrentTrack(track) {
-  //   setCurrentTrack(track);
-  // }
-
   function onVideoModalOpen({ title, src, youtubeId }) {
     setVideoModalData({ title, src, youtubeId });
     setIsVideoModalOpened(true);

@@ -17,30 +17,35 @@ function useAudioPlayer(audioPlayerRef, track, onTrackEnd) {
 
   const handlePlayClick = () => {
     setPlaying(!isPlaying);
-  }
-
-  useEffect(() => {
-    isPlaying
-      ? audioPlayerRef.current.play().catch(_ => setPlaying(false))
+    !isPlaying
+      ? audioPlayerRef.current.play()
       : audioPlayerRef.current.pause();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPlaying, track]);
-  // catch предназначен для отлавливания исключения "play() failed because the user didn't interact
-  // with the document first" при загрузке страницы.
-
+  }
+      
   const handleLoadedMetaData = () => {
     setDuration(audioPlayerRef.current.duration);
     setCurTime(audioPlayerRef.current.currentTime);
     setLoadedState(true);
   }
+  
+  useEffect(() => {
+    isPlaying
+      ? audioPlayerRef.current.play().catch(_ => {setPlaying(false)})
+      : audioPlayerRef.current.pause();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [track, isPlaying]);
+  // catch предназначен для отлавливания исключения "play() failed because the user didn't interact
+  // with the document first" при загрузке страницы.
 
   const handleTimeUpdate = () => setCurTime(audioPlayerRef.current.currentTime);
 
   const handleTrackEnd = () => {
     setDuration(audioPlayerRef.current.duration);
     setCurTime(0);
-    onTrackEnd();
-    setPlaying(false);
+    const isLastTrack = onTrackEnd();
+    if (isLastTrack) {
+      setPlaying(false);
+    }
   }
   
   useEffect(() => {
@@ -53,17 +58,12 @@ function useAudioPlayer(audioPlayerRef, track, onTrackEnd) {
 
   useEffect(() => {
     setCurTime(0);
-    setPlaying(true);
     setLoadedState(false);
   }, [track]);
 
-  
-  useEffect(() => {
-    setPlaying(false);
-  }, []);
-
   return {
     isPlaying,
+    setPlaying,
     handlePlayClick,
     isLoaded,
     handleTimeUpdate,

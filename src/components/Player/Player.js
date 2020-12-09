@@ -54,7 +54,17 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
   const handleTrackEnd = () => {
     if (currentTrackIndex < tracks.length - 1) {
       onSetCurrentTrack(tracks[currentTrackIndex + 1]);
-    }
+      return false;
+    } else return true;
+    // Возвращаем true, если трек -- последний в списке.
+  }
+
+  // Триггер для запуска трека после переключения из состояния паузы
+  const [triggerTrackCheckout, toggleTrigger] = useState(false);
+
+  const handleTrackClick = (track) => {
+    onSetCurrentTrack(track);
+    toggleTrigger(!triggerTrackCheckout);
   }
 
   const handlePlayerSwitcherClick = () => {
@@ -85,11 +95,12 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
       }
       <PlayerController
         isPlayerExtend={isPlayerExtend}
+        isVideoModalOpened={isVideoModalOpened}
         track={currentTrack}
         onForwardClick={handleForwardClick}
         onBackwardClick={handleBackwardClick}
         onTrackEnd={handleTrackEnd}
-        isVideoModalOpened={isVideoModalOpened}
+        trigger={triggerTrackCheckout}
       />
       <ExtendBtn
         isOpen={isPlayerExtend}
@@ -98,7 +109,7 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
       {isPlayerExtend && 
         <PlayerInfoContainer
         isOpen={isPlayerExtend}
-        onTrackClick={onSetCurrentTrack}
+        onTrackClick={handleTrackClick}
         tracks={tracks}
         isTextInfo={isTextInfo}
         currentTrack={currentTrack}
