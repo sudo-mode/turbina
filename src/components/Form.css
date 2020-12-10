@@ -102,7 +102,6 @@
    background-color: rgb(0, 0, 0);
    color: #fff;
    cursor: pointer;
-   font-style: italic;
 }
 
 .form__submit-button:focus {
@@ -174,7 +173,7 @@
 }
 
 .form__input_type-choice:hover + .form__choice-pseudo-item {
-    transform: skew(-9deg);
+    opacity: .8;
     cursor: pointer;
 }
 

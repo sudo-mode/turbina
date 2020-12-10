@@ -55,6 +55,12 @@
   }
 }
 
+@media screen and (max-width: 480px) and (max-height: 550px) {
+  .cover-wrapper {
+    display: none;
+  }
+}
+
 @media screen and (orientation: landscape) and (max-height: 550px) {
   .cover-wrapper {
     width: 120px;

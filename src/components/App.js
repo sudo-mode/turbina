@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive'
 import Main from './Main';
 import Info from './Info';
-import Footer from './Footer';
+import Footer from './Footer/Footer';
 import Background from './Background';
 import Blur from './Blur';
 import VideoModal from './VideoModal';

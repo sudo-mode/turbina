@@ -23,15 +23,11 @@
   margin: 0;
   padding: 0;
   display: block;
-  transition: transform .2s ease-in-out;
   opacity: 0;
 }
 
 .player__switcher:hover {
   box-shadow: 0 0 8px 4px #ffffff40;
-}
-.player__switcher:hover .player__switcher-text {
-  transform: skewX(-9deg);
 }
 
 .player__switcher:active, .player__switcher:focus {

@@ -12,7 +12,7 @@
 
 .blur__layer_active {
   z-index: 0;
-  opacity: .4;
+  opacity: .6;
   backdrop-filter: blur(3px);
 }
 
