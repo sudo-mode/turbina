@@ -5,7 +5,8 @@ import { useState, useEffect } from 'react';
 audioElementId -- (строка, например 'audio')
 track -- трек из списка песен, устанавливается в качестве зависимости 
         (useEffect при смене трека)
-onTrackEnd -- обработчик конца трека
+onTrackEnd -- обработчик конца трека (указывает, что делать: переключать
+        на следующий трек или нет)
 */
 function useAudioPlayer(audioPlayerRef, track, onTrackEnd) {
   const [isLoaded, setLoadedState] = useState(false);
@@ -40,11 +41,10 @@ function useAudioPlayer(audioPlayerRef, track, onTrackEnd) {
   const handleTimeUpdate = () => setCurTime(audioPlayerRef.current.currentTime);
 
   const handleTrackEnd = () => {
-    setDuration(audioPlayerRef.current.duration);
-    setCurTime(0);
     const isLastTrack = onTrackEnd();
     if (isLastTrack) {
       setPlaying(false);
+      setCurTime(0);
     }
   }
   
@@ -52,6 +52,7 @@ function useAudioPlayer(audioPlayerRef, track, onTrackEnd) {
     if (clickedTime && clickedTime !== curTime) {
       audioPlayerRef.current.currentTime = clickedTime;
       setClickedTime(null);
+      console.log(clickedTime)
     } 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clickedTime]);
@@ -59,11 +60,15 @@ function useAudioPlayer(audioPlayerRef, track, onTrackEnd) {
   useEffect(() => {
     setCurTime(0);
     setLoadedState(false);
+    setPlaying(true);
   }, [track]);
+
+  useEffect(() => {
+    setPlaying(false);
+  }, []);
 
   return {
     isPlaying,
-    setPlaying,
     handlePlayClick,
     isLoaded,
     handleTimeUpdate,

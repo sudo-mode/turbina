@@ -59,14 +59,6 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
     // Возвращаем true, если трек -- последний в списке.
   }
 
-  // Триггер для запуска трека после переключения из состояния паузы
-  const [triggerTrackCheckout, toggleTrigger] = useState(false);
-
-  const handleTrackClick = (track) => {
-    onSetCurrentTrack(track);
-    toggleTrigger(!triggerTrackCheckout);
-  }
-
   const handlePlayerSwitcherClick = () => {
     setTextInfo(!isTextInfo);
   }
@@ -100,7 +92,6 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
         onForwardClick={handleForwardClick}
         onBackwardClick={handleBackwardClick}
         onTrackEnd={handleTrackEnd}
-        trigger={triggerTrackCheckout}
       />
       <ExtendBtn
         isOpen={isPlayerExtend}
@@ -109,7 +100,7 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
       {isPlayerExtend && 
         <PlayerInfoContainer
         isOpen={isPlayerExtend}
-        onTrackClick={handleTrackClick}
+        onTrackClick={onSetCurrentTrack}
         tracks={tracks}
         isTextInfo={isTextInfo}
         currentTrack={currentTrack}
