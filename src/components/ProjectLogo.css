@@ -10,6 +10,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: filter .5s ease-in-out;
+  z-index: 3;
 }
 
 .title__logo {
@@ -19,6 +20,12 @@
 @media screen and (max-width: 1024px) {
   .title {
     max-width: 580px;
+  }
+}
+
+@media screen and (max-width: 480px) and (max-height: 500px) {
+  .title {
+    opacity: .2;
   }
 }
 

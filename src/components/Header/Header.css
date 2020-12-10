@@ -9,6 +9,7 @@
   transition: filter .5s ease-in-out;
   mix-blend-mode: screen;
   will-change: opacity; /* для корректной работы mix-blend-mode в Safari и на iOS */
+  z-index: 5;
 }
 
 .header__marshak-links {
