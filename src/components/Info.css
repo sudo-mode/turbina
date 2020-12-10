@@ -12,7 +12,8 @@
   border-radius: 10px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   position: relative;
-  z-index: 2;
+  /* z-index: 2; */
+  z-index: 30;
 }
 
 /* Адаптивная верстка  */
