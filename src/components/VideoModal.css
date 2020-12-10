@@ -104,12 +104,11 @@
 @media screen and (orientation: landscape) and (max-height: 740px) {
   .modal__content {
     height: 100%;
-    max-height: calc(100vmin - 2*(36px + 16px + 22px) - calc(100vmin - 100%));
+    max-height: calc(100% - 2*(36px + 16px + 22px));
     /* 
     36px - максимальная высота кнопки "Закрыть";
     16px - высота отступа от modal__content до кнопки "Закрыть";
     22px - запас расстояния от кнопки "Закрыть" до нижнего края экрана;
-    calc(100vmin - 100%) - высота панели браузера;
     */
   }
 }
