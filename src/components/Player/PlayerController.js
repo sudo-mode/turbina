@@ -8,7 +8,7 @@ import ControlBtn from './ControlBtn';
 import BackwardBtn from './BackwardBtn';
 import ForwardBtn from './ForwardBtn';
 
-function PlayerController({ isPlayerExtend, isVideoModalOpened, track, onForwardClick, onBackwardClick, onTrackEnd, trigger }) {
+function PlayerController({ isPlayerExtend, isVideoModalOpened, track, onForwardClick, onBackwardClick, onTrackEnd }) {
   const trackRef = useRef();
   const audioPlayerRef = useRef();
 
@@ -20,7 +20,6 @@ function PlayerController({ isPlayerExtend, isVideoModalOpened, track, onForward
 
   const {
     isPlaying,
-    setPlaying,
     handlePlayClick,
     isLoaded,
     handleTimeUpdate,
@@ -30,28 +29,6 @@ function PlayerController({ isPlayerExtend, isVideoModalOpened, track, onForward
     curTime,
     duration
   } = useAudioPlayer(audioPlayerRef, track, onTrackEnd);
-  
-  // В функциях handleForwardClick и handleBackwardClick напрямую устанавливается 
-  // isPlaying в состояние true для того, чтобы при переключении трека, когда текущий трек на паузе,
-  // следующий запускался.
-  const handleForwardClick = () => {
-    onForwardClick();
-    setPlaying(true);
-  }
-
-  const handleBackwardClick = () => {
-    onBackwardClick();
-    setPlaying(true);
-  }
-
-  // Изначально использовался useEffect внутри useAudioPlayer, в зависимости от трека устанавливающий
-  // isPlaying в состояние true (см. состояние репозитория на момент коммита ecfc2e8), но это работало
-  // везде кроме iOS.
-  useEffect(() => {
-    setPlaying(true);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [trigger]);
-
 
   /* Ставим на паузу трек в аудио-плеере, если открывается модальное окно с youtube-плеером */
   useEffect(() => {
@@ -74,12 +51,12 @@ function PlayerController({ isPlayerExtend, isVideoModalOpened, track, onForward
           <p>Ваш браузер не поддерживает HTML5 аудио.</p>
         </audio>
         <div className="player__controllers">
-          <BackwardBtn onBtnClick={handleBackwardClick} />
+          <BackwardBtn onBtnClick={onBackwardClick} />
           <ControlBtn
             isPlaying={isPlaying}
             onBtnClick={handlePlayClick}
           />
-          <ForwardBtn onBtnClick={handleForwardClick} />
+          <ForwardBtn onBtnClick={onForwardClick} />
         </div>
         <div className="player__song-container">
           <p
