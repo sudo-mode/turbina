@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import cn from "classnames";
 import YTPlayer from "yt-player";
 import "./VideoModal.css";
+import "../style-mixes/main-button/main-button.css";
 
 function VideoModal({ videoModalData, isVideoModalOpened, onVideoModalClose }) {
   const [videoPlayer, setVideoPlayer] = useState({});
@@ -44,7 +45,7 @@ function VideoModal({ videoModalData, isVideoModalOpened, onVideoModalClose }) {
           ></iframe>
         </div>
         <button
-          className="modal__close-button"
+          className="modal__close-button main-button main-button_type_common"
           type="button"
           onClick={handleVideoModalClose}
         >

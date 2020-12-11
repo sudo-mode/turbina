@@ -39,26 +39,6 @@
   top: calc(100% + 16px);
   left: 50%;
   transform: translate(-50%);
-
-  border: 2px solid #fff;
-  border-radius: 30px;
-  padding: 8px 20px;
-  color: #fff;
-  background-color: transparent;
-  cursor: pointer;
-  font-size: inherit;
-  line-height: inherit;
-  overflow: hidden;
-  transition: box-shadow .2s ease-out;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.modal__close-button:focus {
-  outline: none;
-}
-
-.modal__close-button:hover {
-  box-shadow: 0 0 8px 4px #ffffff40;
 }
 
 .modal__iframe-container {
@@ -120,11 +100,6 @@
   .modal__content {
     max-width: 804px;
   }
-
-  .modal__close-button {
-    padding: 8px 18px;
-    font-size: 15px;
-  }
 }
 
 @media screen and (max-width: 1024px) and (min-height: 551px) {
@@ -174,11 +149,6 @@
   }
 
   .modal__title {
-    font-size: 12px;
-  }
-
-  .modal__close-button {
-    padding: 7px 16px;
     font-size: 12px;
   }
 }
