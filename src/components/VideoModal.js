@@ -1,13 +1,10 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import cn from "classnames";
 import YTPlayer from "yt-player";
 import "./VideoModal.css";
 
 function VideoModal({ videoModalData, isVideoModalOpened, onVideoModalClose }) {
   const [videoPlayer, setVideoPlayer] = useState({});
-
-  const modalContentRef = useRef();
-  const iframeRef = useRef();
 
   const handleVideoModalClose = () => {
     onVideoModalClose();
@@ -31,7 +28,7 @@ function VideoModal({ videoModalData, isVideoModalOpened, onVideoModalClose }) {
         "modal_opened": isVideoModalOpened,
       })}
     >
-      <div className="modal__content" ref={modalContentRef}>
+      <div className="modal__content">
         <h2 className="modal__title">{videoModalData.title}</h2>
         <div
           className="modal__iframe-container"
@@ -44,7 +41,6 @@ function VideoModal({ videoModalData, isVideoModalOpened, onVideoModalClose }) {
             }
             title="YouTube"
             allowFullScreen
-            ref={iframeRef}
           ></iframe>
         </div>
         <button
