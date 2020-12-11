@@ -35,6 +35,7 @@
 @media screen and (max-width: 768px) {
   .player {
     grid-template-columns: 180px 1fr max-content 42px;
+    font-size: 15px;
   }
 }
 
