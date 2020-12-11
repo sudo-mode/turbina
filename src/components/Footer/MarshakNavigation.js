@@ -11,7 +11,7 @@ function MarshakNavigation ({ className, links }) {
             <a
               className="marshak-navigation__link"
               href={item.link}
-              target="_blank"
+              target={item.target}
               rel="noreferrer"
             >
               {item.title}

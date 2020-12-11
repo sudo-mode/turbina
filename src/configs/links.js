@@ -26,15 +26,28 @@ const yandexPraktikumLink = {
 const marshakLinks = [
   {
     marshakLabel: 'Книги',
-    marshakLink: 'https://marshakbooks.ru/'
+    marshakLink: 'https://marshakbooks.ru/',
+    target: '_blank',
+  },
+  {
+    marshakLabel: 'Одежда',
+    marshakLink: 'https://marshakbooks.ru/wear/',
+    target: '_blank',
+  },
+  {
+    marshakLabel: 'Музыка',
+    marshakLink: 'https://marshakbooks.ru/turbina/',
+    target: '_self',
   },
   {
     marshakLabel: 'Школа',
-    marshakLink: 'https://marshakbooks.ru/school/'
+    marshakLink: 'https://marshakbooks.ru/school/',
+    target: '_blank',
   },
   {
     marshakLabel: 'О нас',
-    marshakLink: 'https://marshakbooks.ru/о-нас/'
+    marshakLink: 'https://marshakbooks.ru/о-нас/',
+    target: '_blank',
   },
 ];
 
@@ -43,14 +56,27 @@ const marshakNavLinks = [
   {
     title: 'Книги',
     link: 'https://marshakbooks.ru/',
+    target: '_blank',
+  },
+  {
+    title: 'Одежда',
+    link: 'https://marshakbooks.ru/wear/',
+    target: '_blank',
+  },
+  {
+    title: 'Музыка',
+    link: 'https://marshakbooks.ru/turbina/',
+    target: '_self',
   },
   {
     title: 'Школа',
     link: 'https://marshakbooks.ru/school/',
+    target: '_blank',
   },
   {
     title: 'О нас',
     link: 'https://marshakbooks.ru/о-нас/',
+    target: '_blank',
   },
 ];
 

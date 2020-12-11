@@ -118,6 +118,7 @@ function Marshak({ className, isMobile, isLandscape, isPlayerExtend }) {
               key={i}
               marshakLabel={item.marshakLabel}
               marshakLink={item.marshakLink}
+              marshakLinkTarget={item.target}
               style={{
                 ...item,
               }}
