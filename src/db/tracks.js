@@ -4,188 +4,19 @@ import fourNewTracksCover from '../images/four_new_tracks.jpeg';
 
 // №1
 import loveOutlineCover from '../images/love_outline_cover.jpg';
-
-// New tracks
 // №2
-import doomsday from './audio/Конец света — TYAGOTENIE feat. Варя Карпова.mp3';
+import nature from './audio/Природа — Jerk feat. Федя Быстров.mp3';
 // №3
-import whiteCat from './audio/У белого кота — Света Лукьянова feat. Никита Тугумов.mp3';
+import doomsday from './audio/Конец света — TYAGOTENIE feat. Варя Карпова.mp3';
 // №4
 import squirrels from './audio/Белочки — Бабба feat. Варя Карпова.mp3';
 // №5
-import nature from './audio/Природа — Jerk feat. Федя Быстров.mp3';
+import whiteCat from './audio/У белого кота — Света Лукьянова feat. Никита Тугумов.mp3';
 
+// Новые треки добавлять в начало массива
 export const tracks = [
   {
-    id: '№1',
-    trackName: 'Контур любви',
-    author: 'Хадн дадн',
-    originalAuthor: 'Варя Карпова и Федя Быстров',
-    text: `Мой милый, милый мальчик, 
-      Моя милая, милая девочка.
-      Никогда не знаешь, что будет дальше
-      В этой гадкой зиме.
-      Мой милый, милый мальчик, 
-      Моя милая, милая девочка.
-      Никогда не знаешь, что будет дальше
-      В этой гадкой зиме.
-      
-      Но я так сильно люблю тебя, 
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу.
-      Я так сильно люблю тебя, 
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу.
-        
-      Мы выйдем на лужочек,
-      Мы выйдем на поляночку.
-      На том лужочке и полянке
-      Будем мы всегда.
-      Пройдут многие годы,
-      И много изменится.
-      А ты в других домах, случайных снах
-      Заглядывай сюда.
-        
-      Где я так сильно люблю тебя, 
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу.
-      Я так сильно люблю тебя, 
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу.
-      Я так сильно люблю тебя, 
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу.
-      Я так сильно люблю тебя, 
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу за контур любви,
-      Что выхожу.`,
-    link: loveOutline,
-    videoLink: '',
-    theme: {
-      color: '#fff',
-      backgroundColor: 'white',
-      backgroundImage: `url(${defaultBackground})`,
-    },
-    albumPicture: loveOutlineCover,
-    streamings: [
-      { 
-        serviceLabel: 'Яндекс.Музыка',
-        serviceLink: 'https://music.yandex.ru/album/12769745'
-      },
-      { 
-        serviceLabel: 'Spotify',
-        serviceLink: 'https://open.spotify.com/track/0FRjmDhfKmVARMOvmUm6no?si=rwTima3JQaWdse3mrQko1g'
-      },
-      { 
-        serviceLabel: 'Apple Music',
-        serviceLink: 'https://music.apple.com/ru/album/контур-любви-feat-варя-карпова-федя-быстров-single/1539942736'
-      },
-      { 
-        serviceLabel: 'VK Music',
-        serviceLink: 'https://vk.com/music/album/-2000389059_9389059_4fb8e57c6b6b7b1795'
-      },
-    ],
-  },
-  {
-    id: '№2',
-    trackName: 'Конец света',
-    author: 'TYAGOTENIE',
-    originalAuthor: 'Варя Карпова',
-    text: `Конец света
-    Конец света
-    Конец света
-    Настал
-    
-    Конец света
-    Конец света
-    Конец света
-    Настал
-    
-    Нам конец света настал
-    Нам конец света настал
-    Конец света настал
-    Нам
-    
-    Конец света настал
-    Конец света настал
-    Настал, настал, настал, настал,  
-    Настал, настал, настал
-    
-    Веки веков пришли наши
-    На веки веков мы ушли
-    Ничего нет, мы идём искать
-    Другую планету
-    
-    О нет, о нет, о нет,  о нет
-    
-    Наш конец света настал
-    Конец света настал
-    Навсегда
-    На веки веков
-    
-    Падём мы в вечную темноту
-    На скверную темноту
-    Ищем новую планету
-    Пригодную для жизни
-    
-    Пригодную для жизни
-    Пригодную для жизни. 
-    Землю номер два 
-    Землю номер два
-    
-    Конец света настал
-    Конец света настал
-    Конец света 
-    Конец кошкам 
-    Конец света
-    Всем людям
-    
-    Всем конец света настал
-    Всем конец света настал
-    Конец света настал
-    Нам
-    
-    Бам-ба-ба-бам`,
-    link: doomsday,
-    videoLink: '',
-    theme: {
-      color: '#fff',
-      backgroundColor: 'white',
-      backgroundImage: `url(${defaultBackground})`,
-    },
-    albumPicture: fourNewTracksCover,
-    streamings: [
-      { 
-        serviceLabel: 'Яндекс.Музыка',
-        serviceLink: 'https://music.yandex.ru/'
-      },
-      { 
-        serviceLabel: 'Spotify',
-        serviceLink: 'https://open.spotify.com/'
-      },
-      { 
-        serviceLabel: 'Apple Music',
-        serviceLink: 'https://music.apple.com/ru/'
-      },
-      { 
-        serviceLabel: 'VK Music',
-        serviceLink: 'https://vk.com/music/'
-      },
-    ],
-  },
-  {
-    id: '№3',
+    id: '№5',
     trackName: 'У белого кота',
     author: 'Света Лукьянова',
     originalAuthor: 'Никита Тугумов',
@@ -330,7 +161,96 @@ export const tracks = [
     ],
   },
   {
-    id: '№5',
+    id: '№3',
+    trackName: 'Конец света',
+    author: 'TYAGOTENIE',
+    originalAuthor: 'Варя Карпова',
+    text: `Конец света
+    Конец света
+    Конец света
+    Настал
+    
+    Конец света
+    Конец света
+    Конец света
+    Настал
+    
+    Нам конец света настал
+    Нам конец света настал
+    Конец света настал
+    Нам
+    
+    Конец света настал
+    Конец света настал
+    Настал, настал, настал, настал,  
+    Настал, настал, настал
+    
+    Веки веков пришли наши
+    На веки веков мы ушли
+    Ничего нет, мы идём искать
+    Другую планету
+    
+    О нет, о нет, о нет,  о нет
+    
+    Наш конец света настал
+    Конец света настал
+    Навсегда
+    На веки веков
+    
+    Падём мы в вечную темноту
+    На скверную темноту
+    Ищем новую планету
+    Пригодную для жизни
+    
+    Пригодную для жизни
+    Пригодную для жизни. 
+    Землю номер два 
+    Землю номер два
+    
+    Конец света настал
+    Конец света настал
+    Конец света 
+    Конец кошкам 
+    Конец света
+    Всем людям
+    
+    Всем конец света настал
+    Всем конец света настал
+    Конец света настал
+    Нам
+    
+    Бам-ба-ба-бам`,
+    link: doomsday,
+    videoLink: '',
+    theme: {
+      color: '#fff',
+      backgroundColor: 'white',
+      backgroundImage: `url(${defaultBackground})`,
+    },
+    albumPicture: fourNewTracksCover,
+    streamings: [
+      { 
+        serviceLabel: 'Яндекс.Музыка',
+        serviceLink: 'https://music.yandex.ru/'
+      },
+      { 
+        serviceLabel: 'Spotify',
+        serviceLink: 'https://open.spotify.com/'
+      },
+      { 
+        serviceLabel: 'Apple Music',
+        serviceLink: 'https://music.apple.com/ru/'
+      },
+      { 
+        serviceLabel: 'VK Music',
+        serviceLink: 'https://vk.com/music/'
+      },
+    ],
+  },
+  
+  
+  {
+    id: '№2',
     trackName: 'Природа',
     author: 'Jerk',
     originalAuthor: 'Федя Быстров',
@@ -379,6 +299,87 @@ export const tracks = [
       { 
         serviceLabel: 'VK Music',
         serviceLink: 'https://vk.com/music/'
+      },
+    ],
+  },
+  {
+    id: '№1',
+    trackName: 'Контур любви',
+    author: 'Хадн дадн',
+    originalAuthor: 'Варя Карпова и Федя Быстров',
+    text: `Мой милый, милый мальчик, 
+      Моя милая, милая девочка.
+      Никогда не знаешь, что будет дальше
+      В этой гадкой зиме.
+      Мой милый, милый мальчик, 
+      Моя милая, милая девочка.
+      Никогда не знаешь, что будет дальше
+      В этой гадкой зиме.
+      
+      Но я так сильно люблю тебя, 
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу.
+      Я так сильно люблю тебя, 
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу.
+        
+      Мы выйдем на лужочек,
+      Мы выйдем на поляночку.
+      На том лужочке и полянке
+      Будем мы всегда.
+      Пройдут многие годы,
+      И много изменится.
+      А ты в других домах, случайных снах
+      Заглядывай сюда.
+        
+      Где я так сильно люблю тебя, 
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу.
+      Я так сильно люблю тебя, 
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу.
+      Я так сильно люблю тебя, 
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу.
+      Я так сильно люблю тебя, 
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу за контур любви,
+      Что выхожу.`,
+    link: loveOutline,
+    videoLink: '',
+    theme: {
+      color: '#fff',
+      backgroundColor: 'white',
+      backgroundImage: `url(${defaultBackground})`,
+    },
+    albumPicture: loveOutlineCover,
+    streamings: [
+      { 
+        serviceLabel: 'Яндекс.Музыка',
+        serviceLink: 'https://music.yandex.ru/album/12769745'
+      },
+      { 
+        serviceLabel: 'Spotify',
+        serviceLink: 'https://open.spotify.com/track/0FRjmDhfKmVARMOvmUm6no?si=rwTima3JQaWdse3mrQko1g'
+      },
+      { 
+        serviceLabel: 'Apple Music',
+        serviceLink: 'https://music.apple.com/ru/album/контур-любви-feat-варя-карпова-федя-быстров-single/1539942736'
+      },
+      { 
+        serviceLabel: 'VK Music',
+        serviceLink: 'https://vk.com/music/album/-2000389059_9389059_4fb8e57c6b6b7b1795'
       },
     ],
   },
