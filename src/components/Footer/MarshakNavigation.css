@@ -40,17 +40,17 @@
   opacity: .5;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1140px) {
   .marshak-navigation__links {
-    margin-left: 30px;
+    margin-left: 20px;
   }
 
   .marshak-navigation__link-container {
-    margin-left: 12px;
+    margin-left: 8px;
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1024px) {
   .marshak-navigation {
     flex-direction: column;
   }
@@ -60,7 +60,7 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 660px) {
   .marshak-navigation__links {
     flex-direction: column;
     margin-top: 16px;

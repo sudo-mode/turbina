@@ -15,7 +15,7 @@
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   grid-template-areas: "marshak social yandex";
-  grid-column-gap: 20px;
+  grid-column-gap: 18px;
 }
 
 .footer__marshak {
@@ -67,6 +67,10 @@
 @media screen and (max-width: 1024px) {
   .footer {
     font-size: 15px;
+  }
+
+  .footer__links {
+    grid-column-gap: 12px;
   }
 
   .footer__owner-info {
