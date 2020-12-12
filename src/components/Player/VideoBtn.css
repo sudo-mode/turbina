@@ -1,6 +1,8 @@
 .video-link-wrapper {
-  display: inline-block;
-  padding-right: 10px;
+  /* inline-flex -- чтобы  обертка была по размерами содержимого */
+  display: inline-flex;
+  margin-right: 10px;
+  margin-top: 10px;
   border-radius: 5px;
   -webkit-tap-highlight-color: transparent;
 }
@@ -25,7 +27,11 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
+  .video-link-wrapper {
+    margin-top: 0;
+  }
+  
   .video-link {
     height: 30px;
     width: 74px;

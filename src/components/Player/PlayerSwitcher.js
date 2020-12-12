@@ -1,24 +1,13 @@
 import './PlayerSwitcher.css';
-import { useState, useEffect } from 'react';
+import cnWithSwitchAnimation from '../../utils/switchAnimation';
 
-function PlayerSwitcher ({ onClick, isTextInfo  }) {
+function PlayerSwitcher({ onClick, isTextInfo }) {
 
-  const [switcherStyle, setContentStyle] = useState('player__switcher-text');
-
-  const setChangeStyle = () => {
-    setContentStyle('player__switcher-text');
-    setTimeout(() => {  
-      setContentStyle('player__switcher-text player__switcher-text_loaded');
-    }, 100)
-  }
-
-  useEffect(() => {
-    setChangeStyle();
-  }, [isTextInfo])
-
-  return (   
-    <button onClick={ onClick } className='player__switcher'>
-      <p className={switcherStyle}>{isTextInfo ? 'Релизы' : 'Текст песни'}</p>
+  return (
+    <button onClick={onClick} className='player__switcher'>
+      <span className={cnWithSwitchAnimation('player__switcher-text', isTextInfo)}>
+        {isTextInfo ? 'Релизы' : 'Текст песни'}
+      </span>
     </button>
   )
 }

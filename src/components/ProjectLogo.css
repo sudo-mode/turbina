@@ -10,6 +10,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: filter .5s ease-in-out;
+  z-index: 3;
 }
 
 .title__logo {
@@ -18,17 +19,17 @@
 
 @media screen and (max-width: 1024px) {
   .title {
-    max-width: 640px;
+    max-width: 580px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) and (max-height: 500px) {
   .title {
-    max-width: 660px;
+    opacity: .2;
   }
 }
 
-@media screen and (orientation:landscape) and (max-height: 600px) {
+@media screen and (orientation:landscape) and (max-height: 420px) {
   .title {
     max-width: 300px;
   }

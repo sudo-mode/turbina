@@ -3,21 +3,26 @@
   padding-right: 10px;
 }
 
+.player__track-item:first-child {
+  padding-top: 8px;
+}
+
 .player__track-item:last-child {
-  padding-bottom: 8px;
+  margin-bottom: 24px;
 }
 
 .player__track {
   width: fit-content;
   padding: 0 5px 0 0;
-  margin: 0 0 16px;
+  margin-top: 0;
+  margin-bottom: 12px;
   color: #fff;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-weight: 400;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  transition: transform .2s ease-out, text-shadow 0.2s ease-out, opacity .5s ease-in-out;
+  transition: opacity .2s ease-out, text-shadow 0.2s ease-out;
 }
 
 .player__feat {
@@ -29,32 +34,18 @@
   font-weight: 500;
 }
 
-.player__track_loading {
-  opacity: 0;
-}
-
 .player__track_info {
-  max-width: calc(100% - 56px);
+  max-width: 100%;
   text-align: left;
 }
 
 .player__track_info:hover {
   cursor: pointer;
-  font-style: italic;
+  opacity: .5;
 }
 
 .player__track:active, .player__track:focus {
   outline: none;
-}
-
-@media screen and (max-width: 1024px) {
-  .player__track {
-    margin-bottom: 15px;
-  }
-
-  .player__track-item:last-child {
-    padding-bottom: 8px;
-  }
 }
 
 @media screen and (max-width: 480px) {
