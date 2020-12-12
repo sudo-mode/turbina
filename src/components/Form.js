@@ -17,6 +17,7 @@ function Form() {
     const [isMusician, setIsMusician] = React.useState(false);
 
     const inputNameStyle = cn('form__input', 'form__input_name', {'form__input_invalid': errors.name});
+    const inputAgeStyle = cn('form__input', 'form__input_age', {'form__input_invalid': errors.age});
     const inputTelStyle = cn('form__input', 'form__input_tel', {'form__input_invalid': errors.tel});
     const inputEmailStyle = cn('form__input', 'form__input_email', {'form__input_invalid': errors.email});
     const inputTextStyle = cn('form__textarea', 'form__input', {'form__input_invalid': errors.text});
@@ -30,6 +31,7 @@ function Form() {
               setIsSuccess(true);
               setIsSubmitted(false);
               setIsErrorVisible(false);
+              setIsMusician(false);
               resetForm();
 
               setTimeout(() => 
@@ -53,14 +55,14 @@ function Form() {
     }
 
     return(
-        <div className="form-container">
+        <div className="form-container" id="form-participate">
 
           <TextContainer>
             <h2 className="text-container__heading">Форма</h2>
             <p className="text-container__paragraph">Заполните эту форму и вы можете стать частью проекта.</p>
           </TextContainer>
 
-        <form className="form" name="send-poem" id="form-participate" onSubmit={handleSubmit} noValidate>
+        <form className="form" name="send-poem" onSubmit={handleSubmit} noValidate>
            
            <div className="form__type-buttons">
              <label htmlFor="parent" className="form__input_type-label">
@@ -86,6 +88,19 @@ function Form() {
                   onChange={handleChange}
                 />
                 {errors.name && <span className="form__input-error">{errors.name}</span>}
+
+                {!isMusician && <input 
+                  className={inputAgeStyle}
+                  type="number"
+                  name="age" 
+                  placeholder="Возраст автора"
+                  required
+                  min="1"
+                  max="99"
+                  value={values.age || ''}
+                  onChange={handleChange}
+                />}
+                {!isMusician && errors.age && <span className="form__input-error">{errors.age}</span>}
 
                 <input 
                   className={inputTelStyle}

@@ -102,7 +102,6 @@
    background-color: rgb(0, 0, 0);
    color: #fff;
    cursor: pointer;
-   font-style: italic;
 }
 
 .form__submit-button:focus {
@@ -174,8 +173,20 @@
 }
 
 .form__input_type-choice:hover + .form__choice-pseudo-item {
-    transform: skew(-9deg);
+    opacity: .8;
     cursor: pointer;
+}
+
+.form__input_age::-webkit-outer-spin-button,
+.form__input_age::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.form__input,
+.form__input:hover,
+.form__input:focus {
+    appearance: none;
+    -moz-appearance: textfield;
 }
 
 /* Адаптивная верстка для брекпоинта 1024px */

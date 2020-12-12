@@ -1,0 +1,174 @@
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, .8);
+  transition: opacity 0.3s linear;
+  z-index: 100;
+}
+
+.modal_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__content {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 920px;
+  width: 100%;
+  padding: 0 75px 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #252525;
+  border-radius: 8px;
+}
+
+.modal__close-button {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.modal__iframe-container {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+.modal__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.modal__title {
+  margin: 45px auto;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+/* Адаптивная высота iframe и контейнера modal__content */
+
+@media screen and (orientation: portrait) {
+  .modal__iframe-container {
+    padding-bottom: 56%;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-height: 741px) {
+  .modal__iframe-container {
+    padding-bottom: 56%;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-height: 740px) {
+  .modal__content {
+    height: 100%;
+    max-height: calc(100% - 2*(36px + 16px + 22px));
+    /* 
+    36px - максимальная высота кнопки "Закрыть";
+    16px - высота отступа от modal__content до кнопки "Закрыть";
+    22px - запас расстояния от кнопки "Закрыть" до нижнего края экрана;
+    */
+  }
+}
+
+
+/* Ширина: 1024px и меньше */
+
+@media screen and (max-width: 1024px) {
+  .modal__content {
+    max-width: 804px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-height: 551px) {
+  .modal__content {
+    padding: 0 50px 50px;
+  }
+
+  .modal__title {
+    margin: 35px auto;
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 550px) {
+  .modal__content {
+    padding: 0 20px 20px;
+  }
+
+  .modal__title {
+    margin: 20px auto;
+  }
+}
+
+
+/* Ширина: 768px и меньше */
+
+@media screen and (max-width: 768px) and (min-height: 551px) {
+  .modal__content {
+    padding: 0 44px 44px;
+  }
+}
+
+
+/* Ширина: 600px и меньше */
+
+@media screen and (max-width: 600px) {
+  .modal__title {
+    font-size: 14px;
+  }
+}
+
+
+/* Ширина: 480px и меньше */
+
+@media screen and (max-width: 480px) {
+  .modal {
+    padding: 0 10px;
+  }
+
+  .modal__title {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) and (min-height: 551px) {
+  .modal__content {
+    padding: 0 14px 104px;
+  }
+
+  .modal__title {
+    margin: 30px auto 44px;
+  }
+}
+
+@media screen and (max-width: 480px) and (max-height: 550px) {
+  .modal__content {
+    padding: 0 14px 30px;
+  }
+
+  .modal__title {
+    margin: 30px auto;
+  }
+}

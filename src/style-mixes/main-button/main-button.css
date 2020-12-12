@@ -1,0 +1,37 @@
+@import url(./type/main-button_type_accent.css);
+@import url(./type/main-button_type_common.css);
+
+.main-button {
+  border: 2px solid #fff;
+  padding: 8px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  transition: box-shadow .2s ease-out;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.main-button:focus {
+  outline: none;
+}
+
+.main-button:hover {
+  box-shadow: 0 0 8px 4px #ffffff40;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-button {
+    padding: 8px 18px;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-button {
+    padding: 7px 16px;
+    font-size: 12px;
+  }
+}
+

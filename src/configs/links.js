@@ -1,64 +1,86 @@
 import FacebookIcon from "../components/svg/FacebookIcon";
 import InstagramIcon from "../components/svg/InstagramIcon";
 import VkontakteIcon from "../components/svg/VkontakteIcon";
+import TelegramIcon from "../components/svg/TelegramIcon";
 
+// TODO обновить ссылку на стрим (src + youtubeId)
 
+// Ссылка на Live трансляцию на youtube
+const liveLink = {
+  title: 'Прямое включение с семейного фестиваля «Вселенная книг»',
+  src: 'https://www.youtube.com/embed/OVPPOwMpSpQ',
+  // идентификатор видео (часть ссылки на youtube, после 'embed/'):
+  youtubeId: 'OVPPOwMpSpQ', 
+};
+
+// Ссылка на главную страницу Маршак (используется для логотипа в хедере)
 const marshakMainLink = 'https://marshakbooks.ru/';
+
+// Ссылка на Яндекс.Практикум - Создание сайтов для НКО
 const yandexPraktikumLink = {
   title: 'Яндекс.Практикума',
   link:'https://www.notion.so/de0ecc64f8134e178448dcbc6382046e',
 };
 
+// Ссылки, появляющиеся при наведении на логотип Маршака в хедере
 const marshakLinks = [
   {
     marshakLabel: 'Книги',
-    marshakLink: 'https://marshakbooks.ru/'
+    marshakLink: 'https://marshakbooks.ru/',
+    target: '_blank',
+  },
+  {
+    marshakLabel: 'Одежда',
+    marshakLink: 'https://marshakbooks.ru/wear/',
+    target: '_blank',
+  },
+  {
+    marshakLabel: 'Музыка',
+    marshakLink: 'https://marshakbooks.ru/turbina/',
+    target: '_self',
   },
   {
     marshakLabel: 'Школа',
-    marshakLink: 'https://marshakbooks.ru/school/'
+    marshakLink: 'https://marshakbooks.ru/school/',
+    target: '_blank',
   },
   {
     marshakLabel: 'О нас',
-    marshakLink: 'https://marshakbooks.ru/о-нас/'
+    marshakLink: 'https://marshakbooks.ru/о-нас/',
+    target: '_blank',
   },
 ];
 
-// TODO: вставить актуальные ссылки на стриминговые сервисы
-const serviceLinks = [
-  { 
-    serviceLabel: 'Яндекс.Музыка',
-    serviceLink: 'https://music.yandex.ru/album/12769745'
-  },
-  { 
-    serviceLabel: 'Spotify',
-    serviceLink: 'https://open.spotify.com/track/0FRjmDhfKmVARMOvmUm6no?si=rwTima3JQaWdse3mrQko1g'
-  },
-  { 
-    serviceLabel: 'Apple Music',
-    serviceLink: 'https://music.apple.com/ru/album/контур-любви-feat-варя-карпова-федя-быстров-single/1539942736'
-  },
-  { 
-    serviceLabel: 'VK Music',
-    serviceLink: 'https://vk.com/music/album/-2000389059_9389059_4fb8e57c6b6b7b1795'
-  },
-];
-
+// Ссылки для футера
 const marshakNavLinks = [
   {
     title: 'Книги',
     link: 'https://marshakbooks.ru/',
+    target: '_blank',
+  },
+  {
+    title: 'Одежда',
+    link: 'https://marshakbooks.ru/wear/',
+    target: '_blank',
+  },
+  {
+    title: 'Музыка',
+    link: 'https://marshakbooks.ru/turbina/',
+    target: '_self',
   },
   {
     title: 'Школа',
     link: 'https://marshakbooks.ru/school/',
+    target: '_blank',
   },
   {
     title: 'О нас',
-    link: 'https://marshakbooks.ru/%d0%be-%d0%bd%d0%b0%d1%81/',
+    link: 'https://marshakbooks.ru/о-нас/',
+    target: '_blank',
   },
 ];
 
+// Иконки соцсетей
 const socialNetworks = [
   {
     name: 'Instagram',
@@ -78,6 +100,12 @@ const socialNetworks = [
     IconElement: VkontakteIcon,
     className: 'social-networks__vkontakte',
   },
+  {
+    name: 'Telegram',
+    link: 'https://t.me/marshakbooks',
+    IconElement: TelegramIcon,
+    className: 'social-networks__telegram',
+  },
 ]
 
-export { marshakMainLink, marshakLinks, serviceLinks, yandexPraktikumLink, marshakNavLinks, socialNetworks };
+export { marshakMainLink, marshakLinks, yandexPraktikumLink, marshakNavLinks, socialNetworks, liveLink };

@@ -1,27 +1,26 @@
 .player {
   display: grid;
-  grid-template-columns: min-content 35px 1fr max-content 42px;
-  grid-template-rows: min-content 1fr;
+  grid-template-columns: 206px 1fr max-content 42px;
+  grid-template-rows: min-content min-content 1fr;
   grid-template-areas: 
-    "cover player player buttons extend-btn"
-    "cover    .   info    info       .     ";
+    "cover     .       .        .     "
+    "player  player player  extend-btn"
+    "buttons  info   info       .     ";
   margin-left: 10px;
   margin-right: 10px;
-  margin-bottom: 10px;
-  padding-top: 145px;
+  margin-bottom: 16px;
   font-family: 'Inter', Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.2;
-  overflow: hidden;
   position: relative;
-  z-index: 1;
+  z-index: 20;
 }
 
 .player__buttons-wrapper {
   grid-area: buttons;
   display: flex;
-  margin-top: -4px;
-  margin-left: 20px;
+  flex-direction: column;
+  margin-top: 26px;
 }
 
 @media screen and (min-width: 1280px) {
@@ -33,74 +32,37 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .player {
-    font-size: 18px;
-  }
-
-  .player__buttons-wrapper {
-    margin-top: -6px;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .player {
-    margin-bottom: 8px;
-    grid-template-columns: 35px min-content 1fr max-content 44px;
-    grid-template-areas: 
-    "player player player buttons extend-btn"
-    "   .   cover   info   info        .    ";
-  }
-
-  .player__buttons-wrapper {
-    margin-left: 14px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .player {
-    grid-template-rows: min-content min-content 1fr;
-    grid-template-columns: 35px min-content 1fr 44px;
-    grid-template-areas:
-      "player  player  player  extend-btn "
-      "  .    buttons  buttons     .      "
-      "  .     cover    info       .      ";
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 16px;
-  }
-
-  .player__buttons-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 0;
+    grid-template-columns: 180px 1fr max-content 42px;
+    font-size: 15px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .player {
-    grid-template-rows: min-content min-content min-content 1fr;
-    grid-template-columns: 26px min-content 1fr 26px;
+    grid-template-rows: repeat(5, min-content);
+    grid-template-columns: 1fr;
     grid-template-areas: 
-      "player  player  player  extend-btn "
-      "  .     cover   cover       .      "
-      "  .    buttons  buttons     .      "
-      "  .     info    info        .      ";
+      "extend-btn"
+      "  cover   "
+      "  player  "
+      " buttons  "
+      "   info   ";
     margin-bottom: 16px;
+    margin-right: 0;
+    margin-left: 0;
     font-size: 14px;
-    padding-top: 15px;
   }
 
   .player__buttons-wrapper {
-    margin-top: 22px;
-    margin-bottom: 22px;
+    flex-direction: row-reverse;
+    margin-top: 0;
   }
 }
 
-@media screen and (max-height: 600px) {
-  .player {
-    padding-top: 15px;
+@media screen and (orientation:landscape) and (max-height: 370px) {
+  .player__buttons-wrapper {
+    margin-top: 14px;
   }
 }

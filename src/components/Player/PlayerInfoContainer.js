@@ -1,15 +1,34 @@
+import { useState, useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import { Scrollbars } from 'react-custom-scrollbars';
 import './PlayerInfoContainer.css';
 import PlayerInfoContent from './PlayerInfoContent';
-import { Scrollbars } from 'react-custom-scrollbars';
-import { useMediaQuery } from 'react-responsive';
+import cnWithSwitchAnimation from '../../utils/switchAnimation';
+import cn from 'classnames';
 
 function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrackClick, isLoading }) {
-  const isScrollbarHeight1280 = useMediaQuery({ query: '(min-width: 1280px)' });
-  const isScrollbarHeight1024 = useMediaQuery({ query: '(min-width: 1025px)' });
-  const isScrollbarHeight768 = useMediaQuery({ query: '(min-width: 768px)' });
-  const isScrollbarHeight480 = useMediaQuery({ query: '(min-width: 480px)' });
+  const isBigDesktop = useMediaQuery({ query: '(min-width: 1025px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 769px)' });
+  const isTablet = useMediaQuery({ query: '(min-width: 481px)' });
+  const isLandscape = useMediaQuery({query: '(orientation:landscape) and (max-height: 420px)'});
+  const isSmallMobileLandscape = useMediaQuery({query: '(orientation:landscape) and (max-height: 370px)'});
 
-  const height = isScrollbarHeight1280 ? 118 : isScrollbarHeight1024 ? 118 : isScrollbarHeight768 ? 102 : isScrollbarHeight480 ? 100 : 88;
+  const defineScrollbarHeight = () => {
+    if (isSmallMobileLandscape) return 74;
+    if (isLandscape) return 98;
+    if (isBigDesktop) return 130;
+    if (isDesktop) return 102;
+    if (isTablet) return 152;
+    return 88;
+  };
+  
+  const [scrollbarHeight, setScrollbarHeight] = useState(
+    defineScrollbarHeight()
+  );
+
+  useEffect(() => {
+    setScrollbarHeight(defineScrollbarHeight());
+  }, [isBigDesktop, isDesktop, isLandscape, isTablet, isSmallMobileLandscape]);
 
   const renderView = ({ style, ...props }) => {
     return (
@@ -41,20 +60,23 @@ function PlayerInfoContainer({ tracks, isOpen, isTextInfo, currentTrack, onTrack
 
   const renderTrackHorizontal = ({ style, ...props }) => {
     return (
-    <div
-      style={{ display: 'none' }}
-      {...props}
-    />
+      <div
+        style={{ display: 'none' }}
+        {...props}
+      />
     );
   };
 
   return (
 
-    <div className={`player__info-container ${isOpen && 'player__info-container_active'}`}>
+    <div className={cn('player__info-container', { 'player__info-container_active': isOpen })}>
+      <p className={cnWithSwitchAnimation('player__info-header', isTextInfo)}>
+        {isTextInfo ? 'Текст песни:' : 'Релизы:'}
+      </p>
       <Scrollbars
         className='player__scrollbars'
         renderView={renderView}
-        style={{ height: height }}
+        style={{ height: scrollbarHeight }}
         renderThumbVertical={renderThumb}
         renderTrackVertical={renderTrack}
         renderTrackHorizontal={renderTrackHorizontal}

@@ -9,7 +9,7 @@ import VideoBtn from './VideoBtn';
 import PlayerCover from './PlayerCover';
 import tracks from '../../db/tracks';
 
-function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCurrentTrack }) {
+function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCurrentTrack, isVideoModalOpened }) {
   const [isTextInfo, setTextInfo] = useState(false);
   const [isExtendElementsMounted, setIsExtendElementsMounted] = useState(false);
 
@@ -19,7 +19,7 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
     config: { duration: 250 },
     onRest: () => {
       if (!isPlayerExtend) {
-        setIsExtendElementsMounted(false)
+        setIsExtendElementsMounted(false);
       }
     } 
   });
@@ -29,8 +29,34 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
     setIsExtendElementsMounted(true);
   }
 
-  const handleTrackClick = (track) => {
-    onSetCurrentTrack(track);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(tracks.indexOf(currentTrack));
+
+  useEffect(() => {
+    setCurrentTrackIndex(tracks.indexOf(currentTrack));
+  }, [currentTrack]);
+
+  const handleForwardClick = () => {
+    if (currentTrackIndex < tracks.length - 1) {
+      onSetCurrentTrack(tracks[currentTrackIndex + 1]);
+    } else if (currentTrackIndex === tracks.length - 1) {
+      onSetCurrentTrack(tracks[0]);
+    }
+  }
+
+  const handleBackwardClick = () => {
+    if (currentTrackIndex === 0) {
+      onSetCurrentTrack(tracks[tracks.length - 1]);
+    } else if (currentTrackIndex > 0) {
+      onSetCurrentTrack(tracks[currentTrackIndex - 1]);
+    }
+  }
+
+  const handleTrackEnd = () => {
+    if (currentTrackIndex < tracks.length - 1) {
+      onSetCurrentTrack(tracks[currentTrackIndex + 1]);
+      return false;
+    } else return true;
+    // Возвращаем true, если трек -- последний в списке.
   }
 
   const handlePlayerSwitcherClick = () => {
@@ -46,7 +72,7 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
     if (isPlayerExtend) {
       setIsExtendElementsMounted(true);
     }
-  }, [isPlayerExtend])
+  }, [isPlayerExtend]);
   
   return (
     <section className="player" style={style}>
@@ -61,7 +87,11 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
       }
       <PlayerController
         isPlayerExtend={isPlayerExtend}
+        isVideoModalOpened={isVideoModalOpened}
         track={currentTrack}
+        onForwardClick={handleForwardClick}
+        onBackwardClick={handleBackwardClick}
+        onTrackEnd={handleTrackEnd}
       />
       <ExtendBtn
         isOpen={isPlayerExtend}
@@ -70,7 +100,7 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
       {isPlayerExtend && 
         <PlayerInfoContainer
         isOpen={isPlayerExtend}
-        onTrackClick={handleTrackClick}
+        onTrackClick={onSetCurrentTrack}
         tracks={tracks}
         isTextInfo={isTextInfo}
         currentTrack={currentTrack}
@@ -81,15 +111,15 @@ function Player ({ isPlayerExtend, onPlayerExtend, style, currentTrack, onSetCur
           className="player__buttons-wrapper"
           style={extendPlayerAnimationConfig}
         >
+          <PlayerSwitcher
+            onClick={handlePlayerSwitcherClick}
+            isTextInfo={isTextInfo}
+          />
           {currentTrack.videoLink &&
             <VideoBtn 
               videoLink={currentTrack.videoLink}
             /> 
           }
-          <PlayerSwitcher
-            onClick={handlePlayerSwitcherClick}
-            isTextInfo={isTextInfo}
-          />
         </animated.div>
       }
     </section>

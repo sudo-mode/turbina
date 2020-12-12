@@ -1,0 +1,85 @@
+/* Контейнер для кнопки "Стриминги" и ссылок */
+
+.stream-services {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+
+/* Список ссылок на стриминги */
+
+.stream-services__links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+/* Кнопка "Стриминги" */
+
+.stream-services__button {
+  max-width: 150px; /* for transition */
+  min-width: 70px; /* for transition */
+  margin-bottom: 8px;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 8px 20px;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+  overflow: hidden;
+  transition: 
+    box-shadow .2s ease-out, 
+    max-width .3s linear,
+    min-width .3s linear;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.stream-services__button:focus {
+  outline: none;
+}
+
+.stream-services__button:hover {
+  box-shadow: 0 0 8px 4px #ffffff40;
+}
+
+.stream-services__button_minimised {
+  max-width: 35px; /* for transition */
+  min-width: 30px; /* for transition */
+  padding: 6px;
+  line-height: 0;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .stream-services {
+    font-size: 15px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+
+  .stream-services {
+    font-size: 12px;
+  }
+
+  .stream-services__button {
+    padding: 7px 14px;
+    margin-bottom: 5px;
+  }
+
+  .stream-services__button_minimised {
+    padding: 4px;
+    margin-bottom: 5px;
+  }
+}

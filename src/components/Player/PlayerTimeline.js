@@ -4,7 +4,11 @@ import './PlayerTimeline.css';
 function PlayerTimeline ({ duration, curTime, onTimeUpdate }) {
   const timelineRef = useRef();
 
-  const curPercentage = (curTime / duration) * 100;
+  // --- Страховка на случай неверного отсчёта времени, оставшегося до конца трека ---
+  // При запуске трека после загрузки страницы первый раз audio.duration
+  // не успевает правильно загрузиться и audio.currentTime превышает 
+  // audio.duration, из-за чего curPercentage может быть больше 100.
+  const curPercentage = curTime <= duration ? (curTime / duration) * 100 : 100;
 
   const calculateClickedTime = (e) => {
     const timeline = timelineRef.current;

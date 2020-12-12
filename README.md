@@ -4,9 +4,9 @@
 
 Frontend проекта выполнен студентами Яндекс.Практикум
 
-Ознакомиться с проектом можно, перейдя по [ссылке](https://sudo-mode.github.io/turbina/ "Проект Турбина").
+Ознакомиться с проектом можно, перейдя по [ссылке](https://competent-booth-39f138.netlify.app/ "Проект Турбина") или на [сайте](https://marshakbooks.ru/turbina/ "Проект Турбина") независимого детского книжного магазина "Маршак".
 
-![alt tag](https://psv4.userapi.com/c856224/u1190603/docs/d2/8aac3224a384/Turbina.jpg?extra=odD1k5MntXgMLWrC2kklYY7qHv8E8gcVzYsuW_tDBP0-cKJkB34OKf6Y2EJBZc6pQs8BTPlJlzu06r4JiisVWxWXQd9Cpus9drleWYjK9B74v5zoiHxTzEtQzml710Hx1_H7N0KXGlUti0n1gZY "Турбина. Песни, которые придумали дети.")
+![Превью](https://sun9-66.userapi.com/impg/OpBAWUpZL7_5dzV5iK6rRWfk4ox-S_1Vbb_TTA/naboVez551A.jpg?size=1278x780&quality=96&proxy=1&sign=fec0896b759714503e352d70b9d7854e&type=album "Турбина. Песни, которые придумали дети.")
 
 ## Технологический стек
 
