@@ -4,7 +4,7 @@
 
 Frontend проекта выполнен студентами Яндекс.Практикум
 
-Ознакомиться с проектом можно, перейдя по [ссылке](https://turbina.netlify.app/ "Проект Турбина") или на [сайте](https://marshakbooks.ru/turbina/ "Проект Турбина") независимого детского книжного магазина "Маршак".
+Ознакомиться с проектом можно на [сайте](https://marshakbooks.ru/turbina/ "Проект Турбина") независимого детского книжного магазина "Маршак".
 
 ![Превью](https://sun9-66.userapi.com/impg/OpBAWUpZL7_5dzV5iK6rRWfk4ox-S_1Vbb_TTA/naboVez551A.jpg?size=1278x780&quality=96&proxy=1&sign=fec0896b759714503e352d70b9d7854e&type=album "Турбина. Песни, которые придумали дети.")
 
